@@ -84,6 +84,43 @@ fn format_summary(
                 }
             }
         }
+        JobResult::Mocha(mocha) => {
+            out.push_str(&format!(
+                "\n{} passing ({}), {} pending, {} failing\n",
+                mocha.passing, mocha.duration, mocha.pending, mocha.failing
+            ));
+
+            if let Some(suppressed) = mocha.suppressed_flakes {
+                out.push_str(&format!(
+                    "{} of {} failures suppressed as known flakes\n",
+                    suppressed, mocha.failing
+                ));
+            }
+
+            if !mocha.failures.is_empty() {
+                out.push_str("\nFAILURES:\n");
+                for f in &mocha.failures {
+                    if f.test.is_empty() {
+                        out.push_str(&format!("  {}) {}\n", f.number, f.suite));
+                    } else {
+                        out.push_str(&format!("  {}) {} > {}\n", f.number, f.suite, f.test));
+                    }
+                    if !f.error_message.is_empty() {
+                        out.push_str(&format!("     {}\n", f.error_message));
+                    }
+                    if let Some(ref diff) = f.diff {
+                        out.push_str(&format!(
+                            "     expected: {}  actual: {}\n",
+                            diff.expected, diff.actual
+                        ));
+                    }
+                    for line in &f.stack_trace {
+                        out.push_str(&format!("     {}\n", line));
+                    }
+                    out.push('\n');
+                }
+            }
+        }
         JobResult::Unknown { line_count } => {
             out.push_str(&format!(
                 "\nUnknown job type. Cleaned log has {} lines.\n",

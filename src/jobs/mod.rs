@@ -1,3 +1,4 @@
+pub mod mocha;
 pub mod nextest;
 
 use crate::log_parser::CleanLine;
@@ -12,6 +13,8 @@ pub trait JobParser {
 pub enum JobResult {
     #[serde(rename = "nextest")]
     Nextest(nextest::NextestResult),
+    #[serde(rename = "mocha")]
+    Mocha(mocha::MochaResult),
     #[serde(rename = "unknown")]
     Unknown { line_count: usize },
 }
@@ -19,6 +22,8 @@ pub enum JobResult {
 pub fn classify(job_name: &str) -> Box<dyn JobParser> {
     if job_name.contains("rust-tests") || job_name.contains("nextest") {
         Box::new(nextest::NextestParser)
+    } else if job_name.contains("typescript-tests") || job_name.contains("mocha") {
+        Box::new(mocha::MochaParser)
     } else {
         Box::new(UnknownParser)
     }
