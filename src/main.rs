@@ -26,7 +26,7 @@ struct Cli {
     raw: bool,
 
     /// Output directory for generated files
-    #[arg(long, default_value = "/tmp/bk-logs")]
+    #[arg(long, default_value = ".")]
     output_dir: PathBuf,
 }
 
