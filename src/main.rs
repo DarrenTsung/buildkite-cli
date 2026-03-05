@@ -40,6 +40,10 @@ enum BuildsCommand {
     ListJobs {
         /// Buildkite build URL (e.g. https://buildkite.com/figma/ci/builds/287221)
         url: String,
+
+        /// Output as JSON
+        #[arg(long)]
+        json: bool,
     },
 }
 
@@ -79,7 +83,7 @@ fn main() -> Result<()> {
 
     match cli.command {
         Commands::Builds { command } => match command {
-            BuildsCommand::ListJobs { url } => cmd_list_jobs(&url),
+            BuildsCommand::ListJobs { url, json } => cmd_list_jobs(&url, json),
         },
         Commands::Pr { command } => match command {
             PrCommand::Checks => cmd_pr_checks(),
@@ -102,7 +106,7 @@ fn cmd_pr_checks() -> Result<()> {
     Ok(())
 }
 
-fn cmd_list_jobs(url: &str) -> Result<()> {
+fn cmd_list_jobs(url: &str, json: bool) -> Result<()> {
     let parsed = buildkite::parse_url(url).context("Failed to parse Buildkite URL")?;
     let token =
         std::env::var("BUILDKITE_TOKEN").context("BUILDKITE_TOKEN environment variable not set")?;
@@ -112,7 +116,15 @@ fn cmd_list_jobs(url: &str) -> Result<()> {
         .fetch_build_jobs(&parsed)
         .context("Failed to fetch build jobs")?;
 
-    output::print_build_jobs(&parsed.build_number, &parsed.pipeline, &jobs);
+    if json {
+        output::print_build_jobs_json(&parsed, &jobs)?;
+    } else {
+        let base_url = format!(
+            "https://buildkite.com/{}/{}/builds/{}",
+            parsed.org, parsed.pipeline, parsed.build_number
+        );
+        output::print_build_jobs(&parsed.build_number, &parsed.pipeline, &base_url, &jobs);
+    }
     Ok(())
 }
 

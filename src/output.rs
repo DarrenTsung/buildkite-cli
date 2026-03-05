@@ -1,7 +1,8 @@
-use crate::buildkite::JobInfo;
+use crate::buildkite::{JobInfo, ParsedUrl};
 use crate::github::{CheckState, PrInfo};
 use crate::jobs::JobResult;
 use anyhow::Result;
+use serde::Serialize;
 use std::path::Path;
 
 pub fn write_results(
@@ -72,7 +73,33 @@ pub fn print_pr_checks(info: &PrInfo) {
     println!("{}", parts.join(", "));
 }
 
-pub fn print_build_jobs(build_number: &str, pipeline: &str, jobs: &[JobInfo]) {
+#[derive(Serialize)]
+struct JobJson {
+    name: String,
+    id: String,
+    state: String,
+    url: String,
+}
+
+pub fn print_build_jobs_json(parsed: &ParsedUrl, jobs: &[JobInfo]) -> Result<()> {
+    let base_url = format!(
+        "https://buildkite.com/{}/{}/builds/{}",
+        parsed.org, parsed.pipeline, parsed.build_number
+    );
+    let entries: Vec<JobJson> = jobs
+        .iter()
+        .map(|j| JobJson {
+            name: j.name.clone(),
+            id: j.id.clone(),
+            state: j.state.clone(),
+            url: format!("{}#{}", base_url, j.id),
+        })
+        .collect();
+    println!("{}", serde_json::to_string_pretty(&entries)?);
+    Ok(())
+}
+
+pub fn print_build_jobs(build_number: &str, pipeline: &str, base_url: &str, jobs: &[JobInfo]) {
     println!("Build {} ({})\n", build_number, pipeline);
     for job in jobs {
         let icon = match job.state.as_str() {
@@ -85,6 +112,8 @@ pub fn print_build_jobs(build_number: &str, pipeline: &str, jobs: &[JobInfo]) {
             other => format!(" ({})", other),
         };
         println!("  {} {}{}", icon, job.name, suffix);
+        // Show job URL dimmed on next line for easy copy-paste
+        println!("    \x1b[2m{}#{}\x1b[0m", base_url, job.id);
     }
 }
 

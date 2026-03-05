@@ -44,9 +44,9 @@ PR #1234: my-feature-branch
 
 Failed and pending checks show their Buildkite URL, which you can pass directly to `bk jobs download-logs` or `bk builds list-jobs`.
 
-### `bk builds list-jobs <BUILD_URL>`
+### `bk builds list-jobs <BUILD_URL> [--json]`
 
-Lists all jobs in a build with pass/fail status.
+Lists all jobs in a build with pass/fail status. Each job shows its full Buildkite URL (dimmed) on the next line for easy copy-paste into `bk jobs download-logs`.
 
 ```bash
 bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221"
@@ -58,10 +58,21 @@ Example output:
 Build 287221 (ci)
 
   ✓ lint-check
+    https://buildkite.com/figma/ci/builds/287221#aaa-bbb
   ✓ type-check
+    https://buildkite.com/figma/ci/builds/287221#ccc-ddd
   ✗ multiplayer-rust-tests (failed)
+    https://buildkite.com/figma/ci/builds/287221#eee-fff
   ✓ multiplayer-typescript-tests
+    https://buildkite.com/figma/ci/builds/287221#ggg-hhh
   - deploy-staging (waiting)
+    https://buildkite.com/figma/ci/builds/287221#iii-jjj
+```
+
+Use `--json` to output structured JSON with `name`, `id`, `state`, and `url` fields:
+
+```bash
+bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221" --json
 ```
 
 ### `bk jobs download-logs <JOB_URL>`
