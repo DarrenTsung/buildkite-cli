@@ -80,6 +80,36 @@ pub fn clean_log(raw: &str) -> Vec<CleanLine> {
     lines
 }
 
+/// Extract Bazel targets that were actually executed (not cached).
+/// Cached targets show `Testing //target; 0s`, executed ones show `> 0s`.
+/// Target names may be truncated (e.g. `//.../.../foo:foo_test`).
+pub fn extract_executed_targets(raw: &str) -> Vec<String> {
+    let bk_ts_re = Regex::new(r"\x1b_bk;t=\d+\x07").unwrap();
+    let ansi_re = Regex::new(r"\x1b\[[0-9;]*[a-zA-Z]").unwrap();
+    let testing_re = Regex::new(r"Testing (//\S+);\s+(\d+)s").unwrap();
+
+    let mut targets: std::collections::HashMap<String, u64> = std::collections::HashMap::new();
+
+    for raw_line in raw.lines() {
+        let line = bk_ts_re.replace_all(raw_line, "");
+        let line = ansi_re.replace_all(&line, "");
+        for caps in testing_re.captures_iter(&line) {
+            let target = caps[1].to_string();
+            let dur: u64 = caps[2].parse().unwrap_or(0);
+            let entry = targets.entry(target).or_insert(0);
+            if dur > *entry {
+                *entry = dur;
+            }
+        }
+    }
+
+    targets
+        .into_iter()
+        .filter(|(_, dur)| *dur > 0)
+        .map(|(t, _)| t)
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

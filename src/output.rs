@@ -221,12 +221,26 @@ fn format_summary(
             let failing_pkgs: Vec<&crate::jobs::gotest::GoTestPackage> =
                 gotest.packages.iter().filter(|p| !p.passed).collect();
 
-            if failing_pkgs.is_empty() {
-                out.push_str(&format!(
-                    "\nAll {} packages passed.\n",
-                    gotest.packages.len()
-                ));
-            } else {
+            let executed: Vec<_> = gotest.packages.iter().filter(|p| p.executed).collect();
+            let cached_count = gotest.packages.len() - executed.len();
+
+            if !executed.is_empty() {
+                out.push_str(&format!("\nExecuted ({}):\n", executed.len()));
+                for pkg in &executed {
+                    let icon = if pkg.passed { "✓" } else { "✗" };
+                    out.push_str(&format!(
+                        "  {} {} ({} tests)\n",
+                        icon,
+                        pkg.target,
+                        pkg.tests.len()
+                    ));
+                }
+            }
+            if cached_count > 0 {
+                out.push_str(&format!("\n{} cached targets passed\n", cached_count));
+            }
+
+            if !failing_pkgs.is_empty() {
                 for pkg in &failing_pkgs {
                     out.push_str(&format!("\n=== {} ===\n", pkg.target));
                     let passed = pkg

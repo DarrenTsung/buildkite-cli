@@ -3,7 +3,10 @@ use crate::log_parser::CleanLine;
 use regex::Regex;
 use serde::Serialize;
 
-pub struct GoTestParser;
+pub struct GoTestParser {
+    /// Truncated Bazel target patterns for targets that were actually executed (duration > 0s)
+    pub executed_targets: Vec<String>,
+}
 
 #[derive(Debug, Serialize)]
 pub struct GoTestResult {
@@ -15,6 +18,8 @@ pub struct GoTestResult {
 pub struct GoTestPackage {
     pub target: String,
     pub passed: bool,
+    /// Whether this target was actually executed (not a Bazel cache hit)
+    pub executed: bool,
     pub tests: Vec<GoTest>,
     pub failing_tests: Vec<GoFailingTest>,
 }
@@ -51,8 +56,29 @@ pub struct BazelSummary {
 
 impl JobParser for GoTestParser {
     fn parse(&self, lines: &[CleanLine]) -> JobResult {
-        let result = parse_go_tests(lines);
+        let mut result = parse_go_tests(lines);
+        // Mark packages as executed based on Bazel progress line durations.
+        // Truncated targets like `//.../bootstrap:bootstrap_test` are matched
+        // against full targets by checking if the full target ends with the
+        // suffix after `...`.
+        for pkg in &mut result.packages {
+            pkg.executed = self.executed_targets.iter().any(|et| target_matches(&pkg.target, et));
+        }
         JobResult::GoTest(result)
+    }
+}
+
+/// Check if a full target like `//a/b/c:c_test` matches a potentially truncated
+/// target like `//.../c:c_test`.
+fn target_matches(full: &str, pattern: &str) -> bool {
+    if full == pattern {
+        return true;
+    }
+    // Pattern like `//.../foo:bar_test` — match suffix after `...`
+    if let Some(suffix) = pattern.strip_prefix("//...") {
+        full.ends_with(suffix)
+    } else {
+        false
     }
 }
 
@@ -189,10 +215,15 @@ fn flush_package(
     failures: &mut Vec<GoFailingTest>,
 ) {
     if let Some(target) = target.take() {
+        // Skip packages with no test output (Bazel cache hits)
+        if tests.is_empty() && failures.is_empty() {
+            return;
+        }
         let passed = failures.is_empty();
         packages.push(GoTestPackage {
             target,
             passed,
+            executed: false, // Set later based on Bazel progress line durations
             tests: std::mem::take(tests),
             failing_tests: std::mem::take(failures),
         });

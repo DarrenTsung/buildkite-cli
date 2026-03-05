@@ -203,7 +203,7 @@ fn cmd_download_logs(
     }
 
     // Parse with job-specific parser
-    let parser = jobs::classify(&job_name);
+    let parser = jobs::classify(&job_name, &raw_log);
     let result = parser.parse(&clean_lines);
 
     // Generate output

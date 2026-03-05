@@ -22,13 +22,14 @@ pub enum JobResult {
     Unknown { line_count: usize },
 }
 
-pub fn classify(job_name: &str) -> Box<dyn JobParser> {
+pub fn classify(job_name: &str, raw_log: &str) -> Box<dyn JobParser> {
     if job_name.contains("rust-tests") || job_name.contains("nextest") {
         Box::new(nextest::NextestParser)
     } else if job_name.contains("typescript-tests") || job_name.contains("mocha") {
         Box::new(mocha::MochaParser)
     } else if job_name.contains("agentplat") || job_name.contains("go-test") {
-        Box::new(gotest::GoTestParser)
+        let executed_targets = crate::log_parser::extract_executed_targets(raw_log);
+        Box::new(gotest::GoTestParser { executed_targets })
     } else {
         Box::new(UnknownParser)
     }
