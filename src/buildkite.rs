@@ -6,23 +6,33 @@ pub struct ParsedUrl {
     pub org: String,
     pub pipeline: String,
     pub build_number: String,
-    pub job_id: String,
+    pub job_id: Option<String>,
 }
 
 pub fn parse_url(url: &str) -> Result<ParsedUrl> {
-    // https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed
+    // Matches with or without #job-id fragment
     let re = Regex::new(
-        r"https?://buildkite\.com/([^/]+)/([^/]+)/builds/(\d+)#([0-9a-f-]+)",
+        r"https?://buildkite\.com/([^/]+)/([^/]+)/builds/(\d+)(?:#([0-9a-f-]+))?",
     )?;
 
-    let caps = re.captures(url).context("URL does not match expected Buildkite format: https://buildkite.com/<org>/<pipeline>/builds/<number>#<job-id>")?;
+    let caps = re.captures(url).context("URL does not match expected Buildkite format: https://buildkite.com/<org>/<pipeline>/builds/<number>[#<job-id>]")?;
 
     Ok(ParsedUrl {
         org: caps[1].to_string(),
         pipeline: caps[2].to_string(),
         build_number: caps[3].to_string(),
-        job_id: caps[4].to_string(),
+        job_id: caps.get(4).map(|m| m.as_str().to_string()),
     })
+}
+
+#[derive(Debug, Clone)]
+#[allow(dead_code)]
+pub struct JobInfo {
+    pub id: String,
+    pub name: String,
+    pub step_key: Option<String>,
+    pub state: String,
+    pub job_type: String,
 }
 
 pub struct Client {
@@ -39,9 +49,13 @@ impl Client {
     }
 
     pub fn download_log(&self, parsed: &ParsedUrl) -> Result<String> {
+        let job_id = parsed
+            .job_id
+            .as_deref()
+            .context("Job ID is required to download logs (use a URL with #job-id)")?;
         let url = format!(
             "https://api.buildkite.com/v2/organizations/{}/pipelines/{}/builds/{}/jobs/{}/log",
-            parsed.org, parsed.pipeline, parsed.build_number, parsed.job_id
+            parsed.org, parsed.pipeline, parsed.build_number, job_id
         );
 
         let resp = self
@@ -63,7 +77,7 @@ impl Client {
         resp.text().context("Failed to read response body")
     }
 
-    pub fn fetch_job_name(&self, parsed: &ParsedUrl) -> Result<String> {
+    pub fn fetch_build_jobs(&self, parsed: &ParsedUrl) -> Result<Vec<JobInfo>> {
         let url = format!(
             "https://api.buildkite.com/v2/organizations/{}/pipelines/{}/builds/{}",
             parsed.org, parsed.pipeline, parsed.build_number
@@ -85,20 +99,53 @@ impl Client {
             .as_array()
             .context("No jobs array in build response")?;
 
+        let mut result = Vec::new();
         for job in jobs {
-            if job["id"].as_str() == Some(&parsed.job_id) {
-                if let Some(name) = job["step_key"].as_str() {
-                    return Ok(name.to_string()) as Result<String>;
-                }
-                if let Some(name) = job["name"].as_str() {
-                    // Strip emoji markup like ":rust: multiplayer-rust-tests"
-                    let cleaned = strip_emoji_markup(name);
-                    return Ok(cleaned);
-                }
+            let job_type = job["type"]
+                .as_str()
+                .unwrap_or("unknown")
+                .to_string();
+
+            if job_type != "script" {
+                continue;
+            }
+
+            let name = job["step_key"]
+                .as_str()
+                .map(|s| s.to_string())
+                .or_else(|| {
+                    job["name"]
+                        .as_str()
+                        .map(|n| strip_emoji_markup(n))
+                })
+                .unwrap_or_else(|| "unknown".to_string());
+
+            result.push(JobInfo {
+                id: job["id"].as_str().unwrap_or("").to_string(),
+                name,
+                step_key: job["step_key"].as_str().map(|s| s.to_string()),
+                state: job["state"].as_str().unwrap_or("unknown").to_string(),
+                job_type,
+            });
+        }
+
+        Ok(result)
+    }
+
+    pub fn fetch_job_name(&self, parsed: &ParsedUrl) -> Result<String> {
+        let job_id = parsed
+            .job_id
+            .as_deref()
+            .context("Job ID is required to fetch job name")?;
+
+        let jobs = self.fetch_build_jobs(parsed)?;
+        for job in &jobs {
+            if job.id == job_id {
+                return Ok(job.name.clone());
             }
         }
 
-        bail!("Job {} not found in build", parsed.job_id)
+        bail!("Job {} not found in build", job_id)
     }
 }
 
@@ -112,13 +159,26 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_parse_url() {
+    fn test_parse_url_with_job_id() {
         let url = "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed";
         let parsed = parse_url(url).unwrap();
         assert_eq!(parsed.org, "figma");
         assert_eq!(parsed.pipeline, "figma");
         assert_eq!(parsed.build_number, "5950766");
-        assert_eq!(parsed.job_id, "019ca8a8-6e21-4548-9b5c-e8656a82feed");
+        assert_eq!(
+            parsed.job_id.as_deref(),
+            Some("019ca8a8-6e21-4548-9b5c-e8656a82feed")
+        );
+    }
+
+    #[test]
+    fn test_parse_url_without_job_id() {
+        let url = "https://buildkite.com/figma/ci/builds/287221";
+        let parsed = parse_url(url).unwrap();
+        assert_eq!(parsed.org, "figma");
+        assert_eq!(parsed.pipeline, "ci");
+        assert_eq!(parsed.build_number, "287221");
+        assert_eq!(parsed.job_id, None);
     }
 
     #[test]

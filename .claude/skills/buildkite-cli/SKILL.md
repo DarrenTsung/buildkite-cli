@@ -1,11 +1,11 @@
 ---
-name: bk-logs
-description: Parse Buildkite job logs to extract test results, failures, and structured output. Use when the user shares a Buildkite build URL, wants to analyze CI test failures, or asks about failing tests in a Buildkite job.
+name: buildkite-cli
+description: Buildkite CLI for inspecting builds and parsing job logs. Use when the user shares a Buildkite build URL, wants to list jobs in a build, analyze CI test failures, or asks about failing tests in a Buildkite job.
 ---
 
-# Buildkite Log Parser CLI
+# Buildkite CLI (`bk`)
 
-The `bk` CLI downloads and parses Buildkite job logs, stripping noise (BK timestamps, ANSI codes, bazel progress lines) and producing structured output for known job types (currently `multiplayer-rust-tests` nextest jobs).
+The `bk` CLI inspects Buildkite builds and parses job logs. It can list all jobs in a build with pass/fail status, or download and parse individual job logs into structured output.
 
 ## Authentication
 
@@ -17,47 +17,59 @@ export BUILDKITE_TOKEN="your-token"
 
 Tokens can be created at: https://buildkite.com/user/api-access-tokens
 
-## Usage
+## Commands
 
-### Parse a Buildkite job URL
+### `bk builds list-jobs <BUILD_URL>`
 
-```bash
-bk "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
-```
-
-### Parse a local log file
+Lists all jobs in a build with pass/fail status.
 
 ```bash
-bk --file path/to/log.log --job-name multiplayer-rust-tests
+bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221"
 ```
 
-### Dump cleaned log only (no structured parsing)
+Example output:
+
+```
+Build 287221 (ci)
+
+  ✓ lint-check
+  ✓ type-check
+  ✗ multiplayer-rust-tests (failed)
+  ✓ multiplayer-typescript-tests
+  - deploy-staging (waiting)
+```
+
+### `bk jobs download-logs <JOB_URL>`
+
+Downloads and parses a job's log. The URL must include a `#job-id` fragment.
 
 ```bash
-bk --file path/to/log.log --raw
+bk jobs download-logs "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
 ```
 
-### Custom output directory
+### `bk jobs download-logs --file <PATH>`
+
+Parses a local log file instead of fetching from the API.
 
 ```bash
-bk "https://buildkite.com/..." --output-dir /tmp/my-logs
+bk jobs download-logs --file path/to/log.log --job-name multiplayer-rust-tests
 ```
 
-## Flags reference
+### Flags for `jobs download-logs`
 
 | Flag             | Required | Description                                                        |
 |------------------|----------|--------------------------------------------------------------------|
-| `<URL>`          | No*      | Buildkite job URL (org/pipeline/build/job extracted from URL)      |
+| `<URL>`          | No*      | Buildkite job URL with `#job-id` fragment                          |
 | `--file <path>`  | No*      | Local log file to parse instead of fetching from API               |
 | `--job-name`     | No       | Job name hint when using `--file` (e.g. `multiplayer-rust-tests`)  |
 | `--raw`          | No       | Output cleaned log only, skip structured parsing                   |
-| `--output-dir`   | No       | Output directory (default: `/tmp/bk-logs`)                         |
+| `--output-dir`   | No       | Output directory (default: `.`)                                    |
 
-*Either a Buildkite URL or `--file` must be provided.
+*Either a job URL or `--file` must be provided.
 
 ## Output files
 
-All files are written to `--output-dir` (default `/tmp/bk-logs/`):
+All files are written to `--output-dir` (default: current directory):
 
 | File                        | Description                                          |
 |-----------------------------|------------------------------------------------------|
@@ -85,17 +97,20 @@ Parses mocha test output. Extracts:
 ## Examples
 
 ```bash
-# Analyze a failing CI build
-bk "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
+# List all jobs in a build
+bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221"
+
+# Download and parse a specific job's log
+bk jobs download-logs "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
 
 # Parse a previously downloaded log
-bk --file figma_build_5950766_multiplayer-rust-tests.log --job-name multiplayer-rust-tests
+bk jobs download-logs --file figma_build_5950766_multiplayer-rust-tests.log --job-name multiplayer-rust-tests
 
 # Just get the cleaned log for manual inspection
-bk --file build.log --raw | less
+bk jobs download-logs --file build.log --raw | less
 
 # Extract failing test names from JSON
-cat /tmp/bk-logs/*_results.json | jq '.runs[].failing_tests[].name'
+cat *_results.json | jq '.runs[].failing_tests[].name'
 ```
 
 ## Building

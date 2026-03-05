@@ -1,3 +1,4 @@
+use crate::buildkite::JobInfo;
 use crate::jobs::JobResult;
 use anyhow::Result;
 use std::path::Path;
@@ -26,6 +27,22 @@ pub fn write_results(
     println!("{}", summary);
 
     Ok(())
+}
+
+pub fn print_build_jobs(build_number: &str, pipeline: &str, jobs: &[JobInfo]) {
+    println!("Build {} ({})\n", build_number, pipeline);
+    for job in jobs {
+        let icon = match job.state.as_str() {
+            "passed" => "✓",
+            "failed" | "timed_out" => "✗",
+            _ => "-",
+        };
+        let suffix = match job.state.as_str() {
+            "passed" => String::new(),
+            other => format!(" ({})", other),
+        };
+        println!("  {} {}{}", icon, job.name, suffix);
+    }
 }
 
 fn format_summary(
