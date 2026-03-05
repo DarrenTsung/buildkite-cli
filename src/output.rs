@@ -1,4 +1,5 @@
 use crate::buildkite::JobInfo;
+use crate::github::{CheckState, PrInfo};
 use crate::jobs::JobResult;
 use anyhow::Result;
 use std::path::Path;
@@ -27,6 +28,48 @@ pub fn write_results(
     println!("{}", summary);
 
     Ok(())
+}
+
+pub fn print_pr_checks(info: &PrInfo) {
+    println!("PR #{}: {}\n", info.number, info.head_branch);
+
+    let mut passed = 0u32;
+    let mut failed = 0u32;
+    let mut pending = 0u32;
+
+    for check in &info.checks {
+        let (icon, suffix) = match check.state {
+            CheckState::Passed => {
+                passed += 1;
+                ("✓", String::new())
+            }
+            CheckState::Failed => {
+                failed += 1;
+                ("✗", " (failed)".to_string())
+            }
+            CheckState::Pending => {
+                pending += 1;
+                ("-", " (pending)".to_string())
+            }
+        };
+        println!("  {} {}{}", icon, check.name, suffix);
+        if !matches!(check.state, CheckState::Passed) {
+            println!("    {}", check.link);
+        }
+    }
+
+    println!();
+    let mut parts = Vec::new();
+    if passed > 0 {
+        parts.push(format!("{} passed", passed));
+    }
+    if failed > 0 {
+        parts.push(format!("{} failed", failed));
+    }
+    if pending > 0 {
+        parts.push(format!("{} pending", pending));
+    }
+    println!("{}", parts.join(", "));
 }
 
 pub fn print_build_jobs(build_number: &str, pipeline: &str, jobs: &[JobInfo]) {

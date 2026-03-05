@@ -1,4 +1,5 @@
 mod buildkite;
+mod github;
 mod jobs;
 mod log_parser;
 mod output;
@@ -26,6 +27,11 @@ enum Commands {
         #[command(subcommand)]
         command: JobsCommand,
     },
+    /// GitHub PR operations
+    Pr {
+        #[command(subcommand)]
+        command: PrCommand,
+    },
 }
 
 #[derive(Subcommand)]
@@ -35,6 +41,12 @@ enum BuildsCommand {
         /// Buildkite build URL (e.g. https://buildkite.com/figma/ci/builds/287221)
         url: String,
     },
+}
+
+#[derive(Subcommand)]
+enum PrCommand {
+    /// Show Buildkite check status for the current branch's PR
+    Checks,
 }
 
 #[derive(Subcommand)]
@@ -69,6 +81,9 @@ fn main() -> Result<()> {
         Commands::Builds { command } => match command {
             BuildsCommand::ListJobs { url } => cmd_list_jobs(&url),
         },
+        Commands::Pr { command } => match command {
+            PrCommand::Checks => cmd_pr_checks(),
+        },
         Commands::Jobs { command } => match command {
             JobsCommand::DownloadLogs {
                 url,
@@ -79,6 +94,12 @@ fn main() -> Result<()> {
             } => cmd_download_logs(url, file, job_name, raw, output_dir),
         },
     }
+}
+
+fn cmd_pr_checks() -> Result<()> {
+    let info = github::fetch_pr_checks().context("Failed to fetch PR checks")?;
+    output::print_pr_checks(&info);
+    Ok(())
 }
 
 fn cmd_list_jobs(url: &str) -> Result<()> {

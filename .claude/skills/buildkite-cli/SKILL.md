@@ -1,6 +1,6 @@
 ---
 name: buildkite-cli
-description: Buildkite CLI for inspecting builds and parsing job logs. Use when the user shares a Buildkite build URL, wants to list jobs in a build, analyze CI test failures, or asks about failing tests in a Buildkite job.
+description: Buildkite CLI for inspecting builds and parsing job logs. Use when the user shares a Buildkite build URL, wants to list jobs in a build, analyze CI test failures, asks about failing tests in a Buildkite job, or wants to check PR CI status from the current branch.
 ---
 
 # Buildkite CLI (`bk`)
@@ -18,6 +18,31 @@ export BUILDKITE_TOKEN="your-token"
 Tokens can be created at: https://buildkite.com/user/api-access-tokens
 
 ## Commands
+
+### `bk pr checks`
+
+Shows Buildkite check status for the current branch's PR. Requires `gh` CLI to be authenticated.
+
+```bash
+bk pr checks
+```
+
+Example output:
+
+```
+PR #1234: my-feature-branch
+
+  ✓ lint-check
+  ✓ type-check
+  ✗ multiplayer-rust-tests (failed)
+    https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed
+  ✓ multiplayer-typescript-tests
+  - deploy-staging (pending)
+
+3 passed, 1 failed, 1 pending
+```
+
+Failed and pending checks show their Buildkite URL, which you can pass directly to `bk jobs download-logs` or `bk builds list-jobs`.
 
 ### `bk builds list-jobs <BUILD_URL>`
 
@@ -97,6 +122,9 @@ Parses mocha test output. Extracts:
 ## Examples
 
 ```bash
+# Show Buildkite checks for the current branch's PR
+bk pr checks
+
 # List all jobs in a build
 bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221"
 
