@@ -130,6 +130,14 @@ Parses mocha test output. Extracts:
 - Each failure with suite name, test name, error message, diff, and stack trace
 - Suppressed known flakes from the CI test-runner
 
+### `agentplat-test` and Go test jobs (gotest)
+
+Parses Go test output run via Bazel. Matches job names containing `agentplat` or `go-test`. Extracts:
+- Per-package results grouped by Bazel target
+- Individual test pass/fail/skip with durations
+- Failure output (error messages between `=== RUN` and `--- FAIL`)
+- Bazel summary (executed/total/passed/failed)
+
 ## Examples
 
 ```bash

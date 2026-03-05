@@ -210,6 +210,46 @@ fn format_summary(
                 }
             }
         }
+        JobResult::GoTest(gotest) => {
+            if let Some(ref summary) = gotest.bazel_summary {
+                out.push_str(&format!(
+                    "\nBazel: executed {} of {} tests, {} passed, {} failed\n",
+                    summary.executed, summary.total, summary.passed, summary.failed
+                ));
+            }
+
+            let failing_pkgs: Vec<&crate::jobs::gotest::GoTestPackage> =
+                gotest.packages.iter().filter(|p| !p.passed).collect();
+
+            if failing_pkgs.is_empty() {
+                out.push_str(&format!(
+                    "\nAll {} packages passed.\n",
+                    gotest.packages.len()
+                ));
+            } else {
+                for pkg in &failing_pkgs {
+                    out.push_str(&format!("\n=== {} ===\n", pkg.target));
+                    let passed = pkg
+                        .tests
+                        .iter()
+                        .filter(|t| t.status == crate::jobs::gotest::GoTestStatus::Pass)
+                        .count();
+                    let failed = pkg.failing_tests.len();
+                    out.push_str(&format!("{} passed, {} failed\n", passed, failed));
+
+                    out.push_str("\nFAILURES:\n");
+                    for ft in &pkg.failing_tests {
+                        out.push_str(&format!(
+                            "  FAIL [{:.3}s] {}\n",
+                            ft.duration_secs, ft.name
+                        ));
+                        for line in &ft.output {
+                            out.push_str(&format!("    {}\n", line));
+                        }
+                    }
+                }
+            }
+        }
         JobResult::Unknown { line_count } => {
             out.push_str(&format!(
                 "\nUnknown job type. Cleaned log has {} lines.\n",

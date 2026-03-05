@@ -1,3 +1,4 @@
+pub mod gotest;
 pub mod mocha;
 pub mod nextest;
 
@@ -15,6 +16,8 @@ pub enum JobResult {
     Nextest(nextest::NextestResult),
     #[serde(rename = "mocha")]
     Mocha(mocha::MochaResult),
+    #[serde(rename = "gotest")]
+    GoTest(gotest::GoTestResult),
     #[serde(rename = "unknown")]
     Unknown { line_count: usize },
 }
@@ -24,6 +27,8 @@ pub fn classify(job_name: &str) -> Box<dyn JobParser> {
         Box::new(nextest::NextestParser)
     } else if job_name.contains("typescript-tests") || job_name.contains("mocha") {
         Box::new(mocha::MochaParser)
+    } else if job_name.contains("agentplat") || job_name.contains("go-test") {
+        Box::new(gotest::GoTestParser)
     } else {
         Box::new(UnknownParser)
     }
