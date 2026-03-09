@@ -264,6 +264,19 @@ fn format_summary(
                 }
             }
         }
+        JobResult::GoLint(golint) => {
+            if golint.issues.is_empty() {
+                out.push_str("\nNo lint issues found.\n");
+            } else {
+                out.push_str(&format!("\n{} lint issues:\n", golint.issues.len()));
+                for issue in &golint.issues {
+                    out.push_str(&format!(
+                        "\n  {}:{}:{}\n    {} ({})\n",
+                        issue.file, issue.line, issue.col, issue.message, issue.linter
+                    ));
+                }
+            }
+        }
         JobResult::Unknown { line_count } => {
             out.push_str(&format!(
                 "\nUnknown job type. Cleaned log has {} lines.\n",

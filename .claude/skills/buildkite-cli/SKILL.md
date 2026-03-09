@@ -139,6 +139,11 @@ Parses Go test output run via Bazel. Matches job names containing `agentplat` or
 - Bazel summary (executed/total/passed/failed)
 - Distinguishes executed vs cached targets (using Bazel progress line durations)
 
+### Lint jobs (golint)
+
+Parses golangci-lint output. Matches job names containing `lint`. Extracts:
+- Lint issues with file, line, column, message, and linter name
+
 ## Examples
 
 ```bash

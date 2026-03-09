@@ -1,3 +1,4 @@
+pub mod golint;
 pub mod gotest;
 pub mod mocha;
 pub mod nextest;
@@ -18,6 +19,8 @@ pub enum JobResult {
     Mocha(mocha::MochaResult),
     #[serde(rename = "gotest")]
     GoTest(gotest::GoTestResult),
+    #[serde(rename = "golint")]
+    GoLint(golint::GoLintResult),
     #[serde(rename = "unknown")]
     Unknown { line_count: usize },
 }
@@ -27,6 +30,8 @@ pub fn classify(job_name: &str, raw_log: &str) -> Box<dyn JobParser> {
         Box::new(nextest::NextestParser)
     } else if job_name.contains("typescript-tests") || job_name.contains("mocha") {
         Box::new(mocha::MochaParser)
+    } else if job_name.contains("lint") {
+        Box::new(golint::GoLintParser)
     } else if job_name.contains("agentplat") || job_name.contains("go-test") {
         let executed_targets = crate::log_parser::extract_executed_targets(raw_log);
         Box::new(gotest::GoTestParser { executed_targets })
