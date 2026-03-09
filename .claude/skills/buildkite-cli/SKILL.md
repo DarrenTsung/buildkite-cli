@@ -99,7 +99,7 @@ bk jobs download-logs --file path/to/log.log --job-name multiplayer-rust-tests
 | `--file <path>`  | No*      | Local log file to parse instead of fetching from API               |
 | `--job-name`     | No       | Job name hint when using `--file` (e.g. `multiplayer-rust-tests`)  |
 | `--raw`          | No       | Output cleaned log only, skip structured parsing                   |
-| `--output-dir`   | No       | Output directory (default: `.`)                                    |
+| `--output-dir`   | No       | Output directory (default: `.`). **Always use the default (current directory) — do not use `/tmp/`.** |
 
 *Either a job URL or `--file` must be provided.
 
