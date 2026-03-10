@@ -138,6 +138,7 @@ Parses Go test output run via Bazel. Matches job names containing `agentplat` or
 - Failure output (error messages between `=== RUN` and `--- FAIL`)
 - Bazel summary (executed/total/passed/failed)
 - Distinguishes executed vs cached targets (using Bazel progress line durations)
+- Supports both `Test output for` (batch) and `@@//target:binary |` (streaming) Bazel formats
 
 ### Lint jobs (golint)
 
