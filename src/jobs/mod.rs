@@ -2,6 +2,7 @@ pub mod golint;
 pub mod gotest;
 pub mod mocha;
 pub mod nextest;
+pub mod script_error;
 
 use crate::log_parser::CleanLine;
 use serde::Serialize;
@@ -21,8 +22,8 @@ pub enum JobResult {
     GoTest(gotest::GoTestResult),
     #[serde(rename = "golint")]
     GoLint(golint::GoLintResult),
-    #[serde(rename = "unknown")]
-    Unknown { line_count: usize },
+    #[serde(rename = "script_error")]
+    ScriptError(script_error::ScriptErrorResult),
 }
 
 pub fn classify(job_name: &str, raw_log: &str) -> Box<dyn JobParser> {
@@ -36,16 +37,7 @@ pub fn classify(job_name: &str, raw_log: &str) -> Box<dyn JobParser> {
         let executed_targets = crate::log_parser::extract_executed_targets(raw_log);
         Box::new(gotest::GoTestParser { executed_targets })
     } else {
-        Box::new(UnknownParser)
-    }
-}
-
-struct UnknownParser;
-
-impl JobParser for UnknownParser {
-    fn parse(&self, lines: &[CleanLine]) -> JobResult {
-        JobResult::Unknown {
-            line_count: lines.len(),
-        }
+        // Fall back to generic script error parser for any unrecognized job
+        Box::new(script_error::ScriptErrorParser)
     }
 }

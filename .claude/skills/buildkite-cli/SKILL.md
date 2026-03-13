@@ -140,6 +140,10 @@ Parses Go test output run via Bazel. Matches job names containing `agentplat` or
 - Distinguishes executed vs cached targets (using Bazel progress line durations)
 - Supports both `Test output for` (batch) and `@@//target:binary |` (streaming) Bazel formats
 
+### Generic script errors (fallback)
+
+For any unrecognized job type, extracts error lines (`ERROR:`, TypeScript errors, `❌` markers, Bazel `FAILED` targets), the failed command, and exit code from the log. This replaces the old "Unknown job type" output.
+
 ### Lint jobs (golint)
 
 Parses golangci-lint output. Matches job names containing `lint`. Extracts:

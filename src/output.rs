@@ -277,11 +277,21 @@ fn format_summary(
                 }
             }
         }
-        JobResult::Unknown { line_count } => {
-            out.push_str(&format!(
-                "\nUnknown job type. Cleaned log has {} lines.\n",
-                line_count
-            ));
+        JobResult::ScriptError(script) => {
+            if let Some(ref cmd) = script.failed_command {
+                out.push_str(&format!("\nFailed command: {}\n", cmd));
+            }
+            if let Some(code) = script.exit_code {
+                out.push_str(&format!("Exit code: {}\n", code));
+            }
+            if script.errors.is_empty() {
+                out.push_str("\nNo specific errors found in log.\n");
+            } else {
+                out.push_str(&format!("\n{} errors:\n", script.errors.len()));
+                for err in &script.errors {
+                    out.push_str(&format!("  {}\n", err));
+                }
+            }
         }
     }
 
