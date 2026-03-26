@@ -142,7 +142,9 @@ Parses Go test output run via Bazel. Matches job names containing `agentplat` or
 
 ### Generic script errors (fallback)
 
-For any unrecognized job type, extracts error lines (`ERROR:`, TypeScript errors, `❌` markers, Bazel `FAILED` targets), the failed command, and exit code from the log. This replaces the old "Unknown job type" output.
+For any unrecognized job type, extracts error lines (`ERROR:`, TypeScript errors, Go compiler errors, `❌` markers, Bazel `FAILED` targets), the failed command, and exit code from the log. Go compiler errors (`undefined:`, `too many arguments`, etc.) include have/want type context lines.
+
+When a specialized parser (gotest, golint, etc.) returns empty results (e.g. a compilation error prevents tests or linting from running), the CLI automatically falls back to this generic parser to surface the actual errors.
 
 ### Lint jobs (golint)
 

@@ -30,6 +30,9 @@ fn parse_script_errors(lines: &[CleanLine]) -> ScriptErrorResult {
     let ts_error_re = Regex::new(r"^\S+\.tsx?:\d+:\d+ - error TS\d+:").unwrap();
     // Bazel FAILED targets
     let bazel_failed_re = Regex::new(r"^//\S+\s+FAILED").unwrap();
+    // Go compiler errors: file.go:line:col: message
+    // Matches full paths (services/foo/bar.go:10:5: ...) and short paths (bar.go:10:5: ...)
+    let go_error_re = Regex::new(r"^\S+\.go:\d+:\d+:\s+").unwrap();
 
     let mut errors = Vec::new();
     let mut failed_command = None;
@@ -64,18 +67,30 @@ fn parse_script_errors(lines: &[CleanLine]) -> ScriptErrorResult {
             || cross_re.is_match(text)
             || ts_error_re.is_match(text)
             || bazel_failed_re.is_match(text)
+            || go_error_re.is_match(text)
         {
             errors.push(text.to_string());
             continue;
         }
 
-        // Capture context lines right after a TypeScript error (the source code line)
+        // Capture context lines right after an error
         if !errors.is_empty() {
             let last = errors.last().unwrap();
+            // TypeScript error context: source code and underline markers
             if ts_error_re.is_match(last) || last.ends_with("~~") {
-                // Source code or underline context
                 if text.contains('~') || text.starts_with(|c: char| c.is_ascii_digit()) {
                     errors.push(text.to_string());
+                    continue;
+                }
+            }
+            // Go compiler error context: have/want type mismatch lines
+            if go_error_re.is_match(last)
+                || last.starts_with("have ")
+                || last.starts_with("want ")
+            {
+                if text.starts_with("have ") || text.starts_with("want ") {
+                    errors.push(text.to_string());
+                    continue;
                 }
             }
         }
@@ -116,6 +131,63 @@ mod tests {
         ]);
         let result = parse_script_errors(&input);
         assert!(result.errors.len() >= 2);
+        assert_eq!(result.exit_code, Some(1));
+    }
+
+    #[test]
+    fn test_parse_go_compile_errors() {
+        let input = lines(&[
+            "ERROR: /home/circleci/figma/services/agentplat/sbox/sboxd/server/BUILD.bazel:37:8: GoCompilePkg services/agentplat/sbox/sboxd/server/server_test.internal.a failed: (Exit 1): builder failed: error executing GoCompilePkg command",
+            "Use --sandbox_debug to see verbose messages from the sandbox",
+            "services/agentplat/sbox/sboxd/server/server_test.go:710:25: undefined: WithDefaultWorkspacePath",
+            "services/agentplat/sbox/sboxd/server/server_test.go:719:52: too many arguments in call to wsMgr.CreateWorkspaceForBootstrap",
+            "\thave (context.Context, \"figma.com/services/agentplat/proto\".WorkspaceID, string)",
+            "\twant (context.Context, \"figma.com/services/agentplat/proto\".WorkspaceID)",
+            "compilepkg: error running subcommand external/rules_go++go_sdk+go_sdk/pkg/tool/linux_amd64/compile: exit status 2",
+            "ERROR: Build did NOT complete successfully",
+            "FAILED: ",
+            "exit status 1",
+        ]);
+        let result = parse_script_errors(&input);
+        // Should capture the ERROR lines and Go compiler errors
+        let errors_str = result.errors.join("\n");
+        assert!(
+            errors_str.contains("undefined: WithDefaultWorkspacePath"),
+            "should capture undefined error"
+        );
+        assert!(
+            errors_str.contains("too many arguments"),
+            "should capture too-many-arguments error"
+        );
+        assert!(
+            errors_str.contains("have (context.Context"),
+            "should capture have/want context"
+        );
+        assert!(
+            errors_str.contains("want (context.Context"),
+            "should capture have/want context"
+        );
+        // First exit status found is 2 (from the Go compiler)
+        assert_eq!(result.exit_code, Some(2));
+    }
+
+    #[test]
+    fn test_parse_go_compile_errors_short_paths() {
+        // golangci-lint produces shorter paths without the full package prefix
+        let input = lines(&[
+            "sboxd/server/server_test.go:710:25: undefined: WithDefaultWorkspacePath",
+            "sboxd/server/server_test.go:719:52: too many arguments in call to wsMgr.CreateWorkspaceForBootstrap",
+            "\thave (context.Context, \"figma.com/services/agentplat/proto\".WorkspaceID, string)",
+            "\twant (context.Context, \"figma.com/services/agentplat/proto\".WorkspaceID)",
+            "exit status 1",
+        ]);
+        let result = parse_script_errors(&input);
+        assert_eq!(
+            result.errors.len(),
+            4,
+            "should capture 2 errors + 2 context lines, got: {:?}",
+            result.errors
+        );
         assert_eq!(result.exit_code, Some(1));
     }
 

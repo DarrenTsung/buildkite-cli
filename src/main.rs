@@ -6,6 +6,7 @@ mod output;
 
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
+use jobs::JobParser;
 use std::path::PathBuf;
 
 #[derive(Parser)]
@@ -202,9 +203,17 @@ fn cmd_download_logs(
         return Ok(());
     }
 
-    // Parse with job-specific parser
+    // Parse with job-specific parser, falling back to generic error
+    // extraction when the specialized parser finds nothing (e.g. a Go
+    // compilation error in a lint or test job).
     let parser = jobs::classify(&job_name, &raw_log);
     let result = parser.parse(&clean_lines);
+    let result = if result.is_empty() {
+        let fallback = jobs::script_error::ScriptErrorParser;
+        fallback.parse(&clean_lines)
+    } else {
+        result
+    };
 
     // Generate output
     output::write_results(&output_dir, &prefix, &build_number, &job_id, &job_name, &result)?;

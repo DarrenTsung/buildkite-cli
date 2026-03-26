@@ -26,6 +26,20 @@ pub enum JobResult {
     ScriptError(script_error::ScriptErrorResult),
 }
 
+impl JobResult {
+    /// Returns true when a specialized parser found no domain-specific results.
+    /// Used to trigger fallback to the generic ScriptErrorParser.
+    pub fn is_empty(&self) -> bool {
+        match self {
+            JobResult::Nextest(r) => r.runs.is_empty(),
+            JobResult::Mocha(r) => r.passing == 0 && r.failing == 0,
+            JobResult::GoTest(r) => r.packages.is_empty() && r.bazel_summary.is_none(),
+            JobResult::GoLint(r) => r.issues.is_empty(),
+            JobResult::ScriptError(_) => false, // Already the fallback
+        }
+    }
+}
+
 pub fn classify(job_name: &str, raw_log: &str) -> Box<dyn JobParser> {
     if job_name.contains("rust-tests") || job_name.contains("nextest") {
         Box::new(nextest::NextestParser)
