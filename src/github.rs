@@ -11,6 +11,7 @@ pub struct PrCheck {
 }
 
 /// Summary of a Buildkite pipeline step, aggregated across retry attempts.
+#[derive(Clone)]
 pub struct BkStepSummary {
     pub name: String,
     /// State of the most recent attempt (e.g. "failed", "running").

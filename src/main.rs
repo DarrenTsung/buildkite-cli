@@ -150,10 +150,10 @@ fn expand_checks_to_jobs(client: &buildkite::Client, info: &mut github::PrInfo) 
         return;
     }
 
-    // Track which build URLs have already been expanded under a check,
-    // so we don't duplicate the full job list when multiple checks (e.g.
-    // buildkite/setup and buildkite/finish) point to the same build.
-    let mut expanded_builds: std::collections::HashSet<String> = std::collections::HashSet::new();
+    // Attach Buildkite job summaries to every check so effective state is
+    // always computed from actual jobs, not GitHub's (sometimes premature)
+    // bucket status. Display deduplication happens in the output layer.
+    let mut step_cache: HashMap<String, Vec<BkStepSummary>> = HashMap::new();
 
     for check in &mut info.checks {
         let build_url = check
@@ -167,14 +167,10 @@ fn expand_checks_to_jobs(client: &buildkite::Client, info: &mut github::PrInfo) 
             None => continue,
         };
 
-        if expanded_builds.contains(&build_url) {
-            // This build is already expanded under another check. Skip
-            // to avoid showing the same 80+ jobs twice.
-            continue;
-        }
-        expanded_builds.insert(build_url);
-
-        check.bk_steps = summarize_all_steps(jobs);
+        let steps = step_cache
+            .entry(build_url)
+            .or_insert_with(|| summarize_all_steps(jobs));
+        check.bk_steps = steps.clone();
     }
 }
 

@@ -46,6 +46,10 @@ pub fn print_pr_checks(info: &PrInfo) {
     let mut failed = 0u32;
     let mut pending = 0u32;
 
+    // Track which build URLs have had their job details displayed,
+    // so we only show the full job list once per build.
+    let mut displayed_builds: std::collections::HashSet<String> = std::collections::HashSet::new();
+
     for check in &info.checks {
         let has_bk_jobs = !check.bk_steps.is_empty();
 
@@ -76,7 +80,16 @@ pub fn print_pr_checks(info: &PrInfo) {
         };
         println!("  {} {}{}", icon, check.name, suffix);
 
-        if has_bk_jobs {
+        // Only show the full job details once per build URL.
+        let build_url_key = check
+            .link
+            .split('#')
+            .next()
+            .unwrap_or(&check.link)
+            .to_string();
+        let show_job_details = has_bk_jobs && displayed_builds.insert(build_url_key);
+
+        if show_job_details {
             let build_url = check
                 .link
                 .split('#')
@@ -86,6 +99,7 @@ pub fn print_pr_checks(info: &PrInfo) {
             // Categorize steps: show failed individually, collapse
             // running by name, collapse passed/waiting into counts.
             let mut passed_count = 0u32;
+            let mut soft_failed_count = 0u32;
             let mut waiting_count = 0u32;
             // Running jobs grouped by name for collapsing shards.
             let mut running_groups: Vec<(String, Vec<&crate::github::BkStepSummary>)> = Vec::new();
@@ -94,6 +108,10 @@ pub fn print_pr_checks(info: &PrInfo) {
                 match step.current_state.as_str() {
                     "passed" if step.failed_attempts == 0 => {
                         passed_count += 1;
+                        continue;
+                    }
+                    "soft_failed" if step.failed_attempts == 0 => {
+                        soft_failed_count += 1;
                         continue;
                     }
                     "waiting" | "scheduled" | "assigned" | "accepted" => {
@@ -116,6 +134,7 @@ pub fn print_pr_checks(info: &PrInfo) {
                 // Failed, timed_out, canceled, or passed-with-retries: show individually
                 let step_icon = match step.current_state.as_str() {
                     "passed" => "✓",
+                    "soft_failed" => "~",
                     "failed" | "timed_out" | "canceled" => "✗",
                     "running" => "→",
                     _ => "-",
@@ -186,6 +205,9 @@ pub fn print_pr_checks(info: &PrInfo) {
             if passed_count > 0 {
                 collapsed.push(format!("{} passed", passed_count));
             }
+            if soft_failed_count > 0 {
+                collapsed.push(format!("{} soft-failed", soft_failed_count));
+            }
             if waiting_count > 0 {
                 collapsed.push(format!("{} waiting", waiting_count));
             }
@@ -219,6 +241,7 @@ enum EffectiveState {
 }
 
 /// Derive the overall check state from its Buildkite jobs.
+/// `soft_failed` is treated as passing (Buildkite considers it non-blocking).
 fn effective_check_state(steps: &[crate::github::BkStepSummary]) -> EffectiveState {
     let any_failed = steps.iter().any(|s| {
         matches!(
@@ -231,7 +254,7 @@ fn effective_check_state(steps: &[crate::github::BkStepSummary]) -> EffectiveSta
     }
     let all_passed = steps
         .iter()
-        .all(|s| s.current_state == "passed");
+        .all(|s| matches!(s.current_state.as_str(), "passed" | "soft_failed"));
     if all_passed {
         EffectiveState::Passed
     } else {
