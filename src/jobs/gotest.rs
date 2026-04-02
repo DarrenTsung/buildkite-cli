@@ -22,6 +22,10 @@ pub struct GoTestPackage {
     pub executed: bool,
     pub tests: Vec<GoTest>,
     pub failing_tests: Vec<GoFailingTest>,
+    /// Raw output for non-Go test targets (e.g. TS itests) where we can't
+    /// parse structured test results but need to surface the error output.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub raw_output: Vec<String>,
 }
 
 #[derive(Debug, Serialize)]
@@ -134,6 +138,8 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
 
     // If we have streaming output, parse each target group
     if has_streaming {
+        let mut failed_targets = Vec::new();
+
         for (target, content_lines) in &streaming_lines {
             let fake_lines: Vec<CleanLine> = content_lines
                 .iter()
@@ -147,14 +153,34 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
                 packages.push(GoTestPackage {
                     target: target.clone(),
                     passed: group.failures.is_empty(),
-                    executed: true, // Streaming output = actually executed
+                    executed: true,
                     tests: group.tests,
                     failing_tests: group.failures,
+                    raw_output: Vec::new(),
                 });
+            } else if !content_lines.is_empty() {
+                // Non-Go target with output but no Go test patterns.
+                // Check if it looks like a failure (error lines, non-zero
+                // exit, etc.) and include it with raw output so failures
+                // aren't silently dropped.
+                let has_errors = content_lines.iter().any(|l| line_looks_like_error(l));
+                if has_errors {
+                    packages.push(GoTestPackage {
+                        target: target.clone(),
+                        passed: false,
+                        executed: true,
+                        tests: Vec::new(),
+                        failing_tests: Vec::new(),
+                        raw_output: truncate_output(content_lines),
+                    });
+                }
             }
         }
 
-        // Parse bazel summary from non-streaming lines
+        // Parse bazel summary and FAILED/TIMEOUT lines from non-streaming lines
+        let bazel_failed_re =
+            Regex::new(r"^(//\S+)\s+(FAILED|TIMEOUT)(?:\s+in\s+([\d.]+)s)?").unwrap();
+
         for line in &non_streaming_lines {
             let text = line.text.trim();
             if let Some(caps) = bazel_summary_re.captures(text) {
@@ -170,13 +196,28 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
                     failed,
                 });
             }
+            if let Some(caps) = bazel_failed_re.captures(text) {
+                failed_targets.push(caps[1].to_string());
+            }
         }
+
+        // Add failed targets that weren't already captured by streaming output
+        add_missing_failed_targets(&mut packages, &failed_targets);
 
         return GoTestResult {
             packages,
             bazel_summary,
         };
     }
+
+    // Bazel FAILED/TIMEOUT target lines (appear after test output sections)
+    let bazel_failed_re =
+        Regex::new(r"^(//\S+)\s+(FAILED|TIMEOUT)(?:\s+in\s+([\d.]+)s)?").unwrap();
+    let mut failed_targets = Vec::new();
+
+    // Collect all lines in each "Test output for" section so non-Go
+    // failures (e.g. TS itests) aren't silently dropped.
+    let mut section_output: Vec<String> = Vec::new();
 
     // Non-streaming format (original path)
     for line in &non_streaming_lines {
@@ -189,10 +230,12 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
                 &mut current_target,
                 &mut current_tests,
                 &mut current_failures,
+                &mut section_output,
             );
             current_target = Some(caps[1].to_string());
             current_run_name = None;
             current_run_output.clear();
+            section_output.clear();
             continue;
         }
 
@@ -249,6 +292,7 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
                 &mut current_target,
                 &mut current_tests,
                 &mut current_failures,
+                &mut section_output,
             );
 
             let executed: usize = caps[1].parse().unwrap_or(0);
@@ -267,9 +311,20 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
             continue;
         }
 
+        // Bazel FAILED/TIMEOUT target lines
+        if let Some(caps) = bazel_failed_re.captures(text) {
+            failed_targets.push(caps[1].to_string());
+            continue;
+        }
+
         // Collect output lines while a test is running (for failure capture)
         if current_run_name.is_some() && !text.is_empty() && !text.starts_with("=== ") {
             current_run_output.push(text.to_string());
+        }
+
+        // Also collect all section output for non-Go target detection
+        if current_target.is_some() && !text.is_empty() {
+            section_output.push(text.to_string());
         }
     }
 
@@ -279,7 +334,11 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
         &mut current_target,
         &mut current_tests,
         &mut current_failures,
+        &mut section_output,
     );
+
+    // Add failed targets that weren't captured by "Test output for" sections
+    add_missing_failed_targets(&mut packages, &failed_targets);
 
     GoTestResult {
         packages,
@@ -361,20 +420,78 @@ fn flush_package(
     target: &mut Option<String>,
     tests: &mut Vec<GoTest>,
     failures: &mut Vec<GoFailingTest>,
+    section_output: &mut Vec<String>,
 ) {
     if let Some(target) = target.take() {
-        // Skip packages with no test output (Bazel cache hits)
-        if tests.is_empty() && failures.is_empty() {
-            return;
+        if !tests.is_empty() || !failures.is_empty() {
+            // Go test output found: use structured results
+            let passed = failures.is_empty();
+            packages.push(GoTestPackage {
+                target,
+                passed,
+                executed: false, // Set later based on Bazel progress line durations
+                tests: std::mem::take(tests),
+                failing_tests: std::mem::take(failures),
+                raw_output: Vec::new(),
+            });
+        } else if section_output.iter().any(|l| line_looks_like_error(l)) {
+            // Non-Go target with error output (e.g. TS itests).
+            // Include it as a failed package with raw output so
+            // failures aren't silently hidden.
+            packages.push(GoTestPackage {
+                target,
+                passed: false,
+                executed: true,
+                tests: Vec::new(),
+                failing_tests: Vec::new(),
+                raw_output: truncate_output(section_output),
+            });
         }
-        let passed = failures.is_empty();
-        packages.push(GoTestPackage {
-            target,
-            passed,
-            executed: false, // Set later based on Bazel progress line durations
-            tests: std::mem::take(tests),
-            failing_tests: std::mem::take(failures),
+        // Otherwise: no tests and no errors = Bazel cache hit, skip.
+        tests.clear();
+        failures.clear();
+        section_output.clear();
+    }
+}
+
+use super::line_looks_like_error;
+
+/// Truncate raw output to a reasonable size for display.
+fn truncate_output(lines: &[String]) -> Vec<String> {
+    const MAX_LINES: usize = 50;
+    if lines.len() <= MAX_LINES {
+        lines.to_vec()
+    } else {
+        let mut out = lines[..MAX_LINES / 2].to_vec();
+        out.push(format!("... ({} lines omitted) ...", lines.len() - MAX_LINES));
+        out.extend_from_slice(&lines[lines.len() - MAX_LINES / 2..]);
+        out
+    }
+}
+
+/// Add failed Bazel targets that weren't captured by test output sections.
+/// These come from `//target FAILED in Xs` lines in the Bazel summary.
+fn add_missing_failed_targets(packages: &mut Vec<GoTestPackage>, failed_targets: &[String]) {
+    for target in failed_targets {
+        // Check if this target (or its package prefix) is already tracked
+        let already_tracked = packages.iter().any(|p| {
+            p.target == *target
+                || target.starts_with(&p.target)
+                || (target.contains(':') && {
+                    let pkg = &target[..target.rfind(':').unwrap()];
+                    p.target == pkg || p.target.starts_with(pkg)
+                })
         });
+        if !already_tracked {
+            packages.push(GoTestPackage {
+                target: target.clone(),
+                passed: false,
+                executed: true,
+                tests: Vec::new(),
+                failing_tests: Vec::new(),
+                raw_output: vec!["(no test output captured, target reported FAILED by Bazel)".to_string()],
+            });
+        }
     }
 }
 
@@ -500,5 +617,85 @@ mod tests {
         assert!(pkg.failing_tests[0].output[0].contains("expected ok"));
         let summary = result.bazel_summary.unwrap();
         assert_eq!(summary.failed, 1);
+    }
+
+    #[test]
+    fn test_non_go_target_failure_captured() {
+        // Simulates a TS itest failing alongside passing Go tests.
+        // Before the fix, the TS failure was silently dropped.
+        let input = lines(&[
+            "==================== Test output for //services/agentplat/sbox/sboxd:sboxd_test:",
+            "=== RUN   TestHealth",
+            "--- PASS: TestHealth (0.01s)",
+            "==================== Test output for //services/agentplat/ts-client/itest:itest:",
+            "Error [AgentPlatError]: bootstrap config is required",
+            "    at SboxClient.createWorkspace (src/client.ts:42:11)",
+            "==================== Test output for //services/agentplat/ts-client/itest:itest_disconnect:",
+            "Error [AgentPlatError]: bootstrap config is required",
+            "    at SboxClient.createWorkspace (src/client.ts:42:11)",
+            "//services/agentplat/ts-client/itest:itest                       FAILED in 12.3s",
+            "//services/agentplat/ts-client/itest:itest_disconnect            FAILED in 728.3s",
+            "Executed 3 out of 8 tests: 5 tests pass and 3 fail locally.",
+        ]);
+        let result = parse_go_tests(&input);
+
+        // Should have 3 packages: the passing Go test + 2 failing TS tests
+        assert_eq!(result.packages.len(), 3, "expected Go pkg + 2 TS failures, got: {:?}",
+            result.packages.iter().map(|p| &p.target).collect::<Vec<_>>());
+
+        let go_pkg = result.packages.iter().find(|p| p.target.contains("sboxd_test")).unwrap();
+        assert!(go_pkg.passed);
+        assert_eq!(go_pkg.tests.len(), 1);
+
+        let ts_itest = result.packages.iter().find(|p| p.target.ends_with("itest:itest")).unwrap();
+        assert!(!ts_itest.passed);
+        assert!(ts_itest.tests.is_empty(), "non-Go target should have no Go tests");
+        assert!(!ts_itest.raw_output.is_empty(), "should have raw error output");
+        assert!(ts_itest.raw_output.iter().any(|l| l.contains("bootstrap config is required")));
+
+        let summary = result.bazel_summary.unwrap();
+        assert_eq!(summary.failed, 3);
+    }
+
+    #[test]
+    fn test_bazel_failed_target_without_output_section() {
+        // A target that appears in FAILED lines but has no "Test output for" section
+        let input = lines(&[
+            "==================== Test output for //pkg:pkg_test:",
+            "=== RUN   TestFoo",
+            "--- PASS: TestFoo (0.01s)",
+            "//services/ts/itest:itest   FAILED in 5.0s",
+            "Executed 2 out of 2 tests: 1 tests pass and 1 fail locally.",
+        ]);
+        let result = parse_go_tests(&input);
+
+        assert_eq!(result.packages.len(), 2);
+        let failed = result.packages.iter().find(|p| p.target.contains("ts/itest")).unwrap();
+        assert!(!failed.passed);
+        assert!(!failed.raw_output.is_empty());
+    }
+
+    #[test]
+    fn test_streaming_non_go_target_failure() {
+        // TS test failure in streaming format alongside Go test
+        let input = lines(&[
+            "@@//services/foo/itest:scenario_test | === RUN   TestHealth",
+            "@@//services/foo/itest:scenario_test | --- PASS: TestHealth (0.01s)",
+            "@@//services/ts-client/itest:itest | Error [AgentPlatError]: bootstrap config is required",
+            "@@//services/ts-client/itest:itest |     at SboxClient.createWorkspace (src/client.ts:42:11)",
+            "//services/ts-client/itest:itest   FAILED in 12.3s",
+            "Executed 2 out of 2 tests: 1 tests pass and 1 fail locally.",
+        ]);
+        let result = parse_go_tests(&input);
+
+        assert_eq!(result.packages.len(), 2);
+
+        let go_pkg = result.packages.iter().find(|p| p.target.contains("foo/itest")).unwrap();
+        assert!(go_pkg.passed);
+
+        let ts_pkg = result.packages.iter().find(|p| p.target.contains("ts-client")).unwrap();
+        assert!(!ts_pkg.passed);
+        assert!(!ts_pkg.raw_output.is_empty());
+        assert!(ts_pkg.raw_output.iter().any(|l| l.contains("bootstrap config")));
     }
 }

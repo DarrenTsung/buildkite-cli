@@ -6,7 +6,9 @@ mod output;
 
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
+use github::{BkStepSummary, CheckState};
 use jobs::JobParser;
+use std::collections::HashMap;
 use std::path::PathBuf;
 
 #[derive(Parser)]
@@ -33,6 +35,11 @@ enum Commands {
         #[command(subcommand)]
         command: PrCommand,
     },
+    /// Retry a failed job
+    Retry {
+        /// Buildkite job URL (must include a #job-id fragment)
+        url: String,
+    },
 }
 
 #[derive(Subcommand)]
@@ -51,7 +58,11 @@ enum BuildsCommand {
 #[derive(Subcommand)]
 enum PrCommand {
     /// Show Buildkite check status for the current branch's PR
-    Checks,
+    Checks {
+        /// Branch name to check (defaults to current branch)
+        #[arg(long)]
+        branch: Option<String>,
+    },
 }
 
 #[derive(Subcommand)]
@@ -87,7 +98,7 @@ fn main() -> Result<()> {
             BuildsCommand::ListJobs { url, json } => cmd_list_jobs(&url, json),
         },
         Commands::Pr { command } => match command {
-            PrCommand::Checks => cmd_pr_checks(),
+            PrCommand::Checks { branch } => cmd_pr_checks(branch),
         },
         Commands::Jobs { command } => match command {
             JobsCommand::DownloadLogs {
@@ -98,14 +109,173 @@ fn main() -> Result<()> {
                 output_dir,
             } => cmd_download_logs(url, file, job_name, raw, output_dir),
         },
+        Commands::Retry { url } => cmd_retry(&url),
     }
 }
 
-fn cmd_pr_checks() -> Result<()> {
-    let info = github::fetch_pr_checks().context("Failed to fetch PR checks")?;
+fn cmd_pr_checks(branch: Option<String>) -> Result<()> {
+    let mut info =
+        github::fetch_pr_checks(branch.as_deref()).context("Failed to fetch PR checks")?;
+
+    // Enrich pending checks with Buildkite job states so we can detect
+    // failures hidden behind a "pending" GitHub status (e.g. retrying jobs).
+    if let Ok(token) = std::env::var("BUILDKITE_TOKEN") {
+        let client = buildkite::Client::new(&token);
+        enrich_pending_checks(&client, &mut info);
+    }
+
     output::print_pr_checks(&info);
     Ok(())
 }
+
+/// For each pending check with a Buildkite link, fetch the build's jobs and
+/// attach step-level summaries showing failures and retry state.
+fn enrich_pending_checks(client: &buildkite::Client, info: &mut github::PrInfo) {
+    // Deduplicate builds: multiple checks may point to the same build URL.
+    let mut builds: HashMap<String, Vec<buildkite::JobInfo>> = HashMap::new();
+
+    for check in &info.checks {
+        if !matches!(check.state, CheckState::Pending) {
+            continue;
+        }
+        if builds.contains_key(&check.link) {
+            continue;
+        }
+        if let Ok(parsed) = buildkite::parse_url(&check.link) {
+            if let Ok(jobs) = client.fetch_build_jobs(&parsed) {
+                builds.insert(check.link.clone(), jobs);
+            }
+        }
+    }
+
+    if builds.is_empty() {
+        return;
+    }
+
+    for check in &mut info.checks {
+        if !matches!(check.state, CheckState::Pending) {
+            continue;
+        }
+        let jobs = match builds.get(&check.link) {
+            Some(j) => j,
+            None => continue,
+        };
+
+        check.bk_steps = summarize_steps(jobs);
+    }
+
+    // Steps that have their own dedicated pending check are already shown
+    // there, so remove them from the "finish" check to avoid redundancy.
+    let has_own_check: std::collections::HashSet<String> = info
+        .checks
+        .iter()
+        .filter(|c| matches!(c.state, CheckState::Pending) && !c.name.ends_with("/finish"))
+        .filter_map(|c| c.name.strip_prefix("buildkite/").map(|s| s.to_string()))
+        .collect();
+
+    for check in &mut info.checks {
+        if check.name.ends_with("/finish") {
+            check.bk_steps.retain(|s| !has_own_check.contains(&s.name));
+        }
+    }
+}
+
+/// Return step summaries for jobs that have failures or prior retries.
+///
+/// Buildkite replaces retried jobs in the API response, so the jobs array
+/// only contains the *latest* attempt per step. Prior failed attempts are
+/// indicated by `retries_count > 0` on the current job.
+fn summarize_steps(jobs: &[buildkite::JobInfo]) -> Vec<BkStepSummary> {
+    let mut summaries = Vec::new();
+
+    for job in jobs {
+        // "broken" means a dependency failed, not this step itself.
+        if job.state == "broken" {
+            continue;
+        }
+
+        let is_current_failure = matches!(
+            job.state.as_str(),
+            "failed" | "timed_out" | "canceled"
+        );
+        let failed_attempts = job.retries_count;
+
+        if failed_attempts == 0 && !is_current_failure {
+            continue;
+        }
+
+        // The Buildkite REST API returns 404 for retried jobs, so we
+        // can't walk the full chain. We can only get the immediate
+        // prior attempt from retry_source. For deeper chains we show
+        // the count but only have the most recent prior attempt's URL.
+        let prior_job_ids = match job.retry_source_job_id {
+            Some(ref id) => vec![id.clone()],
+            None => Vec::new(),
+        };
+
+        let duration_secs = compute_duration(&job.started_at, &job.finished_at);
+
+        summaries.push(BkStepSummary {
+            name: job.name.clone(),
+            current_state: job.state.clone(),
+            failed_attempts,
+            prior_job_ids,
+            duration_secs,
+        });
+    }
+
+    summaries
+}
+
+/// Compute duration in seconds from started_at to finished_at (or now).
+fn compute_duration(started_at: &Option<String>, finished_at: &Option<String>) -> Option<u64> {
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    let start = parse_iso8601(started_at.as_deref()?)?;
+    let end = match finished_at {
+        Some(f) => parse_iso8601(f)?,
+        None => SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .ok()?
+            .as_secs(),
+    };
+    Some(end.saturating_sub(start))
+}
+
+/// Minimal ISO 8601 parser for Buildkite timestamps (e.g. "2026-03-31T18:46:03.860Z").
+fn parse_iso8601(s: &str) -> Option<u64> {
+    // Strip fractional seconds and trailing Z.
+    let s = s.trim_end_matches('Z');
+    let (date_part, time_part) = s.split_once('T')?;
+    let mut date_iter = date_part.split('-');
+    let year: i64 = date_iter.next()?.parse().ok()?;
+    let month: i64 = date_iter.next()?.parse().ok()?;
+    let day: i64 = date_iter.next()?.parse().ok()?;
+
+    let time_part = time_part.split('.').next()?; // drop fractional seconds
+    let mut time_iter = time_part.split(':');
+    let hour: i64 = time_iter.next()?.parse().ok()?;
+    let min: i64 = time_iter.next()?.parse().ok()?;
+    let sec: i64 = time_iter.next()?.parse().ok()?;
+
+    // Days from year (simplified, good enough for 2000-2099).
+    let mut days: i64 = 0;
+    for y in 1970..year {
+        days += if y % 4 == 0 && (y % 100 != 0 || y % 400 == 0) { 366 } else { 365 };
+    }
+    let month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let is_leap = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+    for m in 0..(month - 1) as usize {
+        days += month_days[m] as i64;
+        if m == 1 && is_leap {
+            days += 1;
+        }
+    }
+    days += day - 1;
+
+    Some((days * 86400 + hour * 3600 + min * 60 + sec) as u64)
+}
+
 
 fn cmd_list_jobs(url: &str, json: bool) -> Result<()> {
     let parsed = buildkite::parse_url(url).context("Failed to parse Buildkite URL")?;
@@ -126,6 +296,32 @@ fn cmd_list_jobs(url: &str, json: bool) -> Result<()> {
         );
         output::print_build_jobs(&parsed.build_number, &parsed.pipeline, &base_url, &jobs);
     }
+    Ok(())
+}
+
+fn cmd_retry(url: &str) -> Result<()> {
+    let parsed = buildkite::parse_url(url).context("Failed to parse Buildkite URL")?;
+    if parsed.job_id.is_none() {
+        anyhow::bail!(
+            "URL must include a #job-id fragment to retry a specific job.\n\
+             Use: bk retry \"{}#<job-id>\"\n\
+             To find job IDs, run: bk builds list-jobs \"{}\"",
+            url,
+            url
+        );
+    }
+    let token =
+        std::env::var("BUILDKITE_TOKEN").context("BUILDKITE_TOKEN environment variable not set")?;
+    let client = buildkite::Client::new(&token);
+
+    let resp = client.retry_job(&parsed).context("Failed to retry job")?;
+    let new_id = resp["id"].as_str().unwrap_or("unknown");
+    let state = resp["state"].as_str().unwrap_or("unknown");
+    eprintln!(
+        "Retried job in {}/{} build #{}: new job {} ({})",
+        parsed.org, parsed.pipeline, parsed.build_number, new_id, state
+    );
+
     Ok(())
 }
 
@@ -215,8 +411,13 @@ fn cmd_download_logs(
         result
     };
 
+    // Scan for error-like lines the parser may have missed. This catches
+    // bugs where a parser "succeeds" on some output but silently ignores
+    // failures from other targets or languages in the same log.
+    let uncaptured = jobs::find_uncaptured_errors(&clean_lines, &result);
+
     // Generate output
-    output::write_results(&output_dir, &prefix, &build_number, &job_id, &job_name, &result)?;
+    output::write_results(&output_dir, &prefix, &build_number, &job_id, &job_name, &result, &uncaptured)?;
 
     Ok(())
 }

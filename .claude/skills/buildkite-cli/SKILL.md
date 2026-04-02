@@ -9,7 +9,7 @@ The `bk` CLI inspects Buildkite builds and parses job logs. It can list all jobs
 
 ## Authentication
 
-Set the Buildkite API token (requires `read_builds` scope):
+Set the Buildkite API token (requires `read_builds` and `write_builds` scopes):
 
 ```bash
 export BUILDKITE_TOKEN="your-token"
@@ -19,12 +19,15 @@ Tokens can be created at: https://buildkite.com/user/api-access-tokens
 
 ## Commands
 
-### `bk pr checks`
+### `bk pr checks [--branch <BRANCH>]`
 
-Shows Buildkite check status for the current branch's PR. Requires `gh` CLI to be authenticated.
+Shows Buildkite check status for a PR. Defaults to the current branch's PR; use `--branch` to check a different branch. Requires `gh` CLI to be authenticated.
+
+When `BUILDKITE_TOKEN` is set, pending checks are enriched with actual Buildkite job states. This detects jobs that are failing behind a "pending" GitHub status (e.g. jobs in a retry loop that GitHub hasn't marked as failed yet).
 
 ```bash
 bk pr checks
+bk pr checks --branch darren/my-feature
 ```
 
 Example output:
@@ -37,9 +40,12 @@ PR #1234: my-feature-branch
   ✗ multiplayer-rust-tests (failed)
     https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed
   ✓ multiplayer-typescript-tests
+  ⚠ agentplat-itest (pending — 1 job failing)
+    https://buildkite.com/figma/agentplat-itest/builds/54321
+      ✗ agentplat-itest: failed (2 prior attempts failed)
   - deploy-staging (pending)
 
-3 passed, 1 failed, 1 pending
+3 passed, 1 failed, 1 failing (still pending on GitHub), 1 pending
 ```
 
 Failed and pending checks show their Buildkite URL, which you can pass directly to `bk jobs download-logs` or `bk builds list-jobs`.
@@ -73,6 +79,14 @@ Use `--json` to output structured JSON with `name`, `id`, `state`, and `url` fie
 
 ```bash
 bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221" --json
+```
+
+### `bk retry <JOB_URL>`
+
+Retries a specific failed job. The URL must include a `#job-id` fragment.
+
+```bash
+bk retry "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
 ```
 
 ### `bk jobs download-logs <JOB_URL>`
@@ -139,6 +153,7 @@ Parses Go test output run via Bazel. Matches job names containing `agentplat` or
 - Bazel summary (executed/total/passed/failed)
 - Distinguishes executed vs cached targets (using Bazel progress line durations)
 - Supports both `Test output for` (batch) and `@@//target:binary |` (streaming) Bazel formats
+- **Non-Go target failures** (e.g. TS client itests): detects Bazel targets that fail without Go test output patterns. Captures raw error output and Bazel `FAILED`/`TIMEOUT` lines so these failures aren't silently hidden behind passing Go tests.
 
 ### Generic script errors (fallback)
 
@@ -157,6 +172,9 @@ Parses golangci-lint output. Matches job names containing `lint`. Extracts:
 # Show Buildkite checks for the current branch's PR
 bk pr checks
 
+# Show Buildkite checks for a specific branch's PR
+bk pr checks --branch darren/my-feature
+
 # List all jobs in a build
 bk builds list-jobs "https://buildkite.com/figma/ci/builds/287221"
 
@@ -165,6 +183,9 @@ bk jobs download-logs "https://buildkite.com/figma/figma/builds/5950766#019ca8a8
 
 # Parse a previously downloaded log
 bk jobs download-logs --file figma_build_5950766_multiplayer-rust-tests.log --job-name multiplayer-rust-tests
+
+# Retry a specific failed job
+bk retry "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
 
 # Just get the cleaned log for manual inspection
 bk jobs download-logs --file build.log --raw | less
