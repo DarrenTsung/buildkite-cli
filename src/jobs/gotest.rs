@@ -171,7 +171,7 @@ fn parse_go_tests(lines: &[CleanLine]) -> GoTestResult {
                         executed: true,
                         tests: Vec::new(),
                         failing_tests: Vec::new(),
-                        raw_output: truncate_output(content_lines),
+                        raw_output: extract_error_lines(content_lines),
                     });
                 }
             }
@@ -444,7 +444,7 @@ fn flush_package(
                 executed: true,
                 tests: Vec::new(),
                 failing_tests: Vec::new(),
-                raw_output: truncate_output(section_output),
+                raw_output: extract_error_lines(section_output),
             });
         }
         // Otherwise: no tests and no errors = Bazel cache hit, skip.
@@ -456,17 +456,14 @@ fn flush_package(
 
 use super::line_looks_like_error;
 
-/// Truncate raw output to a reasonable size for display.
-fn truncate_output(lines: &[String]) -> Vec<String> {
-    const MAX_LINES: usize = 50;
-    if lines.len() <= MAX_LINES {
-        lines.to_vec()
-    } else {
-        let mut out = lines[..MAX_LINES / 2].to_vec();
-        out.push(format!("... ({} lines omitted) ...", lines.len() - MAX_LINES));
-        out.extend_from_slice(&lines[lines.len() - MAX_LINES / 2..]);
-        out
-    }
+/// Extract only error-like lines from raw output for the summary.
+/// The full raw output is available in the clean log file.
+fn extract_error_lines(lines: &[String]) -> Vec<String> {
+    lines
+        .iter()
+        .filter(|l| line_looks_like_error(l))
+        .map(|l| l.trim().to_string())
+        .collect()
 }
 
 /// Add failed Bazel targets that weren't captured by test output sections.

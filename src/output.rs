@@ -382,11 +382,13 @@ fn format_summary(
                             }
                         }
                     } else if !pkg.raw_output.is_empty() {
-                        // Non-Go target failure with raw output
-                        out.push_str("FAILED (non-Go target):\n");
+                        // Non-Go target failure: show error lines only,
+                        // full output is in the clean log file.
+                        out.push_str("FAILED (non-Go target), error lines:\n");
                         for line in &pkg.raw_output {
                             out.push_str(&format!("  {}\n", line));
                         }
+                        out.push_str("  (full output in *_clean.log)\n");
                     }
                 }
             }
