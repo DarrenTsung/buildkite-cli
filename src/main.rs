@@ -6,7 +6,7 @@ mod output;
 
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
-use github::{BkStepSummary, CheckState};
+use github::BkStepSummary;
 use jobs::JobParser;
 use std::collections::HashMap;
 use std::path::PathBuf;
@@ -117,33 +117,31 @@ fn cmd_pr_checks(branch: Option<String>) -> Result<()> {
     let mut info =
         github::fetch_pr_checks(branch.as_deref()).context("Failed to fetch PR checks")?;
 
-    // Enrich pending checks with Buildkite job states so we can detect
-    // failures hidden behind a "pending" GitHub status (e.g. retrying jobs).
+    // Expand each GitHub status check into its individual Buildkite jobs.
     if let Ok(token) = std::env::var("BUILDKITE_TOKEN") {
         let client = buildkite::Client::new(&token);
-        enrich_pending_checks(&client, &mut info);
+        expand_checks_to_jobs(&client, &mut info);
     }
 
     output::print_pr_checks(&info);
     Ok(())
 }
 
-/// For each pending check with a Buildkite link, fetch the build's jobs and
-/// attach step-level summaries showing failures and retry state.
-fn enrich_pending_checks(client: &buildkite::Client, info: &mut github::PrInfo) {
+/// Fetch Buildkite build jobs for every check and attach them as bk_steps.
+/// This gives a full view of all running/passed/failed jobs, not just the
+/// GitHub-level status.
+fn expand_checks_to_jobs(client: &buildkite::Client, info: &mut github::PrInfo) {
     // Deduplicate builds: multiple checks may point to the same build URL.
     let mut builds: HashMap<String, Vec<buildkite::JobInfo>> = HashMap::new();
 
     for check in &info.checks {
-        if !matches!(check.state, CheckState::Pending) {
-            continue;
-        }
-        if builds.contains_key(&check.link) {
+        let build_url = check.link.split('#').next().unwrap_or(&check.link);
+        if builds.contains_key(build_url) {
             continue;
         }
         if let Ok(parsed) = buildkite::parse_url(&check.link) {
             if let Ok(jobs) = client.fetch_build_jobs(&parsed) {
-                builds.insert(check.link.clone(), jobs);
+                builds.insert(build_url.to_string(), jobs);
             }
         }
     }
@@ -152,40 +150,36 @@ fn enrich_pending_checks(client: &buildkite::Client, info: &mut github::PrInfo) 
         return;
     }
 
+    // Track which build URLs have already been expanded under a check,
+    // so we don't duplicate the full job list when multiple checks (e.g.
+    // buildkite/setup and buildkite/finish) point to the same build.
+    let mut expanded_builds: std::collections::HashSet<String> = std::collections::HashSet::new();
+
     for check in &mut info.checks {
-        if !matches!(check.state, CheckState::Pending) {
-            continue;
-        }
-        let jobs = match builds.get(&check.link) {
+        let build_url = check
+            .link
+            .split('#')
+            .next()
+            .unwrap_or(&check.link)
+            .to_string();
+        let jobs = match builds.get(&build_url) {
             Some(j) => j,
             None => continue,
         };
 
-        check.bk_steps = summarize_steps(jobs);
-    }
-
-    // Steps that have their own dedicated pending check are already shown
-    // there, so remove them from the "finish" check to avoid redundancy.
-    let has_own_check: std::collections::HashSet<String> = info
-        .checks
-        .iter()
-        .filter(|c| matches!(c.state, CheckState::Pending) && !c.name.ends_with("/finish"))
-        .filter_map(|c| c.name.strip_prefix("buildkite/").map(|s| s.to_string()))
-        .collect();
-
-    for check in &mut info.checks {
-        if check.name.ends_with("/finish") {
-            check.bk_steps.retain(|s| !has_own_check.contains(&s.name));
+        if expanded_builds.contains(&build_url) {
+            // This build is already expanded under another check. Skip
+            // to avoid showing the same 80+ jobs twice.
+            continue;
         }
+        expanded_builds.insert(build_url);
+
+        check.bk_steps = summarize_all_steps(jobs);
     }
 }
 
-/// Return step summaries for jobs that have failures or prior retries.
-///
-/// Buildkite replaces retried jobs in the API response, so the jobs array
-/// only contains the *latest* attempt per step. Prior failed attempts are
-/// indicated by `retries_count > 0` on the current job.
-fn summarize_steps(jobs: &[buildkite::JobInfo]) -> Vec<BkStepSummary> {
+/// Return step summaries for ALL jobs in a build.
+fn summarize_all_steps(jobs: &[buildkite::JobInfo]) -> Vec<BkStepSummary> {
     let mut summaries = Vec::new();
 
     for job in jobs {
@@ -194,20 +188,6 @@ fn summarize_steps(jobs: &[buildkite::JobInfo]) -> Vec<BkStepSummary> {
             continue;
         }
 
-        let is_current_failure = matches!(
-            job.state.as_str(),
-            "failed" | "timed_out" | "canceled"
-        );
-        let failed_attempts = job.retries_count;
-
-        if failed_attempts == 0 && !is_current_failure {
-            continue;
-        }
-
-        // The Buildkite REST API returns 404 for retried jobs, so we
-        // can't walk the full chain. We can only get the immediate
-        // prior attempt from retry_source. For deeper chains we show
-        // the count but only have the most recent prior attempt's URL.
         let prior_job_ids = match job.retry_source_job_id {
             Some(ref id) => vec![id.clone()],
             None => Vec::new(),
@@ -218,9 +198,10 @@ fn summarize_steps(jobs: &[buildkite::JobInfo]) -> Vec<BkStepSummary> {
         summaries.push(BkStepSummary {
             name: job.name.clone(),
             current_state: job.state.clone(),
-            failed_attempts,
+            failed_attempts: job.retries_count,
             prior_job_ids,
             duration_secs,
+            job_id: job.id.clone(),
         });
     }
 

@@ -45,45 +45,77 @@ pub fn print_pr_checks(info: &PrInfo) {
     let mut passed = 0u32;
     let mut failed = 0u32;
     let mut pending = 0u32;
-    let mut failing_behind_pending = 0u32;
 
     for check in &info.checks {
-        let has_bk_failures = !check.bk_steps.is_empty();
+        let has_bk_jobs = !check.bk_steps.is_empty();
 
-        let (icon, suffix) = match check.state {
-            CheckState::Passed => {
+        // Derive check-level state from the actual Buildkite jobs when available.
+        let effective_state = if has_bk_jobs {
+            effective_check_state(&check.bk_steps)
+        } else {
+            match check.state {
+                CheckState::Passed => EffectiveState::Passed,
+                CheckState::Failed => EffectiveState::Failed,
+                CheckState::Pending => EffectiveState::Pending,
+            }
+        };
+
+        let (icon, suffix) = match effective_state {
+            EffectiveState::Passed => {
                 passed += 1;
                 ("✓", String::new())
             }
-            CheckState::Failed => {
+            EffectiveState::Failed => {
                 failed += 1;
-                ("✗", " (failed)".to_string())
+                ("✗", String::new())
             }
-            CheckState::Pending if has_bk_failures => {
-                failing_behind_pending += 1;
-                ("⚠", format!(" (pending — {})", bk_failure_summary(&check.bk_steps)))
-            }
-            CheckState::Pending => {
+            EffectiveState::Pending => {
                 pending += 1;
-                ("-", " (pending)".to_string())
+                ("→", String::new())
             }
         };
         println!("  {} {}{}", icon, check.name, suffix);
-        if !matches!(check.state, CheckState::Passed) {
-            println!("    {}", check.link);
-        }
 
-        // Show Buildkite job details for checks with detected failures.
-        if has_bk_failures {
-            // Strip fragment from check link to get the build base URL.
+        if has_bk_jobs {
             let build_url = check
                 .link
                 .split('#')
                 .next()
                 .unwrap_or(&check.link);
 
+            // Categorize steps: show failed individually, collapse
+            // running by name, collapse passed/waiting into counts.
+            let mut passed_count = 0u32;
+            let mut waiting_count = 0u32;
+            // Running jobs grouped by name for collapsing shards.
+            let mut running_groups: Vec<(String, Vec<&crate::github::BkStepSummary>)> = Vec::new();
+
             for step in &check.bk_steps {
+                match step.current_state.as_str() {
+                    "passed" if step.failed_attempts == 0 => {
+                        passed_count += 1;
+                        continue;
+                    }
+                    "waiting" | "scheduled" | "assigned" | "accepted" => {
+                        waiting_count += 1;
+                        continue;
+                    }
+                    "running" if step.failed_attempts == 0 => {
+                        // Group running jobs by name
+                        if let Some(group) = running_groups.iter_mut().find(|(n, _)| n == &step.name)
+                        {
+                            group.1.push(step);
+                        } else {
+                            running_groups.push((step.name.clone(), vec![step]));
+                        }
+                        continue;
+                    }
+                    _ => {}
+                }
+
+                // Failed, timed_out, canceled, or passed-with-retries: show individually
                 let step_icon = match step.current_state.as_str() {
+                    "passed" => "✓",
                     "failed" | "timed_out" | "canceled" => "✗",
                     "running" => "→",
                     _ => "-",
@@ -106,12 +138,13 @@ pub fn print_pr_checks(info: &PrInfo) {
                     .map(|s| format!(" [{}]", format_duration(s)))
                     .unwrap_or_default();
                 println!(
-                    "      {} {}: {}{}{}",
+                    "      {} {} ({}){}{}",
                     step_icon, step.name, step.current_state, duration_str, retry_note
                 );
-                // Show prior attempt URLs so logs can be downloaded.
-                // The Buildkite REST API only exposes the immediate prior
-                // attempt ID, so for deeper chains we show what we have.
+                println!(
+                    "        {}#{}",
+                    build_url, step.job_id
+                );
                 for (i, prior_id) in step.prior_job_ids.iter().enumerate() {
                     let attempt_num = step.failed_attempts - i as u32;
                     println!(
@@ -120,6 +153,48 @@ pub fn print_pr_checks(info: &PrInfo) {
                     );
                 }
             }
+
+            // Show running groups (collapsed when >1 shard)
+            for (name, steps) in &running_groups {
+                if steps.len() == 1 {
+                    let step = steps[0];
+                    let duration_str = step
+                        .duration_secs
+                        .map(|s| format!(" [{}]", format_duration(s)))
+                        .unwrap_or_default();
+                    println!("      → {} (running){}", name, duration_str);
+                    println!("        {}#{}", build_url, step.job_id);
+                } else {
+                    let max_dur = steps
+                        .iter()
+                        .filter_map(|s| s.duration_secs)
+                        .max();
+                    let duration_str = max_dur
+                        .map(|s| format!(" [{}]", format_duration(s)))
+                        .unwrap_or_default();
+                    println!(
+                        "      → {} ({} shards running){}",
+                        name,
+                        steps.len(),
+                        duration_str
+                    );
+                }
+            }
+
+            // Collapsed summaries
+            let mut collapsed = Vec::new();
+            if passed_count > 0 {
+                collapsed.push(format!("{} passed", passed_count));
+            }
+            if waiting_count > 0 {
+                collapsed.push(format!("{} waiting", waiting_count));
+            }
+            if !collapsed.is_empty() {
+                println!("      ({})", collapsed.join(", "));
+            }
+        } else if !matches!(check.state, CheckState::Passed) {
+            // No Buildkite expansion available, just show the link
+            println!("    {}", check.link);
         }
     }
 
@@ -131,53 +206,39 @@ pub fn print_pr_checks(info: &PrInfo) {
     if failed > 0 {
         parts.push(format!("{} failed", failed));
     }
-    if failing_behind_pending > 0 {
-        parts.push(format!("{} failing (still pending on GitHub)", failing_behind_pending));
-    }
     if pending > 0 {
         parts.push(format!("{} pending", pending));
     }
     println!("{}", parts.join(", "));
 }
 
-/// One-line summary of Buildkite failures for the check suffix.
-fn bk_failure_summary(steps: &[crate::github::BkStepSummary]) -> String {
-    let currently_failed = steps
-        .iter()
-        .filter(|s| {
-            matches!(
-                s.current_state.as_str(),
-                "failed" | "timed_out" | "canceled"
-            )
-        })
-        .count();
-    let retrying = steps
-        .iter()
-        .filter(|s| {
-            s.failed_attempts > 0
-                && !matches!(
-                    s.current_state.as_str(),
-                    "failed" | "timed_out" | "canceled"
-                )
-        })
-        .count();
-
-    let mut parts = Vec::new();
-    if currently_failed > 0 {
-        parts.push(format!(
-            "{} {} failing",
-            currently_failed,
-            if currently_failed == 1 { "job" } else { "jobs" }
-        ));
-    }
-    if retrying > 0 {
-        parts.push(format!(
-            "{} retrying",
-            retrying
-        ));
-    }
-    parts.join(", ")
+enum EffectiveState {
+    Passed,
+    Failed,
+    Pending,
 }
+
+/// Derive the overall check state from its Buildkite jobs.
+fn effective_check_state(steps: &[crate::github::BkStepSummary]) -> EffectiveState {
+    let any_failed = steps.iter().any(|s| {
+        matches!(
+            s.current_state.as_str(),
+            "failed" | "timed_out" | "canceled"
+        )
+    });
+    if any_failed {
+        return EffectiveState::Failed;
+    }
+    let all_passed = steps
+        .iter()
+        .all(|s| s.current_state == "passed");
+    if all_passed {
+        EffectiveState::Passed
+    } else {
+        EffectiveState::Pending
+    }
+}
+
 
 fn format_duration(secs: u64) -> String {
     if secs < 60 {

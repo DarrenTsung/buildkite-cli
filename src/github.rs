@@ -24,6 +24,8 @@ pub struct BkStepSummary {
     /// Duration of the current attempt in seconds, or elapsed time if
     /// still running.
     pub duration_secs: Option<u64>,
+    /// Job ID for the current attempt.
+    pub job_id: String,
 }
 
 pub enum CheckState {
@@ -57,7 +59,7 @@ pub fn fetch_pr_checks(branch: Option<&str>) -> Result<PrInfo> {
     let mut view_cmd = Command::new("gh");
     view_cmd.args(["pr", "view", "--json", "number,headRefName"]);
     if let Some(b) = branch {
-        view_cmd.args(["--head", b]);
+        view_cmd.arg(b);
     }
     let view_output = view_cmd.output().context("Failed to run `gh pr view`")?;
 
@@ -73,7 +75,7 @@ pub fn fetch_pr_checks(branch: Option<&str>) -> Result<PrInfo> {
     let mut checks_cmd = Command::new("gh");
     checks_cmd.args(["pr", "checks", "--json", "name,state,link,bucket"]);
     if let Some(b) = branch {
-        checks_cmd.args(["--head", b]);
+        checks_cmd.arg(b);
     }
     let checks_output = checks_cmd
         .output()
