@@ -184,19 +184,15 @@ pub fn print_pr_checks(info: &PrInfo) {
                     println!("      → {} (running){}", name, duration_str);
                     println!("        {}#{}", build_url, step.job_id);
                 } else {
-                    let max_dur = steps
-                        .iter()
-                        .filter_map(|s| s.duration_secs)
-                        .max();
-                    let duration_str = max_dur
-                        .map(|s| format!(" [{}]", format_duration(s)))
-                        .unwrap_or_default();
-                    println!(
-                        "      → {} ({} shards running){}",
-                        name,
-                        steps.len(),
-                        duration_str
-                    );
+                    // Show each shard individually so every job has a clickable URL.
+                    for step in steps {
+                        let duration_str = step
+                            .duration_secs
+                            .map(|s| format!(" [{}]", format_duration(s)))
+                            .unwrap_or_default();
+                        println!("      → {} (running){}", name, duration_str);
+                        println!("        {}#{}", build_url, step.job_id);
+                    }
                 }
             }
 
