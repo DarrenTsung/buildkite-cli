@@ -67,6 +67,19 @@ enum PrCommand {
 
 #[derive(Subcommand)]
 enum JobsCommand {
+    /// Download artifacts from a job
+    DownloadArtifacts {
+        /// Buildkite job URL (must include a #job-id fragment)
+        url: String,
+
+        /// Only list artifacts without downloading
+        #[arg(long)]
+        list: bool,
+
+        /// Glob pattern to filter artifacts (e.g. "*.xml", "**/*test*")
+        #[arg(long)]
+        filter: Option<String>,
+    },
     /// Download and parse job logs
     DownloadLogs {
         /// Buildkite job URL (e.g. https://buildkite.com/figma/figma/builds/5950766#019ca8a8-...)
@@ -83,10 +96,6 @@ enum JobsCommand {
         /// Dump cleaned logs only, skip structured parsing
         #[arg(long)]
         raw: bool,
-
-        /// Output directory for generated files
-        #[arg(long, default_value = ".")]
-        output_dir: PathBuf,
     },
 }
 
@@ -101,13 +110,17 @@ fn main() -> Result<()> {
             PrCommand::Checks { branch } => cmd_pr_checks(branch),
         },
         Commands::Jobs { command } => match command {
+            JobsCommand::DownloadArtifacts {
+                url,
+                list,
+                filter,
+            } => cmd_download_artifacts(&url, list, filter),
             JobsCommand::DownloadLogs {
                 url,
                 file,
                 job_name,
                 raw,
-                output_dir,
-            } => cmd_download_logs(url, file, job_name, raw, output_dir),
+            } => cmd_download_logs(url, file, job_name, raw),
         },
         Commands::Retry { url } => cmd_retry(&url),
     }
@@ -307,8 +320,8 @@ fn cmd_download_logs(
     file: Option<PathBuf>,
     job_name_arg: Option<String>,
     raw: bool,
-    output_dir: PathBuf,
 ) -> Result<()> {
+    let output_dir = PathBuf::from(".");
     let (raw_log, build_number, job_id, job_name) = if let Some(file_path) = &file {
         let raw = std::fs::read_to_string(file_path)
             .with_context(|| format!("Failed to read log file: {}", file_path.display()))?;
@@ -397,6 +410,122 @@ fn cmd_download_logs(
     output::write_results(&output_dir, &prefix, &build_number, &job_id, &job_name, &result, &uncaptured)?;
 
     Ok(())
+}
+
+fn cmd_download_artifacts(
+    url: &str,
+    list_only: bool,
+    filter: Option<String>,
+) -> Result<()> {
+    let output_dir = PathBuf::from(".");
+    let parsed = buildkite::parse_url(url).context("Failed to parse Buildkite URL")?;
+    if parsed.job_id.is_none() {
+        anyhow::bail!(
+            "URL must include a #job-id fragment.\n\
+             Use: bk jobs download-artifacts \"{}#<job-id>\"\n\
+             To find job IDs, run: bk builds list-jobs \"{}\"",
+            url,
+            url
+        );
+    }
+
+    let token =
+        std::env::var("BUILDKITE_TOKEN").context("BUILDKITE_TOKEN environment variable not set")?;
+    let client = buildkite::Client::new(&token);
+
+    let artifacts = client
+        .list_artifacts(&parsed)
+        .context("Failed to list artifacts")?;
+
+    if artifacts.is_empty() {
+        eprintln!("No artifacts found for this job.");
+        return Ok(());
+    }
+
+    // Filter artifacts by glob pattern if provided.
+    let filter_re = filter.as_ref().map(|f| glob_to_regex(f));
+    let artifacts: Vec<_> = artifacts
+        .into_iter()
+        .filter(|a| match &filter_re {
+            Some(re) => re.is_match(&a.path),
+            None => true,
+        })
+        .collect();
+
+    if artifacts.is_empty() {
+        eprintln!(
+            "No artifacts matched filter: {}",
+            filter.as_deref().unwrap_or("*")
+        );
+        return Ok(());
+    }
+
+    if list_only {
+        for a in &artifacts {
+            println!("{} ({})", a.path, format_size(a.size));
+        }
+        eprintln!("\n{} artifact(s)", artifacts.len());
+        return Ok(());
+    }
+
+    std::fs::create_dir_all(&output_dir)
+        .with_context(|| format!("Failed to create output dir: {}", output_dir.display()))?;
+
+    for a in &artifacts {
+        let dest = output_dir.join(&a.path);
+        if let Some(parent) = dest.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+
+        let bytes = client
+            .download_artifact(a)
+            .with_context(|| format!("Failed to download {}", a.path))?;
+        std::fs::write(&dest, &bytes)?;
+        eprintln!("Downloaded {} ({})", dest.display(), format_size(a.size));
+    }
+
+    eprintln!("\n{} artifact(s) downloaded to {}", artifacts.len(), output_dir.display());
+    Ok(())
+}
+
+fn format_size(bytes: u64) -> String {
+    if bytes < 1024 {
+        format!("{} B", bytes)
+    } else if bytes < 1024 * 1024 {
+        format!("{:.1} KB", bytes as f64 / 1024.0)
+    } else {
+        format!("{:.1} MB", bytes as f64 / (1024.0 * 1024.0))
+    }
+}
+
+/// Convert a simple glob pattern to a regex (supports * and **).
+fn glob_to_regex(pattern: &str) -> regex::Regex {
+    let mut re = String::from("(?i)^");
+    let mut chars = pattern.chars().peekable();
+    while let Some(c) = chars.next() {
+        match c {
+            '*' => {
+                if chars.peek() == Some(&'*') {
+                    chars.next();
+                    // Skip optional path separator after **
+                    if chars.peek() == Some(&'/') {
+                        chars.next();
+                    }
+                    re.push_str(".*");
+                } else {
+                    re.push_str("[^/]*");
+                }
+            }
+            '?' => re.push('.'),
+            '.' | '(' | ')' | '+' | '{' | '}' | '[' | ']' | '^' | '$' | '|' | '\\' => {
+                re.push('\\');
+                re.push(c);
+            }
+            _ => re.push(c),
+        }
+    }
+    re.push('$');
+    regex::Regex::new(&re).unwrap_or_else(|_| regex::Regex::new(".*").unwrap())
 }
 
 fn extract_build_from_filename(filename: &str) -> Option<String> {

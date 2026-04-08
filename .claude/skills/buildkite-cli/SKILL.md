@@ -9,7 +9,7 @@ The `bk` CLI inspects Buildkite builds and parses job logs. It can list all jobs
 
 ## Authentication
 
-Set the Buildkite API token (requires `read_builds` and `write_builds` scopes):
+Set the Buildkite API token (requires `read_builds`, `write_builds`, and `read_artifacts` scopes):
 
 ```bash
 export BUILDKITE_TOKEN="your-token"
@@ -89,6 +89,21 @@ Retries a specific failed job. The URL must include a `#job-id` fragment.
 bk retry "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
 ```
 
+### `bk jobs download-artifacts <JOB_URL> [--list] [--filter <GLOB>]`
+
+Downloads artifacts from a Buildkite job to the current directory. The URL must include a `#job-id` fragment. Useful when test output is stored as artifacts rather than inline in the log (e.g. Bazel test XML results).
+
+```bash
+# List artifacts without downloading
+bk jobs download-artifacts --list "https://buildkite.com/figma/ci/builds/413652#019d6a74-..."
+
+# Download all artifacts
+bk jobs download-artifacts "https://buildkite.com/figma/ci/builds/413652#019d6a74-..."
+
+# Download only XML test results
+bk jobs download-artifacts --filter "**/*.xml" "https://buildkite.com/figma/ci/builds/413652#019d6a74-..."
+```
+
 ### `bk jobs download-logs <JOB_URL>`
 
 Downloads and parses a job's log. The URL must include a `#job-id` fragment.
@@ -113,7 +128,6 @@ bk jobs download-logs --file path/to/log.log --job-name multiplayer-rust-tests
 | `--file <path>`  | No*      | Local log file to parse instead of fetching from API               |
 | `--job-name`     | No       | Job name hint when using `--file` (e.g. `multiplayer-rust-tests`)  |
 | `--raw`          | No       | Output cleaned log only, skip structured parsing                   |
-| `--output-dir`   | No       | Output directory (default: `.`). **Always use the default (current directory) — do not use `/tmp/`.** |
 
 *Either a job URL or `--file` must be provided.
 
@@ -186,6 +200,12 @@ bk jobs download-logs --file figma_build_5950766_multiplayer-rust-tests.log --jo
 
 # Retry a specific failed job
 bk retry "https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed"
+
+# List artifacts for a job
+bk jobs download-artifacts --list "https://buildkite.com/figma/ci/builds/413652#019d6a74-..."
+
+# Download test result artifacts
+bk jobs download-artifacts --filter "**/*.xml" "https://buildkite.com/figma/ci/builds/413652#019d6a74-..."
 
 # Just get the cleaned log for manual inspection
 bk jobs download-logs --file build.log --raw | less

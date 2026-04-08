@@ -182,6 +182,70 @@ impl Client {
         resp.json().context("Failed to parse retry response")
     }
 
+    pub fn list_artifacts(&self, parsed: &ParsedUrl) -> Result<Vec<ArtifactInfo>> {
+        let job_id = parsed
+            .job_id
+            .as_deref()
+            .context("Job ID is required to list artifacts (use a URL with #job-id)")?;
+        let url = format!(
+            "https://api.buildkite.com/v2/organizations/{}/pipelines/{}/builds/{}/jobs/{}/artifacts",
+            parsed.org, parsed.pipeline, parsed.build_number, job_id
+        );
+
+        let resp = self
+            .client
+            .get(&url)
+            .header("Authorization", format!("Bearer {}", self.token))
+            .send()
+            .context("HTTP request for artifacts failed")?;
+
+        if !resp.status().is_success() {
+            bail!(
+                "Buildkite API returned status {}: {}",
+                resp.status(),
+                resp.text().unwrap_or_default()
+            );
+        }
+
+        let body: Vec<serde_json::Value> = resp.json()?;
+        let mut result = Vec::new();
+        for artifact in &body {
+            result.push(ArtifactInfo {
+                id: artifact["id"].as_str().unwrap_or("").to_string(),
+                filename: artifact["filename"].as_str().unwrap_or("").to_string(),
+                path: artifact["path"].as_str().unwrap_or("").to_string(),
+                size: artifact["file_size"].as_u64().unwrap_or(0),
+                download_url: artifact["download_url"]
+                    .as_str()
+                    .unwrap_or("")
+                    .to_string(),
+            });
+        }
+
+        Ok(result)
+    }
+
+    pub fn download_artifact(&self, artifact: &ArtifactInfo) -> Result<Vec<u8>> {
+        let resp = self
+            .client
+            .get(&artifact.download_url)
+            .header("Authorization", format!("Bearer {}", self.token))
+            .send()
+            .context("HTTP request to download artifact failed")?;
+
+        if !resp.status().is_success() {
+            bail!(
+                "Buildkite API returned status {}: {}",
+                resp.status(),
+                resp.text().unwrap_or_default()
+            );
+        }
+
+        resp.bytes()
+            .map(|b| b.to_vec())
+            .context("Failed to read artifact bytes")
+    }
+
     pub fn fetch_job_name(&self, parsed: &ParsedUrl) -> Result<String> {
         let job_id = parsed
             .job_id
@@ -197,6 +261,16 @@ impl Client {
 
         bail!("Job {} not found in build", job_id)
     }
+}
+
+#[derive(Debug, Clone)]
+#[allow(dead_code)]
+pub struct ArtifactInfo {
+    pub id: String,
+    pub filename: String,
+    pub path: String,
+    pub size: u64,
+    pub download_url: String,
 }
 
 fn strip_emoji_markup(s: &str) -> String {
