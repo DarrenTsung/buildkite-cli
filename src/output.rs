@@ -123,17 +123,15 @@ pub fn print_pr_checks(info: &PrInfo, compact: bool) {
                     .unwrap_or(&check.link);
                 let inline = bk_steps_compact_inline(&check.bk_steps);
                 if let Some(suffix) = inline {
-                    // All jobs collapsed into a summary, show on one line.
-                    println!("  {} {} ({})", icon, check.name, suffix);
+                    println!("{} {} ({})", icon, check.name, suffix);
                 } else {
-                    // Has interesting sub-lines (failures, running).
-                    println!("  {} {}", icon, check.name);
+                    println!("{} {}", icon, check.name);
                     print_bk_steps_compact(build_url, &check.bk_steps);
                 }
             } else if !matches!(effective_state, EffectiveState::Passed) && !has_bk_jobs {
-                println!("  {} {}  {}", icon, check.name, check.link);
+                println!("{}  {}  {}", icon, check.name, check.link);
             } else {
-                println!("  {} {}", icon, check.name);
+                println!("{} {}", icon, check.name);
             }
         } else {
             println!("  {} {}", icon, check.name);
@@ -336,7 +334,7 @@ fn print_bk_steps_compact(build_url: &str, steps: &[crate::github::BkStepSummary
             String::new()
         };
         println!(
-            "      {} {}{}  {}#{}{}",
+            "    {} {}{}  {}#{}{}",
             step_icon, step.name, duration_str, build_url, step.job_id, retry_note
         );
     }
@@ -348,7 +346,7 @@ fn print_bk_steps_compact(build_url: &str, steps: &[crate::github::BkStepSummary
                 .map(|s| format!(" [{}]", format_duration(s)))
                 .unwrap_or_default();
             println!(
-                "      → {}{}  {}#{}",
+                "    → {}{}  {}#{}",
                 name, duration_str, build_url, step.job_id
             );
         }
@@ -365,7 +363,7 @@ fn print_bk_steps_compact(build_url: &str, steps: &[crate::github::BkStepSummary
         collapsed.push(format!("{} waiting", waiting_count));
     }
     if !collapsed.is_empty() {
-        println!("      ({})", collapsed.join(", "));
+        println!("    ({})", collapsed.join(", "));
     }
 }
 
