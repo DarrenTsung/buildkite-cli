@@ -39,21 +39,47 @@ pub fn write_results(
     Ok(())
 }
 
-pub fn print_pr_checks(info: &PrInfo) {
-    println!("PR #{}: {}\n", info.number, info.head_branch);
+pub fn print_pr_checks(info: &PrInfo, compact: bool) {
+    // Track which build URLs have had their job details displayed,
+    // so we only show the full job list once per build.
+    let mut displayed_builds: std::collections::HashSet<String> = std::collections::HashSet::new();
+
+    // Pre-compute effective states for sorting: failed first, then pending, then passed.
+    let mut check_order: Vec<(usize, EffectiveState)> = info
+        .checks
+        .iter()
+        .enumerate()
+        .map(|(i, check)| {
+            let state = if !check.bk_steps.is_empty() {
+                effective_check_state(&check.bk_steps)
+            } else {
+                match check.state {
+                    CheckState::Passed => EffectiveState::Passed,
+                    CheckState::Failed => EffectiveState::Failed,
+                    CheckState::Pending => EffectiveState::Pending,
+                }
+            };
+            (i, state)
+        })
+        .collect();
+    check_order.sort_by_key(|(_, state)| match state {
+        EffectiveState::Failed => 0,
+        EffectiveState::Pending => 1,
+        EffectiveState::Passed => 2,
+    });
+
+    if !compact {
+        println!("PR #{}: {}\n", info.number, info.head_branch);
+    }
 
     let mut passed = 0u32;
     let mut failed = 0u32;
     let mut pending = 0u32;
 
-    // Track which build URLs have had their job details displayed,
-    // so we only show the full job list once per build.
-    let mut displayed_builds: std::collections::HashSet<String> = std::collections::HashSet::new();
-
-    for check in &info.checks {
+    for (idx, _) in &check_order {
+        let check = &info.checks[*idx];
         let has_bk_jobs = !check.bk_steps.is_empty();
 
-        // Derive check-level state from the actual Buildkite jobs when available.
         let effective_state = if has_bk_jobs {
             effective_check_state(&check.bk_steps)
         } else {
@@ -64,21 +90,20 @@ pub fn print_pr_checks(info: &PrInfo) {
             }
         };
 
-        let (icon, suffix) = match effective_state {
+        let icon = match effective_state {
             EffectiveState::Passed => {
                 passed += 1;
-                ("✓", String::new())
+                "✓"
             }
             EffectiveState::Failed => {
                 failed += 1;
-                ("✗", String::new())
+                "✗"
             }
             EffectiveState::Pending => {
                 pending += 1;
-                ("→", String::new())
+                "→"
             }
         };
-        println!("  {} {}{}", icon, check.name, suffix);
 
         // Only show the full job details once per build URL.
         let build_url_key = check
@@ -89,145 +114,259 @@ pub fn print_pr_checks(info: &PrInfo) {
             .to_string();
         let show_job_details = has_bk_jobs && displayed_builds.insert(build_url_key);
 
-        if show_job_details {
-            let build_url = check
-                .link
-                .split('#')
-                .next()
-                .unwrap_or(&check.link);
-
-            // Categorize steps: show failed individually, collapse
-            // running by name, collapse passed/waiting into counts.
-            let mut passed_count = 0u32;
-            let mut soft_failed_count = 0u32;
-            let mut waiting_count = 0u32;
-            // Running jobs grouped by name for collapsing shards.
-            let mut running_groups: Vec<(String, Vec<&crate::github::BkStepSummary>)> = Vec::new();
-
-            for step in &check.bk_steps {
-                match step.current_state.as_str() {
-                    "passed" if step.failed_attempts == 0 => {
-                        passed_count += 1;
-                        continue;
-                    }
-                    "soft_failed" if step.failed_attempts == 0 => {
-                        soft_failed_count += 1;
-                        continue;
-                    }
-                    "waiting" | "scheduled" | "assigned" | "accepted" => {
-                        waiting_count += 1;
-                        continue;
-                    }
-                    "running" if step.failed_attempts == 0 => {
-                        // Group running jobs by name
-                        if let Some(group) = running_groups.iter_mut().find(|(n, _)| n == &step.name)
-                        {
-                            group.1.push(step);
-                        } else {
-                            running_groups.push((step.name.clone(), vec![step]));
-                        }
-                        continue;
-                    }
-                    _ => {}
-                }
-
-                // Failed, timed_out, canceled, or passed-with-retries: show individually
-                let step_icon = match step.current_state.as_str() {
-                    "passed" => "✓",
-                    "soft_failed" => "~",
-                    "failed" | "timed_out" | "canceled" => "✗",
-                    "running" => "→",
-                    _ => "-",
-                };
-                let retry_note = if step.failed_attempts > 0 {
-                    format!(
-                        " ({} prior {} failed)",
-                        step.failed_attempts,
-                        if step.failed_attempts == 1 {
-                            "attempt"
-                        } else {
-                            "attempts"
-                        }
-                    )
+        if compact {
+            if show_job_details {
+                let build_url = check
+                    .link
+                    .split('#')
+                    .next()
+                    .unwrap_or(&check.link);
+                let inline = bk_steps_compact_inline(&check.bk_steps);
+                if let Some(suffix) = inline {
+                    // All jobs collapsed into a summary, show on one line.
+                    println!("  {} {} ({})", icon, check.name, suffix);
                 } else {
-                    String::new()
-                };
-                let duration_str = step
-                    .duration_secs
-                    .map(|s| format!(" [{}]", format_duration(s)))
-                    .unwrap_or_default();
-                println!(
-                    "      {} {} ({}){}{}",
-                    step_icon, step.name, step.current_state, duration_str, retry_note
-                );
-                println!(
-                    "        {}#{}",
-                    build_url, step.job_id
-                );
-                for (i, prior_id) in step.prior_job_ids.iter().enumerate() {
-                    let attempt_num = step.failed_attempts - i as u32;
-                    println!(
-                        "        attempt {}: {}#{}",
-                        attempt_num, build_url, prior_id
-                    );
+                    // Has interesting sub-lines (failures, running).
+                    println!("  {} {}", icon, check.name);
+                    print_bk_steps_compact(build_url, &check.bk_steps);
                 }
+            } else if !matches!(effective_state, EffectiveState::Passed) && !has_bk_jobs {
+                println!("  {} {}  {}", icon, check.name, check.link);
+            } else {
+                println!("  {} {}", icon, check.name);
             }
-
-            // Show running groups (collapsed when >1 shard)
-            for (name, steps) in &running_groups {
-                if steps.len() == 1 {
-                    let step = steps[0];
-                    let duration_str = step
-                        .duration_secs
-                        .map(|s| format!(" [{}]", format_duration(s)))
-                        .unwrap_or_default();
-                    println!("      → {} (running){}", name, duration_str);
-                    println!("        {}#{}", build_url, step.job_id);
-                } else {
-                    // Show each shard individually so every job has a clickable URL.
-                    for step in steps {
-                        let duration_str = step
-                            .duration_secs
-                            .map(|s| format!(" [{}]", format_duration(s)))
-                            .unwrap_or_default();
-                        println!("      → {} (running){}", name, duration_str);
-                        println!("        {}#{}", build_url, step.job_id);
-                    }
-                }
+        } else {
+            println!("  {} {}", icon, check.name);
+            if show_job_details {
+                let build_url = check
+                    .link
+                    .split('#')
+                    .next()
+                    .unwrap_or(&check.link);
+                print_bk_steps_full(build_url, &check.bk_steps);
+            } else if !matches!(effective_state, EffectiveState::Passed) && !has_bk_jobs {
+                println!("    {}", check.link);
             }
-
-            // Collapsed summaries
-            let mut collapsed = Vec::new();
-            if passed_count > 0 {
-                collapsed.push(format!("{} passed", passed_count));
-            }
-            if soft_failed_count > 0 {
-                collapsed.push(format!("{} soft-failed", soft_failed_count));
-            }
-            if waiting_count > 0 {
-                collapsed.push(format!("{} waiting", waiting_count));
-            }
-            if !collapsed.is_empty() {
-                println!("      ({})", collapsed.join(", "));
-            }
-        } else if !matches!(check.state, CheckState::Passed) {
-            // No Buildkite expansion available, just show the link
-            println!("    {}", check.link);
         }
     }
 
-    println!();
+    if !compact {
+        println!();
+        let mut parts = Vec::new();
+        if passed > 0 {
+            parts.push(format!("{} passed", passed));
+        }
+        if failed > 0 {
+            parts.push(format!("{} failed", failed));
+        }
+        if pending > 0 {
+            parts.push(format!("{} pending", pending));
+        }
+        println!("{}", parts.join(", "));
+    }
+}
+
+fn print_bk_steps_full(build_url: &str, steps: &[crate::github::BkStepSummary]) {
+    let mut passed_count = 0u32;
+    let mut soft_failed_count = 0u32;
+    let mut waiting_count = 0u32;
+    let mut running_groups: Vec<(String, Vec<&crate::github::BkStepSummary>)> = Vec::new();
+
+    for step in steps {
+        match step.current_state.as_str() {
+            "passed" if step.failed_attempts == 0 => {
+                passed_count += 1;
+                continue;
+            }
+            "soft_failed" if step.failed_attempts == 0 => {
+                soft_failed_count += 1;
+                continue;
+            }
+            "waiting" | "scheduled" | "assigned" | "accepted" => {
+                waiting_count += 1;
+                continue;
+            }
+            "running" if step.failed_attempts == 0 => {
+                if let Some(group) = running_groups.iter_mut().find(|(n, _)| n == &step.name) {
+                    group.1.push(step);
+                } else {
+                    running_groups.push((step.name.clone(), vec![step]));
+                }
+                continue;
+            }
+            _ => {}
+        }
+
+        let step_icon = match step.current_state.as_str() {
+            "passed" => "✓",
+            "soft_failed" => "~",
+            "failed" | "timed_out" | "canceled" => "✗",
+            "running" => "→",
+            _ => "-",
+        };
+        let retry_note = if step.failed_attempts > 0 {
+            format!(
+                " ({} prior {} failed)",
+                step.failed_attempts,
+                if step.failed_attempts == 1 { "attempt" } else { "attempts" }
+            )
+        } else {
+            String::new()
+        };
+        let duration_str = step
+            .duration_secs
+            .map(|s| format!(" [{}]", format_duration(s)))
+            .unwrap_or_default();
+        println!(
+            "      {} {} ({}){}{}",
+            step_icon, step.name, step.current_state, duration_str, retry_note
+        );
+        println!("        {}#{}", build_url, step.job_id);
+        for (i, prior_id) in step.prior_job_ids.iter().enumerate() {
+            let attempt_num = step.failed_attempts - i as u32;
+            println!("        attempt {}: {}#{}", attempt_num, build_url, prior_id);
+        }
+    }
+
+    for (name, steps) in &running_groups {
+        for step in steps {
+            let duration_str = step
+                .duration_secs
+                .map(|s| format!(" [{}]", format_duration(s)))
+                .unwrap_or_default();
+            println!("      → {} (running){}", name, duration_str);
+            println!("        {}#{}", build_url, step.job_id);
+        }
+    }
+
+    let mut collapsed = Vec::new();
+    if passed_count > 0 {
+        collapsed.push(format!("{} passed", passed_count));
+    }
+    if soft_failed_count > 0 {
+        collapsed.push(format!("{} soft-failed", soft_failed_count));
+    }
+    if waiting_count > 0 {
+        collapsed.push(format!("{} waiting", waiting_count));
+    }
+    if !collapsed.is_empty() {
+        println!("      ({})", collapsed.join(", "));
+    }
+}
+
+/// If all steps can be collapsed into a single summary (no failures, no running),
+/// return the summary string. Otherwise return None.
+fn bk_steps_compact_inline(steps: &[crate::github::BkStepSummary]) -> Option<String> {
+    for step in steps {
+        match step.current_state.as_str() {
+            "passed" | "soft_failed" if step.failed_attempts == 0 => {}
+            "waiting" | "scheduled" | "assigned" | "accepted" => {}
+            _ => return None,
+        }
+    }
     let mut parts = Vec::new();
-    if passed > 0 {
-        parts.push(format!("{} passed", passed));
+    let passed = steps.iter().filter(|s| s.current_state == "passed").count();
+    let soft_failed = steps.iter().filter(|s| s.current_state == "soft_failed").count();
+    let waiting = steps.iter().filter(|s| {
+        matches!(s.current_state.as_str(), "waiting" | "scheduled" | "assigned" | "accepted")
+    }).count();
+    if passed > 0 { parts.push(format!("{} passed", passed)); }
+    if soft_failed > 0 { parts.push(format!("{} soft-failed", soft_failed)); }
+    if waiting > 0 { parts.push(format!("{} waiting", waiting)); }
+    if parts.is_empty() { return None; }
+    Some(parts.join(", "))
+}
+
+fn print_bk_steps_compact(build_url: &str, steps: &[crate::github::BkStepSummary]) {
+    let mut passed_count = 0u32;
+    let mut soft_failed_count = 0u32;
+    let mut waiting_count = 0u32;
+    let mut running_groups: Vec<(String, Vec<&crate::github::BkStepSummary>)> = Vec::new();
+
+    for step in steps {
+        match step.current_state.as_str() {
+            "passed" if step.failed_attempts == 0 => {
+                passed_count += 1;
+                continue;
+            }
+            "soft_failed" if step.failed_attempts == 0 => {
+                soft_failed_count += 1;
+                continue;
+            }
+            "waiting" | "scheduled" | "assigned" | "accepted" => {
+                waiting_count += 1;
+                continue;
+            }
+            "running" if step.failed_attempts == 0 => {
+                if let Some(group) = running_groups.iter_mut().find(|(n, _)| n == &step.name) {
+                    group.1.push(step);
+                } else {
+                    running_groups.push((step.name.clone(), vec![step]));
+                }
+                continue;
+            }
+            _ => {}
+        }
+
+        let step_icon = match step.current_state.as_str() {
+            "passed" => "✓",
+            "soft_failed" => "~",
+            "failed" | "timed_out" | "canceled" => "✗",
+            "running" => "→",
+            _ => "-",
+        };
+        let duration_str = step
+            .duration_secs
+            .map(|s| format!(" [{}]", format_duration(s)))
+            .unwrap_or_default();
+        let retry_note = if step.failed_attempts > 0 {
+            let prior_refs: Vec<String> = step
+                .prior_job_ids
+                .iter()
+                .enumerate()
+                .map(|(i, id)| format!("attempt {}: #{}",
+                    step.failed_attempts - i as u32, id))
+                .collect();
+            if prior_refs.is_empty() {
+                format!(" ({} retries)", step.failed_attempts)
+            } else {
+                format!("  ({})", prior_refs.join(", "))
+            }
+        } else {
+            String::new()
+        };
+        println!(
+            "      {} {}{}  {}#{}{}",
+            step_icon, step.name, duration_str, build_url, step.job_id, retry_note
+        );
     }
-    if failed > 0 {
-        parts.push(format!("{} failed", failed));
+
+    for (name, steps) in &running_groups {
+        for step in steps {
+            let duration_str = step
+                .duration_secs
+                .map(|s| format!(" [{}]", format_duration(s)))
+                .unwrap_or_default();
+            println!(
+                "      → {}{}  {}#{}",
+                name, duration_str, build_url, step.job_id
+            );
+        }
     }
-    if pending > 0 {
-        parts.push(format!("{} pending", pending));
+
+    let mut collapsed = Vec::new();
+    if passed_count > 0 {
+        collapsed.push(format!("{} passed", passed_count));
     }
-    println!("{}", parts.join(", "));
+    if soft_failed_count > 0 {
+        collapsed.push(format!("{} soft-failed", soft_failed_count));
+    }
+    if waiting_count > 0 {
+        collapsed.push(format!("{} waiting", waiting_count));
+    }
+    if !collapsed.is_empty() {
+        println!("      ({})", collapsed.join(", "));
+    }
 }
 
 enum EffectiveState {

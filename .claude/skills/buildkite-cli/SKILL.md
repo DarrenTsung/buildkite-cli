@@ -19,33 +19,18 @@ Tokens can be created at: https://buildkite.com/user/api-access-tokens
 
 ## Commands
 
-### `bk pr checks [--branch <BRANCH>]`
+### `bk pr checks [--branch <BRANCH>] [--compact/-c]`
 
 Shows Buildkite check status for a PR. Defaults to the current branch's PR; use `--branch` to check a different branch. Requires `gh` CLI to be authenticated.
 
 When `BUILDKITE_TOKEN` is set, pending checks are enriched with actual Buildkite job states. This detects jobs that are failing behind a "pending" GitHub status (e.g. jobs in a retry loop that GitHub hasn't marked as failed yet).
 
+Checks are sorted with failures first, then pending, then passed. Use `--compact` / `-c` for a denser format that puts URLs inline and drops redundant state labels.
+
 ```bash
 bk pr checks
+bk pr checks --compact
 bk pr checks --branch darren/my-feature
-```
-
-Example output:
-
-```
-PR #1234: my-feature-branch
-
-  ✓ lint-check
-  ✓ type-check
-  ✗ multiplayer-rust-tests (failed)
-    https://buildkite.com/figma/figma/builds/5950766#019ca8a8-6e21-4548-9b5c-e8656a82feed
-  ✓ multiplayer-typescript-tests
-  ⚠ agentplat-itest (pending — 1 job failing)
-    https://buildkite.com/figma/agentplat-itest/builds/54321
-      ✗ agentplat-itest: failed (2 prior attempts failed)
-  - deploy-staging (pending)
-
-3 passed, 1 failed, 1 failing (still pending on GitHub), 1 pending
 ```
 
 Failed and pending checks show their Buildkite URL, which you can pass directly to `bk jobs download-logs` or `bk builds list-jobs`.

@@ -62,6 +62,10 @@ enum PrCommand {
         /// Branch name to check (defaults to current branch)
         #[arg(long)]
         branch: Option<String>,
+
+        /// Compact single-line format (no wasted vertical space)
+        #[arg(long, short)]
+        compact: bool,
     },
 }
 
@@ -107,7 +111,7 @@ fn main() -> Result<()> {
             BuildsCommand::ListJobs { url, json } => cmd_list_jobs(&url, json),
         },
         Commands::Pr { command } => match command {
-            PrCommand::Checks { branch } => cmd_pr_checks(branch),
+            PrCommand::Checks { branch, compact } => cmd_pr_checks(branch, compact),
         },
         Commands::Jobs { command } => match command {
             JobsCommand::DownloadArtifacts {
@@ -126,7 +130,7 @@ fn main() -> Result<()> {
     }
 }
 
-fn cmd_pr_checks(branch: Option<String>) -> Result<()> {
+fn cmd_pr_checks(branch: Option<String>, compact: bool) -> Result<()> {
     let mut info =
         github::fetch_pr_checks(branch.as_deref()).context("Failed to fetch PR checks")?;
 
@@ -136,7 +140,7 @@ fn cmd_pr_checks(branch: Option<String>) -> Result<()> {
         expand_checks_to_jobs(&client, &mut info);
     }
 
-    output::print_pr_checks(&info);
+    output::print_pr_checks(&info, compact);
     Ok(())
 }
 
