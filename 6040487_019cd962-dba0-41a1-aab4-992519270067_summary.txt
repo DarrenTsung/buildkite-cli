@@ -1,0 +1,4 @@
+Build: 6040487
+Job: agentplat-itest (019cd962-dba0-41a1-aab4-992519270067)
+
+Bazel: executed 13 of 13 tests, 11 passed, 2 failed

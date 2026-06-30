@@ -1,0 +1,16 @@
+{
+  "type": "script_error",
+  "errors": [
+    "ERROR: /home/circleci/figma/services/cortex/BUILD.bazel:45:11: Transpiling (dts) & type-checking TypeScript project @@//services/cortex:ts [tsc -p services/cortex/tsconfig.json] failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)",
+    "services/cortex/lib/support/foundry_api.ts:20:33 - error TS2307: Cannot find module '@figma/agentplat-client' or its corresponding type declarations.",
+    "20 import { AgentPlatClient } from '@figma/agentplat-client'",
+    "services/cortex/lib/support/foundry_api.ts:210:34 - error TS7006: Parameter 'connectErr' implicitly has an 'any' type.",
+    "210       client.connect(undefined, (connectErr) => {",
+    "services/cortex/lib/support/foundry_api.ts:219:12 - error TS7006: Parameter 'createErr' implicitly has an 'any' type.",
+    "219           (createErr) => {",
+    "ERROR: /home/circleci/figma/services/cortex/BUILD.bazel:45:11 Middleman _middlemen/services_Scortex_Sts_Utypecheck_Utest.sh-runfiles failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)",
+    "ERROR: Build did NOT complete successfully"
+  ],
+  "failed_command": null,
+  "exit_code": 1
+}

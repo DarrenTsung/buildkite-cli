@@ -1,0 +1,1565 @@
+~~~ Running agent environment hook
+$ /etc/buildkite-agent/hooks/environment
+FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED: true
+~~~ :broom: Setting up worker environment
+~~~ :old_key: Loading job credentials
+Fetching job JWT from Buildkite...0m0.167s
+Authenticating to the Figma CI credential exchange...fetched imdsv2 token
+fetched instance role
+fetched instance credentials
+0m0.245s
+Starting an SSH agent and loading figmaci/production/FIGMABOT2_SSH_PRIVATE_KEY...
+Agent pid 3576313
+Identity added: (stdin) (figmabot+2@figma.com)
+2026/03/13 21:58:16 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+Tags sent successfully
+~~~ :lock: Verifying pipeline integrity
+# JOB_START added
+# ENABLE_DD_COMMAND_LOGGING added
+# DISK_USAGE_PCT_START added
+# FIGMA_CI_TEST_QUEUE_SINATRA_REDIS added
+# STABLE_COMMITS_TOKEN_SECRET_ID added
+# AWS_SESSION_TOKEN added
+# AWS_ACCESS_KEY_ID added
+# FIGMA_CI_PRIVATE_DATA_BUCKET added
+# FIGMA_CI_ARTIFACTORY_ENDPOINT added
+# FIGMA_CI_STEP_SIGNING_KEY_ID added
+# FIGMA_CI_PROBER_BUILDS_BUCKET added
+# FIGMA_CI_TEST_QUEUE_REDIS added
+# FIGMA_CI_CACHE_BUCKET added
+# FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT added
+# FIGMA_CI_I18N_PRIVATE_BUCKET added
+# ADMIN_AWS_SESSION_TOKEN added
+# SSH_AGENT_PID added
+# BUILDKITE_AGENTS_PER_INSTANCE added
+# FIGMA_CI_XCODE_BUCKET added
+# LC_ALL added
+# ADMIN_AWS_SECRET_ACCESS_KEY added
+# FIGMA_CI_LAMBDA_BUILDS_BUCKET added
+# CI_HOOK_STAGE_FILE added
+# FIGMA_CI_TOOLS_BUCKET added
+# FIGMA_CI_GITHUB_TOKEN added
+# FIGMA_CI_BUCKET added
+# FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED added
+# CI_JOB_STAGE_FILE added
+# ADMIN_AWS_ACCESS_KEY_ID added
+# FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY added
+# FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT added
+# STABLE_COMMITS_ENDPOINT added
+# FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT added
+# SSH_AUTH_SOCK added
+# AWS_DEFAULT_REGION added
+# FIGMA_CI_BAZEL_TARGET_DETERMINATION_BUCKET added
+# FIGMA_CI_TEMPORAL_WORKFLOW_HISTORIES_BUCKET added
+# FIGMA_CI_SINATRA_TEST_DURATION added
+# FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT added
+# FIGMA_CI_I18N_PUBLIC_BUCKET added
+# FIGMA_CI_VM_BUCKET added
+# FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY added
+# FIGMA_CI_STATE_BUCKET added
+# FIGMA_CI_GIT_MIRROR_ENDPOINT added
+# BUILDKITE_BINARY_DEPS_HASHES added
+# AWS_SECRET_ACCESS_KEY added
+# FIGMA_CI_ARTIFACT_CACHE_ENDPOINT added
+~~~ Preparing plugins
+~~~ Running agent pre-checkout hook
+$ /etc/buildkite-agent/hooks/pre-checkout
+Git trace2 enabled: /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335
+agent_cgroup: /agent.slice/agent-4/
+.				devex					     jsvm-cpp					 rootly
+..				devops					     k6						 .rubocop_todo.yml
+agent				discovery-pipeline			     k8s					 .rubocop.yml
+.agents				docker-compose-logs			     kafka					 ruby
+AGENTS.md			.dockerignore				     lambda					 .ruby-version
+ai-agent			dogma					     launch_darkly				 .ruby-version-next
+aibox				dotfig					     .lfs-assets-id				 rust
+aibox-use-role			drift-integration			     .lfsconfig					 rust-toolchain
+antiabuse			dx					     LICENSE					 scenegraph-server
+antiabuse-iframe		dx-use-role				     litmus					 scripts
+artifact-metadata-webhook	e2e					     livegraph					 search
+artifacts			editor-embeds				     livegraph-internal				 search-indexer
+asana				entity-sync-v2				     livequery					 secrets
+.aspect				envoy					     local-extension-registry			 security
+asset_publish_data_snapshots	error-dashboard				     log					 .semgrepignore
+bazel				etcd					     m1-docker-compose.yml			 sentry
+bazel-ci-targets.txt		figcode					     macos-dev-setup				 services
+.bazel_fix_commands.json	figdev					     .mailmap					 share
+.bazelignore			figfile-api				     maintainers				 shell
+.bazeliskrc			figfile-event-stream			     maintainers.yml				 should_run_all_tests.txt
+.bazelrc			fig_file_random_editor			     mcp-config.yml				 sinatra
+.bazelversion			figgytron				     .mcp.json					 sinatra-async-worker
+beacon				figkube					     memorydb					 sinatra-ecs-task
+benchmark-litmus		figma					     .metadata_never_index			 sitemaps
+bin				figma-cli				     minifig					 sites-preview-shared
+blob-store			figma.code-workspace			     minifig.coder.yml				 sites-runtime
+BUILD.bazel			figmadoc				     minifig-schema.json			 sites-server-renderer
+buildbuddy.yaml			figma_repl				     minifig.yml				 sites-tests
+.bundle				figmascope-redaction-lambda		     misc-tools					 sites-usage-data-scraper
+.cache				figment					     mise.amd64.toml				 smokescreen
+.cargo				fig_migrator				     mise.coder.toml				 socket.yml
+Cargo.lock			figser					     mise.macos.toml				 sorbet
+Cargo.toml			figtag					     mise.rce.toml				 spacelift-admin
+catalog-info.yaml		file-diff				     .mise.toml					 spacelift-ci-jobs
+changestream			file-importer				     mitmproxy-certs				 sprig
+charts				file-proxy				     ml						 src
+cherry_pick			.fileTemplates.json			     mnemo					 ssl
+chrome-os-app			file_test_map.json			     mobile-android				 support-chat-iframe
+ci_env				file_test_map_sinatra.json		     mobile-common				 surveyors
+ci_feature_flags.txt		file_test_map_sinatra-rollout-tests.json     mobile-ios					 .syncpackrc.mjs
+ci-schema.json			filtered_sinatra_tests.txt		     mobile-prototyping				 teams.go
+.clang-format-ignore		flag_to_test_map.json			     MODULE.bazel				 TEAMS.yml
+.claude				flag_to_test_map_sinatra.json		     MODULE.bazel.lock				 TEAMS_YML_README.md
+CLAUDE.md			flag_to_test_map_sinatra-rollout-tests.json  monitoring					 .templates
+.claude-plugin			flag-wizard				     monitors					 temporal
+cloud-docker-compose.coder.yml	flink					     msk					 temporal-go-worker
+cloud-docker-compose.yml	font-index-tooling			     multiplayer				 temporal-worker
+cloudflare			fpl					     multiplayer_data_loss_observability_script  terrafig
+codebase-suggestions		fullscreen				     multiplayer-etcd				 TESTING.md
+code-components-transpiler	Gemfile					     multiplayer-load-test			 test-snapshot-images
+code-devtools-worker		Gemfile.lock				     multiplayer-proxy				 tf
+codegen				Gemfile_next.lock			     notion-docs				 tmp
+codemirror6			.git					     .npmrc					 todo-lint-migrations.md
+code-samples			.gitattributes				     o11y					 tools
+code-sandbox-worker		.git-blame-ignore-revs			     orca					 traffic
+.codex				git-delete-merged-branches		     package.json				 tree-sitter-datadogmonitor
+config				git-delete-merged-branches.ts		     patches					 tunnel
+cors-image-proxy-lambda		githooks				     payload					 .tx
+cortex_inspector		.github					     permissions				 upnode
+coverage			.gitignore				     pixie					 .use-ruby-next
+.cursor				go					     plugin-gateway				 vector-aggregator
+.cursorindexingignore		.golangci.yml				     .pnpmfile.cjs				 vector-metrics-pipeline
+.cursorteam			go.mod					     pnpm-lock.yaml				 vendor
+dagster				google-tag-manager			     pnpm-workspace.yaml			 viewer
+dashboards			go.sum					     postgresql					 vitest.workspace.js
+database_dev			gov					     .prettierignore				 .vscode
+data-eng			graphiql				     .prettierrc				 vscode-extension
+datahub-executor		.graphqlrc.yml				     .prettier_shim.js				 vulny
+db-events-pipeline		heartbeat-client			     probers					 WARP.md
+dbops				heartbeat-server			     prodbox					 wb
+dbschema			heartbeat-server-go			     .projections.json				 weavy
+db_setup.log			high-integrity-approvals		     .projections.md				 web
+dbt				high-integrity-approvals.yml		     .pryrc					 webhooks
+deny.toml			hk.pkl					     public					 web-logger
+deploys				.ignore					     pyrightconfig.json				 widget-iframes
+deps				image-resizer				     Rakefile					 widget-oauth
+design-to-react			infra-metadata				     rds					 WORKSPACE
+desktop				infra-tools				     README.md					 .yamlfmt.yaml
+devbox				integrations				     redis					 .zed
+devbox_cli			integration-test			     REPO.bazel					 zendesk
+devbox-profiles			interaction-test			     reports
+.devcontainer			internal-packages			     repo.txt
+developer-docs			jira-add-on				     rest-api-schema
+/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma already exists, skipping
+/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel already exists, skipping
+[git-bundle] Downloading s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma/../ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+Completed 256.0 KiB/16.8 MiB (5.3 MiB/s) with 1 file(s) remainingCompleted 512.0 KiB/16.8 MiB (10.3 MiB/s) with 1 file(s) remainingCompleted 768.0 KiB/16.8 MiB (15.1 MiB/s) with 1 file(s) remainingCompleted 1.0 MiB/16.8 MiB (19.8 MiB/s) with 1 file(s) remaining  Completed 1.2 MiB/16.8 MiB (24.4 MiB/s) with 1 file(s) remaining  Completed 1.5 MiB/16.8 MiB (28.7 MiB/s) with 1 file(s) remaining  Completed 1.8 MiB/16.8 MiB (33.0 MiB/s) with 1 file(s) remaining  Completed 2.0 MiB/16.8 MiB (37.2 MiB/s) with 1 file(s) remaining  Completed 2.2 MiB/16.8 MiB (41.1 MiB/s) with 1 file(s) remaining  Completed 2.5 MiB/16.8 MiB (44.9 MiB/s) with 1 file(s) remaining  Completed 2.8 MiB/16.8 MiB (48.7 MiB/s) with 1 file(s) remaining  Completed 3.0 MiB/16.8 MiB (52.3 MiB/s) with 1 file(s) remaining  Completed 3.2 MiB/16.8 MiB (55.9 MiB/s) with 1 file(s) remaining  Completed 3.5 MiB/16.8 MiB (59.6 MiB/s) with 1 file(s) remaining  Completed 3.8 MiB/16.8 MiB (63.1 MiB/s) with 1 file(s) remaining  Completed 4.0 MiB/16.8 MiB (66.7 MiB/s) with 1 file(s) remaining  Completed 4.2 MiB/16.8 MiB (70.2 MiB/s) with 1 file(s) remaining  Completed 4.5 MiB/16.8 MiB (72.4 MiB/s) with 1 file(s) remaining  Completed 4.8 MiB/16.8 MiB (74.3 MiB/s) with 1 file(s) remaining  Completed 5.0 MiB/16.8 MiB (73.9 MiB/s) with 1 file(s) remaining  Completed 5.2 MiB/16.8 MiB (74.6 MiB/s) with 1 file(s) remaining  Completed 5.5 MiB/16.8 MiB (76.4 MiB/s) with 1 file(s) remaining  Completed 5.8 MiB/16.8 MiB (76.0 MiB/s) with 1 file(s) remaining  Completed 6.0 MiB/16.8 MiB (77.7 MiB/s) with 1 file(s) remaining  Completed 6.2 MiB/16.8 MiB (78.2 MiB/s) with 1 file(s) remaining  Completed 6.5 MiB/16.8 MiB (77.0 MiB/s) with 1 file(s) remaining  Completed 6.8 MiB/16.8 MiB (79.2 MiB/s) with 1 file(s) remaining  Completed 7.0 MiB/16.8 MiB (79.8 MiB/s) with 1 file(s) remaining  Completed 7.2 MiB/16.8 MiB (80.1 MiB/s) with 1 file(s) remaining  Completed 7.5 MiB/16.8 MiB (80.7 MiB/s) with 1 file(s) remaining  Completed 7.8 MiB/16.8 MiB (80.9 MiB/s) with 1 file(s) remaining  Completed 8.0 MiB/16.8 MiB (81.3 MiB/s) with 1 file(s) remaining  Completed 8.2 MiB/16.8 MiB (81.6 MiB/s) with 1 file(s) remaining  Completed 8.5 MiB/16.8 MiB (82.0 MiB/s) with 1 file(s) remaining  Completed 8.8 MiB/16.8 MiB (82.3 MiB/s) with 1 file(s) remaining  Completed 9.0 MiB/16.8 MiB (82.7 MiB/s) with 1 file(s) remaining  Completed 9.2 MiB/16.8 MiB (83.0 MiB/s) with 1 file(s) remaining  Completed 9.5 MiB/16.8 MiB (83.2 MiB/s) with 1 file(s) remaining  Completed 9.8 MiB/16.8 MiB (83.4 MiB/s) with 1 file(s) remaining  Completed 10.0 MiB/16.8 MiB (83.6 MiB/s) with 1 file(s) remaining Completed 10.2 MiB/16.8 MiB (83.9 MiB/s) with 1 file(s) remaining Completed 10.5 MiB/16.8 MiB (84.1 MiB/s) with 1 file(s) remaining Completed 10.8 MiB/16.8 MiB (84.2 MiB/s) with 1 file(s) remaining Completed 11.0 MiB/16.8 MiB (84.4 MiB/s) with 1 file(s) remaining Completed 11.2 MiB/16.8 MiB (85.3 MiB/s) with 1 file(s) remaining Completed 11.5 MiB/16.8 MiB (84.6 MiB/s) with 1 file(s) remaining Completed 11.8 MiB/16.8 MiB (84.9 MiB/s) with 1 file(s) remaining Completed 12.0 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 12.2 MiB/16.8 MiB (85.5 MiB/s) with 1 file(s) remaining Completed 12.5 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 12.8 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 13.0 MiB/16.8 MiB (85.9 MiB/s) with 1 file(s) remaining Completed 13.2 MiB/16.8 MiB (86.1 MiB/s) with 1 file(s) remaining Completed 13.5 MiB/16.8 MiB (86.4 MiB/s) with 1 file(s) remaining Completed 13.8 MiB/16.8 MiB (86.3 MiB/s) with 1 file(s) remaining Completed 14.0 MiB/16.8 MiB (86.5 MiB/s) with 1 file(s) remaining Completed 14.2 MiB/16.8 MiB (86.6 MiB/s) with 1 file(s) remaining Completed 14.5 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 14.8 MiB/16.8 MiB (86.9 MiB/s) with 1 file(s) remaining Completed 15.0 MiB/16.8 MiB (87.1 MiB/s) with 1 file(s) remaining Completed 15.2 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 15.5 MiB/16.8 MiB (87.4 MiB/s) with 1 file(s) remaining Completed 15.8 MiB/16.8 MiB (87.5 MiB/s) with 1 file(s) remaining Completed 16.0 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining Completed 16.2 MiB/16.8 MiB (87.7 MiB/s) with 1 file(s) remaining Completed 16.5 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (88.0 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining download: s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+# GIT_CHECKOUT_START_TIME added
+# GIT_TRACE2_CONFIG_PARAMS added
+# GIT_TRACE2_EVENT_BRIEF added
+# GIT_TRACE2_EVENT_NESTING added
+# GIT_TRACE2_EVENT added
+# BUILDKITE_CLEAN_CHECKOUT added
+# CI_GIT_BUNDLE_PATH added
+# GIT_TRACE2_ENV_VARS added
+~~~ Preparing working directory
+$ cd /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma
+~~~ Running agent checkout hook
+$ /etc/buildkite-agent/hooks/checkout
+In checkout hook v1.0.14
+Starting custom checkout logic!
+# Using Goblet: true
+# Host "github.com" already in list of known hosts at "/var/lib/buildkite-agent/.ssh/known_hosts"
+# In checkout directory: /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma
+# Preparing to use Goblet at http://git-mirror.devex.figma.com:80
+# Result of git remote -v 
+`origin	http://github.com/figma/figma.git (fetch)
+origin	http://github.com/figma/figma.git (push)`
+$ git remote set-url origin http://github.com/figma/figma.git
+$ git config http.proxy http://git-mirror.devex.figma.com:80
+# buildkite_keep_git_http_proxy is on, keeping git http proxy set
+$ sudo git clean -ffxdq
+# Unbundling /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+$ git bundle unbundle /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+Unbundling objects: 100% (13487/13487), 16.77 MiB | 16.84 MiB/s, done.
+Resolving deltas: 100% (8218/8218), completed with 2692 local objects.
+39797485db7c015fe430b0b519161fcbf2de0483 refs/tags/ci-git-bundle-019ce933-50d4-4732-a800-fa98dedf0004
+# Setting origin/master to MERGE_BASE_MASTER_COMMIT a0e18ee951127b32be1ded36b1b043770946712b
+$ git update-ref refs/remotes/origin/master a0e18ee951127b32be1ded36b1b043770946712b
+# Tracking 0 master commits fetched between c4173443ac6a081a3606619903096198307c4bdb and a0e18ee951127b32be1ded36b1b043770946712b
+$ git switch --force --detach 39797485db7c015fe430b0b519161fcbf2de0483
+Warning: you are leaving 344 commits behind, not connected to
+any of your branches:
+  4a61b4eeb801 Merge branch 'yichao/plan-id-denorm-poc-cycle-prevetion' into mq-tmp-c41734-9001-709378
+  c4173443ac6a Update PPTX export test to address some comments from previous PR (#709958)
+  e1566a0b6a01 web: Wire recent sessions into Make Local UI (#709983)
+  602ad4abab05 Fullscreen: Remove old dispatchToFacet and replace with optimized dispatchToRef (#709935)
+ ... and 340 more.
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+ git branch <new-branch-name> 4a61b4eeb801
+HEAD is now at 39797485db7c cortex: add observability for workspace/create bootstrap
+# Checking to see if Git data needs to be sent to Buildkite
+$ buildkite-agent meta-data exists buildkite:git:commit
+check-feature-flag: 2026/03/13 21:58:38 checking flag buildkite_resolve_commit_after_checkout
+check-feature-flag: 2026/03/13 21:58:38 flag value: true
+Git checkout required 0 retries
+# GIT_CHECKOUT_RETRIES added
+# Checking to see if git commit information needs to be sent to Buildkite...
+# BUILDKITE_COMMIT is already resolved and meta-data populated, skipping
+~~~ Running agent post-checkout hook
+$ /etc/buildkite-agent/hooks/post-checkout
+git head commit timestamp: 2026-03-13T21:55:58Z
+=== Stable commit check context ===
+Branch: darren/cortex-call-workspace-create
+Build number: 6075330
+Build URL: https://buildkite.com/figma/figma/builds/6075330
+Job ID: 019ce935-099e-42ea-93d6-1e8d3df48335
+Job label: cortex-test-and-build
+Pipeline: figma
+Step key: cortex-test-and-build
+Should check stable: false
+===================================
+Skipping stable check: not a designated job for this pipeline (pipeline=figma, step=cortex-test-and-build)
+# BASED_OFF_STABLE added
+# GIT_CHECKOUT_DURATION added
+# GIT_HEAD_COMMIT_TIMESTAMP added
+~~~ Running agent pre-command hook
+$ /etc/buildkite-agent/hooks/pre-command
+~~~ Running plugin docker-compose command hook
+$ devex/buildkite/plugins/docker-compose/hooks/command
+{
+  "services": {
+    "main": {
+      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+      "deploy": {
+        "resources": {
+          "limits": {
+            "memory": "32g"
+          }
+        }
+      },
+      "labels": {
+        "cgroup_parent": "${CGROUP_PARENT}",
+        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+      },
+      "volumes": [
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "/var/lib/buildkite-agent/.docker/:/home/circleci/.docker",
+        "/usr/bin/docker-credential-ecr-login:/usr/bin/docker-credential-ecr-login",
+        "/var/lib/buildkite-agent/bazel-remote:/home/circleci/bazel-remote",
+        "/var/lib/buildkite-agent/.ssh/known_hosts:/home/circleci/.ssh/known_hosts"
+      ],
+      "depends_on": [],
+      "privileged": true,
+      "environment": {
+        "GOFLAGS": "-mod=mod",
+        "RACK_ENV": "test",
+        "SETTINGS_YML": "/home/circleci/figma/config/dev_settings.yml",
+        "DOCKER_BUILDKIT": "1",
+        "TEST_REPORTS_DIR": "/home/circleci/figma/reports",
+        "FIGMA_BAZEL_REMOTE_ADDRESS": "unix:///home/circleci/bazel-remote/bazel-remote-grpc.sock",
+        "ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK": "1"
+      },
+      "working_dir": "/home/circleci/figma",
+      "network_mode": "service:network",
+      "cgroup_parent": "${CGROUP_PARENT}",
+      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-main"
+    },
+    "network": {
+      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+      "deploy": {
+        "resources": {
+          "limits": {
+            "memory": "32g"
+          }
+        }
+      },
+      "labels": {
+        "cgroup_parent": "${CGROUP_PARENT}",
+        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+      },
+      "command": "tail -f /dev/null",
+      "privileged": true,
+      "environment": {},
+      "cgroup_parent": "${CGROUP_PARENT}",
+      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-network"
+    }
+  }
+}
+Using BAZEL_CACHE_DIR=/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel
+~~~ :docker: Building Docker Compose Service: main
+⚠️ No pre-built image found from a previous 'build' step for this service and config file. Building image...
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 build --pull main
+~~~ :docker: Starting dependencies
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 up -d --scale main=0 main
+[?25l[+] Running 1/0
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠋ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Creating                                                                  0.1s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.2s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.3s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.4s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.5s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.6s
+[?25h[?25l[+] Running 2/2
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Started                                                                   0.6s
+[?25h
+--- :docker: Running  in service main
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 run --name cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_LABEL -e MERGE_BASE_BRANCH -e FIGMA_CI_LD_FEATURE_FLAGS -e RUN_ALL_TESTS_FOR_DELETED_FILES -e CI -e RACK_ENV -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_BRANCH_TYPE -e BUILDKITE_BRANCH -e BUILDKITE_AGENT_NAME -e BUILDKITE_MESSAGE -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e FIGMA_CI_RESOURCE_CLASS -e CI_CPUS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_PULL_REQUEST -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e USE_WEB_JEST_LITE -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_PARALLEL_JOB -e CI_USERNAME -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_BUILD_ID -e BUILDKITE_SOURCE -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e TEST_REPORTS_DIR -e BUILDKITE_RETRY_COUNT -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_BUILD_CREATOR_EMAIL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_JOB_ID -e BUILDKITE_STEP_IDENTIFIER -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_QUEUE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_AGENT_ID -e BUILDKITE_STEP_ID -e GOFLAGS -e CHANGED_FILES -e BUILDKITE_PLUGINS -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_PROJECT_SLUG -e BUILDKITE_AGENT_META_DATA_ARCH -e COMMITTER_EMAIL -e BUILDKITE_REBUILT_FROM_BUILD_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PIPELINE_ID -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_COMPUTE_TYPE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_STEP_KEY -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMAND -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_TAG -e BUILDKITE_BUILD_URL -e CI_WORKING_DIRECTORY -e BUILDKITE -e BUILDKITE_REPO -e BUILDKITE_PULL_REQUEST_REPO -e AWS_ECR_ACCOUNT_URL -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_OS -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e JOB_MAINTAINER -e IS_SOFT_FAIL -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_PULL_REQUEST_DRAFT -e START_TIME -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_COMMIT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e CI_MEM_GIB -e DOCKER_BUILDKIT -e BASH_ENV --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335:/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+[?25l[+] Running 1/0
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Running                                                                   0.0s
+[?25hrunning ci-interp for 6075330/raw-steps-0-0.json with BUILDKITE_STEP_KEY: cortex-test-and-build
+--- CI Stage: container.start_job
+--- Attach Workspace at .
+Using dependency groups: [[]]
+Successfully attached workspace at .
+--- mkdir -p reports artifacts
+--- Record external IP address
+35.85.229.190
+--- devex/buildkite/bazel-setup.sh
+Using EngFlow remote cache configuration
+Using --local_resources=memory=29491
+Using --local_resources=cpu=32
+Using --jobs=32
+Using --loading_phase_threads=32
+Using --experimental_skyframe_cpu_heavy_skykeys_thread_pool_size=32
+Configuring EngFlow TLS certificates...
+EngFlow TLS certificates configured successfully
+Using EngFlow remote cache
+Using --build_metadata=USER=buildkite
+Using --build_metadata=DISABLE_COMMIT_STATUS_REPORTING=true
+Using --@aspect_rules_lint//lint:fail_on_violation
+Using new Artifactory endpoint (artifactory.prod.figmadevex.com)
+✓ Configuring pip to use Artifactory for PyPI packages
+✓ Set PIP_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+✓ Set PIP_TRUSTED_HOST_ARG=--trusted-host=artifactory.prod.figmadevex.com
+✓ Set UV_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+✓ Configuring GOPROXY to use Artifactory for Go modules
+✓ Set GOPROXY=https://artifactory.prod.figmadevex.com/artifactory/api/go/go-virtual
+✓ Configuring Bazel downloader to use Artifactory for Bazel releases
+✓ Set BAZELISK_FORMAT_URL=https://artifactory.prod.figmadevex.com/artifactory/releases.bazel.build/%v/release/bazel-%v-%o-%m%e
+✓ Configuring Bazel downloader to use Artifactory for Rust toolchain
+✗ rules_oci using upstream registries (buildkite_artifactory_docker flag disabled)
+Using --downloader_config=/home/circleci/bazel_downloader.cfg
+--- devex/buildkite/bazel-help-with-retry.sh
+Checking for cached Bazel version 8.5.1...
+Cache directory exists: /home/circleci/.cache/bazel/_bazel_circleci/install
+Found cached version: 8.5.1 in b8a069f8b7ab718c13dbfa7ea3667622
+✓ Bazel 8.5.1 already installed in cache
+--- devex/buildkite/artifactory-setup.sh
+Setting up Artifactory package registry configuration...
+✓ Configuring Python/pip to use Artifactory at artifactory.prod.figmadevex.com
+  Configured pip.conf to use Artifactory
+  Configured UV_INDEX_URL to use Artifactory
+✓ Configuring Go modules to use Artifactory at artifactory.prod.figmadevex.com
+✓ Configuring Ruby/Bundler to use Artifactory at artifactory.prod.figmadevex.com
+✓ Configuring npm/pnpm to use Artifactory at artifactory.prod.figmadevex.com
+✗ Skipping Docker Artifactory setup
+Artifactory setup complete.
+--- devex/buildkite/ssh-setup.sh
+Starting an SSH agent and loading figmaci/production/FIGMABOT1_SSH_PRIVATE_KEY...
+Agent pid 107
+export SSH_AUTH_SOCK=/tmp/ssh-dwDO32EoByN9/agent.106
+Identity added: (stdin) (figmabot+1@figma.com)
+--- Storing artifacts at git-fetch-debug.log
+Could not find file at path git-fetch-debug.log
+Running "/usr/bin/buildkite-agent artifact upload git-fetch-debug.log"
+2026-03-13 21:58:44 WARN   Couldn't walk path git-fetch-debug.log
+2026-03-13 21:58:44 INFO   No files matched paths: git-fetch-debug.log
+--- Delete git debug log
+--- Monitor cgroup resource usage
+This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-11.log
+--- Start ci-cache-stats server
+This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-12.log
+--- Configure BES backend
+Using EngFlow backend, skipping BuildBuddy BES configuration
+--- CI Stage: container.main
+--- bazel build //services/cortex/...
+Starting local Bazel server (8.5.1) and connecting to it...
+INFO: Invocation ID: 7bef9dcb-d504-4ecf-a721-4684bcce7939
+WARNING: For repository 'rules_cc', the root module requires module version rules_cc@0.1.5, but got rules_cc@0.2.15 in the resolved dependency graph. Please update the version in your MODULE.bazel or set --check_direct_dependencies=off
+INFO: Invocation ID: 709ff8b0-dce7-4551-b766-276b20e7606b
+INFO: Streaming build results to: https://taaffeite.cluster.engflow.com/invocation/709ff8b0-dce7-4551-b766-276b20e7606b
+Computing main repo mapping: 
+Computing main repo mapping: 
+    Fetching ..._features+//private:extensions.bzl%version_extension; starting
+Computing main repo mapping: 
+    Fetching ...@@rules_python+//python/extensions:python.bzl%python; starting
+Computing main repo mapping: 
+Loading: 
+Loading: 8 packages loaded
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ension @@aspect_rules_js+//npm:extensions.bzl%npm; starting 4s
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching repository @@aspect_rules_js++npm+npm; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching repository @@aspect_rules_js++npm+npm; Initializing
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching repository @@aspect_rules_js++npm+npm; Initializing
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ository @@aspect_rules_js++npm+npm; Translating pnpm-lock.yaml
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ct_rules_js++npm+npm; Generating starlark for npm dependencies
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ct_rules_js++npm+npm; Generating starlark for npm dependencies
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...rules_js++npm+npm; Generating starlark for npm dependencies 4s
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...rules_js++npm+npm; Generating starlark for npm dependencies 5s
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ct_rules_js++npm+npm__astro__5.18.1_620251581__links; starting
+    Fetching ...m+npm__at_astrojs_starlight__0.37.7_409104384__links; starting
+    Fetching ...npm__at_anthropic-ai_claude-agent-sdk__0.2.69__links; starting
+    Fetching ...thropic-ai_claude-agent-sdk__0.2.69_zod_4.3.5__links; starting
+    Fetching ...ropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58__links; starting
+    Fetching ..._js++npm+npm__at_astrojs_mdx__4.3.0_409104384__links; starting
+    Fetching ...+npm+npm__at_anthropic-ai_claude-code__2.1.58__links; starting
+    Fetching ...trojs_react__4.4.2_1380537113__links; starting ... (9 fetches)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...s_postcss-cascade-layers__4.0.6_postcss_8.5.2__links; starting
+    Fetching ...stcss-color-mix-function__4.0.1_postcss_8.5.2__links; starting
+    Fetching ...s_postcss-color-function__5.0.1_postcss_8.5.2__links; starting
+    Fetching ...ss-exponential-functions__1.0.9_postcss_8.5.2__links; starting
+    Fetching ...ols_postcss-hwb-function__5.0.1_postcss_8.5.2__links; starting
+    Fetching ...ls_postcss-hwb-function__3.0.18_postcss_8.5.2__links; starting
+    Fetching ...s_postcss-gamut-mapping__1.0.11_postcss_8.5.2__links; starting
+    Fetching ...apping__2.0.10_postcss_8.5.2__links; starting ... (13 fetches)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...m__at_docusaurus_plugin-svgr__3.9.1_333713746__links; starting
+    Fetching ..._at_docusaurus_theme-common__3.9.1_1096324443__links; starting
+    Fetching ...+npm+npm__at_docusaurus_core__3.9.1_333713746__links; starting
+    Fetching ...cusaurus_plugin-content-docs__3.9.1_333713746__links; starting
+    Fetching ...__at_docusaurus_plugin-debug__3.9.1_333713746__links; starting
+    Fetching ...us_plugin-css-cascade-layers__3.9.1_333713746__links; starting
+    Fetching ...ocusaurus_plugin-google-gtag__3.9.1_333713746__links; starting
+    Fetching ...e-analytics__3.9.1_333713746__links; starting ... (18 fetches)
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...__at_rspack_core__1.7.5_at_swc_helpers_0.5.15__links; starting
+    Fetching ...t_rules_js++npm+npm__at_rspack_binding__1.7.5__links; starting
+    Fetching ..._js++npm+npm__at_rspack_cli__1.7.5_1223858708__links; starting
+    Fetching ...m+npm__at_rspack_dev-server__1.1.5_1223858708__links; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...ect_rules_js++npm+npm__at_types_node__22.17.2__links; starting
+    Fetching ...ules_js++npm+npm__at_types_node-fetch__2.6.13__links; starting
+    Fetching ..._webpack-dev-middleware__5.3.4_webpack_5.91.0__links; starting
+    Fetching ...pm+npm__at_types_postcss-modules-scope__3.0.4__links; starting
+    Fetching ...types_postcss-modules-local-by-default__4.0.2__links; starting
+    Fetching ...types_rollup-plugin-postcss__3.1.4_2066069473__links; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...sitory @@aspect_rules_js++npm+npm__vue__3.3.4__links; starting
+Loading: 14 packages loaded
+    currently loading: services/cortex ... (2 packages)
+    Fetching ...pm+npm__postcss-load-config__6.0.1_1147016012__links; starting
+    Fetching ..._js++npm+npm__postcss-js__4.0.1_postcss_8.5.2__links; starting
+    Fetching ...npm+npm__postcss-logical__7.0.1_postcss_8.5.2__links; starting
+    Fetching ...__postcss-merge-longhand__7.0.4_postcss_8.5.2__links; starting
+    Fetching ...npm+npm__postcss-logical__9.0.0_postcss_8.5.2__links; starting
+    Fetching ...pm__postcss-merge-idents__6.0.3_postcss_8.5.2__links; starting
+    Fetching ...postcss-minify-gradients__5.1.1_postcss_8.5.2__links; starting
+    Fetching ...adients__6.0.3_postcss_8.5.2__links; starting ... (18 fetches)
+Loading: 15 packages loaded
+    currently loading: services/cortex
+Loading: 16 packages loaded
+    currently loading: config/terraform/infra-metadata/aws-vpc/modules/config \
+... (18 packages)
+Analyzing: 288 targets (76 packages loaded)
+Analyzing: 288 targets (76 packages loaded, 0 targets configured)
+Analyzing: 288 targets (76 packages loaded, 0 targets configured)
+    currently loading: @@bazel_tools//tools
+Analyzing: 288 targets (182 packages loaded, 293 targets configured)
+    currently loading: @@rules_go++go_sdk+go_toolchains// ... (8 packages)
+    Fetching repository @@rules_java++toolchains+local_jdk; starting
+Analyzing: 288 targets (244 packages loaded, 2361 targets configured)
+    currently loading: 
+Analyzing: 288 targets (283 packages loaded, 4687 targets configured)
+    currently loading:  ... (26 packages)
+Analyzing: 288 targets (448 packages loaded, 6902 targets configured)
+    currently loading:  ... (10 packages)
+    Fetching ...itory @@gazelle++go_deps+com_github_hashicorp_hcl_v2; starting
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching ...tory @@gazelle++go_deps+com_github_charmbracelet_huh; starting
+Analyzing: 288 targets (479 packages loaded, 7029 targets configured)
+    currently loading:  ... (12 packages)
+    Copying file services/cortex/ownership/figjam.yml; 0s local
+    Copying file .../cortex/ownership/search_and_recommendations.yml; 0s local
+    Copying file services/cortex/ownership/desktop.yml; 0s local
+    Copying file services/cortex/ownership/interaction_design.yml; 0s local
+    Copying file vitest/private/bazel_snapshot_resolver.mjs; 0s local
+    Copying file vitest/private/bazel_sequencer.mjs; 0s local
+    Copying file services/cortex/ownership/buzz.yml; 0s local
+    Copying file services/cortex/ownership/expressive_ai.yml; 0s local ...
+    Fetching ...itory @@gazelle++go_deps+com_github_hashicorp_hcl_v2; starting
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching ...gazelle++go_deps+com_github_charmbracelet_huh; running Gazelle
+    Fetching ...o_deps+com_github_hashicorp_terraform_config_inspect; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+Analyzing: 288 targets (506 packages loaded, 14803 targets configured)
+    currently loading:  ... (4 packages)
+    Copying file services/cortex/eslint.config.mjs; 0s local
+    //services/cortex:integration_test-known-flaky; 0s remote-cache
+    Fetching ...@gazelle++go_deps+com_github_hashicorp_hcl_v2; running Gazelle
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching ...com_github_hashicorp_terraform_config_inspect; running Gazelle
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...zelle++go_deps+com_github_mitchellh_hashstructure_v2; starting
+    Fetching ...elle++go_deps+com_github_charmbracelet_x_exp_strings; starting
+    Fetching repository @@gazelle++go_deps+com_github_catppuccin_go; starting
+    Fetching ...eps+com_github_charmbracelet_bubbles; starting ... (9 fetches)
+Analyzing: 288 targets (557 packages loaded, 17896 targets configured)
+    currently loading:  ... (3 packages)
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...y @@gazelle++go_deps+com_github_catppuccin_go; running Gazelle
+    Fetching ...ository @@gazelle++go_deps+com_github_zclconf_go_cty; starting
+    Fetching ...le++go_deps+com_github_apparentlymart_go_textseg_v15; starting
+    Fetching ...ry @@gazelle++go_deps+com_github_muesli_cancelreader; starting
+    Fetching repository @@gazelle++go_deps+com_github_muesli_ansi; starting
+    Fetching ...go_deps+com_github_atotto_clipboard; starting ... (10 fetches)
+Analyzing: 288 targets (563 packages loaded, 27764 targets configured)
+    currently loading:  ... (2 packages)
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...ository @@gazelle++go_deps+com_github_zclconf_go_cty; starting
+    Fetching ...le++go_deps+com_github_apparentlymart_go_textseg_v15; starting
+    Fetching ...zelle++go_deps+com_github_muesli_cancelreader; running Gazelle
+    Fetching repository @@gazelle++go_deps+com_github_muesli_ansi; starting
+    Fetching ...@gazelle++go_deps+com_github_atotto_clipboard; running Gazelle
+    Fetching ...ps+com_github_mitchellh_go_wordwrap; starting ... (11 fetches)
+Analyzing: 288 targets (584 packages loaded, 36626 targets configured)
+    currently loading: 
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...ne.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 3.2 MiB (14.5%)
+    Fetching ...s/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 415.5 KiB (1.7%)
+Analyzing: 288 targets (584 packages loaded, 36865 targets configured)
+    currently loading: 
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...ne.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 9.9 MiB (44.3%)
+    Fetching ...es/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 4.5 MiB (18.3%)
+Analyzing: 288 targets (592 packages loaded, 36991 targets configured)
+    currently loading: 
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...e.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 17.0 MiB (76.4%)
+    Fetching ...s/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 18.8 MiB (77.2%)
+Analyzing: 288 targets (593 packages loaded, 36994 targets configured)
+    currently loading: 
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...+rclone_linux_amd64; Extracting rclone-v1.69.2-linux-amd64.zip
+    Fetching ..._1/linux_x86_64_archive; Extracting tofu_1.9.1_linux_amd64.zip
+Analyzing: 288 targets (593 packages loaded, 36994 targets configured)
+    currently loading: 
+    @com_github_google_go_cmp//cmp/internal/flags:flags; 0s remote-cache
+    @com_github_google_go_cmp//cmp/internal/function:function; 0s remote-cache
+    ...//:go-wordwrap; 0s remote-cache
+    @com_github_google_go_cmp//cmp/internal/flags:flags; 0s remote-cache
+    ...//textseg:textseg; 0s remote-cache
+    @com_github_agext_levenshtein//:levenshtein; 0s remote-cache
+    ...//hcl/strconv:strconv; 0s remote-cache
+    ...//:go-wordwrap; 0s remote-cache ...
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+    Fetching ...+rclone_linux_amd64; Extracting rclone-v1.69.2-linux-amd64.zip
+    Fetching ..._1/linux_x86_64_archive; Extracting tofu_1.9.1_linux_amd64.zip
+Analyzing: 288 targets (595 packages loaded, 36998 targets configured)
+    .../cortex/monitor_generator:cortex_monitor_generator_lib; 0s remote-cache
+    .../cortex/monitor_generator:cortex_monitor_generator; 0s remote-cache
+    Running nogo on //.../monitor_generator:monitorgenerator; 0s remote-cache
+    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+Analyzing: 288 targets (596 packages loaded, 37020 targets configured)
+    currently loading: share/kiwi
+Analyzing: 288 targets (670 packages loaded, 40345 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__throttleit__2.1.0//
+    Fetching ...ry @@aspect_rules_js++npm+npm__at_types_aws4__1.11.6; starting
+    Fetching ...pect_rules_js++npm+npm__at_streamparser_json__0.0.20; starting
+    Fetching repository @@aspect_rules_js++npm+npm__uuid__9.0.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__hpagent__1.2.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__json11__2.0.2; starting
+    Fetching ...y @@aspect_rules_js++npm+npm__at_types_node__22.17.2; starting
+    Fetching ...aspect_rules_js++npm+npm__at_ioredis_commands__1.5.0; starting
+    Fetching ...ules_js++npm+npm__underscore__1.1.7; starting ... (39 fetches)
+Analyzing: 288 targets (769 packages loaded, 41008 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__at_smithy_util-defaults-mod\
+e-browser__3.0.28//
+    //services/cortex:tf_gen_2; 0s local
+    Fetching ...itory @@aspect_rules_js++npm+npm__dprint-node__1.0.8; starting
+    Fetching ...m-virtual/dprint-node/-/dprint-node-1.0.8.tgz; 5.2 MiB (55.2%)
+    Fetching ...ules_js++npm+npm__at_dmsnell_diff-match-patch__1.1.0; starting
+    Fetching ... @@aspect_rules_js++npm+npm__cluster-key-slot__1.1.2; starting
+    Fetching ...sitory @@aspect_rules_js++npm+npm__aws4fetch__1.0.20; starting
+    Fetching repository @@aspect_rules_js++npm+npm__react__18.3.1; starting
+    Fetching repository @@aspect_rules_js++npm+npm__ioredis__5.6.0; starting
+    Fetching ...t_ai-sdk_anthropic__1.2.5_703562450; starting ... (33 fetches)
+Analyzing: 288 targets (896 packages loaded, 41767 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__strip-final-newline__2.0.0/\
+/
+    Fetching ...itory @@aspect_rules_js++npm+npm__dprint-node__1.0.8; starting
+    Fetching ...ct_rules_js++npm+npm__ioredis-mock__8.13.1_546409497; starting
+    Fetching repository @@aspect_rules_js++npm+npm__fengari__0.1.4; starting
+    Fetching ...t_rules_js++npm+npm__sharp-phash__2.2.0_sharp_0.33.5; starting
+    Fetching ...ect_rules_js++npm+npm__ml-levenberg-marquardt__2.1.1; starting
+    Fetching ...tory @@aspect_rules_js++npm+npm__is-any-array__0.1.1; starting
+    Fetching ...ct_rules_js++npm+npm__json-parse-helpfulerror__1.0.3; starting
+    Fetching ...npm__at_img_sharp-win32-x64__0.34.3; starting ... (27 fetches)
+Analyzing: 288 targets (1080 packages loaded, 42768 targets configured)
+    currently loading: launch_darkly
+    ...//parser:parser; 0s remote-cache
+    ...//parser:parser; 0s remote-cache
+    Fetching ...++npm+npm__at_img_sharp-libvips-linuxmusl-x64__1.2.0; starting
+    Fetching ...pentelemetry_core__1.30.1_at_opentelemetry_api_1.7.0; starting
+    Fetching ...ory @@aspect_rules_js++npm+npm__at_types_pako__1.0.1; starting
+    Fetching repository @@aspect_rules_js++npm+npm__cjson__0.5.0; starting
+    Fetching ...tory @@aspect_rules_js++npm+npm__unsplash-js__7.0.19; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__widest-line__3.1.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__figures__3.2.0; starting
+    Fetching ...ules_js++npm+npm__JSONSelect__0.4.0; starting ... (32 fetches)
+INFO: From RunBinary services/cortex/monitor_generator/gen_monitors:
+  Warning: No such directory: services/cortex/generated_monitors
+Analyzing: 288 targets (1199 packages loaded, 43274 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__ip3country__5.0.0// ... (2 \
+packages)
+    .../cortex/generated_monitors:validate_monitors_community_test; 0s local
+    //services/cortex/generated_monitors:validate_monitors_community; 0s local
+    //services/cortex/generated_monitors:validate_monitors_community; 0s local
+    RunBinary services/cortex/monitor_generator/gen_monitors; 0s remote-cache
+    ...//accessibility:accessibility; 0s remote-cache
+    ...//accessibility:accessibility; 0s remote-cache
+    Fetching ...++npm+npm__at_img_sharp-libvips-linuxmusl-x64__1.2.0; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__widest-line__3.1.0; starting
+    Fetching ...npm+npm__at_jitl_quickjs-wasmfile-debug-sync__0.31.0; starting
+    Fetching ...ory @@aspect_rules_js++npm+npm__xml-parser-xo__4.1.4; starting
+    Fetching ..._js++npm+npm__esbuild-register__3.5.0_esbuild_0.25.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__which__5.0.0; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__kiwi-schema__0.5.0; starting
+    Fetching ..._provider-utils__3.0.20_zod_3.25.58; starting ... (31 fetches)
+Analyzing: 288 targets (1387 packages loaded, 44275 targets configured)
+    @com_github_atotto_clipboard//:clipboard; 0s remote-cache
+    Running nogo on @com_github_atotto_clipboard//:clipboard; 0s remote-cache
+    @@gazelle++go_deps+com_github_catppuccin_go//:go; 0s remote-cache
+    @@gazelle++go_deps+com_github_catppuccin_go//:go; 0s remote-cache
+    Fetching ...ository @@aspect_rules_js++npm+npm__tiktoken__1.0.13; starting
+    Fetching ..._rules_js++npm+npm__at_img_sharp-win32-arm64__0.34.3; starting
+    Fetching repository @@aspect_rules_js++npm+npm__esm__3.2.25; starting
+    Fetching ...t_rules_js++npm+npm__at_datadog_native-appsec__7.1.1; starting
+    Fetching repository @@aspect_rules_js++npm+npm__turndown__7.2.2; starting
+    Fetching ...npm+npm__at_img_sharp-libvips-linuxmusl-arm64__1.2.0; starting
+    Fetching ...pect_rules_js++npm+npm__node-abort-controller__3.1.1; starting
+    Fetching ...les_js++npm+npm__token-types__6.1.2; starting ... (30 fetches)
+Analyzing: 288 targets (1552 packages loaded, 46143 targets configured)
+    currently loading: fullscreen/ts/bindings/ui ... (11 packages)
+    Fetching ...s_js++npm+npm__at_img_sharp-libvips-linux-x64__1.2.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__sql.js__1.14.0; starting
+    Fetching ...@@aspect_rules_js++npm+npm__at_datadog_pprof__5.10.0; starting
+    Fetching ...ository @@aspect_rules_js++npm+npm__clarinet__0.12.6; starting
+    Fetching ... @@aspect_rules_js++npm+npm__at_grpc_grpc-js__1.10.9; starting
+    Fetching repository @@aspect_rules_js++npm+npm__tmp__0.0.33; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__tiny-worker__2.3.0; starting
+    Fetching ...aspect_rules_js++npm+npm__rc__1.2.8; starting ... (25 fetches)
+Analyzing: 288 targets (1746 packages loaded, 48830 targets configured)
+    Fetching ...js++npm+npm__at_img_sharp-libvips-linux-arm64__1.2.0; starting
+    Fetching ...s_js++npm+npm__at_img_sharp-libvips-linux-arm__1.2.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__sinon__18.0.1; starting
+    Fetching ..._js++npm+npm__at_img_sharp-libvips-darwin-x64__1.2.0; starting
+    Fetching ...@aspect_rules_js++npm+npm__at_types_request__2.48.12; starting
+    Fetching repository @@aspect_rules_js++npm+npm__semifies__1.0.0; starting
+    Fetching ...ry @@aspect_rules_js++npm+npm__node-addon-api__8.5.0; starting
+    Fetching ..._rules_js++npm+npm__cardinal__2.1.1; starting ... (29 fetches)
+Analyzing: 288 targets (1893 packages loaded, 50089 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__jest-util__30.2.0// ... (2 \
+packages)
+    Fetching ..._js++npm+npm__at_img_sharp-libvips-darwin-x64__1.2.0; starting
+    Fetching ...s++npm+npm__at_img_sharp-libvips-darwin-arm64__1.2.0; starting
+    Fetching ...t_rules_js++npm+npm__at_sinonjs_text-encoding__0.7.3; starting
+    Fetching ...ository @@aspect_rules_js++npm+npm__nice-grpc__2.1.7; starting
+    Fetching ...ect_rules_js++npm+npm__at_types_cli-progress__3.11.6; starting
+    Fetching ...sitory @@aspect_rules_js++npm+npm__queue-tick__1.0.1; starting
+    Fetching ...sitory @@aspect_rules_js++npm+npm__modern-tar__0.7.4; starting
+    Fetching ...s_js++npm+npm__at_types_uuid__9.0.8; starting ... (28 fetches)
+Analyzing: 288 targets (2056 packages loaded, 51442 targets configured)
+    currently loading: fullscreen ... (2 packages)
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ..._rules_js++npm+npm__at_datadog_native-appsec__10.2.1; starting
+    Fetching repository @@aspect_rules_js++npm+npm__prettier__3.0.3; starting
+    Fetching ...spect_rules_js++npm+npm__at_types_stream-json__1.7.7; starting
+    Fetching ...ct_rules_js++npm+npm__at_smithy_protocol-http__1.2.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__ora__5.4.1; starting
+    Fetching repository @@aspect_rules_js++npm+npm__koalas__1.0.2; starting
+    Fetching ...rules_js++npm+npm__duplexify__4.1.3; starting ... (27 fetches)
+Analyzing: 288 targets (2334 packages loaded, 53575 targets configured)
+    currently loading: share/design-diff ... (3 packages)
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...@@aspect_rules_js++npm+npm__vitest__3.2.4_1802497239; starting
+    Fetching ...ry @@aspect_rules_js++npm+npm__is-interactive__1.0.0; starting
+    Fetching ...es_js++npm+npm__at_aws-sdk_client-sagemaker__3.664.0; starting
+    Fetching ...pect_rules_js++npm+npm__at_borewit_text-codec__0.2.1; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__jsonrepair__3.13.1; starting
+    Fetching ...itory @@aspect_rules_js++npm+npm__hyperlinker__1.0.0; starting
+    Fetching ...+npm+npm__at_sinonjs_commons__2.0.0; starting ... (14 fetches)
+Analyzing: 288 targets (2464 packages loaded, 55416 targets configured)
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ... @@aspect_rules_js++npm+npm__at_datadog_pprof__5.2.0; starting
+    Fetching repository @@aspect_rules_js++npm+npm__lru_map__0.3.3; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+    Fetching ...ry @@aspect_rules_js++npm+npm__extend-shallow__2.0.1; starting
+    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+    Fetching ...edrock__2.1.4_2131515139; Patching repository ... (35 fetches)
+Analyzing: 288 targets (2506 packages loaded, 56017 targets configured)
+    currently loading: fullscreen/node-fields-codegen
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-linux-x64-musl__0.1.96; starting
+    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+    Fetching ...-rs_canvas-linux-arm64-musl__0.1.96; starting ... (29 fetches)
+Analyzing: 288 targets (2541 packages loaded, 56639 targets configured)
+    //services/cortex:gantt_parser_run_binary_copy_srcs_to_bin; 0s local
+    Copying file .../rules-engine/src/util/configs/bad_anon_ids.json; 0s local
+    Copying file .../util/configs/mcp_tool_success_rate_limits.json; 0s local
+    Copying file .../rules-engine/src/util/configs/bad_mx_ips.json; 0s local
+    Copying file .../src/util/configs/known_bad_ip_nets.json; 0s local
+    Copying file .../src/util/configs/known_card_testing_emails.json; 0s local
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-linux-x64-musl__0.1.96; starting
+    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+    Fetching ...-rs_canvas-linux-arm64-musl__0.1.96; starting ... (29 fetches)
+Analyzing: 288 targets (2584 packages loaded, 57880 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__undici__5.29.0//
+    //services/cortex:gantt_parser_run_binary_copy_srcs_to_bin; 0s local
+    Copying file .../rules-engine/src/util/configs/bad_anon_ids.json; 0s local
+    Copying file .../util/configs/mcp_tool_success_rate_limits.json; 0s local
+    Copying file .../rules-engine/src/util/configs/bad_mx_ips.json; 0s local
+    Copying file .../src/util/configs/known_bad_ip_nets.json; 0s local
+    Copying file .../src/util/configs/known_card_testing_emails.json; 0s local
+    //services/cortex:flowchart_parser_run_binary_copy_srcs_to_bin; 0s local
+    //bazel/js:tsconfig_to_swcrc_ts; 0s remote-cache
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+    Fetching ...+npm+npm__at_napi-rs_canvas-linux-arm64-musl__0.1.96; starting
+    Fetching ...++npm+npm__at_napi-rs_canvas-linux-arm64-gnu__0.1.96; starting
+    Fetching ..._canvas-linux-arm-gnueabihf__0.1.96; starting ... (25 fetches)
+Analyzing: 288 targets (2604 packages loaded, 58704 targets configured)
+    //services/cortex:ts_tests_transpile; 0s remote-cache
+    //services/cortex:ts_tests_transpile; 0s remote-cache
+    //services/cortex:ts_tests_transpile; 0s remote-cache
+    //services/cortex:ts_tests_transpile; 0s remote-cache
+    //services/cortex:ts_tests_transpile; 0s remote-cache
+    //services/cortex:ts_integration_tests_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_tests_transpile; 0s remote-cache ...
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...es_js++npm+npm__at_napi-rs_canvas-darwin-x64__0.1.96; starting
+    Fetching ..._js++npm+npm__at_napi-rs_canvas-darwin-arm64__0.1.96; starting
+    Fetching ...js++npm+npm__at_napi-rs_canvas-android-arm64__0.1.96; starting
+    Fetching ...at_anthropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58; starting
+Analyzing: 288 targets (2608 packages loaded, 58817 targets configured)
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache
+    //services/cortex:ts_transpile; 0s remote-cache ...
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+    Fetching ...at_anthropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58; starting
+Analyzing: 288 targets (2608 packages loaded, 58817 targets configured)
+    currently loading: @@aspect_rules_js++npm+npm__at_anthropic-ai_claude-agen\
+t-sdk__0.2.69_zod_3.25.58//
+    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+Analyzing: 288 targets (2622 packages loaded, 59063 targets configured)
+Analyzing: 288 targets (2622 packages loaded, 59093 targets configured)
+    //services/cortex:ts_typecheck_test; 0s local
+    Copying directory package; 0s local
+    Copying file services/cortex/lib/util/v1_to_v2_helpers.ts; 0s local
+    Copying file config/feature_flags.json [for tool]; 0s local
+    Copying file .../cortex/cortex-types-no-readable-stream.d.ts; 0s local
+    Copying file share/sync.kiwi; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:_ts_generate_types_swcrc; 0s remote-cache ...
+INFO: Analyzed 288 targets (2622 packages loaded, 59094 targets configured).
+    Copying file services/cortex/vitest.config.mjs; 0s local
+    Copying file services/cortex/tsconfig.json; 0s local
+    Copying file share/scenegraph-server-client/src/index.ts; 0s local
+    Copying file .../cortex/lib/api/background_remove_inference.ts; 0s local
+    Copying file ai-agent/mappers/claude-code/tsconfig.json; 0s local
+    Copying file services/cortex/lib/util/tokens-cost.ts; 0s local
+    Copying file .../ts/bindings/editor/tsconfig.json [for tool]; 0s local
+    Copying file share/code-vfs/tsconfig.json [for tool]; 0s local ...
+    //share/color-tokens:generate_token_files; 0s local
+    Copying file web/packages/lib/src/hooks/resize_observer.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../mappers/claude-code/package.json [for tool]; 0s local
+    Copying file .../bindings/render-tree/tsconfig.json [for tool]; 0s local
+    Copying file .../ts/bindings/scenegraph/tsconfig.json [for tool]; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../cli/src/commands/log_or_mock_all/index.ts; 0s local ...
+    //services/cortex:build_deps; 0s local
+    Copying file share/point-and-edit/package.json [for tool]; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file services/cortex/lib/util/__test__/sort.test.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts; 0s local ...
+    //services/cortex:build_deps; 0s local
+    //services/cortex:build_dist; 0s local
+    Copying file .../cortex/integration_tests/lib/test_schema.ts; 0s local
+    Copying file share/code-vfs/src/utils.ts [for tool]; 0s local
+    Copying file share/jsx/src/util/validators/fontSizeCount.ts; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:build_deps; 0s local
+    Copying file services/cortex/lib/context.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/code-vfs/src/lru-cache.ts; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:build_deps; 0s local
+    //services/cortex:ts; 0s local
+    Copying file .../cortex/test_data/status.expected_responses.json; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/code-vfs/src/code-vfs.ts [for tool]; 0s local
+    //share/node-info:ts; 0s local ...
+    //services/cortex:build_deps; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/collaborative-text/tsconfig.json [for tool]; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file services/cortex/lib/util/crypto.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/figcache/src/throttler/throttler.ts; 0s local
+    Copying file web/packages/lib/src/interaction_recording.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:integration_test; 0s local
+    Copying file .../make-edits-core/src/prompts/buzz_zero_to_one.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../cortex/__test__/test_data/tone/tone_46.json; 0s local
+    Copying file sites-runtime/packages/schemas/src/json/schemas.ts; 0s local
+    //share/synapse/global:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file services/cortex/lib/support/tracer.ts; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/node-info/package.json [for tool]; 0s local
+    //services/cortex:ts_tests; 0s local
+    //sites-runtime:ts; 0s local
+    Copying file share/jsx/src/index.ts; 0s local
+    Copying file .../scenegraph/src/actions/codegen/cpp_to_ts.ts; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //share/point-and-edit:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file share/foundry-schemas/package.json [for tool]; 0s local
+    Copying file share/synapse/server/src/lib/pixelmatch.ts; 0s local ...
+    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:integration_test; 0s local
+    //services/cortex:ts; 0s local
+    Copying file services/cortex/lib/server.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file .../cortex/__test__/test_data/gantt/gantt_12.json; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+    //services/cortex:ts_tests; 0s local
+    //share/synapse/global:ts; 0s local
+    Copying file .../cortex/test_data/slides_rewrite_text_v2.json; 0s local
+    Copying file sites-runtime/src/shared/types/behavior_presets.ts; 0s local
+    Copying file share/html-to-design-serializer/src/svg.ts; 0s local
+    Copying file config/logging/schema_preset_libraries.ts; 0s local
+    //services/cortex:ts; 0s local ...
+    //services/cortex:cortex_debug; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts; 0s local
+    //share/synapse/global:ts; 0s local
+    //share/synapse/global:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file config/logging/schema_figmascope.ts; 0s local ...
+    //services/cortex:cortex_debug; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //share/synapse/server:ts; 0s local
+    //sites-runtime:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    .../server:bundle_code_file_templates_copy_srcs_to_bin; 0s local ...
+    //services/cortex:cortex_debug; 0s local
+    //share/synapse/global:ts; 0s local
+    Copying file sites-runtime/src/components/figma_layer.tsx; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../packages/js_serializer/src/ir/index.ts; 0s local
+    //share/synapse/server:ts; 0s local ...
+    //services/cortex:cortex_debug; 0s local
+    Copying file share/node-info/helpers/runtime.ts; 0s local
+    Copying file share/code-ts-transforms/src/index.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file code-components-transpiler/shared/src/lib/css.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //share/code-ts-transforms:ts; 0s local ...
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file config/logging/schema_ai_productivity.ts; 0s local
+    Copying file fullscreen/ts/scenegraph/src/changes_stager.ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/make-edits-core:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts; 0s local ...
+    //services/cortex/cli:client_test; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../synapse/server/src/app/design/image-helpers.ts; 0s local
+    Copying file share/figcache/src/timer/stopwatch.ts; 0s local
+    Copying file design-to-react/packages/util/src/name_deduper.ts; 0s local
+    //share/jsx:ts; 0s local
+    //services/cortex:ts; 0s local
+    Copying file share/figcache/src/throttler/acceptor.ts; 0s local ...
+    //services/cortex/cli:client_test; 0s local
+    Copying file .../modal-direct/package.json [for tool]; 0s local
+    //fullscreen/ts/scenegraph:ts; 0s local
+    Copying file sites-runtime/src/components/website.tsx; 0s local
+    //services/cortex:ts_tests; 0s local
+    //share/synapse/global:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file .../ts/scenegraph/src/facets/fragment_facet.ts; 0s local ...
+    //services/cortex/cli:client_test; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //fullscreen/ts/scenegraph:ts; 0s local
+    //services/cortex:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file config/manifests/jsvm-cpp.json [for tool]; 0s local ...
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file share/auto-auto-layout/src/stack_test_helpers.ts; 0s local
+    Copying file sites-runtime/src/interactivity/smart_animate.ts; 0s local
+    //share/synapse/global:ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../cortex/lib/controllers/foundry/sync/handler.ts; 0s local
+    Copying file .../server/src/agent/strip_media_content.ts; 0s local ...
+    //services/cortex:convert_old_test; 0s local
+    //services/cortex:generate_errors_binary; 0s local
+    //services/cortex:test; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //share/code-ts-transforms:ts; 0s local
+    Copying file share/code-ts-transforms/src/jsx_source_import.ts; 0s local
+    Copying file .../global/src/shared/schemas/image_to_jsx.ts; 0s local ...
+    //services/cortex:convert_old_test; 0s local
+    //services/cortex:generate_errors_binary; 0s local
+    //services/cortex:test; 0s local
+    //services/cortex/cli:cli; 0s local
+    //share/synapse/server:ts; 0s local
+    Copying file share/jsx/src/tailwind/constants.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts; 0s local ...
+    //services/cortex:convert_old_test; 0s local
+    //services/cortex:generate_errors_binary; 0s local
+    //services/cortex:test; 0s local
+    //services/cortex/cli:cli; 0s local
+    //services/cortex:integration_test; 0s local
+    //services/cortex/cli:build_deps; 0s local
+    Copying file config/logging/schema_comments.ts; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:convert_old_test; 0s local
+    //services/cortex:generate_errors_binary; 0s local
+    //services/cortex:test; 0s local
+    //services/cortex/cli:cli; 0s local
+    //services/cortex:integration_test; 0s local
+    //services/cortex/cli:build_deps; 0s local
+    //services/cortex:ts; 0s local
+    Copying file .../cortex/__test__/test_data/tone/tone_35.json; 0s local ...
+    //services/cortex:convert_old_test; 0s local
+    //services/cortex:generate_errors_binary; 0s local
+    //services/cortex:test; 0s local
+    //services/cortex/cli:cli; 0s local
+    //services/cortex:integration_test; 0s local
+    //services/cortex/cli:build_deps; 0s local
+    //share/point-and-edit:ts; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:convert_old_test; 1s local
+    //services/cortex:generate_errors_binary; 1s local
+    //services/cortex:test; 1s local
+    //services/cortex/cli:cli; 0s local
+    //services/cortex:integration_test; 0s local
+    //services/cortex/cli:build_deps; 0s local
+    Copying file .../cortex/__test__/test_data/gantt/gantt_17.json; 0s local
+    //services/cortex:ts; 0s local ...
+    //services/cortex:convert_old_test; 1s local
+    //services/cortex:test; 1s local
+    //services/cortex:integration_test; 1s local
+    //services/cortex/cli:build_deps; 0s local
+    //services/cortex:cortex; 0s local
+    //services/cortex:ts_tests; 0s local
+    //share/synapse/server:ts; 0s local
+    //services/cortex:ts_tests; 0s local ...
+    //services/cortex:integration_test; 1s local
+    //services/cortex:cortex; 0s local
+    Copying file .../ts/scenegraph/src/facets/whiteboard_facet.ts; 0s local
+    Copying file .../ts/scenegraph/src/facets/viewer_state_facet.ts; 0s local
+    Copying file .../tailwind/src/tw_animate_css.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file fpl/tokens-raw/package.json; 0s local
+    Copying file .../cortex/__test__/test_data/tone/tone_6.json; 0s local ...
+    //services/cortex:cortex; 0s local
+    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+    //share/synapse/server:ts; 0s local
+    Copying file share/jotai/src/with_history.ts; 0s local
+    Copying file share/design-diff/src/types.ts; 0s local
+    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:test; 0s local ...
+    //services/cortex:cortex; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local
+    Copying file .../cortex/__test__/test_data/tone/tone_45.json; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file .../packages/util/src/select_element_for_node.ts; 0s local
+    Copying file share/synapse/server/src/agent_sandbox/index.ts; 0s local
+    Copying file .../synapse/server/src/llm_rerank/llm_rerank.ts; 0s local ...
+    //services/cortex:cortex; 0s local
+    Copying file fullscreen/ts/scenegraph/src/base_scenegraph.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    Copying file services/cortex/__test__/test_data/tone/tone_2.json; 0s local
+    Copying file .../server/src/cortex/core/edit_image/types.ts; 0s local
+    //services/cortex:ts_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //share/synapse/global:ts; 0s local ...
+    Creating source manifest for //.../cortex:generate_types_binary; 0s local
+    Copying file services/cortex/__test__/test_data/tone/tone_3.json; 0s local
+    Copying file share/jsx/src/util/quadtree.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //share/synapse/server:ts; 0s local
+    Copying file .../cortex/__test__/test_data/tone/tone_30.json; 0s local
+    Copying file .../packages/schemas/src/primitives/schemas.ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //share/synapse/server:ts; 0s local
+    //design-to-react/packages/core:ts; 0s local
+    Copying directory package [for tool]; 0s local
+    Copying file ml/packages/acorn-jsx/utils.ts; 0s local
+    Copying file .../server/src/app/design/code_chat/supabase.ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local
+    Copying file .../cortex/test_data/inference_core_text_embed.json; 0s local
+    //share/synapse/server:ts; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //design-to-react/packages/core:ts; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    Copying file .../core/src/assembler/breakpoint_assembler.ts; 0s local
+    Copying directory package [for tool]; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/server:ts; 0s local ...
+    //services/cortex:generate_types_binary; 0s local
+    //services/cortex:ts_integration_tests; 0s local
+    //share/synapse/server:ts; 0s local
+    //share/synapse/global:ts; 0s local
+    Copying file .../synapse/global/src/shared/snake_case_helpers.ts; 0s local
+    //share/synapse/server:ts; 0s local
+    //design-to-react/packages/core:ts; 0s local
+    .../server:bundle_code_file_templates_copy_srcs_to_bin; 0s local ...
+    Copying file .../kq/query/test/cases/attribute_selectors.tsx; 0s local
+    Copying file .../kq/configs/all_transforms_all_props_jsx.json; 0s local
+    Copying file ml/packages/kq/jsx/util/sanitizePropName.ts; 0s local
+    Copying file ml/packages/kq/fig/node_defaults.json; 0s local
+    Copying file ml/packages/kq/formatters/json.ts; 0s local
+    Copying file ml/packages/kq/fig/font_list_types.d.ts; 0s local
+    Copying file ml/packages/kq/fig/fig_builders.ts; 0s local
+    Copying directory package; 0s local ...
+    //config/logging:ts_src; 0s remote-cache
+    .../node_modules/@datadog+native-metrics@2.0.0/lc; 0s remote-cache
+    Running lifecycle hooks on npm package protobufjs@7.3.0}; 0s remote-cache
+    Running lifecycle hooks on npm package canvas@3.0.1}; 0s remote-cache
+    //:.aspect_rules_js/node_modules/canvas@3.0.1/lc; 0s remote-cache
+    //ml/packages/kq:ts; 0s remote-cache
+    //:.aspect_rules_js/node_modules/@datadog+pprof@5.2.0/lc; 0s remote-cache
+    .../node_modules/@datadog+pprof@5.2.0/lc; 0s remote-cache ...
+    //config/logging:ts_src; 0s remote-cache
+    //:.aspect_rules_js/node_modules/canvas@3.0.1/lc; 0s remote-cache
+    //ml/packages/kq:ts; 0s remote-cache
+    //security/infra/lib/antiabuse-ts-client:ts; 0s remote-cache
+    //:.aspect_rules_js/node_modules/node-av@5.2.2/lc; 0s remote-cache
+    //fullscreen/node-fields-codegen:data_ts; 0s remote-cache
+    //fullscreen/node-fields-codegen:main_ts; 0s remote-cache
+    //share/color-tokens:generate; 0s remote-cache ...
+    //config/logging:ts_src; 0s remote-cache
+    //ml/packages/kq:ts; 0s remote-cache
+    //share/point-and-edit:ts; 0s remote-cache
+    Running lifecycle hooks on npm package dd-trace@3.58.0}; 0s remote-cache
+    //:.aspect_rules_js/node_modules/dd-trace@3.58.0/lc; 0s remote-cache
+    Running lifecycle hooks on npm package dd-trace@5.67.0}; 0s remote-cache
+    //:.aspect_rules_js/node_modules/dd-trace@5.67.0/lc; 0s remote-cache
+    [Prepa] Writing file services/cortex/image.binary.js_image_entries.json
+    //fullscreen/ts/bindings/path-rendering:ts; 0s remote-cache
+    Generating bindings for scenegraph; 0s remote-cache
+    Generating bindings for scenegraph [for tool]; 0s remote-cache
+    [Prepa] Bundling Javascript sites-runtime/dist/index.js [esbuild]
+    [Prepa] Bundling Javascript sites-runtime/dist/server.js [esbuild]
+    [Prepa] Bundling Javascript sites-runtime/dist/index.js [esbuild]
+    [Prepa] //sites-runtime:bundle
+    [Prepa] //sites-runtime:bundle_dev
+    [Prepa] //sites-runtime:bundle_server
+    //fullscreen/ts/scenegraph:ts; 0s remote-cache
+    [Prepa] JsRunBinary .../server/dist/code_file_templates.json [for tool]
+    [Prepa] JsRunBinary share/synapse/server/dist/code_file_templates.json
+    [Prepa] //share/synapse/global:ts
+    [Prepa] JsRunBinary .../server/dist/code_file_templates.json [for tool]
+    [Prepa] JsRunBinary share/synapse/server/dist/code_file_templates.json
+    //share/synapse/global:ts; 0s remote-cache
+    [Prepa] //share/synapse/server:ts
+    [Prepa] JsRunBinary services/cortex/dist/.cortex-types.d.ts
+    [Prepa] //share/synapse/server:ts
+    JsRunBinary services/cortex/dist/.cortex-types.d.ts; 0s remote-cache
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    //share/synapse/server:ts; 0s remote-cache
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Prepa] //services/cortex/cli:ts
+    [Prepa] //services/cortex:generate_errors_script
+    [Prepa] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Prepa] //services/cortex/cli:ts
+    [Prepa] //services/cortex:generate_errors_script
+    [Prepa] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Prepa] //services/cortex/cli:ts
+    [Prepa] //services/cortex:generate_errors_script
+    [Prepa] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Prepa] //services/cortex:generate_errors_script
+    [Prepa] //services/cortex:ts
+    //services/cortex/cli:ts; 0s remote-cache
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+    [Sched] //services/cortex:ts
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 0s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 0s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 0s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 0s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 1s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 1s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 1s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 2s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+    //services/cortex:ts; 2s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+    //services/cortex:ts; 2s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+    //services/cortex:ts; 3s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+    //services/cortex:ts; 3s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 5s
+    //services/cortex:ts; 3s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 4s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 4s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 4s remote-cache, linux-sandbox
+    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 4s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 0s remote-cache, linux-sandbox
+    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+    //services/cortex:ts; 5s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 0s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 0s remote-cache, linux-sandbox
+    //services/cortex:ts; 6s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 1s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 1s remote-cache, linux-sandbox
+    //services/cortex:ts; 7s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 2s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 2s remote-cache, linux-sandbox
+    //services/cortex:ts; 8s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 3s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 3s remote-cache, linux-sandbox
+    //services/cortex:ts; 8s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 3s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 3s remote-cache, linux-sandbox
+    //services/cortex:ts; 9s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 4s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 4s remote-cache, linux-sandbox
+    //services/cortex:ts; 10s remote-cache, linux-sandbox
+    .../cortex:generate_types_run_binary; 5s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 5s remote-cache, linux-sandbox
+    //services/cortex:ts; 10s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 5s remote-cache, linux-sandbox
+    //services/cortex:ts; 11s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 6s remote-cache, linux-sandbox
+    //services/cortex:ts; 12s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 7s remote-cache, linux-sandbox
+    //services/cortex:ts; 13s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 8s remote-cache, linux-sandbox
+    //services/cortex:ts; 15s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 10s remote-cache, linux-sandbox
+    //services/cortex:ts; 15s remote-cache, linux-sandbox
+    //services/cortex:image.binary.js_image; 10s remote-cache, linux-sandbox
+    //services/cortex:ts; 15s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 0s linux-sandbox
+    //services/cortex:image.binary.js_image; 0s linux-sandbox
+    [Sched] JsImageLayer package_store_3p //.../cortex:image.binary.js_image
+    [Sched] JsImageLayer app //services/cortex:image.binary.js_image
+    [Sched] JsImageLayer package_store_1p //.../cortex:image.binary.js_image
+    //services/cortex:ts; 15s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 0s linux-sandbox
+    //services/cortex:image.binary.js_image; 0s linux-sandbox
+    //services/cortex:image.binary.js_image; 0s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 0s linux-sandbox
+    //services/cortex:image.binary.js_image; 0s linux-sandbox
+    //services/cortex:ts; 16s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:image.binary.js_image; 1s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:ts; 17s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:image.binary.js_image; 1s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:image.binary.js_image; 1s linux-sandbox
+    //services/cortex:ts; 17s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 2s linux-sandbox
+    //services/cortex:image.binary.js_image; 2s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 2s linux-sandbox
+    //services/cortex:ts; 18s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 3s linux-sandbox
+    //services/cortex:image.binary.js_image; 3s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 3s linux-sandbox
+    //services/cortex:ts; 20s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 4s linux-sandbox
+    //services/cortex:image.binary.js_image; 4s linux-sandbox
+    JsImageLayer app //services/cortex:image.binary.js_image; 4s linux-sandbox
+ERROR: /home/circleci/figma/services/cortex/BUILD.bazel:45:11: Transpiling (dts) & type-checking TypeScript project @@//services/cortex:ts [tsc -p services/cortex/tsconfig.json] failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+services/cortex/lib/support/foundry_api.ts:20:33 - error TS2307: Cannot find module '@figma/agentplat-client' or its corresponding type declarations.
+20 import { AgentPlatClient } from '@figma/agentplat-client'
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+services/cortex/lib/support/foundry_api.ts:210:34 - error TS7006: Parameter 'connectErr' implicitly has an 'any' type.
+210       client.connect(undefined, (connectErr) => {
+                                     ~~~~~~~~~~
+services/cortex/lib/support/foundry_api.ts:219:12 - error TS7006: Parameter 'createErr' implicitly has an 'any' type.
+219           (createErr) => {
+               ~~~~~~~~~
+Found 3 errors in the same file, starting at: services/cortex/lib/support/foundry_api.ts:20
+    //services/cortex:ts; 20s remote-cache, linux-sandbox
+    JsImageLayer node //.../cortex:image.binary.js_image; 5s linux-sandbox
+    //services/cortex:image.binary.js_image; 5s linux-sandbox
+ERROR: /home/circleci/figma/services/cortex/BUILD.bazel:45:11 Middleman _middlemen/services_Scortex_Sts_Utypecheck_Utest.sh-runfiles failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+INFO: Elapsed time: 68.891s, Critical Path: 27.71s
+INFO: 17151 processes: 25850 action cache hit, 6391 remote cache hit, 4979 internal, 5 linux-sandbox, 5776 local.
+ERROR: Build did NOT complete successfully
+FAILED: 
+FAILED: 
+INFO: Streaming build results to: https://taaffeite.cluster.engflow.com/invocation/709ff8b0-dce7-4551-b766-276b20e7606b
+exit status 1
+^^^ +++
+--- Flush Bazel-related metrics to Datadog
+ci-cache-stats not found, skipping
+--- Store Bazel artifacts and server logs
+Tags sent
+cp: cannot stat '/home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs': No such file or directory
+Metrics args: --metrics bazel.memory.final:6175808
+Reporting datadog-ci metrics
+Metrics sent
+--- Report additional tags to Datadog
+Feature flag buildkite_ci_interp_test_processor=true, adding datadog tag
+Tags sent
+--- Report test results to Datadog
+/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+--- Storing and processing test results for suppression
+Running test-processor for path reports (test service: cortex-test-and-build)
+2026/03/13 22:00:02 ci-interp: [test-processor-cli] no XML files found in reports
+[test-processor] wrote done sentinel to metadata key test-processor-done-6075330-0
+2026/03/13 22:00:03 ci-interp: Searching pattern: "reports/**/*"
+2026/03/13 22:00:03 ci-interp: Collected 0 XML files
+--- Report network error fetching third party dependencies
+--- Recording max memory usage
+19394469888 bytes ( 18.0625 GiB )
+/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+Metrics sent
+--- Storing 2 artifacts
+Running "/usr/bin/buildkite-agent artifact upload /home/circleci/.npm/_logs/**/*;artifacts/**/*"
+2026-03-13 22:00:05 INFO   Found 6 files that match "/home/circleci/.npm/_logs/**/*;artifacts/**/*"
+2026-03-13 22:00:05 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 22:00:05 INFO   Creating (0-6)/6 artifacts
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d5-4040-9595-b36279d456eb artifacts/command.profile.gz (3.4 MiB)
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d4-40a8-8d24-5a9460c5893b home/circleci/.npm/_logs/2026-03-12T13_37_33_047Z-debug-0.log (1.3 KiB)
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d5-45bc-9afd-754dc063f7c9 home/circleci/.npm/_logs/2026-03-12T13_37_33_158Z-debug-0.log (445 KiB)
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d5-4abf-a387-9a2d76a3343d artifacts/bazel_server_log.out (144 B)
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d5-460c-9361-159f21f23ab6 home/circleci/.npm/_logs/2026-03-12T13_37_44_234Z-debug-0.log (1.2 KiB)
+2026-03-13 22:00:05 INFO   Uploading 019ce936-c0d5-4625-b435-3793f00f81ef home/circleci/.npm/_logs/2026-03-12T13_37_47_693Z-debug-0.log (3.3 KiB)
+2026-03-13 22:00:06 INFO   Artifact uploads completed successfully
+2026/03/13 22:00:06 ci-interp: reaping 0 running tasks
+2026/03/13 22:00:06 ci-interp: Received error from task: bazel build //services/cortex/...
+2026/03/13 22:00:06 ci-interp: Job bazel build //services/cortex/... (exit code 1) does not match any retry conditions or has exceeded all limits
+2026/03/13 22:00:06 retry-cli: Calling retry service for job cortex-test-and-build in build 6075330 (exit code: 1)
+2026/03/13 22:00:07 retry-cli: Retry service response: shouldRetry=false, reason="Deterministic failure: Found 3 errors in the same file, starting at: services/cortex/lib/support/foundry_api.ts:20", traceId=d9eaf3df-fab0-4669-a2b9-da810d9d414c
+Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/logs/*.log"
+2026-03-13 22:00:07 INFO   Found 2 files that match "devex/buildkite/logs/*.log"
+2026-03-13 22:00:07 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 22:00:07 INFO   Creating (0-2)/2 artifacts
+2026-03-13 22:00:07 INFO   Uploading 019ce936-c829-4a67-94a4-60ca91c213f5 devex/buildkite/logs/12-Start_ci-cache-stats_server.log (55 B)
+2026-03-13 22:00:07 INFO   Uploading 019ce936-c82a-4291-82d3-6b41c80fc363 devex/buildkite/logs/11-Monitor_cgroup_resource_usage.log (957 B)
+2026-03-13 22:00:08 INFO   Artifact uploads completed successfully
+Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/results/*.json"
+2026-03-13 22:00:08 INFO   Found 1 files that match "devex/buildkite/results/*.json"
+2026-03-13 22:00:08 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 22:00:08 INFO   Creating (0-1)/1 artifacts
+2026-03-13 22:00:08 INFO   Uploading 019ce936-cd27-49a0-bb75-01f53cfdd6e6 devex/buildkite/results/20260313_215958_failed_step.json (2.3 KiB)
+2026-03-13 22:00:09 INFO   Artifact uploads completed successfully
+2026/03/13 22:00:09 ci-interp: failed to evaluate steps: command `bazel build //services/cortex/...` failed with exit code 1
+~~~ :warning: Failed to run command, exited with 1, run params:
+run --name cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_LABEL -e MERGE_BASE_BRANCH -e FIGMA_CI_LD_FEATURE_FLAGS -e RUN_ALL_TESTS_FOR_DELETED_FILES -e CI -e RACK_ENV -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_BRANCH_TYPE -e BUILDKITE_BRANCH -e BUILDKITE_AGENT_NAME -e BUILDKITE_MESSAGE -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e FIGMA_CI_RESOURCE_CLASS -e CI_CPUS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_PULL_REQUEST -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e USE_WEB_JEST_LITE -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_PARALLEL_JOB -e CI_USERNAME -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_BUILD_ID -e BUILDKITE_SOURCE -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e TEST_REPORTS_DIR -e BUILDKITE_RETRY_COUNT -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_BUILD_CREATOR_EMAIL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_JOB_ID -e BUILDKITE_STEP_IDENTIFIER -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_QUEUE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_AGENT_ID -e BUILDKITE_STEP_ID -e GOFLAGS -e CHANGED_FILES -e BUILDKITE_PLUGINS -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_PROJECT_SLUG -e BUILDKITE_AGENT_META_DATA_ARCH -e COMMITTER_EMAIL -e BUILDKITE_REBUILT_FROM_BUILD_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PIPELINE_ID -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_COMPUTE_TYPE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_STEP_KEY -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMAND -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_TAG -e BUILDKITE_BUILD_URL -e CI_WORKING_DIRECTORY -e BUILDKITE -e BUILDKITE_REPO -e BUILDKITE_PULL_REQUEST_REPO -e AWS_ECR_ACCOUNT_URL -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_OS -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e JOB_MAINTAINER -e IS_SOFT_FAIL -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_PULL_REQUEST_DRAFT -e START_TIME -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_COMMIT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e CI_MEM_GIB -e DOCKER_BUILDKIT -e BASH_ENV --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335:/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+~~~ Uploading linked container logs
+2026-03-13 22:00:09 INFO   Found 1 files that match "docker-compose-logs/*.log"
+2026-03-13 22:00:09 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 22:00:09 INFO   Creating (0-1)/1 artifacts
+2026-03-13 22:00:10 INFO   Uploading 019ce936-d230-49f1-be91-fd0bce5f7c3b docker-compose-logs/network.log (0 B)
+2026-03-13 22:00:10 INFO   Artifact uploads completed successfully
+--- 
+^^^ +++
+🚨 Error: The command exited with status 1
+^^^ +++
+~~~ Running agent post-command hook
+$ /etc/buildkite-agent/hooks/post-command
+check-feature-flag: 2026/03/13 22:00:11 checking flag buildkite_webhook_commit_statuses
+check-feature-flag: 2026/03/13 22:00:11 flag value: true
+[cortex-test-and-build] buildkite_webhook_commit_statuses is enabled, skipping post-command commit status
+~~~ Running plugin docker-compose post-command hook
+$ devex/buildkite/plugins/docker-compose/hooks/post-command
+~~~ :docker: Docker compose: post-command hook
+user command error: running "plugin docker-compose command" shell hook: The plugin docker-compose command hook exited with status 1
+~~~ Running agent pre-exit hook
+$ /etc/buildkite-agent/hooks/pre-exit
+^^^ :link: Datadog Links
+^^^ +++
+]1339;url='https://app.datadoghq.com/dashboard/ifv-nnk-8m5/?tpl_var_build_id%5B0%5D=019ce933-50d4-4732-a800-fa98dedf0004&tpl_var_job_id%5B0%5D=019ce935-099e-42ea-93d6-1e8d3df48335&tpl_var_instance_id%5B0%5D=i-03bc3c50e2f9baef4&tpl_var_host%5B0%5D=ip-10-143-180-112.us-west-2.compute.internal&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job/build/host metrics'
+]1339;url='https://app.datadoghq.com/containers?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-099e-42ea-93d6-1e8d3df48335&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job containers'
+]1339;url='https://app.datadoghq.com/process?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-099e-42ea-93d6-1e8d3df48335&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job processes'
+]1339;url='https://app.datadoghq.com/logs?query=service%3Abuildkite%20%40host%3Ai-03bc3c50e2f9baef4&from_ts=1773439065000&to_ts=1773439241000&live=false&storage=flex_tier';content='Click here to view system logs'
+]1339;url='https://app.datadoghq.com/ci/pipeline-executions?query=ci_level%3Ajob%20%40buildkite.agent.name%3Aproduction-linux-i-03bc3c50e2f9baef4-4&agg_m=count&agg_m_source=base&agg_t=count&cipipeline_explorer_sort=timestamp%2Casc&cols=%40ci.status%2Ctimestamp%2C%40ci.job.url%2C%40ci.job.name%2C%40duration%2C%40git.branch&fromUser=true&index=cipipeline&live=false&paused=true';content='Click here to view job runs on this host'
+~~~ Running global pre-exit hook
+Job vcpu_hours: 16 * .0322222 = .5155552
+Warning: Failed to retrieve AWS EC2 instance price
+Final CI stage: container.main
+2026/03/13 22:00:14 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+Tags sent successfully
+No matching git trace2 events found
+Revoking $FIGMA_CI_GITHUB_TOKEN...0m0.201s
+Stopping ssh-agent 3576313
+Agent pid 3576313 killed
+~~~ Pruning unused Docker resources
+Total reclaimed space: 0B
+Total:	0B
+~~~ Disk snapshot
+Disk before job: 30% | Disk after job: 30% | Delta: 0%
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   50G   15G   36G  30% /
+Buildkite main command experienced an error, setting exit code to 1
+BUILDKITE_JOB_FINAL_EXIT_STATUS=failure
+# SSH_AUTH_SOCK removed
+# SSH_AGENT_PID removed
+~~~ Running plugin docker-compose pre-exit hook
+$ devex/buildkite/plugins/docker-compose/hooks/pre-exit
+~~~ :docker: Reporting docker-compose memory usage to Datadog
+{
+  "services": [],
+  "max_usage_in_bytes": 4792320
+}
+~~~ :docker: Cleaning up after docker-compose
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 kill
+[?25l[+] Running 0/0
+ ⠋ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.1s
+[?25h[?25l[+] Running 0/1
+ ⠙ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.2s
+[?25h[?25l[+] Running 0/1
+ ⠹ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.3s
+[?25h[?25l[+] Running 0/1
+ ⠸ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.4s
+[?25h[?25l[+] Running 0/1
+ ⠼ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.5s
+[?25h[?25l[+] Running 0/1
+ ⠴ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.6s
+[?25h[?25l[+] Running 0/1
+ ⠦ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.7s
+[?25h[?25l[+] Running 0/1
+ ⠧ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.8s
+[?25h[?25l[+] Running 0/1
+ ⠇ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.9s
+[?25h[?25l[+] Running 1/1
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killed                                                                    0.9s
+[?25h
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 rm --force -v
+Going to remove cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network
+[?25l[+] Running 1/0
+ ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Removed                                                                   0.0s
+[?25h
+agent_cgroup: /agent.slice/agent-4/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 down --volumes
+[?25l[+] Running 0/0
+ ⠋ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removing                                                                    0.1s
+[?25h[?25l[+] Running 0/1
+ ⠙ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removing                                                                    0.2s
+[?25h[?25l[+] Running 1/1
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removed                                                                     0.3s
+[?25h[?25l[+] Running 1/1
+ ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removed                                                                     0.3s
+[?25h

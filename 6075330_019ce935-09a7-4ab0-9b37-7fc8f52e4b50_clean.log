@@ -1,0 +1,630 @@
+~~~ Running agent environment hook
+$ /etc/buildkite-agent/hooks/environment
+FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED: true
+~~~ :broom: Setting up worker environment
+~~~ :old_key: Loading job credentials
+Fetching job JWT from Buildkite...0m0.186s
+Authenticating to the Figma CI credential exchange...fetched imdsv2 token
+fetched instance role
+fetched instance credentials
+0m0.227s
+Starting an SSH agent and loading figmaci/production/FIGMABOT1_SSH_PRIVATE_KEY...
+Agent pid 3884507
+Identity added: (stdin) (figmabot+1@figma.com)
+2026/03/13 21:58:16 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+Tags sent successfully
+~~~ :lock: Verifying pipeline integrity
+# FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT added
+# STABLE_COMMITS_ENDPOINT added
+# FIGMA_CI_PRIVATE_DATA_BUCKET added
+# FIGMA_CI_CACHE_BUCKET added
+# FIGMA_CI_STATE_BUCKET added
+# FIGMA_CI_TEST_QUEUE_REDIS added
+# JOB_START added
+# AWS_DEFAULT_REGION added
+# FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED added
+# FIGMA_CI_TEMPORAL_WORKFLOW_HISTORIES_BUCKET added
+# LC_ALL added
+# FIGMA_CI_I18N_PUBLIC_BUCKET added
+# FIGMA_CI_TEST_QUEUE_SINATRA_REDIS added
+# AWS_SESSION_TOKEN added
+# FIGMA_CI_BUCKET added
+# FIGMA_CI_STEP_SIGNING_KEY_ID added
+# FIGMA_CI_GITHUB_TOKEN added
+# ADMIN_AWS_SESSION_TOKEN added
+# SSH_AUTH_SOCK added
+# DISK_USAGE_PCT_START added
+# BUILDKITE_AGENTS_PER_INSTANCE added
+# FIGMA_CI_LAMBDA_BUILDS_BUCKET added
+# FIGMA_CI_PROBER_BUILDS_BUCKET added
+# CI_JOB_STAGE_FILE added
+# STABLE_COMMITS_TOKEN_SECRET_ID added
+# FIGMA_CI_ARTIFACT_CACHE_ENDPOINT added
+# BUILDKITE_BINARY_DEPS_HASHES added
+# ADMIN_AWS_SECRET_ACCESS_KEY added
+# FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT added
+# FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY added
+# SSH_AGENT_PID added
+# FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY added
+# CI_HOOK_STAGE_FILE added
+# FIGMA_CI_VM_BUCKET added
+# AWS_SECRET_ACCESS_KEY added
+# ADMIN_AWS_ACCESS_KEY_ID added
+# FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT added
+# FIGMA_CI_SINATRA_TEST_DURATION added
+# FIGMA_CI_TOOLS_BUCKET added
+# FIGMA_CI_BAZEL_TARGET_DETERMINATION_BUCKET added
+# ENABLE_DD_COMMAND_LOGGING added
+# FIGMA_CI_ARTIFACTORY_ENDPOINT added
+# FIGMA_CI_XCODE_BUCKET added
+# FIGMA_CI_I18N_PRIVATE_BUCKET added
+# FIGMA_CI_GIT_MIRROR_ENDPOINT added
+# AWS_ACCESS_KEY_ID added
+# FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT added
+~~~ Preparing plugins
+~~~ Running agent pre-checkout hook
+$ /etc/buildkite-agent/hooks/pre-checkout
+Git trace2 enabled: /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.git-trace2/019ce935-09a7-4ab0-9b37-7fc8f52e4b50
+agent_cgroup: /agent.slice/agent-1/
+.				devops			       lambda					   .rubocop_todo.yml
+..				discovery-pipeline	       launch_darkly				   .rubocop.yml
+agent				docker-compose-logs	       .lfsconfig				   ruby
+.agents				.dockerignore		       LICENSE					   .ruby-version
+AGENTS.md			dogma			       litmus					   .ruby-version-next
+ai-agent			dotfig			       livegraph				   rust
+aibox				drift-integration	       livegraph-internal			   rust-toolchain
+aibox-use-role			dx			       livequery				   scenegraph-server
+antiabuse			dx-use-role		       local-extension-registry			   scripts
+antiabuse-iframe		e2e			       log					   search
+artifact-metadata-webhook	editor-embeds		       m1-docker-compose.yml			   search-indexer
+artifacts			entity-sync-v2		       macos-dev-setup				   secrets
+asana				envoy			       .mailmap					   security
+.aspect				error-dashboard		       maintainers				   .semgrepignore
+bazel				etcd			       maintainers.yml				   sentry
+bazel-ci-targets.txt		figcode			       mcp-config.yml				   services
+.bazel_fix_commands.json	figdev			       .mcp.json				   share
+.bazelignore			figfile-api		       memorydb					   shell
+.bazeliskrc			figfile-event-stream	       .metadata_never_index			   sinatra
+.bazelrc			fig_file_random_editor	       minifig					   sinatra-async-worker
+.bazelversion			figgytron		       minifig.coder.yml			   sinatra-ecs-task
+beacon				figkube			       minifig-schema.json			   sitemaps
+benchmark-litmus		figma			       minifig.yml				   sites-preview-shared
+bin				figma-cli		       misc-tools				   sites-runtime
+blob-store			figma.code-workspace	       mise.amd64.toml				   sites-server-renderer
+BUILD.bazel			figmadoc		       mise.coder.toml				   sites-tests
+buildbuddy.yaml			figma_repl		       mise.macos.toml				   sites-usage-data-scraper
+.bundle				figmascope-redaction-lambda    mise.rce.toml				   smokescreen
+.cargo				figment			       .mise.toml				   socket.yml
+Cargo.lock			fig_migrator		       mitmproxy-certs				   sorbet
+Cargo.toml			figser			       ml					   spacelift-admin
+catalog-info.yaml		figtag			       mnemo					   spacelift-ci-jobs
+changestream			file-diff		       mobile-android				   sprig
+charts				file-importer		       mobile-common				   src
+cherry_pick			file-proxy		       mobile-ios				   ssl
+chrome-os-app			.fileTemplates.json	       mobile-prototyping			   support-chat-iframe
+ci_env				flag-wizard		       MODULE.bazel				   surveyors
+ci-schema.json			flink			       MODULE.bazel.lock			   .syncpackrc.mjs
+.clang-format-ignore		font-index-tooling	       monitoring				   teams.go
+.claude				fpl			       monitors					   TEAMS.yml
+CLAUDE.md			fullscreen		       msk					   TEAMS_YML_README.md
+.claude-plugin			Gemfile			       multiplayer				   .templates
+cloud-docker-compose.coder.yml	Gemfile.lock		       multiplayer_data_loss_observability_script  temporal
+cloud-docker-compose.yml	Gemfile_next.lock	       multiplayer-etcd				   temporal-go-worker
+cloudflare			.git			       multiplayer-load-test			   temporal-worker
+codebase-suggestions		.gitattributes		       multiplayer-proxy			   terrafig
+code-components-transpiler	.git-blame-ignore-revs	       notion-docs				   TESTING.md
+code-devtools-worker		git-delete-merged-branches     .npmrc					   test-snapshot-images
+codegen				git-delete-merged-branches.ts  o11y					   tf
+codemirror6			githooks		       orca					   tmp
+code-samples			.github			       package.json				   todo-lint-migrations.md
+code-sandbox-worker		.gitignore		       patches					   tools
+.codex				go			       payload					   traffic
+config				.golangci.yml		       permissions				   tree-sitter-datadogmonitor
+cors-image-proxy-lambda		go.mod			       pixie					   tunnel
+cortex_inspector		google-tag-manager	       plugin-gateway				   .tx
+.cursor				go.sum			       .pnpmfile.cjs				   upnode
+.cursorindexingignore		gov			       pnpm-lock.yaml				   vector-aggregator
+.cursorteam			graphiql		       pnpm-workspace.yaml			   vector-metrics-pipeline
+dagster				.graphqlrc.yml		       postgresql				   viewer
+dashboards			heartbeat-client	       .prettierignore				   vitest.workspace.js
+database_dev			heartbeat-server	       .prettierrc				   .vscode
+data-eng			heartbeat-server-go	       .prettier_shim.js			   vscode-extension
+datahub-executor		high-integrity-approvals       probers					   vulny
+db-events-pipeline		high-integrity-approvals.yml   prodbox					   WARP.md
+dbops				hk.pkl			       .projections.json			   wb
+dbschema			.ignore			       .projections.md				   weavy
+dbt				image-resizer		       .pryrc					   web
+deny.toml			infra-metadata		       public					   webhooks
+deploys				infra-tools		       pyrightconfig.json			   web-logger
+deps				integrations		       Rakefile					   widget-iframes
+design-to-react			integration-test	       rds					   widget-oauth
+desktop				interaction-test	       README.md				   WORKSPACE
+devbox				internal-packages	       redis					   .yamlfmt.yaml
+devbox_cli			jira-add-on		       REPO.bazel				   .zed
+devbox-profiles			jsvm-cpp		       reports					   zendesk
+.devcontainer			k6			       repo.txt
+developer-docs			k8s			       rest-api-schema
+devex				kafka			       rootly
+/var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma already exists, skipping
+/var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.cache/bazel already exists, skipping
+[git-bundle] Downloading s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma/../ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+Completed 256.0 KiB/16.8 MiB (6.3 MiB/s) with 1 file(s) remainingCompleted 512.0 KiB/16.8 MiB (12.2 MiB/s) with 1 file(s) remainingCompleted 768.0 KiB/16.8 MiB (18.1 MiB/s) with 1 file(s) remainingCompleted 1.0 MiB/16.8 MiB (23.6 MiB/s) with 1 file(s) remaining  Completed 1.2 MiB/16.8 MiB (29.1 MiB/s) with 1 file(s) remaining  Completed 1.5 MiB/16.8 MiB (34.2 MiB/s) with 1 file(s) remaining  Completed 1.8 MiB/16.8 MiB (39.3 MiB/s) with 1 file(s) remaining  Completed 2.0 MiB/16.8 MiB (44.4 MiB/s) with 1 file(s) remaining  Completed 2.2 MiB/16.8 MiB (49.4 MiB/s) with 1 file(s) remaining  Completed 2.5 MiB/16.8 MiB (54.1 MiB/s) with 1 file(s) remaining  Completed 2.8 MiB/16.8 MiB (58.8 MiB/s) with 1 file(s) remaining  Completed 3.0 MiB/16.8 MiB (63.4 MiB/s) with 1 file(s) remaining  Completed 3.2 MiB/16.8 MiB (65.9 MiB/s) with 1 file(s) remaining  Completed 3.5 MiB/16.8 MiB (67.2 MiB/s) with 1 file(s) remaining  Completed 3.8 MiB/16.8 MiB (68.1 MiB/s) with 1 file(s) remaining  Completed 4.0 MiB/16.8 MiB (70.2 MiB/s) with 1 file(s) remaining  Completed 4.2 MiB/16.8 MiB (70.9 MiB/s) with 1 file(s) remaining  Completed 4.5 MiB/16.8 MiB (71.7 MiB/s) with 1 file(s) remaining  Completed 4.8 MiB/16.8 MiB (73.6 MiB/s) with 1 file(s) remaining  Completed 5.0 MiB/16.8 MiB (74.0 MiB/s) with 1 file(s) remaining  Completed 5.2 MiB/16.8 MiB (74.5 MiB/s) with 1 file(s) remaining  Completed 5.5 MiB/16.8 MiB (76.1 MiB/s) with 1 file(s) remaining  Completed 5.8 MiB/16.8 MiB (76.4 MiB/s) with 1 file(s) remaining  Completed 6.0 MiB/16.8 MiB (76.7 MiB/s) with 1 file(s) remaining  Completed 6.2 MiB/16.8 MiB (77.9 MiB/s) with 1 file(s) remaining  Completed 6.5 MiB/16.8 MiB (77.9 MiB/s) with 1 file(s) remaining  Completed 6.8 MiB/16.8 MiB (79.0 MiB/s) with 1 file(s) remaining  Completed 7.0 MiB/16.8 MiB (79.3 MiB/s) with 1 file(s) remaining  Completed 7.2 MiB/16.8 MiB (79.5 MiB/s) with 1 file(s) remaining  Completed 7.5 MiB/16.8 MiB (79.8 MiB/s) with 1 file(s) remaining  Completed 7.8 MiB/16.8 MiB (80.0 MiB/s) with 1 file(s) remaining  Completed 8.0 MiB/16.8 MiB (81.1 MiB/s) with 1 file(s) remaining  Completed 8.2 MiB/16.8 MiB (81.3 MiB/s) with 1 file(s) remaining  Completed 8.5 MiB/16.8 MiB (81.4 MiB/s) with 1 file(s) remaining  Completed 8.8 MiB/16.8 MiB (82.2 MiB/s) with 1 file(s) remaining  Completed 9.0 MiB/16.8 MiB (82.3 MiB/s) with 1 file(s) remaining  Completed 9.2 MiB/16.8 MiB (82.4 MiB/s) with 1 file(s) remaining  Completed 9.5 MiB/16.8 MiB (82.6 MiB/s) with 1 file(s) remaining  Completed 9.8 MiB/16.8 MiB (82.7 MiB/s) with 1 file(s) remaining  Completed 10.0 MiB/16.8 MiB (83.6 MiB/s) with 1 file(s) remaining Completed 10.2 MiB/16.8 MiB (83.7 MiB/s) with 1 file(s) remaining Completed 10.5 MiB/16.8 MiB (83.8 MiB/s) with 1 file(s) remaining Completed 10.8 MiB/16.8 MiB (83.8 MiB/s) with 1 file(s) remaining Completed 11.0 MiB/16.8 MiB (83.9 MiB/s) with 1 file(s) remaining Completed 11.2 MiB/16.8 MiB (84.7 MiB/s) with 1 file(s) remaining Completed 11.5 MiB/16.8 MiB (84.7 MiB/s) with 1 file(s) remaining Completed 11.8 MiB/16.8 MiB (84.8 MiB/s) with 1 file(s) remaining Completed 12.0 MiB/16.8 MiB (85.4 MiB/s) with 1 file(s) remaining Completed 12.2 MiB/16.8 MiB (85.5 MiB/s) with 1 file(s) remaining Completed 12.5 MiB/16.8 MiB (85.5 MiB/s) with 1 file(s) remaining Completed 12.8 MiB/16.8 MiB (85.6 MiB/s) with 1 file(s) remaining Completed 13.0 MiB/16.8 MiB (85.6 MiB/s) with 1 file(s) remaining Completed 13.2 MiB/16.8 MiB (86.2 MiB/s) with 1 file(s) remaining Completed 13.5 MiB/16.8 MiB (86.2 MiB/s) with 1 file(s) remaining Completed 13.8 MiB/16.8 MiB (86.1 MiB/s) with 1 file(s) remaining Completed 14.0 MiB/16.8 MiB (86.6 MiB/s) with 1 file(s) remaining Completed 14.2 MiB/16.8 MiB (86.5 MiB/s) with 1 file(s) remaining Completed 14.5 MiB/16.8 MiB (87.0 MiB/s) with 1 file(s) remaining Completed 14.8 MiB/16.8 MiB (86.9 MiB/s) with 1 file(s) remaining Completed 15.0 MiB/16.8 MiB (86.9 MiB/s) with 1 file(s) remaining Completed 15.2 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 15.5 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 15.8 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 16.0 MiB/16.8 MiB (87.8 MiB/s) with 1 file(s) remaining Completed 16.2 MiB/16.8 MiB (87.8 MiB/s) with 1 file(s) remaining Completed 16.5 MiB/16.8 MiB (87.8 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (87.8 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (87.4 MiB/s) with 1 file(s) remaining download: s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to production-linux-i-0adf33e84f85833ca-1/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+# GIT_TRACE2_EVENT added
+# GIT_TRACE2_EVENT_NESTING added
+# GIT_TRACE2_EVENT_BRIEF added
+# GIT_TRACE2_CONFIG_PARAMS added
+# BUILDKITE_CLEAN_CHECKOUT added
+# CI_GIT_BUNDLE_PATH added
+# GIT_CHECKOUT_START_TIME added
+# GIT_TRACE2_ENV_VARS added
+~~~ Preparing working directory
+$ cd /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma
+~~~ Running agent checkout hook
+$ /etc/buildkite-agent/hooks/checkout
+In checkout hook v1.0.14
+Starting custom checkout logic!
+# Using Goblet: true
+# Host "github.com" already in list of known hosts at "/var/lib/buildkite-agent/.ssh/known_hosts"
+# In checkout directory: /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma
+# Preparing to use Goblet at http://git-mirror.devex.figma.com:80
+# Result of git remote -v 
+`origin	http://github.com/figma/figma.git (fetch)
+origin	http://github.com/figma/figma.git (push)`
+$ git remote set-url origin http://github.com/figma/figma.git
+$ git config http.proxy http://git-mirror.devex.figma.com:80
+# buildkite_keep_git_http_proxy is on, keeping git http proxy set
+$ sudo git clean -ffxdq
+# Unbundling /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+$ git bundle unbundle /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+Unbundling objects: 100% (13487/13487), 16.77 MiB | 16.26 MiB/s, done.
+Resolving deltas: 100% (8218/8218), completed with 2692 local objects.
+39797485db7c015fe430b0b519161fcbf2de0483 refs/tags/ci-git-bundle-019ce933-50d4-4732-a800-fa98dedf0004
+# Setting origin/master to MERGE_BASE_MASTER_COMMIT a0e18ee951127b32be1ded36b1b043770946712b
+$ git update-ref refs/remotes/origin/master a0e18ee951127b32be1ded36b1b043770946712b
+# Tracking 0 master commits fetched between 0ba8826c4226f3b1f66c536a5ffc7bc0e6964b4b and a0e18ee951127b32be1ded36b1b043770946712b
+$ git switch --force --detach 39797485db7c015fe430b0b519161fcbf2de0483
+Warning: you are leaving 159 commits behind, not connected to
+any of your branches:
+  85bc39b2a765 reve redundant code
+  44816821b98c updates boolean fields to be nullable
+  6f7db9578888 updates zod validation based on new fields and refactors
+  1225d75be369 addresses reviewer comments
+ ... and 155 more.
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+ git branch <new-branch-name> 85bc39b2a765
+HEAD is now at 39797485db7c cortex: add observability for workspace/create bootstrap
+# Checking to see if Git data needs to be sent to Buildkite
+$ buildkite-agent meta-data exists buildkite:git:commit
+check-feature-flag: 2026/03/13 21:58:33 checking flag buildkite_resolve_commit_after_checkout
+check-feature-flag: 2026/03/13 21:58:33 flag value: true
+Git checkout required 0 retries
+# GIT_CHECKOUT_RETRIES added
+# Checking to see if git commit information needs to be sent to Buildkite...
+# BUILDKITE_COMMIT is already resolved and meta-data populated, skipping
+~~~ Running agent post-checkout hook
+$ /etc/buildkite-agent/hooks/post-checkout
+git head commit timestamp: 2026-03-13T21:55:58Z
+Checking disk space
+Disk space free: 2.3T
+Inodes free: 2.6G
+=== Stable commit check context ===
+Branch: darren/cortex-call-workspace-create
+Build number: 6075330
+Build URL: https://buildkite.com/figma/figma/builds/6075330
+Job ID: 019ce935-09a7-4ab0-9b37-7fc8f52e4b50
+Job label: check-feature-flags-in-diff
+Pipeline: figma
+Step key: check-feature-flags-in-diff
+Should check stable: false
+===================================
+Skipping stable check: not a designated job for this pipeline (pipeline=figma, step=check-feature-flags-in-diff)
+# BASED_OFF_STABLE added
+# GIT_HEAD_COMMIT_TIMESTAMP added
+# GIT_CHECKOUT_DURATION added
+~~~ Running agent pre-command hook
+$ /etc/buildkite-agent/hooks/pre-command
+~~~ Running plugin docker-compose command hook
+$ devex/buildkite/plugins/docker-compose/hooks/command
+{
+  "services": {
+    "main": {
+      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+      "deploy": {
+        "resources": {
+          "limits": {
+            "memory": "4g"
+          }
+        }
+      },
+      "labels": {
+        "cgroup_parent": "${CGROUP_PARENT}",
+        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+      },
+      "volumes": [
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "/var/lib/buildkite-agent/.docker/:/home/circleci/.docker",
+        "/usr/bin/docker-credential-ecr-login:/usr/bin/docker-credential-ecr-login",
+        "/var/lib/buildkite-agent/bazel-remote:/home/circleci/bazel-remote",
+        "/var/lib/buildkite-agent/.ssh/known_hosts:/home/circleci/.ssh/known_hosts"
+      ],
+      "depends_on": [],
+      "privileged": true,
+      "environment": {
+        "GOFLAGS": "-mod=mod",
+        "RACK_ENV": "test",
+        "SETTINGS_YML": "/home/circleci/figma/config/dev_settings.yml",
+        "DOCKER_BUILDKIT": "1",
+        "TEST_REPORTS_DIR": "/home/circleci/figma/reports",
+        "FIGMA_BAZEL_REMOTE_ADDRESS": "unix:///home/circleci/bazel-remote/bazel-remote-grpc.sock",
+        "ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK": "1"
+      },
+      "working_dir": "/home/circleci/figma",
+      "network_mode": "service:network",
+      "cgroup_parent": "${CGROUP_PARENT}",
+      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-main"
+    },
+    "network": {
+      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+      "deploy": {
+        "resources": {
+          "limits": {
+            "memory": "4g"
+          }
+        }
+      },
+      "labels": {
+        "cgroup_parent": "${CGROUP_PARENT}",
+        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+      },
+      "command": "tail -f /dev/null",
+      "privileged": true,
+      "environment": {},
+      "cgroup_parent": "${CGROUP_PARENT}",
+      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-network"
+    }
+  }
+}
+Using BAZEL_CACHE_DIR=/var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.cache/bazel
+~~~ :docker: Building Docker Compose Service: main
+⚠️ No pre-built image found from a previous 'build' step for this service and config file. Building image...
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 build --pull main
+~~~ :docker: Starting dependencies
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 up -d --scale main=0 main
+[?25l[+] Running 1/0
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠋ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.1s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠙ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.2s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠹ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.3s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠸ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.4s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠼ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.5s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠴ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.6s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠦ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.7s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠧ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.8s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠇ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            0.9s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠏ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Creating                                                            1.0s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.1s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.2s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.3s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.4s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.5s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.6s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.7s
+[?25h[?25l[+] Running 1/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Starting                                                            1.8s
+[?25h[?25l[+] Running 2/2
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default    Created                                                             0.0s
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Started                                                             1.8s
+[?25h
+--- :docker: Running  in service main
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 run --name check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e AWS_ECR_ACCOUNT_URL -e BUILDKITE_PULL_REQUEST_DRAFT -e BUILDKITE_LABEL -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_BUILD_AUTHOR_EMAIL -e START_TIME -e FIGMA_BRANCH_TYPE -e TEST_REPORTS_DIR -e BUILDKITE_AGENT_META_DATA_QUEUE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_STEP_IDENTIFIER -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_CI_RESOURCE_CLASS -e FIGMA_CI_LD_FEATURE_FLAGS -e BUILDKITE_PLUGINS -e PR_OVERRIDE_RUN_ALL_TESTS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e BUILDKITE_BUILD_CREATOR_EMAIL -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e RUN_ALL_TESTS_FOR_DELETED_FILES -e BUILDKITE -e BUILDKITE_BUILD_ID -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_REBUILT_FROM_BUILD_ID -e CI_USERNAME -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_REPO -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_RETRY_COUNT -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e COMMITTER_EMAIL -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_SOURCE -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_CREATOR_TEAMS -e CI_CPUS -e BUILDKITE_AGENT_ID -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e BUILDKITE_PROJECT_SLUG -e DOCKER_BUILDKIT -e MERGE_BASE_BRANCH -e GOFLAGS -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e BUILDKITE_ORGANIZATION_ID -e RACK_ENV -e BUILDKITE_TAG -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_STEP_ID -e BUILDKITE_MESSAGE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_PULL_REQUEST_LABELS -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_AGENT_META_DATA_OS -e CHANGED_FILES -e IS_SOFT_FAIL -e BUILDKITE_COMMAND -e BUILDKITE_STEP_KEY -e CI_MEM_GIB -e BUILDKITE_TIMEOUT -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_BRANCH -e BUILDKITE_PULL_REQUEST -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_BUILD_URL -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_PIPELINE_ID -e BASH_ENV -e FIGMA_CI_INTEGRITY -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e CI_WORKING_DIRECTORY -e CI -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e BUILDKITE_AGENT_NAME -e BUILDKITE_PULL_REQUEST_REPO -e BUILDKITE_COMPUTE_TYPE -e USE_WEB_JEST_LITE -e BUILDKITE_AGENT_META_DATA_ARCH -e JOB_MAINTAINER -e BUILDKITE_COMMIT -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_PARALLEL_JOB -e BUILDKITE_CHECKSUM_BASED_WORKSPACES --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.git-trace2/019ce935-09a7-4ab0-9b37-7fc8f52e4b50:/var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.git-trace2/019ce935-09a7-4ab0-9b37-7fc8f52e4b50 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3884327-88589.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3884327-88589.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+[?25l[+] Running 1/0
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Running                                                             0.0s
+[?25hrunning ci-interp for 6075330/raw-steps-0-0.json with BUILDKITE_STEP_KEY: check-feature-flags-in-diff
+--- CI Stage: container.start_job
+--- Attach Workspace at .
+Using dependency groups: [[]]
+Successfully attached workspace at .
+--- mkdir -p reports artifacts
+--- Record external IP address
+35.87.174.128
+--- devex/buildkite/bazel-setup.sh
+Using EngFlow remote cache configuration
+Using --local_resources=memory=3686
+Using --host_jvm_args='-Xmx1638m'
+Using --local_resources=cpu=4
+Using --jobs=4
+Using --loading_phase_threads=4
+Using --experimental_skyframe_cpu_heavy_skykeys_thread_pool_size=4
+Configuring EngFlow TLS certificates...
+EngFlow TLS certificates configured successfully
+Using EngFlow remote cache
+Using --build_metadata=USER=buildkite
+Using --build_metadata=DISABLE_COMMIT_STATUS_REPORTING=true
+Using --@aspect_rules_lint//lint:fail_on_violation
+Using new Artifactory endpoint (artifactory.prod.figmadevex.com)
+✓ Configuring pip to use Artifactory for PyPI packages
+✓ Set PIP_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+✓ Set PIP_TRUSTED_HOST_ARG=--trusted-host=artifactory.prod.figmadevex.com
+✓ Set UV_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+✓ Configuring GOPROXY to use Artifactory for Go modules
+✓ Set GOPROXY=https://artifactory.prod.figmadevex.com/artifactory/api/go/go-virtual
+✓ Configuring Bazel downloader to use Artifactory for Bazel releases
+✓ Set BAZELISK_FORMAT_URL=https://artifactory.prod.figmadevex.com/artifactory/releases.bazel.build/%v/release/bazel-%v-%o-%m%e
+✓ Configuring Bazel downloader to use Artifactory for Rust toolchain
+✗ rules_oci using upstream registries (buildkite_artifactory_docker flag disabled)
+Using --downloader_config=/home/circleci/bazel_downloader.cfg
+--- devex/buildkite/bazel-help-with-retry.sh
+Checking for cached Bazel version 8.5.1...
+Cache directory exists: /home/circleci/.cache/bazel/_bazel_circleci/install
+Found cached version: 8.5.1 in b8a069f8b7ab718c13dbfa7ea3667622
+✓ Bazel 8.5.1 already installed in cache
+--- devex/buildkite/artifactory-setup.sh
+Setting up Artifactory package registry configuration...
+✓ Configuring Python/pip to use Artifactory at artifactory.prod.figmadevex.com
+  Configured pip.conf to use Artifactory
+  Configured UV_INDEX_URL to use Artifactory
+✓ Configuring Go modules to use Artifactory at artifactory.prod.figmadevex.com
+✓ Configuring Ruby/Bundler to use Artifactory at artifactory.prod.figmadevex.com
+✓ Configuring npm/pnpm to use Artifactory at artifactory.prod.figmadevex.com
+✗ Skipping Docker Artifactory setup
+Artifactory setup complete.
+--- devex/buildkite/ssh-setup.sh
+Starting an SSH agent and loading figmaci/production/FIGMABOT2_SSH_PRIVATE_KEY...
+Agent pid 108
+export SSH_AUTH_SOCK=/tmp/ssh-BLWMMCougOeP/agent.107
+Identity added: (stdin) (figmabot+2@figma.com)
+--- Storing artifacts at git-fetch-debug.log
+Could not find file at path git-fetch-debug.log
+Running "/usr/bin/buildkite-agent artifact upload git-fetch-debug.log"
+2026-03-13 21:58:38 WARN   Couldn't walk path git-fetch-debug.log
+2026-03-13 21:58:38 INFO   No files matched paths: git-fetch-debug.log
+--- Delete git debug log
+--- Monitor cgroup resource usage
+This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-11.log
+--- Start ci-cache-stats server
+This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-12.log
+--- Configure BES backend
+Using EngFlow backend, skipping BuildBuddy BES configuration
+--- CI Stage: container.main
+--- Restoring cache from keys [vendor-cache-v4-{{ checksum "./Gemfile.lock" }}-{{ arch }}]
+Processing 1 cache key templates
+Executing template: vendor-cache-v4-{{ checksum "./Gemfile.lock" }}-{{ arch }}
+Prefixing key with sha1('vendor-') = 'b67b'
+Cache Version: 0xe8b5082e9f0
+Cache hit for key {release/figma/figma/b67b-vendor-cache-v4-10464be67322b6feea5fb33e6f9aa43c24fe32fc-linux-amd64 G5KzT2vEz_kWX6_7tJwoEAVhS251baf.}, restoring cache
+Starting streaming download and decompression for cache entry: release/figma/figma/b67b-vendor-cache-v4-10464be67322b6feea5fb33e6f9aa43c24fe32fc-linux-amd64 (version: G5KzT2vEz_kWX6_7tJwoEAVhS251baf.)
+Streaming cache from S3: release/figma/figma/b67b-vendor-cache-v4-10464be67322b6feea5fb33e6f9aa43c24fe32fc-linux-amd64
+SDK 2026/03/13 21:58:39 WARN Skipped validation of multipart checksum.
+Successfully started streaming from S3, decompressing cache
+Starting decompression with root: 
+Finished decompressing with root: 
+Successfully decompressed 846212405 bytes from streamed cache
+--- Bundle install
+Using rbenv ruby
+/home/circleci/.rbenv/versions/3.4.7/bin/ruby
+Fetching gem metadata from https://artifactory.prod.figmadevex.com/artifactory/api/gems/rubygems-virtual/.
+Resolving dependencies...
+Fetching bootboot 0.2.2
+Installing bootboot 0.2.2
+Installed plugin bootboot
+Bundle complete! 188 Gemfile dependencies, 336 gems now installed.
+Gems in the group 'development' were not installed.
+Bundled gems are installed into `./vendor/bundle`
+1 installed gem you directly depend on is looking for funding.
+  Run `bundle fund` for details
+--- Saving cache for paths [./vendor]
+Saving cache: vendor-cache-v4-{{ checksum "./Gemfile.lock" }}-{{ arch }}
+Executing template: vendor-cache-v4-{{ checksum "./Gemfile.lock" }}-{{ arch }}
+Prefixing key with sha1('vendor-') = 'b67b'
+skipping saving cache because cache key b67b-vendor-cache-v4-10464be67322b6feea5fb33e6f9aa43c24fe32fc-linux-amd64 already exists
+--- Get git diff and find feature flags
+Using diff base: a0e18ee951127b32be1ded36b1b043770946712b
+[---] FIGMA_RUBY_NEXT=
+I, [2026-03-13T21:58:56.173966 #352]  INFO -- datadog: [datadog] DATADOG CONFIGURATION - CORE - {"date":"2026-03-13T21:58:56Z","os_name":"x86_64-pc-linux","version":"2.13.0","lang":"ruby","lang_version":"3.4.7","env":null,"service":"statsig_feature_gate_ci_check","dd_version":null,"debug":false,"tags":null,"runtime_metrics_enabled":false,"vm":"ruby-3.4.7","health_metrics_enabled":false,"profiling_enabled":false,"dynamic_instrumentation_enabled":false}
+Cortex statsig gates: ai_assistant, ai_assistant_chat_v1, ai_assistant_blobstore, ai_assistant_titles, assistant_chat_new_frames, assistant_chat_make_edits_limitations, assistant_on_canvas_prompt_suggestions, aip_content_fill_image, aip_flower_garden, aip_magnolia, aip_mw_video, aip_replace_image, bake, bake_agent_scratchpad, bake_byods_self_healing, bake_canvas_server_files, bake_ds_import, bake_ds_import_l3a, bake_ds_import_improved_figma_import_prompt, make_kits, make_kits_ga, make_kits_plan_key, make_kits_consumption_plan_key, make_kits_npm_scope_prompt, bake_ds_import_use_sonnet_4, bake_edit_sp, bake_enhance_prompt, bake_m2d_roundtrip, bake_m2d_roundtrip_stored_original, bake_m2d_roundtrip_tool, bake_mcp_client_org, bake_mcp_client_pro, bake_mcp_client_starter, bake_mcp_client_ent, bake_mcp_client_custom_connectors_allowlist, bake_mcp_bypass_size_limit, bake_point_and_edit, bake_push_tool_calls_to_end, bake_sb, bake_sb_disable_suggested, bake_title, bake_description, make_detect_platform_intent, bake_trim_code, bake_use_openai_moderation, cortex_profiling_enabled, cortex_heap_profiling_enabled, cortex_heap_snapshot_on_memory_limit, cortex_abort_with_timeout, cortex_abort_on_client_disconnect, cortex_ai_assistant_alpha_enable_restricted_events, cortex_assistant_outdated_client_error, cortex_attach_agent_jwt, cortex_bedrock_autosuggest_text, cortex_can_send_restricted_analytics_events, cortex_deduplicate_reasoning_blocks, cortex_disable_antiabuse, cortex_disable_bedrock_moderation, cortex_disable_tiktoken, cortex_disable_openai_moderation, cortex_eks_clip_embedding_retry_sagemaker, cortex_eks_clip_embedding_simulate_hard_failure, cortex_enable_global_health_tracker, cortex_enable_server_side_figmake_data, cortex_enable_token_usage_tracking, cortex_enable_token_usage_monitoring, cortex_execution_tracing, cortex_figmake_measure_ensure_sandbox, cortex_foundry_files_get_source_from_sgs, cortex_foundry_files_use_source_from_sgs, cortex_foundry_rewrite_sandbox_url, cortex_provider_affinity_by_persistent_entity_id, cortex_killswitch_bedrock_pinning, cortex_killswitch_gov, cortex_killswitch_single_tenant, cortex_make_edits_allow_1p, cortex_make_edits_alpha_enable_restricted_events, cortex_usage_response_header, cortex_moderate_azure_image_requests, cortex_moderate_image_prompts, cortex_parse_aws_stream_exceptions, cortex_prioritize_provisioned_throughput, cortex_retry_with_fallback, cortex_retry_thinking_signature_errors, cortex_throw_on_empty_response, cortex_use_ai_sdk_v5_object, cortex_use_ai_sdk_v5_text, cortex_use_azure_35_turbo_east, cortex_use_redis_timeout, cortex_use_bg_removal_fallback, cortex_use_global_health_tracker, cortex_use_imagen_upscaling, cortex_use_provider_health_tracker, cortex_use_slow_sliding_window, cortex_use_statsig_feature_flag_values, cortex_use_token_usage_to_calculate_utilization, cortex_use_upscale_fallback, cortex_health_tracker_drt_success_rate, cortex_vertex_ai_force_payg, dakota_content_gen, dakota_content_gen_demo_seed, expr_ai_generate_image_prompt, figjam_ai_canvas_expand, figjam_ai_canvas_threaded_context, figjam_ai_summaries_model_2, figjam_ai_update_visual, figjam_cluster_stickies_model_upgrade, figjam_mermaid_to_diagram, figjam_mermaid_to_diagram_direction, figjam_text_to_template_debug, figjam_text_to_visual, figjam_timeline_same_dates, figjam_ui3_color_palette, first_draft_auto_select_kits, first_draft_byods_chain, first_draft_components_rag, first_draft_direct_gen, first_draft_fine_tune, first_draft_ip_conflict, first_draft_make_changes, first_draft_make_kit, first_draft_native, first_draft_openai_canary_model, first_draft_preflight_query_check, first_draft_seed_ai_calls, first_draft_suggest_props, first_draft_use_gemini, image_to_design, jamgpt, make_attach_snapshot, make_chat_conversation_cards, make_chat_sdk_divert_expected_sanitation_events, make_chat_sdk_server_shadow_reads, make_singapore_picker, make_custom_comps_v0, make_edits_debug, make_edits_server_side_retries, make_enable_route_to_figma_support, make_fast_apply_tool_disabled, make_fast_apply_health_based_disable, make_foundry, make_foundry_allow_npm_scripts, make_foundry_css_import_hoisting, make_foundry_remove_invalid_css_fonts, make_retry_midstream, make_only_moderate_latest_user_message, make_stream_compression_deltas, make_skip_shadcn, bake_finish_chunk, piper_outline_to_deck, prototype_ai_magic_link, qa_v2, slides_a11y_grid_reordering, make_foundry_ui_org, make_foundry_ui_pro, make_foundry_ui_starter, make_thread_request_lock, cmty_ai_tagging, dt_component_browser_mcp_user_rules, ext_cache_mcp_tools_in_cortex, cortex_should_log_raw_response_stream_to_figment, resumable_makes_cortex_killswitch, ce_il_vectorize, make_text_to_prompt, make_count_components_response, ext_bake_github_auth_refresh_custom, cortex_allow_list_tools_antiabuse_bypass, make_with_step_start, make_foundry_tools, make_foundry_create_workspace, make_gemini_high_thinking_level, cortex_openai_tool_schema, metronome, make_sanitization_throw_error, make_foundry_enable_absolute_imports, make_mobile_push_notif_on_complete, make_npm_private_registry, make_gemini_session_caching, make_retry_invalid_thinking_signature, make_retry_sandbox_disconnected, vec_vectorize_no_gradients, make_exclude_reasoning_parts, make_permissive_tsx_loader, whiff_apps, vec_vectorize_limit_size, sandboxed_assistant, foundry_cached_preview_sandbox_trigger, make_sandbox_git_persistence, cortex_workspace_create_bootstrap, voice_to_text
+Livegraph statsig gates: livegraph_test_feature_gate, test_flag, can_discover_pending_invite, community_hub_admin, community_hub_admin_reviewer, community_hub_image_inspection, exempt_guests_from_mfa_requirement, folder_workspace_id_policies_update, pv2_plan_record_dummy_policy, sites, sts_k12_google_org_enabled, perm_enable_debugger_log_for_user, pro_templates_figjam, fc_plan_enabled, cooper, dt_litmus, dt_github_admin_restricted_permission_policy, make_ai_allowlist_for_atlassian, dev_mode_demo_file, dt_component_browser_block_guests, slides_starter_team_design_toggle, litmus_figma_internal_org_staging_guest_access, bake, bake_check_plan, bake_plan_enabled, cmty_make_discovery, cmty_weave_discovery, cmty_make_publishing, cmty_make_publishing_updates, make_template_publishing, make_template_discovery, bake_starter_limit, bake_starter_paywall, bake_monetization_plan, ce_il_root, sts_starter_enabled, sts_student_enabled, deny_collab_without_products_enabled, buzz_approvals_can_access_policy_enabled, user_groups, ff_wsai_policies, mcp_connected_projects_rate_limit_own_seat, user_groups_pv2_plan_record, provisional_access_should_use_plan_id_user_id, user_groups_plan_enabled, ext_launch_apps_in_community, user_groups_end_users, allow_library_access_for_team_scope_access, workspace_audience, bake_mcp_client_custom_connectors_allowlist, bake_mcp_client_ent, bake_mcp_client_org, bake_mcp_client_pro, bake_mcp_client_starter, cmty_duplicate_destination_check, rc_pending_invite_folder_move_policy, team_dep_plan_audience, standalone_team_org_audience_fix, permissions_plan_test_flag, ai_credits_plan_add_on, nested_folders_plan, ext_plant_pv2_beta, workspace_audience_plan_enabled, livegraph_file_can_access, org_guest_mfa_for_google_sso, org_guest_mfa_for_saml_sso, org_campfire_provisional_access_enabled, show_ai_stats_allowlist, make_template_publishing_plan_key, make_template_discovery_plan_key, sites_admin_req_pwds, team_campfire_provisional_access_enabled, ignore_grandfather_logic_on_student_expiry, pressure_test_ai_meter_usage_view
+Mobile iOS statsig gates: ios_figment_refactor, mobile_waf_enabled, native_cache_file_metadata, mobile_make_creation_enabled, mobile_make_nux_enabled, mobile_make_enabled, preload_canvas, slide-deck-viewer-enabled
+Mobile Android statsig gates: android_mobile_authtab_feature, android_user_scope_manager, mobile_multi_account_feature, mobile_multi_account_nux, mobile_multi_account_user_scope_reinit_check, slide-deck-viewer-enabled, mobile_slides_speaker_notes_editing_android, mobile_make_enabled, mobile_make_creation_enabled, mobile_make_nux_enabled, android-unknown-file-screen, android_mirror_top_bar_status_improvement, android-enable-mirror-livegraph-connectivity, android_enable_mirror_wifi_connectivity, android_waf_enabled, preload_android_mfv, android_mobile_figjam_editing_prototype, open-in-file-figma-links-in-new-screen
+Found 1 feature flag(s) in the diff:
+❌ Cortex gate usage: cortex_workspace_create_bootstrap is not found in feature_flags.json
+Total feature flags/gates: 1
+exit status 1
+^^^ +++
+--- Flush Bazel-related metrics to Datadog
+ci-cache-stats not found, skipping
+--- Store Bazel artifacts and server logs
+Metrics args:
+--- Report additional tags to Datadog
+Feature flag buildkite_datadog_ci_enable_cache_tags=false, skipping cache key tags
+Feature flag buildkite_ci_interp_test_processor=true, adding datadog tag
+Tags sent
+--- Report test results to Datadog
+/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+--- Storing and processing test results for suppression
+Running test-processor for path reports (test service: check-feature-flags-in-diff)
+2026/03/13 21:59:17 ci-interp: [test-processor-cli] no XML files found in reports
+[test-processor] wrote done sentinel to metadata key test-processor-done-6075330-0
+2026/03/13 21:59:17 ci-interp: Searching pattern: "reports/**/*"
+2026/03/13 21:59:17 ci-interp: Collected 0 XML files
+--- Report network error fetching third party dependencies
+--- Recording max memory usage
+1604333568 bytes ( 1.4942 GiB )
+/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+Metrics sent
+--- Storing 2 artifacts
+Running "/usr/bin/buildkite-agent artifact upload /home/circleci/.npm/_logs/**/*;artifacts/**/*"
+2026-03-13 21:59:19 INFO   Found 4 files that match "/home/circleci/.npm/_logs/**/*;artifacts/**/*"
+2026-03-13 21:59:19 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 21:59:19 INFO   Creating (0-4)/4 artifacts
+2026-03-13 21:59:19 INFO   Uploading 019ce936-0beb-4796-9874-44dc28cda6bb home/circleci/.npm/_logs/2026-03-12T13_37_33_047Z-debug-0.log (1.3 KiB)
+2026-03-13 21:59:19 INFO   Uploading 019ce936-0beb-4fe2-94fd-5f5a56deedb9 home/circleci/.npm/_logs/2026-03-12T13_37_44_234Z-debug-0.log (1.2 KiB)
+2026-03-13 21:59:19 INFO   Uploading 019ce936-0beb-4c5f-b739-24be517b8156 home/circleci/.npm/_logs/2026-03-12T13_37_47_693Z-debug-0.log (3.3 KiB)
+2026-03-13 21:59:19 INFO   Uploading 019ce936-0beb-48bd-808b-b9dca1af598e home/circleci/.npm/_logs/2026-03-12T13_37_33_158Z-debug-0.log (445 KiB)
+2026-03-13 21:59:19 INFO   Artifact uploads completed successfully
+2026/03/13 21:59:20 ci-interp: reaping 0 running tasks
+2026/03/13 21:59:20 ci-interp: Received error from task: Get git diff and find feature flags
+2026/03/13 21:59:20 ci-interp: Job Get git diff and find feature flags (exit code 1) does not match any retry conditions or has exceeded all limits
+2026/03/13 21:59:20 retry-cli: Calling retry service for job check-feature-flags-in-diff in build 6075330 (exit code: 1)
+2026/03/13 21:59:20 retry-cli: Retry service response: shouldRetry=false, reason="No rule matched", traceId=85b7b63e-ba70-4582-acf0-56317ea765a2
+Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/logs/*.log"
+2026-03-13 21:59:20 INFO   Found 2 files that match "devex/buildkite/logs/*.log"
+2026-03-13 21:59:20 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 21:59:20 INFO   Creating (0-2)/2 artifacts
+2026-03-13 21:59:20 INFO   Uploading 019ce936-111c-4944-a586-c38613404f99 devex/buildkite/logs/12-Start_ci-cache-stats_server.log (55 B)
+2026-03-13 21:59:20 INFO   Uploading 019ce936-111d-4ef6-a6b5-a73726a73b90 devex/buildkite/logs/11-Monitor_cgroup_resource_usage.log (957 B)
+2026-03-13 21:59:21 INFO   Artifact uploads completed successfully
+Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/results/*.json"
+2026-03-13 21:59:21 INFO   Found 1 files that match "devex/buildkite/results/*.json"
+2026-03-13 21:59:21 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 21:59:21 INFO   Creating (0-1)/1 artifacts
+2026-03-13 21:59:21 INFO   Uploading 019ce936-1326-4011-8a65-650de39908f8 devex/buildkite/results/20260313_215916_failed_step.json (2.4 KiB)
+2026-03-13 21:59:21 INFO   Artifact uploads completed successfully
+2026/03/13 21:59:21 ci-interp: failed to evaluate steps: command `Get git diff and find feature flags` failed with exit code 1
+~~~ :warning: Failed to run command, exited with 1, run params:
+run --name check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e AWS_ECR_ACCOUNT_URL -e BUILDKITE_PULL_REQUEST_DRAFT -e BUILDKITE_LABEL -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_BUILD_AUTHOR_EMAIL -e START_TIME -e FIGMA_BRANCH_TYPE -e TEST_REPORTS_DIR -e BUILDKITE_AGENT_META_DATA_QUEUE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_STEP_IDENTIFIER -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_CI_RESOURCE_CLASS -e FIGMA_CI_LD_FEATURE_FLAGS -e BUILDKITE_PLUGINS -e PR_OVERRIDE_RUN_ALL_TESTS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e BUILDKITE_BUILD_CREATOR_EMAIL -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e RUN_ALL_TESTS_FOR_DELETED_FILES -e BUILDKITE -e BUILDKITE_BUILD_ID -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_REBUILT_FROM_BUILD_ID -e CI_USERNAME -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_REPO -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_RETRY_COUNT -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e COMMITTER_EMAIL -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_SOURCE -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_CREATOR_TEAMS -e CI_CPUS -e BUILDKITE_AGENT_ID -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e BUILDKITE_PROJECT_SLUG -e DOCKER_BUILDKIT -e MERGE_BASE_BRANCH -e GOFLAGS -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e BUILDKITE_ORGANIZATION_ID -e RACK_ENV -e BUILDKITE_TAG -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_STEP_ID -e BUILDKITE_MESSAGE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_PULL_REQUEST_LABELS -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_AGENT_META_DATA_OS -e CHANGED_FILES -e IS_SOFT_FAIL -e BUILDKITE_COMMAND -e BUILDKITE_STEP_KEY -e CI_MEM_GIB -e BUILDKITE_TIMEOUT -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_BRANCH -e BUILDKITE_PULL_REQUEST -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_BUILD_URL -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_PIPELINE_ID -e BASH_ENV -e FIGMA_CI_INTEGRITY -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e CI_WORKING_DIRECTORY -e CI -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e BUILDKITE_AGENT_NAME -e BUILDKITE_PULL_REQUEST_REPO -e BUILDKITE_COMPUTE_TYPE -e USE_WEB_JEST_LITE -e BUILDKITE_AGENT_META_DATA_ARCH -e JOB_MAINTAINER -e BUILDKITE_COMMIT -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_PARALLEL_JOB -e BUILDKITE_CHECKSUM_BASED_WORKSPACES --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.git-trace2/019ce935-09a7-4ab0-9b37-7fc8f52e4b50:/var/lib/buildkite-agent/builds/production-linux-i-0adf33e84f85833ca-1/figma/.git-trace2/019ce935-09a7-4ab0-9b37-7fc8f52e4b50 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3884327-88589.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3884327-88589.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+~~~ Uploading linked container logs
+2026-03-13 21:59:22 INFO   Found 1 files that match "docker-compose-logs/*.log"
+2026-03-13 21:59:22 INFO   Uploading to default Buildkite artifact storage
+2026-03-13 21:59:22 INFO   Creating (0-1)/1 artifacts
+2026-03-13 21:59:22 INFO   Uploading 019ce936-16e9-4eb5-875e-0dab35b04c98 docker-compose-logs/network.log (0 B)
+2026-03-13 21:59:22 INFO   Artifact uploads completed successfully
+--- 
+^^^ +++
+🚨 Error: The command exited with status 1
+^^^ +++
+~~~ Running agent post-command hook
+$ /etc/buildkite-agent/hooks/post-command
+check-feature-flag: 2026/03/13 21:59:23 checking flag buildkite_webhook_commit_statuses
+check-feature-flag: 2026/03/13 21:59:23 flag value: true
+[check-feature-flags-in-diff] buildkite_webhook_commit_statuses is enabled, skipping post-command commit status
+~~~ Running plugin docker-compose post-command hook
+$ devex/buildkite/plugins/docker-compose/hooks/post-command
+~~~ :docker: Docker compose: post-command hook
+user command error: running "plugin docker-compose command" shell hook: The plugin docker-compose command hook exited with status 1
+~~~ Running agent pre-exit hook
+$ /etc/buildkite-agent/hooks/pre-exit
+^^^ :link: Datadog Links
+^^^ +++
+]1339;url='https://app.datadoghq.com/dashboard/ifv-nnk-8m5/?tpl_var_build_id%5B0%5D=019ce933-50d4-4732-a800-fa98dedf0004&tpl_var_job_id%5B0%5D=019ce935-09a7-4ab0-9b37-7fc8f52e4b50&tpl_var_instance_id%5B0%5D=i-0adf33e84f85833ca&tpl_var_host%5B0%5D=ip-10-143-185-110.us-west-2.compute.internal&from_ts=1773439065000&to_ts=1773439193000&live=false';content='Click here to view job/build/host metrics'
+]1339;url='https://app.datadoghq.com/containers?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-09a7-4ab0-9b37-7fc8f52e4b50&from_ts=1773439065000&to_ts=1773439193000&live=false';content='Click here to view job containers'
+]1339;url='https://app.datadoghq.com/process?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-09a7-4ab0-9b37-7fc8f52e4b50&from_ts=1773439065000&to_ts=1773439193000&live=false';content='Click here to view job processes'
+]1339;url='https://app.datadoghq.com/logs?query=service%3Abuildkite%20%40host%3Ai-0adf33e84f85833ca&from_ts=1773439065000&to_ts=1773439193000&live=false&storage=flex_tier';content='Click here to view system logs'
+]1339;url='https://app.datadoghq.com/ci/pipeline-executions?query=ci_level%3Ajob%20%40buildkite.agent.name%3Aproduction-linux-i-0adf33e84f85833ca-1&agg_m=count&agg_m_source=base&agg_t=count&cipipeline_explorer_sort=timestamp%2Casc&cols=%40ci.status%2Ctimestamp%2C%40ci.job.url%2C%40ci.job.name%2C%40duration%2C%40git.branch&fromUser=true&index=cipipeline&live=false&paused=true';content='Click here to view job runs on this host'
+~~~ Running global pre-exit hook
+Job vcpu_hours: 2 * .0188888 = .0377776
+Warning: Failed to retrieve AWS EC2 instance price
+Final CI stage: container.main
+2026/03/13 21:59:26 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+failed to send tags: POST https://api.datadoghq.com/api/v2/ci/pipeline/tags giving up after 1 attempt(s)
+No matching git trace2 events found
+Revoking $FIGMA_CI_GITHUB_TOKEN...0m0.196s
+Stopping ssh-agent 3884507
+Agent pid 3884507 killed
+~~~ Pruning unused Docker resources
+Total reclaimed space: 0B
+Total:	0B
+~~~ Disk snapshot
+Disk before job: 26% | Disk after job: 27% | Delta: 1%
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   50G   14G   37G  27% /
+Buildkite main command experienced an error, setting exit code to 1
+BUILDKITE_JOB_FINAL_EXIT_STATUS=failure
+# SSH_AGENT_PID removed
+# SSH_AUTH_SOCK removed
+~~~ Running plugin docker-compose pre-exit hook
+$ devex/buildkite/plugins/docker-compose/hooks/pre-exit
+~~~ :docker: Reporting docker-compose memory usage to Datadog
+{
+  "services": [],
+  "max_usage_in_bytes": 4145152
+}
+~~~ :docker: Cleaning up after docker-compose
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 kill
+[?25l[+] Running 0/0
+ ⠋ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.1s
+[?25h[?25l[+] Running 0/1
+ ⠙ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.2s
+[?25h[?25l[+] Running 0/1
+ ⠹ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.3s
+[?25h[?25l[+] Running 0/1
+ ⠸ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.4s
+[?25h[?25l[+] Running 0/1
+ ⠼ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.5s
+[?25h[?25l[+] Running 0/1
+ ⠴ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.6s
+[?25h[?25l[+] Running 0/1
+ ⠦ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.7s
+[?25h[?25l[+] Running 0/1
+ ⠧ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killing                                                             0.8s
+[?25h[?25l[+] Running 1/1
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Killed                                                              0.9s
+[?25h
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 rm --force -v
+Going to remove check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network
+[?25l[+] Running 1/0
+ ⠿ Container check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50-network  Removed                                                             0.0s
+[?25h
+agent_cgroup: /agent.slice/agent-1/
+$ docker compose -f ./devex/buildkite/docker-compose.yml -p check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50 down --volumes
+[?25l[+] Running 0/0
+ ⠋ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.1s
+[?25h[?25l[+] Running 0/1
+ ⠙ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.2s
+[?25h[?25l[+] Running 0/1
+ ⠹ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.3s
+[?25h[?25l[+] Running 0/1
+ ⠸ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.4s
+[?25h[?25l[+] Running 0/1
+ ⠼ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.5s
+[?25h[?25l[+] Running 0/1
+ ⠴ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removing                                                              0.6s
+[?25h[?25l[+] Running 1/1
+ ⠿ Network check-feature-flags-in-diff-019ce935-09a7-4ab0-9b37-7fc8f52e4b50_default  Removed                                                               0.6s
+[?25h

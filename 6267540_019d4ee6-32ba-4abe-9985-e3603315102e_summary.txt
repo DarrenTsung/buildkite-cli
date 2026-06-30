@@ -1,0 +1,15 @@
+Build: 6267540
+Job: agentplat-itest (019d4ee6-32ba-4abe-9985-e3603315102e)
+
+9 cached targets passed
+
+=== //services/agentplat/ts-client/itest ===
+FAILED (non-Go target), error lines:
+  Error [AgentPlatError]: bootstrap config is required
+  Error [AgentPlatError]: bootstrap config is required
+  (full output in *_clean.log)
+
+⚠ 2 UNCAPTURED ERRORS:
+(error-like lines the parser did not capture)
+  FAIL: //services/agentplat/ts-client/itest:itest_extended (Exit 1) (see /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs/services/agentplat/ts-client/itest/itest_extended/test.log)
+  FAIL: //services/agentplat/ts-client/itest:itest (Exit 1) (see /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs/services/agentplat/ts-client/itest/itest/test.log)

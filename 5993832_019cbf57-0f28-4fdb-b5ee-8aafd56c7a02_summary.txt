@@ -1,0 +1,6 @@
+Build: 5993832
+Job: agentplat-test (019cbf57-0f28-4fdb-b5ee-8aafd56c7a02)
+
+Bazel: executed 3 of 92 tests, 92 passed, 0 failed
+
+All 92 packages passed.

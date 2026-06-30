@@ -1,0 +1,6293 @@
+{
+  "type": "gotest",
+  "packages": [
+    {
+      "target": "//config/terraform/modules/accounts:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/aws-route53/private-zone/consumer/single:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/service-auxiliary-resources:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/fqdn/consumer/batch:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/security-group-access:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/core-2/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/eks-external-load-balancer:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/cms-2/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/aws-vpc/vpc/consumer/single:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/blobstore-s3-buckets/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/constants:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/aws-vpc/security-group/consumer/batch:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/aws-vpc/modules/config:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/env-flag/consumer/batch:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/security-group-allow-all-egress:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/ci-0/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/datadog-keys:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/spd-1/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/eks-internal-load-balancer:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/revamp-0/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/asserts/runtime-assertion:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/service-auxiliary-resources/input-validation:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/main/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/eks-network-load-balancer:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/spd-2/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/pod-iam-role:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/cms-1/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/aws-vpc/subnet-set/consumer/batch:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/region-alias/consumer/single:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/ci-2/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/core-1/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/fqdn/consumer/single:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/revamp-2/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/config-def-path:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/ci-1/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/infra-metadata/env-flag/consumer/single:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/spd-0/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/datadog-monitor:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/revamp-1/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/core-0/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/datadog-k8s-monitors:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/eks-clusters:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//k8s/cluster/cms-0/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//config/terraform/modules/prod-options:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/terraform/generated_outputs:tf_gen_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/stream-protocol:ts_typecheck_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ts-client:ts_typecheck_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ts-client/itest:ts_itest_typecheck_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/terraform:tf_gen_0_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/terraform:tf_gen_2_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/pluginmap/internal/fsutil:fsutil_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestCopyFile_Basic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyFile_PreservesPermissions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyFile_MissingSource",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyFile_OverwritesExisting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyDir_Basic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyDir_NestedDirs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyDir_EmptyDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCopyDir_MissingSource",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/proto:proto_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestNewResponse",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWithWorkspaceDeepCopy",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceIDIsZero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContextIsZero/nil_context",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestNewErrorResponse",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidationErrorFormat",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionIDIsZero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRepoIDIsZero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContextIsZero/empty_workspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData/missing_data_field",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData/empty_data_object",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData/malformed_JSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData/valid_data",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionsDeltaEventRoundTrip/error_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionsDeltaEventRoundTrip/text_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData/invalid_data_type",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRequestData",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContextIsZero/non-zero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContextIsZero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionsDeltaEventRoundTrip/result_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/text_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/tool_result_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/result_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/error_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/unknown_type",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/malformed_JSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/reasoning_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta/tool_call_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDecodeStreamDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionsDeltaEventRoundTrip/tool_call_delta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionsDeltaEventRoundTrip",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionCreateRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/DirMkdirRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileMoveRequest/missing_destinationPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceStatusRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/DirListRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/valid_maxTurns_zero",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileDeleteRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/DirMkdirRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/valid_interrupt+revert",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/missing_requestId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/valid_with_prompt_only",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceUpdateCredentialsRequest/missing_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceUpdateCredentialsRequest/missing_repoId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceSaveRequest/missing_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceSaveRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceUpdateCredentialsRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileReadRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileMoveRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceSetupReposRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceStatusRequest/missing_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileMoveRequest/missing_sourcePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/BgExecStatusRequest/missing_processId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/ExecuteRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/ExecuteRequest/missing_command",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceDeleteRequest/missing_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileDeleteRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/ExecuteRequest/zero_timeout_is_valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/wrong_type",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionSendRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionLeaveRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionGetRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileExistsRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/BgExecLogsRequest/missing_processId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/BgExecStatusRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/valid_maxTurns_positive",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/missing_provider",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionJoinRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/negative_maxTurns",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/missing_prompt",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileWriteRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionJoinRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionPromptRequest/revert_without_interrupt",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionCreateRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionDeleteRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionGetRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceSetupReposRequest/missing_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionLeaveRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionSendRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileExistsRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/ExecuteRequest/negative_timeout",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileReadRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/FileWriteRequest/missing_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/BgExecLogsRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SessionDeleteRequest/missing_sessionId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/missing_fileKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/WorkspaceDeleteRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/missing_userId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/DirListRequest/valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate/SubscribeRequest/missing_prompt",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidate",
+          "status": "PASS",
+          "duration_secs": 0.01
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/agentcontrol/internal/nimbus:nimbus_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestGetOrCreateSandbox",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetSandboxStatus",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetSandboxByRoutingKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDeleteSandbox",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestNotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestUnauthorized",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestServerError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/logging:logging_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestNewDevboxHandler/nil_options_uses_default_level",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestNewDevboxHandler/custom_level",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestNewDevboxHandler",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Enabled/debug_disabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Enabled/info_disabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Enabled/warn_enabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Enabled/error_enabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Enabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Handle",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Handle_OutputStructure",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_Handle_EmptyMessage",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_WithAttrs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_WithGroup",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_WithNestedGroups",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDevboxHandler_WithEmptyGroup",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/agentproxy/internal/connections:connections_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestNewManager",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAddAndRemoveConnection",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRateLimiting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDrainConnections",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestUpdateRateLimiter",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/stressor/config:config_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestLoadConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/valid_config",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/invalid_MAX_CONCURRENT_OPS_-_too_low",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/invalid_MAX_CONCURRENT_OPS_-_too_high",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/invalid_LOG_FORMAT",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/missing_TICK_INTERVAL_when_RUN_ONCE_is_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/TICK_INTERVAL_provided_when_RUN_ONCE_is_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation/missing_UGIT_JWT_KMS_KEY_ARN",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestValidation",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel/debug",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel/info",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel/warn",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel/error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel/unknown",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseLogLevel",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/templates/agents/plugins:plugins_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/add-annotations/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/add-effects/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/add-masks/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/add-prototyping/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/audit-design/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/batch-modify/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/clean-up-file/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/combine-shapes/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/convert-node-types/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-components/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-connector/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-gradients/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-section/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-shape-with-text/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/create-sticky/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/duplicate-and-arrange/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/edit-image/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/edit-text/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/edit-vector/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/find-nodes/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/generate-flow/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/generate-variations/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/insert-nodes/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/inspect-layer-tree/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/inspect-parent-layout/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/manage-node-hierarchy/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/manage-pages/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/manage-styles/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/position-nodes/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/set-clipping/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/set-corner-radius/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/set-fills/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/set-strokes/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/toggle-visibility-and-locking/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/use-design-system/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/use-instances/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/use-variables/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/assistant/skills/work-with-images/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/conversation/skills/ask_user_question/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/example-tool/skills/example-skill/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/make-vite/skills/vite-reader/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/react-router/skills/react-router/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/supabase/skills/supabase/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter/unsplash/skills/unsplash/SKILL.md",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSkillFrontmatter",
+          "status": "PASS",
+          "duration_secs": 0.01
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/workspace:workspace_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestClassifyGitError/auth_failed_basic",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestClassifyGitError/auth_failed_invalid_credentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/auth_failed_could_not_read_username",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/auth_failed_HTTP_401",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/auth_failed_HTTP_403",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/repo_not_found",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/repo_does_not_exist",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/repo_HTTP_404",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/empty_repo_-_not_found_in_upstream",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/empty_repo_-_rev-parse_HEAD_on_repo_with_no_commits",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_HTTP_500",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_HTTP_502",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_HTTP_503",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_HTTP_429",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_service_unavailable",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/server_error_internal_server_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_could_not_resolve_host",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_connection_refused",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_connection_timed_out",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_connection_reset",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_unreachable",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_EOF",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/network_error_TLS_handshake_timeout",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/unknown_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError/empty_stderr",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClassifyGitError",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestGetWorkspaceForPath/exact_repo_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/file_under_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/nested_repo_exact_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/file_under_nested_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/similar_prefix_but_different_dir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/unmanaged_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath/workspace_root_without_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetWorkspaceForPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCreateAndDeleteWorkspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestListWorkspaces",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/URL_with_username_and_password",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/URL_with_only_username",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/URL_without_credentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/no_URL_at_all",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/multiple_URLs_with_credentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/http_URL_with_credentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials/empty_string",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRedactCredentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/pathutil:pathutil_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestResolvePath/empty_path_returns_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/dot_returns_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/relative_path_joined_with_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/deeply_nested_relative_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_within_workspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_equal_to_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_outside_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_with_traversal_is_cleaned",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/relative_path_traversal_errors",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/nested_path_traversal_errors",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/backslash_path_traversal_blocked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/workspace_root_with_trailing_slash",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/double_slashes_normalized",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/empty_workspace_root_errors",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/similar_prefix_is_allowed_-_/workspaces/default2_vs_/workspaces/default",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/root_workspace_allows_all_absolute_paths",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/auth:auth_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestTestAuth/valid_credentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestTestAuth/no_auth_returns_401",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestTestAuth/wrong_password_returns_401",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestTestAuth",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256/valid_token",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256/expired_token",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256/invalid_signature",
+          "status": "PASS",
+          "duration_secs": 0.19
+        },
+        {
+          "name": "TestJWTAuth_RS256/unknown_key_ID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256/invalid_token_format",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256/prefix_token",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_RS256",
+          "status": "PASS",
+          "duration_secs": 0.31
+        },
+        {
+          "name": "TestJWTAuth_AlgorithmValidation/allowed_algorithm_succeeds",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_AlgorithmValidation",
+          "status": "PASS",
+          "duration_secs": 0.07
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_first_key_works",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_second_key_fails_before_adding",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_second_key_works_after_adding",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_first_key_still_works",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_first_key_fails_after_removal",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation/token_with_second_key_still_works",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_KeyRotation",
+          "status": "PASS",
+          "duration_secs": 0.35
+        },
+        {
+          "name": "TestJWTAuth_ClockSkew/token_slightly_in_future_accepted_within_skew",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_ClockSkew",
+          "status": "PASS",
+          "duration_secs": 0.04
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens/valid_prefix_token",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens/prefix_matches_repos_under_prefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens/prefix_too_short_rejected_at_verify",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens/leading_slash_in_repo_path_is_normalized",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens/exact_token_does_not_match_prefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_PrefixTokens",
+          "status": "PASS",
+          "duration_secs": 0.08
+        },
+        {
+          "name": "TestJWTAuth_MultiOp/multi-op_token_grants_both_read_and_write",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_MultiOp/single_read_op_does_not_have_write",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_MultiOp",
+          "status": "PASS",
+          "duration_secs": 0.15
+        },
+        {
+          "name": "TestJWTAuth_MultiRepo/multi-repo_token_matches_all_listed_repos",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_MultiRepo/mixed_prefix_and_exact_repos",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_MultiRepo",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestJWTAuthMiddleware/valid_write_token_for_push",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware/read_token_rejected_for_push",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware/multi-op_token_allows_push",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware/wrong_repo_rejected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware/username_mismatch_rejected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware/no_auth_returns_401",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuthMiddleware",
+          "status": "PASS",
+          "duration_secs": 0.04
+        },
+        {
+          "name": "TestJWTPrefixAuthMiddleware/prefix_token_allows_access_to_repos_under_prefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTPrefixAuthMiddleware/prefix_token_denied_for_repos_outside_prefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTPrefixAuthMiddleware",
+          "status": "PASS",
+          "duration_secs": 0.16
+        },
+        {
+          "name": "TestJWTAuth_NoKeys",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_InvalidKeyType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_FigjwtPrefix/token_with_figjwt__prefix_is_accepted",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_FigjwtPrefix/token_without_figjwt__prefix_still_works",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_FigjwtPrefix/middleware_accepts_figjwt__prefixed_password",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestJWTAuth_FigjwtPrefix",
+          "status": "PASS",
+          "duration_secs": 0.13
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/fswatch:fswatch_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestFuzz_SingleView_Paced",
+          "status": "PASS",
+          "duration_secs": 1.12
+        },
+        {
+          "name": "TestFuzz_SingleView_Burst",
+          "status": "PASS",
+          "duration_secs": 0.6
+        },
+        {
+          "name": "TestFuzz_MultiView",
+          "status": "PASS",
+          "duration_secs": 0.57
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/empty_workspace_root_returns_path_as-is",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/relative_path_resolved_against_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/empty_path_resolves_to_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/dot_resolves_to_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/absolute_path_within_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/absolute_path_outside_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/path_with_dots_is_cleaned",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/relative_path_traversal_via_../../etc/passwd_is_rejected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/relative_path_traversal_via_subdir/../../.._is_rejected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute/symlink_pointing_outside_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ResolveToAbsolute",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ToRelativePath/empty_workspace_root_returns_path_as-is",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ToRelativePath/converts_absolute_to_relative",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ToRelativePath/workspace_root_itself_resolves_to_dot",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPathResolver_ToRelativePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsUnderPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/absolute_target_within_workspace_is_converted_to_relative",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/absolute_target_equal_to_workspace_root_is_converted_to_dot",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/absolute_target_outside_workspace_stays_absolute",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/relative_target_is_returned_unchanged",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/relative_target_without_dots_is_returned_unchanged",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/nil_resolver_returns_target_unchanged",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/empty_workspace_root_returns_target_unchanged",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget/absolute_target_with_dots_is_cleaned_and_converted",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveSymlinkTarget",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCoreWatcher_RefCounting",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestCoreWatcher_RemovePath_NotTracked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCoreWatcher_AddPath_Error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestView_Register_Dir_WalksSubdirs",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestView_Register_Dir_SkipsIgnored",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestView_Register_File",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestView_Unregister",
+          "status": "PASS",
+          "duration_secs": 0.04
+        },
+        {
+          "name": "TestView_HandleEvent_MatchesPath",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestView_HandleEvent_IgnoresPath",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestViewManager_AddView_RemoveView",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestViewManager_DeliverEvent_RoutesToAllMatchingViews",
+          "status": "PASS",
+          "duration_secs": 0.04
+        },
+        {
+          "name": "TestViewManager_RemoveView_StopsDelivery",
+          "status": "PASS",
+          "duration_secs": 0.02
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/domain:domain_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestRepoPath_S3Prefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRepoPath_RefsKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRepoPath_PackKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRepoPath_TmpPrefix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_GetRef",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_SetRef_New",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_SetRef_Update",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_SetRef_ClearsSymbolic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_DeleteRef",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_DeleteRef_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_ActivePacks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_HasPack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_AddPack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_TombstonePack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_TombstonePack_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_RemoveTombstones",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_RemoveTombstones_Empty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_AllPackUUIDs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsCreate/create_(zero_old)",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsCreate/update_(non-zero_old)",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsCreate/delete",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsCreate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsDelete/delete_(zero_new)",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsDelete/create",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsDelete/update",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefUpdate_IsDelete",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestObjectType_String",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHash_ZeroValue",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHash_Comparison",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/transport:transport_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestAgentServerRegistration",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAgentServerDuplicateRegistration",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAgentServerWebSocket",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAgentServerPermissions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWSClient",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestStreamingHandlerRegistration",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestStreamingHandlerWebSocket",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestStreamingHandlerPermissions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPerConnectionRegistration",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAgentServerUnknownCommand",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractRawData/valid_data_field",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractRawData/missing_data_field",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractRawData/invalid_JSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractRawData",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/pack:pack_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestEncoder/encode",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEncoder/encode_empty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEncoder",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_ValidRoundtrip",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestParser_TruncatedHeader",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_InvalidMagic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_InvalidVersion",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_TruncatedObjectData",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_CorruptedZlib",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParser_EmptyPack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/pluginmap/internal/jsonmerge:jsonmerge_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestReadOrCreate_MissingFile",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReadOrCreate_ValidJSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReadOrCreate_InvalidJSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWriteJSON_CreatesFile",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWriteJSON_Formatting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMergeSettings_CreatesNewFile",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMergeSettings_AddsNewField",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMergeSettings_MergesIntoExistingMap",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEnsureMap_MissingKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEnsureMap_ExistingMap",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEnsureArray_MissingKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestEnsureArray_ExistingArray",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAppendUnique_NewItem",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAppendUnique_DuplicateItem",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAppendUnique_MapItem",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAppendUnique_MissingKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/terraform:tf_gen_3_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/client:client_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestWSClient_NewWSClient",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHttpToWebSocketURL",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRepository_Fields",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatchCommand_Fields",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatchMsg_Fields",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/gitclient:gitclient_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestBootstrap_SafeDirectories",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_SafeDirectoriesWildcard",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_NoSafeDirectories",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_FullConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_NoTrace2",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_NoCredentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_CredentialEncoding",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_PartialCredentials",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_Idempotent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCommand_SetsDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCommand_SetsEnv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/plugin:plugin_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestRenderCommand",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_EmptyDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_WithPlugins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHasPlugin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetPlugin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGetPlugin_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutor_Exec_NilCbox",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutor_Exec_EmptyPluginName",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutor_Exec_Success",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutor_Exec_UnsupportedExtension",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/config:config_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestApplyEnvOverrides/all_fields",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/sandbox_git_enabled_already_set_is_not_a_change",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/password_change_with_config_change_returns_true",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/only_non-bootstrap_keys_returns_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/AGENT_CONFIG_sets_field_and_returns_changed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/same_values_returns_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/password-only_change_does_not_count_as_changed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/ignores_unknown_keys",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/empty_values_do_not_override",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/nil_map_preserves_existing_values",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/empty_map_preserves_existing_values",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/sandbox_git_enabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/AGENT_CONFIG_empty_string_is_not_applied",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/AGENT_CONFIG_different_value_triggers_change",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides/AGENT_CONFIG_same_value_returns_unchanged",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestApplyEnvOverrides",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/template:template_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestRegistry_LoadRepoTemplate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_LoadRepoTemplate_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_ListRepoTemplates",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_ClearCache",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadRepoTemplate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadRepoTemplate_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadRepoTemplate_InvalidYAML",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/fs:fs_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestManager_ResolvePath/relative_path_with_workspaceId",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/absolute_path_outside_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/absolute_path_within_workspace_resolves",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/path_traversal_blocked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/absolute_path_with_traversal_is_cleaned",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/dot_path_resolves_to_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/nested_path_traversal_blocked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/deeply_nested_relative_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/workspaceId_with_trailing_slash",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/empty_workspaceRoot_returns_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/custom_workspace_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/path_with_double_slashes_normalized",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/session_working_directory_used_when_no_workspaceID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath/workspaceID_takes_priority_over_sessionID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ResolvePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/unconditional_write_succeeds_on_new_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/unconditional_write_succeeds_on_existing_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/conditional_write_succeeds_when_mtime_matches",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/conditional_write_fails_when_mtime_does_not_match",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/conditional_write_fails_on_nonexistent_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite/response_includes_actual_mtime_from_filesystem",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConditionalWrite",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WriteFile_ConcurrentCAS",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestConflictError_Message/includes_expected_and_actual_mtime",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConflictError_Message/nonexistent_file_shows_expected_mtime_and_0",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConflictError_Message",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/tar_directory_with_files_and_subdirectories",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/error_when_path_doesn't_exist",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/error_when_path_is_a_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/tar_empty_directory",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/tar_content_is_valid_and_decompressible",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/symlinks_are_stored_as_symlink_entries",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/excludes_filters_out_matching_paths",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/exclude_does_not_match_prefix_of_longer_directory_name",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_TarDirectory/excludes_with_multiple_patterns",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TarDirectory/symlinks_inside_excluded_paths_are_excluded",
+          "status": "PASS",
+          "duration_secs": 0.1
+        },
+        {
+          "name": "TestManager_TarDirectory",
+          "status": "PASS",
+          "duration_secs": 0.13
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/workload:workload_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestWorkspaceConfig_Merge",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_MergeNil",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_GetRepoConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_HasRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionConfig_MergeOtherTakesPrecedence",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionConfig_MergePreservesBaseWhenOtherNil",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionConfig_MergeOverridesExisting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_SessionPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_SessionDisabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAgentConfig_Overrides",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_MergeAgentConfigID/other_takes_precedence",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_MergeAgentConfigID/preserves_base_when_other_empty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_MergeAgentConfigID/sets_from_other_when_base_empty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkspaceConfig_MergeAgentConfigID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecContext_TemplateData",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecContext_WithWorkspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecContext_WithArgs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewProcess_AddLog",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewProcess_GetLogs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewProcess_GetInfo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewManager_GetPreviewStatus_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewManager_StartPreview_NilSbox",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPreviewProcess_calculateBackoff",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_Register",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_RegisterDuplicate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_GetNonExistent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_HandlerRegistration",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_HasHandler",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRegistry_List",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsWorkloadMessage",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMockSboxClient_Execute",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/simple_substitution",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/multiple_substitutions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/no_substitutions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/missing_key_uses_no_value_placeholder",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/invalid_template",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/exec_context_template_data",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate/exec_context_with_args",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderTemplate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSyncTemplates",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSyncTemplates_NonExistentSource",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolveRunfilesPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSyncTemplatesWithStrategy_Overwrite",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSyncTemplatesWithStrategy_SkipIfExists",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/workloads/make:make_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestWorkload_GetDefaultConfig_ClientInitiated",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_CustomTemplate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_AgentTemplate",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_AgentTemplateFallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_Bootstrap",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_Bootstrap_UserOwnerType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_Bootstrap_MissingOwnerType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_GetDefaultConfig_Bootstrap_MissingOwnerID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_Bootstrap",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_Bootstrap_Idempotent",
+          "status": "SKIP",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkload_RegisterHandlers",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBeforePrompt_CallsPreExecHook",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBeforePrompt_ReturnsErrorOnNon200",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAfterPrompt_CallsPostExecHook",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestAfterPrompt_ReturnsErrorOnNon200",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSandboxGit_BeforePrompt_MissingRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSandboxGit_BeforePrompt_CleanRepo",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestSandboxGit_BeforePrompt_CrashRecovery",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestSandboxGit_AfterPrompt_MissingRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSandboxGit_AfterPrompt_NoChanges",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestSandboxGit_AfterPrompt_CommitsAndPushes",
+          "status": "PASS",
+          "duration_secs": 0.04
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/pluginmap/adapter:adapter_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestClaudeAdapter_Name",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_DefaultConfigDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_PluginDirectoryCreated",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestClaudeAdapter_EnabledPluginsRegistered",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_SkillsCopiedToPluginDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_HooksWithRelativePathResolution",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_AbsolutePathsPreserved",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_HookScriptsCopied",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MCPPerPlugin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_ExtraDirsCopied",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_DryRun",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_Idempotency",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MultiplePlugins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_Reset",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_ManifestOmitsEmptyDescription",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_PreservesExistingSettings",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MarketplaceGenerated",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MarketplaceRegisteredInSettings",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MarketplaceMultiplePlugins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_MarketplaceIdempotent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_ResetPreservesOtherMarketplaces",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_DryRunNoMarketplace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_Finalize_DryRun",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_Finalize_PluginsDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeAdapter_Finalize_DefaultConfigDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGet_Claude",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGet_Unknown",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGet_Unimplemented",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/lfs:lfs_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestHandleBatch_Download",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_Download_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_Upload",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleBatch_Upload_AlreadyExists",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_InvalidContentType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_MalformedJSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_InvalidOperation",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleBatch_InvalidOID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleDownload_Exists",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleDownload_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleUpload_Valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleUpload_MissingContentLength",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleUpload_HashMismatch",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleVerify_Valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleVerify_SizeMismatch",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleVerify_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleVerify_MalformedJSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleDownload_StreamsContent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit:ugit_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestDebug_Step1_DirectHandlers",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestDebug_Step2_HTTPServer",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestDebug_Step3_GitCloneEmptyRepo",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestDebug_Step4_GitPushThenClone",
+          "status": "PASS",
+          "duration_secs": 0.12
+        },
+        {
+          "name": "TestDebug_Step5_AnalyzePackfile",
+          "status": "PASS",
+          "duration_secs": 0.01
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/protocol:protocol_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestPktLine/write_and_read_roundtrip",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPktLine/flush_packet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPktLine/invalid_hex_length",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPktLine/data_too_long",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPktLine/delimiter_packet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPktLine",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSidebandWriter/write_data_with_channel_byte",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSidebandWriter/write_progress",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSidebandWriter/write_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSidebandWriter/chunking_large_data",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestSidebandWriter",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestWriteV2Capabilities/with_packfile-uris",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWriteV2Capabilities/without_packfile-uris",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWriteV2Capabilities",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleLsRefs/empty_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleLsRefs/with_refs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleLsRefs/prefix_filtering",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleLsRefs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleFetch/empty_wants",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleFetch/clone_with_wants",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleFetch/incremental_fetch_with_haves",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleFetch",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestHandleFetch_PackfileURIs",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleFetch_PackfileURIs_IncrementalWithHaves",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleFetch_PresignFallback",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestHandleReceivePack/create_ref",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleReceivePack/reject_delete_ref",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleReceivePack/reject_force_push",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleReceivePack/empty_request",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleReceivePack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleCommand_UnknownCommand",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/storage:packcache_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestPackCache_GetMiss",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_PutAndGet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_PutLastWriterWins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_Evict",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_EvictMissing",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_LRUEviction",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_LRUEviction_MultipleEntries",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_SizeBytesAccounting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_ConcurrentPutGet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackCache_ConcurrentEvict",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/server:server_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestParseRepoPath_Valid/git_suffix_info_refs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/no_git_suffix_info_refs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/git_upload-pack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/git_receive-pack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/nested_org",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/lfs_batch",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid/lfs_objects",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_Valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_PathTraversal/dotdot_in_owner",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_PathTraversal/dotdot_in_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_PathTraversal/dotdot_mid_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_PathTraversal",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NullByte",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_EmptyOwner/just_git_suffix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_EmptyOwner/empty_before_git",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_EmptyOwner",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_LFSPaths/lfs_batch",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_LFSPaths/lfs_object_download",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_LFSPaths/lfs_verify",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_LFSPaths",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NoServicePath/no_service_suffix",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NoServicePath/random_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NoServicePath/just_slash",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NoServicePath/empty_string",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseRepoPath_NoServicePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractLFSOID_Valid",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractLFSOID_WithTrailingPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractLFSOID_InvalidPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractLFSOID_InvalidOID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMetricsMiddleware_SourceTag/stressor_user_tagged_as_stressor",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMetricsMiddleware_SourceTag/regular_user_tagged_as_organic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMetricsMiddleware_SourceTag/no_auth_tagged_as_organic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMetricsMiddleware_SourceTag",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/agentproxy/internal/proxy:proxy_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestNewProxy",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandler",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware/local_figma_engineering_origin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware/localhost_origin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware/localhost_3000_origin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware/other_origin_-_no_CORS",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware/OPTIONS_preflight",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCORSMiddleware",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_MissingUserID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_MissingFileKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_FileKeyFromHeader",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_OwnerIDFromQuery",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_OwnerIDFromHeader",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_OwnerIDPreferredOverFileKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHandleRequest_DefaultOwnerTypeIsFile",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/agentproxy/internal/router:router_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestComputeShardKey/basic_case",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey/different_user_same_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey/same_user_different_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey/single_range",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey_Deterministic",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey_FileBasedRouting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeShardKey_Distribution",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestComputeRangeIndex/valid_key_000",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeRangeIndex/valid_key_123",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeRangeIndex/valid_key_255",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeRangeIndex/invalid_format",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestComputeRangeIndex",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGenerateAllShardKeys",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestShardKeyRange_Contains",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/internal/storage:storage_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestCompactor_ShouldCompact/MaxPacks_<=_0_returns_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_ShouldCompact/below_threshold_returns_false",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_ShouldCompact/at_threshold_returns_true",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_ShouldCompact/above_threshold_returns_true",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_ShouldCompact/EveryNPushes_modulo_controls_timing",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_ShouldCompact",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_Compact_MergesAllObjects",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestCompactor_Compact_SinglePack",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_Compact_ZeroObjects",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCompactor_Compact_UploadFailure",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestCompactor_Compact_ConcurrentPushPreservesNewPack",
+          "status": "PASS",
+          "duration_secs": 0.47
+        },
+        {
+          "name": "TestCompactor_Compact_AllPacksFailToDownload",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestGC_CollectTombstones_ExpiredPacks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectTombstones_RecentPacks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectTombstones_Empty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectTombstones_NoRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectOrphans_NoRefStore",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectOrphans_OlderThanTTL",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectOrphans_NewerThanTTL",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestGC_CollectAll",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush/creates_new_repo_with_pack_and_refs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush/rejects_update_with_wrong_OldTarget",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush/rejects_force_push_on_existing_ref_(append-only)",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush/rejects_ref_deletion_(append-only)",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush/allows_normal_update_with_correct_OldTarget",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CommitPush",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_Compaction",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestPackManager_AsyncCompaction",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestPackManager_Close",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestPackManager_Load/returns_ErrRepoNotFound_for_nonexistent_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_Load/returns_refs_after_CommitPush",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_Load",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPackManager_CompactionEvictsCache",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestPackManager_ConcurrentCompactionDifferentRepos",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestPackManager_CompactionSemaphore",
+          "status": "PASS",
+          "duration_secs": 0.07
+        },
+        {
+          "name": "TestRefStore/new_repo_returns_ErrRepoNotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore/save_and_load_preserves_data",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore/CAS_conflict_on_stale_etag",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore/Update_creates_new_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore/Update_returning_nil_aborts",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_Update_CASRetry",
+          "status": "PASS",
+          "duration_secs": 0.2
+        },
+        {
+          "name": "TestRefStore_Update_CASMaxRetries",
+          "status": "PASS",
+          "duration_secs": 2.03
+        },
+        {
+          "name": "TestRefStore_Update_ContextCancellation",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRefStore_Update_ConcurrentConflict",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestSimpleObjectResolver_FindWithFallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSimpleObjectResolver_GetWithFallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSimpleObjectResolver_ExistsWithFallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSimpleObjectResolver_FindManyWithFallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSimpleObjectResolver_FindManySwallowsFallbackError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSimpleObjectResolver_ConcurrentAccess",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestS3ObjectResolver_RefCachingEnabled",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestS3ObjectResolver_RefCachingDisabled",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestS3ObjectResolver_FindAndGetObjects",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestS3ObjectResolver_FindMany",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestS3ObjectResolver_FindMany_PartialResults",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestS3ObjectResolver_ObjectNotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestS3ObjectResolver_GetReader",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestThinPack_S3Resolver_ResolvesDistinctDeltaObject",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestThinPack_S3Resolver_AbsentBaseReturnsError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestThinPack_S3Resolver_IncrementalFetch",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestThinPack_Compaction_SucceedsWhenThinPackPresent",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestThinPack_Compaction_MergedPackContainsAllObjects",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestThinPack_Compaction_ThickPacksOnlySucceeds",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestThinPack_Compaction_MixedPacksSucceed",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestThinPack_Compaction_ChainedRefDelta",
+          "status": "PASS",
+          "duration_secs": 0.03
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/mapper:mapper_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestClaudeMapper_AssistantText",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AssistantThinking",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AssistantToolUse",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AssistantMixedBlocks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AssistantAllSkipped",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AssistantEmptyContent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_UserToolResult",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_UserToolResultError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_UserStringContent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_UserNonToolBlocksSkipped",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_ResultSuccess",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_ResultError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_StreamEventTextDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_StreamEventThinkingDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_StreamEventInputJsonDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_StreamEventEmptyTextDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_StreamEventNonDelta",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_SystemMessage",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_AuthStatus",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_ToolProgress",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_ToolUseSummary",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestClaudeMapper_UnknownType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/agentcontrol/internal/requestctx:requestctx_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestNewRequestContext",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWithContext",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFromContext_Missing",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMustFromContext_Panics",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMustFromContext_Success",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/monitor:monitor_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestParseTrace2Events/fetch_command",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/push_command",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/failed_command",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/error_events",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/no_error_events",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/missing_cmd_name_falls_back_to_argv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events/no_exit_event_returns_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestParseTrace2Events_MalformedLines",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestParseTrace2Events_EmptyFile",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv/simple_command",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv/command_with_flags_before_subcommand",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv/full_path_to_git",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv/empty_argv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv/only_git",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractCommandFromArgv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/successful_command_is_not_expected_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/clone_with_remote_branch_not_found",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/rev-parse_on_empty_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/diff_exit_code_1",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/diff_exit_code_128_is_not_expected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError/push_failure_is_not_expected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestIsExpectedError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestMonitorRun_ConsumesFiles",
+          "status": "PASS",
+          "duration_secs": 0.15
+        },
+        {
+          "name": "TestMonitorRun_ProcessesExistingFiles",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestMonitorRun_LogsWarnOnFailedCommand",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestMonitorRun_DrainsOnShutdown",
+          "status": "PASS",
+          "duration_secs": 0.05
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/lock:lock_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestManager_EmptyLockID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_SerializesExecution",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_DifferentLockIDsRunConcurrently",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_ContextCancellation",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_CleansUpIdleLocks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_CleansUpAfterContextCancellation",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestManager_ConcurrentAcquireReleaseSameLock",
+          "status": "PASS",
+          "duration_secs": 0.1
+        },
+        {
+          "name": "TestManager_TryAcquire_Success",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TryAcquire_Busy",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TryAcquire_EmptyLockID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_TryAcquire_CleansUpOnBusy",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_Observer",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_Observer_Timeout",
+          "status": "PASS",
+          "duration_secs": 0.03
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/pluginmap/mapper:mapper_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestDiscoverPlugins_EmptyDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_NoPluginsDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_OnlySkills",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_AllTypes",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_MultiplePlugins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_SkipsDirWithoutSKILLMD",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_MCPConfigMalformed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRun_DispatchesToAdapter",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRun_CallsFinalize",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRun_NoPlugins_SkipsFinalize",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_HooksDirWithoutManifest",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_HooksJSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_MissingManifest",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_ManifestMissingName",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_ManifestMissingVersion",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_PluginsFilter",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRun_PluginsFilter",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_ManifestMalformed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_ManifestNameOverridesDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_DirSet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDiscoverPlugins_ExtraDirs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/ugit/terraform:tf_gen_1_test",
+      "passed": true,
+      "tests": [],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/server:server_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestFSWatch_DirListing_Direct",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestFSWatch_DirListing_Recursive",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestFSWatch_DirListing_None",
+          "status": "PASS",
+          "duration_secs": 0.2
+        },
+        {
+          "name": "TestFSWatch_FileSnapshot_ViaWatch",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_FileNone_NoSnapshot",
+          "status": "PASS",
+          "duration_secs": 0.2
+        },
+        {
+          "name": "TestFSWatch_Resync_Dir_UpdatedContent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_Resync_File_UpdatedContent",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_FileChangeEvent_DirWatch",
+          "status": "PASS",
+          "duration_secs": 0.2
+        },
+        {
+          "name": "TestFSWatch_FileChangeEvent_SnapshotMode",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestFSWatch_Unwatch_Dir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_Unwatch_File",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_NonexistentPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_IgnorePatterns",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_PerConnectionIsolation",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_MultipleWatches",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_ConcurrentFileEvents",
+          "status": "PASS",
+          "duration_secs": 0.15
+        },
+        {
+          "name": "TestFSWatch_Resync_UnwatchedPath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFSWatch_RecursiveWatch_FullWorkflow",
+          "status": "PASS",
+          "duration_secs": 0.31
+        },
+        {
+          "name": "TestFSWatch_IgnoredDirCreation_NoEvents",
+          "status": "PASS",
+          "duration_secs": 0.5
+        },
+        {
+          "name": "TestFSWatch_NestedDirCreation_DeepEvents",
+          "status": "PASS",
+          "duration_secs": 0.35
+        },
+        {
+          "name": "TestFSWatch_ContentSnapshot_DirWatch",
+          "status": "PASS",
+          "duration_secs": 0.15
+        },
+        {
+          "name": "TestReady_NoWorkloadConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_EmptyWorkloadName",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_BootstrapServiceCreated",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_NoBootstrapServiceWithoutWorkload",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_EndpointRegisteredWithWorkload",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_Returns500OnBootstrapFailure",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_GETMethodNotAllowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_WithAuthMiddleware",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_HealthNotAffected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_PingNotAffected",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_EnvVarsAppliedFromRequestBody",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_ValidationErrorWithoutEnvVars",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_MalformedBodyReturns400",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestReady_EmptyBodyNoEnvVarsStillWorks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/relative_path_with_workspacePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_outside_workspace_is_allowed",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_within_workspace_resolves",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/path_traversal_blocked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/absolute_path_with_traversal_is_cleaned",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/dot_path_resolves_to_workspace_root",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/nested_path_traversal_blocked",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/deeply_nested_relative_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/workspacePath_with_trailing_slash",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/empty_workspacePath_returns_error",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/custom_workspace_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath/path_with_double_slashes_normalized",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePath",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestDefaultWorkspaceCreated",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext/NewExecutionContext_creates_context_with_args_map",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext/WithWorkspace_creates_copy_with_new_workspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext/IsZero_returns_true_for_nil_context",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext/IsZero_returns_true_for_zero_workspace",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext/IsZero_returns_false_for_valid_context",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExecutionContext",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/session:session_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestPromptBuffer_WriteAndRead",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_Complete",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_CompleteNonZeroExit",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_WaitForData",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestPromptBuffer_WaitForDataOnComplete",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestPromptBuffer_WriteAfterComplete",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_Size",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_Remove",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_ConcurrentReadWrite",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestPromptBuffer_LastWriteAt",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestPromptBuffer_Stderr",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_OnFirstWriteCallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestPromptBuffer_OnInterMessageGapCallback",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestExtractSessionID/valid_session_ID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractSessionID/missing_session_id_field",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractSessionID/empty_session_id",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractSessionID/invalid_JSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractSessionID/empty_input",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestExtractSessionID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/default_params_—_hardcoded_flags_only",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/all_per-prompt_flags_set",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/session_resume_includes_--resume_flag",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/model_only",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/max_turns_only",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/allowed_tools_joined_with_comma",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/zero_max_turns_not_included",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/negative_max_turns_not_included",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/empty_allowed_tools_not_included",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/model_with_spaces_is_a_single_arg",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/system_prompt_with_newlines_is_a_single_arg",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/system_prompt_with_null_byte_passed_through",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs/allowed_tools_with_commas_in_names",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildArgs",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestBuildEnv/includes_config_dir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv/allowed_env_vars_pass_through",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv/disallowed_env_vars_are_silently_dropped",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv/nil_env_map",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv/env_vars_from_SessionPromptRequest_are_wired_through",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv_DeduplicatesHostEnv",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildEnv_DeduplicatesConfigDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildStdin/text_only",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildStdin/text_with_image",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildStdin/text_with_no_images",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildStdin",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBuildStdin_MultipleImagesPreservesOrder",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSystemGitHook_BeforePrompt_MissingRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSystemGitHook_BeforePrompt_CleanRepo",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestSystemGitHook_BeforePrompt_CrashRecovery",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_MissingRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_NoChanges",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_CommitsChanges",
+          "status": "PASS",
+          "duration_secs": 0.51
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_ContextCancelled",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestSessionSave_CommitsOnPromptComplete",
+          "status": "PASS",
+          "duration_secs": 4.11
+        },
+        {
+          "name": "TestSessionSave_NoopWithoutChanges",
+          "status": "PASS",
+          "duration_secs": 4.21
+        },
+        {
+          "name": "TestSessionSave_PushesToRemote",
+          "status": "PASS",
+          "duration_secs": 0.16
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_Revert",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_Revert_MissingRepo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionRevert_DiscardsChangesOnInterrupt",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestSessionRevert_CommitsWhenRevertFalse",
+          "status": "PASS",
+          "duration_secs": 4.2
+        },
+        {
+          "name": "TestSystemGitHook_AfterPrompt_GitignoreExcludesManagedFiles",
+          "status": "PASS",
+          "duration_secs": 0.64
+        },
+        {
+          "name": "TestSessionSave_PullsRemoteChangesBeforePrompt",
+          "status": "PASS",
+          "duration_secs": 0.17
+        },
+        {
+          "name": "TestHookChain_RunBefore_StopsOnFirstError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHookChain_RunBefore_RunsAllOnSuccess",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHookChain_RunAfter_ContinuesAfterError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHookChain_RunBefore_TimeoutEnforced",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestHookChain_RunBefore_EmitsPhaseTotal",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHookChain_RunAfter_EmitsPhaseTotal",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_BeforeHookFailed",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestSetupWorkloadHooks_ReplacesExisting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupWorkloadHooks_AddsToEmptyChain",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupWorkloadHooks_ReplacesOneWithAnother",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupWorkloadHooks_PreservesSystemHooks",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupWorkloadHooks_TracksWorkloadName",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_PromptCreatesSession",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_PromptExistingSession",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_PromptQueueing",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_GetSession",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_GetSession_NotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ListSessions",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_DeleteSession",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_DeleteActiveSession_NoForce",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_DeleteActiveSession_Force",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_InterruptActiveSession",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_InterruptIdleSession",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_InterruptNonexistentSession",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_Prompts",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_PersistAndReload",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_PromptIDPoolSurvivesRestart",
+          "status": "PASS",
+          "duration_secs": 0.1
+        },
+        {
+          "name": "TestManager_RunningPromptMarkedLostOnRestart",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_StreamBasic",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_UnsupportedAgentType",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ExplicitWorkspaceID",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_UnknownWorkspaceID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_WorkspaceIDPersistsAcrossReload",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_OldSessionJSONGetsDefaultWorkspaceID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_DefaultWorkspaceIDWhenEmpty",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ConcurrentPromptAndStream",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestManager_InterruptCancelsActiveAndStartsNew",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestManager_QueuedPromptExecutesAfterActiveCompletes",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestSessionError_Is",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSessionError_IsWithWrapping",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_Close_ActivePrompt",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_Close_ActiveAndQueuedPrompts",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_Close_NoActivePrompts",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ExecutorStartFailure",
+          "status": "PASS",
+          "duration_secs": 0.2
+        },
+        {
+          "name": "TestManager_BufferEviction",
+          "status": "PASS",
+          "duration_secs": 0.23
+        },
+        {
+          "name": "TestManager_StreamCursorResume",
+          "status": "PASS",
+          "duration_secs": 2.0
+        },
+        {
+          "name": "TestManager_StreamCursorLatest",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestManager_ForceDeleteWithQueue",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_ConcurrentPromptAndDelete",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestManager_ConcurrentStreamAndEviction",
+          "status": "PASS",
+          "duration_secs": 0.23
+        },
+        {
+          "name": "TestManager_DefaultSessionID/first_prompt_with_default_creates_session",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_DefaultSessionID/second_prompt_with_default_reuses_session",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestManager_DefaultSessionID/delete_default_then_prompt_creates_new_session",
+          "status": "PASS",
+          "duration_secs": 0.11
+        },
+        {
+          "name": "TestManager_DefaultSessionID/different_agent_types_get_separate_defaults",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_DefaultSessionID/concurrent_default_session_creation_returns_same_session",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_DefaultSessionID/force_delete_default_session_while_prompt_is_running",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_DefaultSessionID",
+          "status": "PASS",
+          "duration_secs": 0.21
+        },
+        {
+          "name": "TestManager_MaxPromptSizeIncludesImageData",
+          "status": "PASS",
+          "duration_secs": 0.05
+        },
+        {
+          "name": "TestManager_DefaultSessionRoutingMultipleAgentTypesAfterRestart",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestManager_DefaultSessionID_SurvivesRestart",
+          "status": "PASS",
+          "duration_secs": 0.06
+        },
+        {
+          "name": "TestManager_PromptStartTimeout",
+          "status": "PASS",
+          "duration_secs": 0.55
+        },
+        {
+          "name": "TestManager_PromptIdleTimeout",
+          "status": "PASS",
+          "duration_secs": 0.65
+        },
+        {
+          "name": "TestManager_NoTimeoutWhenMakingProgress",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestManager_PromptEndErrorTypeOnNonZeroExit",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_PromptEndNoErrorOnSuccess",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_ClearIdleSession",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestManager_ClearWithForce",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ClearWithoutForceWhileActive",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_ClearDefaultSession",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_Stream_GenericFormat",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestStream_RawFormat_Unchanged",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestStream_GenericFormat_SkippedMessages",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_ClearNotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive/returns_false_for_empty_configDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive/returns_false_for_nonexistent_dir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive/returns_true_when_debug_file_was_recently_modified",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive/returns_true_when_projects_file_was_recently_modified",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive/returns_false_when_files_are_older_than_lookback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestConfigDirActive",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_IdleTimeoutSuppressedByConfigDirActivity",
+          "status": "PASS",
+          "duration_secs": 1.51
+        },
+        {
+          "name": "TestManager_DefaultSymlinkCreated",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_DefaultSymlinkSurvivesRestart",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_DefaultSymlinkRecreatedOnRestart",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestManager_DefaultSymlinkRemovedOnDelete",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestManager_IsDefaultInList",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestManager_PromptBeforeBootstrap",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestFileSessionStore_SaveAndGet",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_GetDefault",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_GetNotFound",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_Remove",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_List_SkipsTmpAndSymlink",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_List_MissingDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestFileSessionStore_Default",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkloadInChain_BeforePrompt_ForwardsParams",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkloadInChain_BeforePrompt_PropagatesError",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkloadInChain_AfterPrompt_ForwardsResult",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestWorkloadInChain_HookOrdering",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    },
+    {
+      "target": "//services/agentplat/sbox/sboxd/internal/bootstrap:bootstrap_test",
+      "passed": true,
+      "tests": [
+        {
+          "name": "TestSetupAgents",
+          "status": "SKIP",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupAgents_SessionDisabled",
+          "status": "SKIP",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupAgents_WithOverrides",
+          "status": "SKIP",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCreateSymlink",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestCreateSymlink_ReplacesExisting",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSeedSessionRepo_CreatesInitialCommit",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestSeedSessionRepo_IdempotentWithExistingCommits",
+          "status": "PASS",
+          "duration_secs": 0.02
+        },
+        {
+          "name": "TestSeedSessionRepo_PushesToRemote",
+          "status": "PASS",
+          "duration_secs": 0.17
+        },
+        {
+          "name": "TestSeedSessionRepo_PushFailureIsNonFatal",
+          "status": "PASS",
+          "duration_secs": 3.44
+        },
+        {
+          "name": "TestSeedSessionRepo_EmptyRepoCreatesCommit",
+          "status": "PASS",
+          "duration_secs": 0.03
+        },
+        {
+          "name": "TestClaudeConfigDirEntriesClassified",
+          "status": "PASS",
+          "duration_secs": 181.08
+        },
+        {
+          "name": "TestGitignoreAllowsAndIgnoresCorrectEntries",
+          "status": "PASS",
+          "duration_secs": 0.01
+        },
+        {
+          "name": "TestBootstrap_EmptyWorkloadName",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_NilEnvOverridesDoNotAffectConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupAgents_NoAgents",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSeedSessionRepo_ErrorWithoutGitDir",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigWithEnvOverrides",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSeedSessionRepo_NoopWhenSessionDisabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSeedSessionRepo_NoopWithoutAgents",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_Idempotency",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_UnknownWorkload",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupPlugins_ClearsDestinationBeforeSync",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupPlugins_RemovesStalePluginDirectories",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestChownAgentDirs_SessionDisabled_ScopedToAgentDirs",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePluginMap/no_config_ID_returns_nil",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig/missing_file",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession/disabled",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig/experiment_config_with_versioned_source",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig/valid_config",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession/custom_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderOverride/plain_content",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession/adds_repo_when_agents_declared",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession/no_agents",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePluginMap/env_var_override_takes_precedence",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderOverride/template_content",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePluginMap/workload_config_ID_constructs_path",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig/empty_plugins",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestRenderOverride",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession/workload_already_declared_session_repo",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupPlugins_MergesOnTopOfAgentSettings",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig/invalid_JSON",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHomeDirForUser/root_user",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestResolvePluginMap",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestSetupSession",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestLoadAgentConfig",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHomeDirForUser/default_fallback",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHomeDirForUser/empty_username",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestHomeDirForUser",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/missing_UGIT_USERNAME",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/missing_UGIT_BASE_URL",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/missing_WORKLOAD_OWNER_ID",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/missing_UGIT_PASSWORD",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/missing_WORKLOAD_OWNER_TYPE",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation/invalid_UGIT_BASE_URL",
+          "status": "PASS",
+          "duration_secs": 0.0
+        },
+        {
+          "name": "TestBootstrap_ConfigValidation",
+          "status": "PASS",
+          "duration_secs": 0.0
+        }
+      ],
+      "failing_tests": []
+    }
+  ],
+  "bazel_summary": {
+    "executed": 3,
+    "total": 92,
+    "passed": 92,
+    "failed": 0
+  }
+}

@@ -1,0 +1,966 @@
+_bk;t=1773097198959~~~ Running agent environment hook
+_bk;t=1773097198960[90m$[0m /etc/buildkite-agent/hooks/environment
+_bk;t=1773097199002FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED: true
+_bk;t=1773097199003~~~ :broom: Setting up worker environment
+_bk;t=1773097199003~~~ :old_key: Loading job credentials
+_bk;t=1773097199003Fetching job JWT from Buildkite...0m0.192s
+_bk;t=1773097199195Authenticating to the Figma CI credential exchange...fetched imdsv2 token
+_bk;t=1773097199204fetched instance role
+_bk;t=1773097199211fetched instance credentials
+_bk;t=17730971995030m0.292s
+_bk;t=1773097199504Starting an SSH agent and loading figmaci/production/FIGMABOT2_SSH_PRIVATE_KEY...
+_bk;t=1773097199507Agent pid 3009756
+_bk;t=1773097199901Identity added: (stdin) (figmabot+2@figma.com)
+_bk;t=17730972003112026/03/09 23:00:00 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+_bk;t=1773097200569Tags sent successfully
+_bk;t=1773097200570~~~ :lock: Verifying pipeline integrity
+_bk;t=1773097200591[90m# LC_ALL added[0m
+_bk;t=1773097200591[90m# STABLE_COMMITS_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_TOOLS_BUCKET added[0m
+_bk;t=1773097200591[90m# JOB_START added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_PROBER_BUILDS_BUCKET added[0m
+_bk;t=1773097200591[90m# STABLE_COMMITS_TOKEN_SECRET_ID added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_ARTIFACTORY_ENDPOINT added[0m
+_bk;t=1773097200591[90m# ADMIN_AWS_SESSION_TOKEN added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_TEST_QUEUE_REDIS added[0m
+_bk;t=1773097200591[90m# AWS_SESSION_TOKEN added[0m
+_bk;t=1773097200591[90m# ENABLE_DD_COMMAND_LOGGING added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_CACHE_BUCKET added[0m
+_bk;t=1773097200591[90m# ADMIN_AWS_ACCESS_KEY_ID added[0m
+_bk;t=1773097200591[90m# SSH_AGENT_PID added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_XCODE_BUCKET added[0m
+_bk;t=1773097200591[90m# DISK_USAGE_PCT_START added[0m
+_bk;t=1773097200591[90m# CI_JOB_STAGE_FILE added[0m
+_bk;t=1773097200591[90m# BUILDKITE_BINARY_DEPS_HASHES added[0m
+_bk;t=1773097200591[90m# ADMIN_AWS_SECRET_ACCESS_KEY added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_I18N_PUBLIC_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_I18N_PRIVATE_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED added[0m
+_bk;t=1773097200591[90m# CI_HOOK_STAGE_FILE added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_GITHUB_TOKEN added[0m
+_bk;t=1773097200591[90m# AWS_DEFAULT_REGION added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_SINATRA_TEST_DURATION added[0m
+_bk;t=1773097200591[90m# AWS_SECRET_ACCESS_KEY added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_TEMPORAL_WORKFLOW_HISTORIES_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_LAMBDA_BUILDS_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_STEP_SIGNING_KEY_ID added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_TEST_QUEUE_SINATRA_REDIS added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_BAZEL_TARGET_DETERMINATION_BUCKET added[0m
+_bk;t=1773097200591[90m# AWS_ACCESS_KEY_ID added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_GIT_MIRROR_ENDPOINT added[0m
+_bk;t=1773097200591[90m# SSH_AUTH_SOCK added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_PRIVATE_DATA_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_STATE_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_ARTIFACT_CACHE_ENDPOINT added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_VM_BUCKET added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY added[0m
+_bk;t=1773097200591[90m# FIGMA_CI_BUCKET added[0m
+_bk;t=1773097200591[90m# BUILDKITE_AGENTS_PER_INSTANCE added[0m
+_bk;t=1773097200591~~~ Preparing plugins
+_bk;t=1773097200591~~~ Running agent pre-checkout hook
+_bk;t=1773097200591[90m$[0m /etc/buildkite-agent/hooks/pre-checkout
+_bk;t=1773097200612Git trace2 enabled: /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.git-trace2/019cd4d4-1f83-4361-a6ed-0123762b5e9e
+_bk;t=1773097200613agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097200943.				devops			       k8s					   rest-api-schema
+_bk;t=1773097200943..				discovery-pipeline	       kafka					   rootly
+_bk;t=1773097200943agent				docker-compose-logs	       lambda					   .rubocop_todo.yml
+_bk;t=1773097200943.agents				.dockerignore		       launch_darkly				   .rubocop.yml
+_bk;t=1773097200943AGENTS.md			dogma			       .lfsconfig				   ruby
+_bk;t=1773097200943ai-agent			dotfig			       LICENSE					   .ruby-version
+_bk;t=1773097200943aibox				drift-integration	       litmus					   .ruby-version-next
+_bk;t=1773097200943aibox-use-role			dx			       livegraph				   rust
+_bk;t=1773097200943antiabuse			dx-use-role		       livegraph-internal			   rust-toolchain
+_bk;t=1773097200943antiabuse-iframe		e2e			       livequery				   scenegraph-server
+_bk;t=1773097200943artifact-metadata-webhook	editor-embeds		       local-extension-registry			   scripts
+_bk;t=1773097200943artifacts			entity-sync-v2		       m1-docker-compose.yml			   search
+_bk;t=1773097200943asana				envoy			       macos-dev-setup				   search-indexer
+_bk;t=1773097200943.aspect				error-dashboard		       .mailmap					   secrets
+_bk;t=1773097200943bazel				etcd			       maintainers				   security
+_bk;t=1773097200943bazel-ci-targets.txt		figcode			       maintainers.yml				   .semgrepignore
+_bk;t=1773097200943.bazel_fix_commands.json	figdev			       mcp-config.yml				   sentry
+_bk;t=1773097200943.bazelignore			figfile-api		       .mcp.json				   services
+_bk;t=1773097200943.bazeliskrc			figfile-event-stream	       memorydb					   share
+_bk;t=1773097200943.bazelrc			fig_file_random_editor	       .metadata_never_index			   shell
+_bk;t=1773097200943.bazelversion			figgytron		       minifig					   sinatra
+_bk;t=1773097200943beacon				figkube			       minifig.coder.yml			   sinatra-async-worker
+_bk;t=1773097200943benchmark-litmus		figma			       minifig-schema.json			   sinatra-ecs-task
+_bk;t=1773097200943bin				figma-cli		       minifig.yml				   sitemaps
+_bk;t=1773097200943blob-store			figma.code-workspace	       misc-tools				   sites-preview-shared
+_bk;t=1773097200943BUILD.bazel			figmadoc		       mise.amd64.toml				   sites-runtime
+_bk;t=1773097200943buildbuddy.yaml			figma_repl		       mise.coder.toml				   sites-server-renderer
+_bk;t=1773097200943.bundle				figmascope-redaction-lambda    mise.macos.toml				   sites-tests
+_bk;t=1773097200943.cargo				figment			       mise.rce.toml				   sites-usage-data-scraper
+_bk;t=1773097200943Cargo.lock			fig_migrator		       .mise.toml				   smokescreen
+_bk;t=1773097200943Cargo.toml			figser			       mitmproxy-certs				   socket.yml
+_bk;t=1773097200944catalog-info.yaml		figtag			       ml					   sorbet
+_bk;t=1773097200944changestream			file-diff		       mnemo					   spacelift-admin
+_bk;t=1773097200944charts				file-importer		       mobile-android				   spacelift-ci-jobs
+_bk;t=1773097200944cherry_pick			file-proxy		       mobile-common				   sprig
+_bk;t=1773097200944chrome-os-app			.fileTemplates.json	       mobile-ios				   src
+_bk;t=1773097200944ci_env				flag-wizard		       mobile-prototyping			   ssl
+_bk;t=1773097200944ci-schema.json			flink			       MODULE.bazel				   support-chat-iframe
+_bk;t=1773097200944.clang-format-ignore		font-index-tooling	       MODULE.bazel.lock			   surveyors
+_bk;t=1773097200944.claude				fpl			       monitoring				   .syncpackrc.mjs
+_bk;t=1773097200944CLAUDE.md			fullscreen		       monitors					   teams.go
+_bk;t=1773097200944cloud-docker-compose.coder.yml	Gemfile			       msk					   TEAMS.yml
+_bk;t=1773097200944cloud-docker-compose.yml	Gemfile.lock		       multiplayer				   TEAMS_YML_README.md
+_bk;t=1773097200944cloudflare			Gemfile_next.lock	       multiplayer_data_loss_observability_script  .templates
+_bk;t=1773097200944codebase-suggestions		.git			       multiplayer-etcd				   temporal
+_bk;t=1773097200944code-components-transpiler	.gitattributes		       multiplayer-load-test			   temporal-go-worker
+_bk;t=1773097200944code-devtools-worker		.git-blame-ignore-revs	       multiplayer-proxy			   temporal-worker
+_bk;t=1773097200944codegen				git-delete-merged-branches     notion-docs				   terrafig
+_bk;t=1773097200944codemirror6			git-delete-merged-branches.ts  .npmrc					   TESTING.md
+_bk;t=1773097200944code-samples			githooks		       o11y					   test-snapshot-images
+_bk;t=1773097200944code-sandbox-worker		.github			       orca					   tf
+_bk;t=1773097200944.codex				.gitignore		       package.json				   tmp
+_bk;t=1773097200944config				go			       patches					   todo-lint-migrations.md
+_bk;t=1773097200944cors-image-proxy-lambda		.golangci.yml		       payload					   tools
+_bk;t=1773097200944cortex_inspector		go.mod			       permissions				   traffic
+_bk;t=1773097200944.cursor				google-tag-manager	       pixie					   tree-sitter-datadogmonitor
+_bk;t=1773097200944.cursorindexingignore		go.sum			       plugin-gateway				   tunnel
+_bk;t=1773097200944.cursorteam			gov			       .pnpmfile.cjs				   .tx
+_bk;t=1773097200944dagster				graphiql		       pnpm-lock.yaml				   upnode
+_bk;t=1773097200944dashboards			.graphqlrc.yml		       pnpm-workspace.yaml			   vector-aggregator
+_bk;t=1773097200944database_dev			heartbeat-client	       postgresql				   vector-metrics-pipeline
+_bk;t=1773097200944data-eng			heartbeat-cron-lambda	       .prettierignore				   viewer
+_bk;t=1773097200944datahub-executor		heartbeat-server	       .prettierrc				   vitest.workspace.js
+_bk;t=1773097200944db-events-pipeline		heartbeat-server-go	       .prettier_shim.js			   .vscode
+_bk;t=1773097200944dbops				high-integrity-approvals       probers					   vscode-extension
+_bk;t=1773097200944dbschema			high-integrity-approvals.yml   prodbox					   vulny
+_bk;t=1773097200944dbt				hk.pkl			       .projections.json			   WARP.md
+_bk;t=1773097200944deny.toml			.ignore			       .projections.md				   wb
+_bk;t=1773097200944deploys				image-resizer		       .pryrc					   weavy
+_bk;t=1773097200944deps				infra-metadata		       public					   web
+_bk;t=1773097200944design-to-react			infra-tools		       pyrightconfig.json			   webhooks
+_bk;t=1773097200944desktop				integrations		       Rakefile					   web-logger
+_bk;t=1773097200944devbox				integration-test	       rds					   widget-iframes
+_bk;t=1773097200944devbox_cli			interaction-test	       README.md				   widget-oauth
+_bk;t=1773097200944devbox-profiles			internal-packages	       redis					   WORKSPACE
+_bk;t=1773097200944.devcontainer			jira-add-on		       REPO.bazel				   .yamlfmt.yaml
+_bk;t=1773097200944developer-docs			jsvm-cpp		       reports					   .zed
+_bk;t=1773097200944devex				k6			       repo.txt					   zendesk
+_bk;t=1773097200944/var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/figma already exists, skipping
+_bk;t=1773097200944/var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.cache/bazel already exists, skipping
+_bk;t=1773097200970[90m# GIT_TRACE2_EVENT_NESTING added[0m
+_bk;t=1773097200970[90m# GIT_CHECKOUT_START_TIME added[0m
+_bk;t=1773097200970[90m# GIT_TRACE2_EVENT_BRIEF added[0m
+_bk;t=1773097200970[90m# GIT_TRACE2_ENV_VARS added[0m
+_bk;t=1773097200970[90m# GIT_TRACE2_CONFIG_PARAMS added[0m
+_bk;t=1773097200970[90m# BUILDKITE_CLEAN_CHECKOUT added[0m
+_bk;t=1773097200970[90m# GIT_TRACE2_EVENT added[0m
+_bk;t=1773097200970~~~ Preparing working directory
+_bk;t=1773097200970[90m$[0m cd /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/figma
+_bk;t=1773097200970~~~ Running agent checkout hook
+_bk;t=1773097200971[90m$[0m /etc/buildkite-agent/hooks/checkout
+_bk;t=1773097200984In checkout hook v1.0.14
+_bk;t=1773097200987Starting custom checkout logic!
+_bk;t=1773097200987[90m# Using Goblet: true[0m
+_bk;t=1773097200990[90m# Host "github.com" already in list of known hosts at "/var/lib/buildkite-agent/.ssh/known_hosts"[0m
+_bk;t=1773097200990[90m# In checkout directory: /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/figma[0m
+_bk;t=1773097200990[90m# Preparing to use Goblet at http://git-mirror.devex.figma.com:80[0m
+_bk;t=1773097200993[90m# Result of git remote -v 
+_bk;t=1773097200993`origin	http://github.com/figma/figma.git (fetch)
+_bk;t=1773097200993origin	http://github.com/figma/figma.git (push)`[0m
+_bk;t=1773097200993[90m$[0m git remote set-url origin http://github.com/figma/figma.git
+_bk;t=1773097200994[90m$[0m git config http.proxy http://git-mirror.devex.figma.com:80
+_bk;t=1773097201844[90m# buildkite_keep_git_http_proxy is on, keeping git http proxy set[0m
+_bk;t=1773097201844[90m$[0m sudo git clean -ffxdq
+_bk;t=1773097203578[90m$[0m git config --global http.postBuffer 524288000
+_bk;t=1773097204497[90m$[0m git fetch --verbose --negotiation-tip=refs/remotes/origin/HEAD --no-tags -- origin f87b0d15d20cebf3cc318a72e2085b87e15b552b master:refs/remotes/origin/master
+_bk;t=1773097204532POST git-upload-pack (238 bytes)
+_bk;t=1773097206650POST git-upload-pack (966 bytes)
+_bk;t=1773097210743POST git-upload-pack (gzip 1116 to 610 bytes)
+_bk;t=1773097213706From http://github.com/figma/figma
+_bk;t=1773097213706 * branch                      f87b0d15d20cebf3cc318a72e2085b87e15b552b -> FETCH_HEAD
+_bk;t=1773097213707   b30670915879..c54cb405d1cf  master     -> origin/master
+_bk;t=1773097213836[90m# Tracking 0 master commits fetched between b3067091587939e3ca06dc4bc9350ddee56c2523 and 7eb86536ec289f98194802b28c4592bcc12e1510[0m
+_bk;t=1773097213836[90m$[0m git switch --force --detach f87b0d15d20cebf3cc318a72e2085b87e15b552b
+_bk;t=1773097218203Warning: you are leaving 5 commits behind, not connected to
+_bk;t=1773097218203any of your branches:
+_bk;t=1773097218203
+_bk;t=1773097218203  a25fa3b9be81 sandbox: Add async IIFE wrapper note to experimental-v1 prompt
+_bk;t=1773097218203  2697470873cb sandbox: Address PR review feedback on limitation skills
+_bk;t=1773097218203  055e16e2e2ea sandbox: Fix truncated snapshot, remove generate-presentation, fix edit-image wording
+_bk;t=1773097218203  43c2007c8720 sandbox: Fix cortex endpoint schema snapshot against latest master
+_bk;t=1773097218203  2990b19852e3 sandbox: Aggressively strip experimental-v1 skills and add getNodeByIdAsync prompt note
+_bk;t=1773097218203
+_bk;t=1773097218203If you want to keep them by creating a new branch, this may be a good time
+_bk;t=1773097218203to do so with:
+_bk;t=1773097218203
+_bk;t=1773097218203 git branch <new-branch-name> a25fa3b9be81
+_bk;t=1773097218203
+_bk;t=1773097218205HEAD is now at f87b0d15d20c agentplat: add test coverage for bootstrap validation, HTTP handler, and workspace handler
+_bk;t=1773097218838[90m# Using resolve-commit-after-checkout experiment 🧪[0m
+_bk;t=1773097218839[90m# Checking to see if Git data needs to be sent to Buildkite[0m
+_bk;t=1773097218839[90m$[0m buildkite-agent meta-data exists buildkite:git:commit
+_bk;t=1773097218982Git checkout required 0 retries
+_bk;t=1773097218998[90m# GIT_CHECKOUT_RETRIES added[0m
+_bk;t=1773097218998[90m# Checking to see if git commit information needs to be sent to Buildkite...[0m
+_bk;t=1773097218998[90m# BUILDKITE_COMMIT is already resolved and meta-data populated, skipping[0m
+_bk;t=1773097218998~~~ Running agent post-checkout hook
+_bk;t=1773097218998[90m$[0m /etc/buildkite-agent/hooks/post-checkout
+_bk;t=1773097219022git head commit timestamp: 2026-03-09T22:57:56Z
+_bk;t=1773097219023=== Stable commit check context ===
+_bk;t=1773097219023Branch: 03-06-agentplat_add_bootstrap_support_to_workspace_create
+_bk;t=1773097219023Build number: 6031337
+_bk;t=1773097219023Build URL: https://buildkite.com/figma/figma/builds/6031337
+_bk;t=1773097219023Job ID: 019cd4d4-1f83-4361-a6ed-0123762b5e9e
+_bk;t=1773097219023Job label: agentplat-sbox-lint
+_bk;t=1773097219023Pipeline: figma
+_bk;t=1773097219023Step key: agentplat-sbox-lint
+_bk;t=1773097219023Should check stable: false
+_bk;t=1773097219023===================================
+_bk;t=1773097219023Skipping stable check: not a designated job for this pipeline (pipeline=figma, step=agentplat-sbox-lint)
+_bk;t=1773097219037[90m# GIT_HEAD_COMMIT_TIMESTAMP added[0m
+_bk;t=1773097219037[90m# BASED_OFF_STABLE added[0m
+_bk;t=1773097219037[90m# GIT_CHECKOUT_DURATION added[0m
+_bk;t=1773097219038~~~ Running agent pre-command hook
+_bk;t=1773097219038[90m$[0m /etc/buildkite-agent/hooks/pre-command
+_bk;t=1773097219052~~~ Running plugin docker-compose command hook
+_bk;t=1773097219052[90m$[0m devex/buildkite/plugins/docker-compose/hooks/command
+_bk;t=1773097219070{
+_bk;t=1773097219070  "services": {
+_bk;t=1773097219070    "main": {
+_bk;t=1773097219070      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:6ffa30060882073150597f7cd64f541a07f1ec00812f567e45c48c0f71e2c77f",
+_bk;t=1773097219070      "deploy": {
+_bk;t=1773097219070        "resources": {
+_bk;t=1773097219070          "limits": {
+_bk;t=1773097219070            "memory": "6g"
+_bk;t=1773097219070          }
+_bk;t=1773097219070        }
+_bk;t=1773097219070      },
+_bk;t=1773097219070      "labels": {
+_bk;t=1773097219070        "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773097219070        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+_bk;t=1773097219070        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+_bk;t=1773097219070        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+_bk;t=1773097219070        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+_bk;t=1773097219070        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+_bk;t=1773097219070      },
+_bk;t=1773097219070      "volumes": [
+_bk;t=1773097219070        "/var/run/docker.sock:/var/run/docker.sock",
+_bk;t=1773097219070        "/var/lib/buildkite-agent/.docker/:/home/circleci/.docker",
+_bk;t=1773097219070        "/usr/bin/docker-credential-ecr-login:/usr/bin/docker-credential-ecr-login",
+_bk;t=1773097219070        "/var/lib/buildkite-agent/bazel-remote:/home/circleci/bazel-remote",
+_bk;t=1773097219070        "/var/lib/buildkite-agent/.ssh/known_hosts:/home/circleci/.ssh/known_hosts"
+_bk;t=1773097219070      ],
+_bk;t=1773097219070      "depends_on": [],
+_bk;t=1773097219070      "privileged": true,
+_bk;t=1773097219070      "environment": {
+_bk;t=1773097219070        "GOFLAGS": "-mod=mod",
+_bk;t=1773097219070        "RACK_ENV": "test",
+_bk;t=1773097219070        "SETTINGS_YML": "/home/circleci/figma/config/dev_settings.yml",
+_bk;t=1773097219070        "DOCKER_BUILDKIT": "1",
+_bk;t=1773097219070        "TEST_REPORTS_DIR": "/home/circleci/figma/reports",
+_bk;t=1773097219070        "FIGMA_BAZEL_REMOTE_ADDRESS": "unix:///home/circleci/bazel-remote/bazel-remote-grpc.sock",
+_bk;t=1773097219070        "ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK": "1"
+_bk;t=1773097219070      },
+_bk;t=1773097219070      "working_dir": "/home/circleci/figma",
+_bk;t=1773097219070      "network_mode": "service:network",
+_bk;t=1773097219070      "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773097219070      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-main"
+_bk;t=1773097219070    },
+_bk;t=1773097219070    "network": {
+_bk;t=1773097219070      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:6ffa30060882073150597f7cd64f541a07f1ec00812f567e45c48c0f71e2c77f",
+_bk;t=1773097219070      "deploy": {
+_bk;t=1773097219070        "resources": {
+_bk;t=1773097219070          "limits": {
+_bk;t=1773097219070            "memory": "6g"
+_bk;t=1773097219070          }
+_bk;t=1773097219070        }
+_bk;t=1773097219070      },
+_bk;t=1773097219070      "labels": {
+_bk;t=1773097219070        "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773097219070        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+_bk;t=1773097219070        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+_bk;t=1773097219070        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+_bk;t=1773097219070        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+_bk;t=1773097219070        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+_bk;t=1773097219070      },
+_bk;t=1773097219070      "command": "tail -f /dev/null",
+_bk;t=1773097219070      "privileged": true,
+_bk;t=1773097219070      "environment": {},
+_bk;t=1773097219070      "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773097219070      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-network"
+_bk;t=1773097219070    }
+_bk;t=1773097219070  }
+_bk;t=1773097219070}
+_bk;t=1773097219258Using BAZEL_CACHE_DIR=/var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.cache/bazel
+_bk;t=1773097219302~~~ :docker: Building Docker Compose Service: main
+_bk;t=1773097219302⚠️ No pre-built image found from a previous 'build' step for this service and config file. Building image...
+_bk;t=1773097219307agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097219308[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e build --pull main
+_bk;t=1773097219354
+_bk;t=1773097219355~~~ :docker: Starting dependencies
+_bk;t=1773097219362agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097219362[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e up -d --scale main=0 main
+_bk;t=1773097219508[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773097219508[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default    Created                                                                     0.0s
+_bk;t=1773097219508[0m[37m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Starting                                                                    0.1s
+_bk;t=1773097219508[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773097219608[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default    Created                                                                     0.0s
+_bk;t=1773097219608[0m[37m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Starting                                                                    0.2s
+_bk;t=1773097219608[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773097219707[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default    Created                                                                     0.0s
+_bk;t=1773097219707[0m[37m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Starting                                                                    0.3s
+_bk;t=1773097219707[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773097219807[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default    Created                                                                     0.0s
+_bk;t=1773097219807[0m[37m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Starting                                                                    0.4s
+_bk;t=1773097219807[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+_bk;t=1773097219882[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default    Created                                                                     0.0s
+_bk;t=1773097219882[0m[34m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Started                                                                     0.4s
+_bk;t=1773097219882[0m[?25h
+_bk;t=1773097219886--- :docker: Running  in service main
+_bk;t=1773097219897agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097219898[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e run --name agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_BRANCH -e BUILDKITE_LABEL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e USE_WEB_JEST_LITE -e BUILDKITE_BUILD_CREATOR_EMAIL -e DOCKER_BUILDKIT -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_PULL_REQUEST -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_TAG -e BUILDKITE_COMMAND -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_MESSAGE -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e BUILDKITE_JOB_ID -e FIGMA_CI_LD_FEATURE_FLAGS -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e BUILDKITE_PARALLEL_JOB_COUNT -e BASH_ENV -e FIGMA_CI_RESOURCE_CLASS -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e BUILDKITE_BUILD_URL -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e GOFLAGS -e BUILDKITE_AGENT_META_DATA_OS -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_NAME -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_COMMIT_RESOLVED -e CI_WORKING_DIRECTORY -e CI_MEM_GIB -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_REPO -e BUILDKITE_PARALLEL_JOB -e SETTINGS_YML -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_RETRY_COUNT -e CI -e AWS_ECR_ACCOUNT_URL -e BUILDKITE -e BUILDKITE_PULL_REQUEST_REPO -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_PLUGINS -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_REPO_SSH_HOST -e FIGMA_BRANCH_TYPE -e CI_USERNAME -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_BUILD_AUTHOR -e JOB_MAINTAINER -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMIT -e RUN_ALL_TESTS_FOR_DELETED_FILES -e BUILDKITE_AGENT_META_DATA_QUEUE -e TEST_REPORTS_DIR -e BUILDKITE_PROJECT_SLUG -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e BUILDKITE_COMPUTE_TYPE -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e BUILDKITE_STEP_IDENTIFIER -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_REBUILT_FROM_BUILD_ID -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e RACK_ENV -e MERGE_BASE_BRANCH -e BUILDKITE_STEP_KEY -e BUILDKITE_PULL_REQUEST_DRAFT -e BUILDKITE_PIPELINE_ID -e IS_SOFT_FAIL -e MERGE_BASE_COMMIT -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e COMMITTER_EMAIL -e CI_CPUS -e BUILDKITE_STEP_ID -e BUILDKITE_SOURCE -e CHANGED_FILES -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e START_TIME -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_AGENT_META_DATA_ARCH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_AGENT_ID --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.git-trace2/019cd4d4-1f83-4361-a6ed-0123762b5e9e:/var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.git-trace2/019cd4d4-1f83-4361-a6ed-0123762b5e9e -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3009467-41213.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3009467-41213.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+_bk;t=1773097219963[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773097219963[34m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Running                                                                     0.0s
+_bk;t=1773097219963[0m[?25hrunning ci-interp for 6031337/raw-steps-0-0.json with BUILDKITE_STEP_KEY: agentplat-sbox-lint
+_bk;t=1773097220951--- [34mCI Stage: container.start_job[0m
+_bk;t=1773097220988
+_bk;t=1773097220988--- [34mAttach Workspace at .[0m
+_bk;t=1773097220989Using dependency groups: [[]]
+_bk;t=1773097220989Successfully attached workspace at .
+_bk;t=1773097220989--- [34mmkdir -p reports artifacts[0m
+_bk;t=1773097220991
+_bk;t=1773097220991--- [34mRecord external IP address[0m
+_bk;t=177309722102144.242.157.2
+_bk;t=1773097221022--- [34mdevex/buildkite/bazel-setup.sh[0m
+_bk;t=1773097221031Using EngFlow remote cache configuration
+_bk;t=1773097221033Using --local_resources=memory=5529
+_bk;t=1773097221033Using --host_jvm_args='-Xmx2457m'
+_bk;t=1773097221033Using --local_resources=cpu=6
+_bk;t=1773097221033Using --jobs=6
+_bk;t=1773097221033Using --loading_phase_threads=6
+_bk;t=1773097221033Using --experimental_skyframe_cpu_heavy_skykeys_thread_pool_size=6
+_bk;t=1773097221034Configuring EngFlow TLS certificates...
+_bk;t=1773097222289EngFlow TLS certificates configured successfully
+_bk;t=1773097222289Using EngFlow remote cache
+_bk;t=1773097222289Using --build_metadata=USER=buildkite
+_bk;t=1773097222289Using --build_metadata=DISABLE_COMMIT_STATUS_REPORTING=true
+_bk;t=1773097222289Using --@aspect_rules_lint//lint:fail_on_violation
+_bk;t=1773097222290Using new Artifactory endpoint (artifactory.prod.figmadevex.com)
+_bk;t=1773097222292✓ Configuring pip to use Artifactory for PyPI packages
+_bk;t=1773097222292✓ Set PIP_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+_bk;t=1773097222292✓ Set PIP_TRUSTED_HOST_ARG=--trusted-host=artifactory.prod.figmadevex.com
+_bk;t=1773097222292✓ Set UV_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+_bk;t=1773097222292✓ Configuring GOPROXY to use Artifactory for Go modules
+_bk;t=1773097222292✓ Set GOPROXY=https://artifactory.prod.figmadevex.com/artifactory/api/go/go-virtual
+_bk;t=1773097222292✓ Configuring Bazel downloader to use Artifactory for Bazel releases
+_bk;t=1773097222292✓ Set BAZELISK_FORMAT_URL=https://artifactory.prod.figmadevex.com/artifactory/releases.bazel.build/%v/release/bazel-%v-%o-%m%e
+_bk;t=1773097222297✓ Configuring Bazel downloader to use Artifactory for Rust toolchain
+_bk;t=1773097222303✗ rules_oci using upstream registries (buildkite_artifactory_docker flag disabled)
+_bk;t=1773097222303Using --downloader_config=/home/circleci/bazel_downloader.cfg
+_bk;t=1773097222303
+_bk;t=1773097222303--- [34mdevex/buildkite/bazel-help-with-retry.sh[0m
+_bk;t=1773097222309Checking for cached Bazel version 8.5.1...
+_bk;t=1773097222309Cache directory exists: /home/circleci/.cache/bazel/_bazel_circleci/install
+_bk;t=1773097222312Found cached version: 8.5.1 in b8a069f8b7ab718c13dbfa7ea3667622
+_bk;t=1773097222312✓ Bazel 8.5.1 already installed in cache
+_bk;t=1773097222312
+_bk;t=1773097222312--- [34mdevex/buildkite/artifactory-setup.sh[0m
+_bk;t=1773097222318Setting up Artifactory package registry configuration...
+_bk;t=1773097222318✓ Configuring Python/pip to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773097222319  Configured pip.conf to use Artifactory
+_bk;t=1773097222319  Configured UV_INDEX_URL to use Artifactory
+_bk;t=1773097222319✓ Configuring Go modules to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773097222321✓ Configuring Ruby/Bundler to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773097222450✓ Configuring npm/pnpm to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773097222453✗ Skipping Docker Artifactory setup
+_bk;t=1773097222453Artifactory setup complete.
+_bk;t=1773097222453
+_bk;t=1773097222453--- [34mdevex/buildkite/ssh-setup.sh[0m
+_bk;t=1773097222458Starting an SSH agent and loading figmaci/production/FIGMABOT1_SSH_PRIVATE_KEY...
+_bk;t=1773097222461Agent pid 110
+_bk;t=1773097222462export SSH_AUTH_SOCK=/tmp/ssh-OOxxstaCZCNL/agent.109
+_bk;t=1773097223166Identity added: (stdin) (figmabot+1@figma.com)
+_bk;t=1773097223167
+_bk;t=1773097223167--- [34mStoring artifacts at git-fetch-debug.log[0m
+_bk;t=1773097223167Could not find file at path git-fetch-debug.log
+_bk;t=1773097223167Running "/usr/bin/buildkite-agent artifact upload git-fetch-debug.log"
+_bk;t=1773097223178[33m2026-03-09 23:00:23 WARN  [0m [0mCouldn't walk path git-fetch-debug.log[0m
+_bk;t=1773097223178[38;5;48m2026-03-09 23:00:23 INFO  [0m [0mNo files matched paths: git-fetch-debug.log[0m
+_bk;t=1773097223410--- [34mDelete git debug log[0m
+_bk;t=1773097223411
+_bk;t=1773097223411--- [34mMonitor cgroup resource usage[0m
+_bk;t=1773097223411This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-11.log
+_bk;t=1773097223411--- [34mStart ci-cache-stats server[0m
+_bk;t=1773097223411This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-12.log
+_bk;t=1773097223411--- [34mConfigure BES backend[0m
+_bk;t=1773097223417Using EngFlow backend, skipping BuildBuddy BES configuration
+_bk;t=1773097223417
+_bk;t=1773097223417--- CI Stage: container.main
+_bk;t=1773097223420
+_bk;t=1773097223420--- bazel run //services/agentplat/sbox:lint -- run ./sboxd/... ./internal/...
+_bk;t=1773097223437Starting local Bazel server (8.5.1) and connecting to it...
+_bk;t=1773097225269INFO: Invocation ID: fe05abf6-1207-4da2-86a4-6c96cff9eb07
+_bk;t=1773097226021WARNING: For repository 'rules_cc', the root module requires module version rules_cc@0.1.5, but got rules_cc@0.2.15 in the resolved dependency graph. Please update the version in your MODULE.bazel or set --check_direct_dependencies=off
+_bk;t=1773097226396[32mINFO: [0mInvocation ID: b3449839-150b-4dd0-a0f8-bad986cdb4ed
+_bk;t=1773097226396[32mINFO: [0mStreaming build results to: [36mhttps://taaffeite.cluster.engflow.com/invocation/b3449839-150b-4dd0-a0f8-bad986cdb4ed[0m
+_bk;t=1773097226445[32mComputing main repo mapping:[0m 
+_bk;t=1773097226650[1A[K_bk;t=1773097226650[32mComputing main repo mapping:[0m 
+_bk;t=1773097226849[1A[K_bk;t=1773097226849[32mComputing main repo mapping:[0m 
+_bk;t=1773097226920[1A[K_bk;t=1773097226920[32mLoading:[0m 
+_bk;t=1773097226936[1A[K_bk;t=1773097226936[32mLoading:[0m 8 packages loaded
+_bk;t=1773097227141[1A[K_bk;t=1773097227141[32mAnalyzing:[0m target //services/agentplat/sbox:lint (9 packages loaded, 0 targets\
+_bk;t=1773097227141 configured)
+_bk;t=1773097227158[1A[K_bk;t=1773097227158[1A[K_bk;t=1773097227158[32mAnalyzing:[0m target //services/agentplat/sbox:lint (9 packages loaded, 0 targets\
+_bk;t=1773097227158 configured)
+_bk;t=1773097227158    currently loading: @@bazel_tools//tools
+_bk;t=1773097227158
+_bk;t=1773097227450[1A[K_bk;t=1773097227450[1A[K_bk;t=1773097227450[1A[K_bk;t=1773097227450[1A[K_bk;t=1773097227450[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097227450s configured)
+_bk;t=1773097227450    Fetching module extension @@gazelle+//:extensions.bzl%go_deps; starting
+_bk;t=1773097227450    Fetching ...les_go++go_sdk+go_sdk; Downloading and extracting Go toolchain
+_bk;t=1773097227739[1A[K_bk;t=1773097227739[1A[K_bk;t=1773097227739[1A[K_bk;t=1773097227739[1A[K_bk;t=1773097227739[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097227739s configured)
+_bk;t=1773097227739    Fetching ...les_go++go_sdk+go_sdk; Downloading and extracting Go toolchain
+_bk;t=1773097227739    Fetching .../dl.google.com/go/go1.26.0.linux-amd64.tar.gz; 8.8 MiB (13.8%)
+_bk;t=1773097227739    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_cache; starting
+_bk;t=1773097228051[1A[K_bk;t=1773097228051[1A[K_bk;t=1773097228051[1A[K_bk;t=1773097228051[1A[K_bk;t=1773097228051[1A[K_bk;t=1773097228051[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097228051s configured)
+_bk;t=1773097228051    Fetching ...les_go++go_sdk+go_sdk; Downloading and extracting Go toolchain
+_bk;t=1773097228051    Fetching ...dl.google.com/go/go1.26.0.linux-amd64.tar.gz; 40.5 MiB (63.6%)
+_bk;t=1773097228051    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_cache; starting
+_bk;t=1773097228252[1A[K_bk;t=1773097228252[1A[K_bk;t=1773097228252[1A[K_bk;t=1773097228252[1A[K_bk;t=1773097228252[1A[K_bk;t=1773097228252[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097228252s configured)
+_bk;t=1773097228252    Fetching ...les_go++go_sdk+go_sdk; Downloading and extracting Go toolchain
+_bk;t=1773097228252    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_cache; starting
+_bk;t=1773097228252    Fetching ...ules_go++go_sdk+go_sdk; Extracting go1.26.0.linux-amd64.tar.gz
+_bk;t=1773097229253[1A[K_bk;t=1773097229253[1A[K_bk;t=1773097229253[1A[K_bk;t=1773097229253[1A[K_bk;t=1773097229253[1A[K_bk;t=1773097229253[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097229253s configured)
+_bk;t=1773097229253    Fetching ...les_go++go_sdk+go_sdk; Downloading and extracting Go toolchain
+_bk;t=1773097229253    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_cache; starting
+_bk;t=1773097229253    Fetching ...ules_go++go_sdk+go_sdk; Extracting go1.26.0.linux-amd64.tar.gz
+_bk;t=1773097229651[1A[K_bk;t=1773097229651[1A[K_bk;t=1773097229651[1A[K_bk;t=1773097229651[1A[K_bk;t=1773097229651[1A[K_bk;t=1773097229651[32mAnalyzing:[0m target //services/agentplat/sbox:lint (14 packages loaded, 8 target\
+_bk;t=1773097229651s configured)
+_bk;t=1773097229651    Fetching repository @@rules_go++go_sdk+go_sdk; starting
+_bk;t=1773097229651    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_cache; starting
+_bk;t=1773097229855[1A[K_bk;t=1773097229855[1A[K_bk;t=1773097229855[1A[K_bk;t=1773097229855[1A[K_bk;t=1773097229855[32mAnalyzing:[0m target //services/agentplat/sbox:lint (15 packages loaded, 9 target\
+_bk;t=1773097229855s configured)
+_bk;t=1773097229855    currently loading: @@rules_go++go_sdk+go_sdk//
+_bk;t=1773097229855
+_bk;t=1773097230118[1A[K_bk;t=1773097230118[1A[K_bk;t=1773097230118[1A[K_bk;t=1773097230118[1A[K_bk;t=1773097230118[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097230118ts configured)
+_bk;t=1773097230118    Fetching ...azelle++go_deps+com_github_golangci_golangci_lint_v2; starting
+_bk;t=1773097230455[1A[K_bk;t=1773097230455[1A[K_bk;t=1773097230455[1A[K_bk;t=1773097230455[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097230455ts configured)
+_bk;t=1773097230455    Fetching ...azelle++go_deps+com_github_golangci_golangci_lint_v2; starting
+_bk;t=1773097230455    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_tools; starting
+_bk;t=1773097231457[1A[K_bk;t=1773097231457[1A[K_bk;t=1773097231457[1A[K_bk;t=1773097231457[1A[K_bk;t=1773097231457[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097231457ts configured)
+_bk;t=1773097231457    Fetching ...azelle++go_deps+com_github_golangci_golangci_lint_v2; starting
+_bk;t=1773097231457    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_tools; starting
+_bk;t=1773097232457[1A[K_bk;t=1773097232457[1A[K_bk;t=1773097232457[1A[K_bk;t=1773097232457[1A[K_bk;t=1773097232457[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097232457ts configured)
+_bk;t=1773097232457    Fetching ...azelle++go_deps+com_github_golangci_golangci_lint_v2; starting
+_bk;t=1773097232457    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_tools; starting
+_bk;t=1773097233458[1A[K_bk;t=1773097233458[1A[K_bk;t=1773097233458[1A[K_bk;t=1773097233458[1A[K_bk;t=1773097233458[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097233458ts configured)
+_bk;t=1773097233458    Fetching ...azelle++go_deps+com_github_golangci_golangci_lint_v2; starting
+_bk;t=1773097233458    Fetching ...e++non_module_deps+bazel_gazelle_go_repository_tools; starting
+_bk;t=1773097234660[1A[K_bk;t=1773097234660[1A[K_bk;t=1773097234660[1A[K_bk;t=1773097234660[1A[K_bk;t=1773097234660[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097234660ts configured)
+_bk;t=1773097234660    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 4s
+_bk;t=1773097234660    Fetching ...non_module_deps+bazel_gazelle_go_repository_tools; starting 4s
+_bk;t=1773097235661[1A[K_bk;t=1773097235661[1A[K_bk;t=1773097235661[1A[K_bk;t=1773097235661[1A[K_bk;t=1773097235661[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097235661ts configured)
+_bk;t=1773097235661    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 5s
+_bk;t=1773097235661    Fetching ...non_module_deps+bazel_gazelle_go_repository_tools; starting 5s
+_bk;t=1773097236664[1A[K_bk;t=1773097236664[1A[K_bk;t=1773097236664[1A[K_bk;t=1773097236664[1A[K_bk;t=1773097236664[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097236664ts configured)
+_bk;t=1773097236664    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 6s
+_bk;t=1773097236664    Fetching ...non_module_deps+bazel_gazelle_go_repository_tools; starting 6s
+_bk;t=1773097237667[1A[K_bk;t=1773097237667[1A[K_bk;t=1773097237667[1A[K_bk;t=1773097237667[1A[K_bk;t=1773097237667[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097237667ts configured)
+_bk;t=1773097237667    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 7s
+_bk;t=1773097237667    Fetching ...non_module_deps+bazel_gazelle_go_repository_tools; starting 7s
+_bk;t=1773097238667[1A[K_bk;t=1773097238667[1A[K_bk;t=1773097238667[1A[K_bk;t=1773097238667[1A[K_bk;t=1773097238667[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097238667ts configured)
+_bk;t=1773097238667    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 8s
+_bk;t=1773097238667    Fetching ...non_module_deps+bazel_gazelle_go_repository_tools; starting 8s
+_bk;t=1773097239659[1A[K_bk;t=1773097239659[1A[K_bk;t=1773097239659[1A[K_bk;t=1773097239659[1A[K_bk;t=1773097239659[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097239659ts configured)
+_bk;t=1773097239659    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 9s
+_bk;t=1773097239869[1A[K_bk;t=1773097239869[1A[K_bk;t=1773097239869[1A[K_bk;t=1773097239869[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097239869ts configured)
+_bk;t=1773097239869    Fetching ...lle++go_deps+com_github_golangci_golangci_lint_v2; starting 9s
+_bk;t=1773097240463[1A[K_bk;t=1773097240463[1A[K_bk;t=1773097240463[1A[K_bk;t=1773097240463[32mAnalyzing:[0m target //services/agentplat/sbox:lint (16 packages loaded, 10 targe\
+_bk;t=1773097240463ts configured)
+_bk;t=1773097240463    Fetching ...le++go_deps+com_github_golangci_golangci_lint_v2; starting 10s
+_bk;t=1773097240668[1A[K_bk;t=1773097240668[1A[K_bk;t=1773097240668[1A[K_bk;t=1773097240668[32mAnalyzing:[0m target //services/agentplat/sbox:lint (39 packages loaded, 12 targe\
+_bk;t=1773097240668ts configured)
+_bk;t=1773097240668
+_bk;t=1773097240870[1A[K_bk;t=1773097240870[1A[K_bk;t=1773097240870[1A[K_bk;t=1773097240870[32mAnalyzing:[0m target //services/agentplat/sbox:lint (134 packages loaded, 137 tar\
+_bk;t=1773097240870gets configured)
+_bk;t=1773097240870    currently loading: @@rules_license+//licenses/spdx ... (2 packages)
+_bk;t=1773097240870
+_bk;t=1773097241073[1A[K_bk;t=1773097241073[1A[K_bk;t=1773097241073[1A[K_bk;t=1773097241073[1A[K_bk;t=1773097241073[32mAnalyzing:[0m target //services/agentplat/sbox:lint (178 packages loaded, 2156 ta\
+_bk;t=1773097241073rgets configured)
+_bk;t=1773097241073    currently loading: @@rules_cc+//cc ... (3 packages)
+_bk;t=1773097241073
+_bk;t=1773097241323[1A[K_bk;t=1773097241323[1A[K_bk;t=1773097241323[1A[K_bk;t=1773097241323[1A[K_bk;t=1773097241323[32mAnalyzing:[0m target //services/agentplat/sbox:lint (200 packages loaded, 12873 t\
+_bk;t=1773097241323argets configured)
+_bk;t=1773097241323    Fetching repository @@gazelle++go_deps+com_github_spf13_cobra; starting
+_bk;t=1773097241323    Fetching ...le++go_deps+com_github_santhosh_tekuri_jsonschema_v6; starting
+_bk;t=1773097241323    Fetching ...y @@gazelle++go_deps+com_github_pelletier_go_toml_v2; starting
+_bk;t=1773097241323    Fetching ... @@gazelle++go_deps+com_github_ldez_grignotin; running Gazelle
+_bk;t=1773097241323    Fetching ...y @@gazelle++go_deps+com_github_hashicorp_go_version; starting
+_bk;t=1773097241323    Fetching repository @@gazelle++go_deps+com_github_gofrs_flock; starting
+_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[1A[K_bk;t=1773097241523[32mAnalyzing:[0m target //services/agentplat/sbox:lint (245 packages loaded, 15204 t\
+_bk;t=1773097241523argets configured)
+_bk;t=1773097241523    Fetching ...elle++go_deps+com_github_rogpeppe_go_internal; running Gazelle
+_bk;t=1773097241523    Fetching ...y @@gazelle++go_deps+com_github_alecthomas_chroma_v2; starting
+_bk;t=1773097241523    Fetching ...tory @@gazelle++go_deps+com_github_fsnotify_fsnotify; starting
+_bk;t=1773097241523    Fetching repository @@gazelle++go_deps+in_gopkg_yaml_v3; starting
+_bk;t=1773097241523    Fetching ...ory @@gazelle++go_deps+com_github_mattn_go_colorable; starting
+_bk;t=1773097241523    Fetching ...++go_deps+com_github_golangci_plugin_module_register; starting
+_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[1A[K_bk;t=1773097241760[32mAnalyzing:[0m target //services/agentplat/sbox:lint (371 packages loaded, 15404 t\
+_bk;t=1773097241760argets configured)
+_bk;t=1773097241760    Fetching ...y @@gazelle++go_deps+com_github_alecthomas_chroma_v2; starting
+_bk;t=1773097241760    Fetching ...y @@gazelle++go_deps+com_github_charmbracelet_x_ansi; starting
+_bk;t=1773097241760    Fetching ...le++go_deps+com_github_mitchellh_mapstructure; running Gazelle
+_bk;t=1773097241760    Fetching repository @@gazelle++go_deps+org_golang_x_text; starting
+_bk;t=1773097241760    Fetching ...gazelle++go_deps+com_github_go_viper_mapstructure_v2; starting
+_bk;t=1773097241760    Fetching ...zelle++go_deps+com_github_sanposhiho_wastedassign_v2; starting
+_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[1A[K_bk;t=1773097241990[32mAnalyzing:[0m target //services/agentplat/sbox:lint (384 packages loaded, 15529 t\
+_bk;t=1773097241990argets configured)
+_bk;t=1773097241990    currently loading: @@gazelle++go_deps+com_github_alecthomas_chroma_v2//qui\
+_bk;t=1773097241990ck
+_bk;t=1773097241990    Fetching repository @@gazelle++go_deps+org_golang_x_text; starting
+_bk;t=1773097241990    Fetching repository @@gazelle++go_deps+com_github_spf13_afero; starting
+_bk;t=1773097241990    Fetching repository @@gazelle++go_deps+com_github_rivo_uniseg; starting
+_bk;t=1773097241990    Fetching repository @@gazelle++go_deps+org_golang_x_sys; starting
+_bk;t=1773097241990    Fetching ...tory @@gazelle++go_deps+com_github_raeperd_recvcheck; starting
+_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[1A[K_bk;t=1773097242199[32mAnalyzing:[0m target //services/agentplat/sbox:lint (391 packages loaded, 15580 t\
+_bk;t=1773097242199argets configured)
+_bk;t=1773097242199    Fetching repository @@gazelle++go_deps+org_golang_x_text; starting
+_bk;t=1773097242199    Fetching repository @@gazelle++go_deps+org_golang_x_sys; starting
+_bk;t=1773097242199    Fetching repository @@gazelle++go_deps+com_github_spf13_cast; starting
+_bk;t=1773097242199    Fetching ...e++go_deps+com_github_gostaticanalysis_nilerr; running Gazelle
+_bk;t=1773097242199    Fetching ...@@gazelle++go_deps+com_github_alexkohler_nakedret_v2; starting
+_bk;t=1773097242199    Fetching ...lle++go_deps+com_github_sashamelentyev_usestdlibvars; starting
+_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[1A[K_bk;t=1773097242402[32mAnalyzing:[0m target //services/agentplat/sbox:lint (397 packages loaded, 15616 t\
+_bk;t=1773097242402argets configured)
+_bk;t=1773097242402    Fetching repository @@gazelle++go_deps+org_golang_x_text; starting
+_bk;t=1773097242402    Fetching repository @@gazelle++go_deps+com_github_spf13_cast; starting
+_bk;t=1773097242402    Fetching ...+go_deps+com_github_maratori_testableexamples; running Gazelle
+_bk;t=1773097242402    Fetching repository @@gazelle++go_deps+com_github_matoous_godox; starting
+_bk;t=1773097242402    Fetching ...y @@gazelle++go_deps+com_github_nishanths_exhaustive; starting
+_bk;t=1773097242402    Fetching repository @@gazelle++go_deps+in_gopkg_ini_v1; starting
+_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[1A[K_bk;t=1773097242616[32mAnalyzing:[0m target //services/agentplat/sbox:lint (406 packages loaded, 16593 t\
+_bk;t=1773097242616argets configured)
+_bk;t=1773097242616    Fetching repository @@gazelle++go_deps+com_github_spf13_cast; starting
+_bk;t=1773097242616    Fetching repository @@gazelle++go_deps+co_honnef_go_tools; starting
+_bk;t=1773097242616    Fetching repository @@gazelle++go_deps+com_github_hashicorp_hcl; starting
+_bk;t=1773097242616    Fetching ...y @@gazelle++go_deps+com_github_stretchr_objx; running Gazelle
+_bk;t=1773097242616    Fetching ...ory @@gazelle++go_deps+com_github_jgautheron_goconst; starting
+_bk;t=1773097242616    Fetching ...@gazelle++go_deps+com_github_ashanbrown_forbidigo_v2; starting
+_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[1A[K_bk;t=1773097242821[32mAnalyzing:[0m target //services/agentplat/sbox:lint (412 packages loaded, 16636 t\
+_bk;t=1773097242821argets configured)
+_bk;t=1773097242821    Fetching repository @@gazelle++go_deps+com_github_spf13_cast; starting
+_bk;t=1773097242821    Fetching repository @@gazelle++go_deps+co_honnef_go_tools; starting
+_bk;t=1773097242821    Fetching ...elle++go_deps+com_github_ykadowak_zerologlint; running Gazelle
+_bk;t=1773097242821    Fetching ...le++go_deps+com_github_tomarrell_wrapcheck_v2; running Gazelle
+_bk;t=1773097242821    Fetching repository @@gazelle++go_deps+com_gitlab_bosi_decorder; starting
+_bk;t=1773097242821    Fetching ...y @@gazelle++go_deps+com_github_kkhaike_contextcheck; starting
+_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[1A[K_bk;t=1773097243031[32mAnalyzing:[0m target //services/agentplat/sbox:lint (428 packages loaded, 18436 t\
+_bk;t=1773097243031argets configured)
+_bk;t=1773097243031    Fetching repository @@gazelle++go_deps+com_github_spf13_cast; starting
+_bk;t=1773097243031    Fetching ...ository @@gazelle++go_deps+co_honnef_go_tools; running Gazelle
+_bk;t=1773097243031    Fetching repository @@gazelle++go_deps+org_golang_x_tools; starting
+_bk;t=1773097243031    Fetching ...gazelle++go_deps+com_github_moricho_tparallel; running Gazelle
+_bk;t=1773097243031    Fetching ... @@gazelle++go_deps+com_github_antonboom_testifylint; starting
+_bk;t=1773097243031    Fetching ...itory @@gazelle++go_deps+com_github_nakabonne_nestif; starting
+_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[1A[K_bk;t=1773097243241[32mAnalyzing:[0m target //services/agentplat/sbox:lint (440 packages loaded, 18471 t\
+_bk;t=1773097243241argets configured)
+_bk;t=1773097243241    currently loading: @@gazelle++go_deps+com_github_yagipy_maintidx//
+_bk;t=1773097243241    Fetching repository @@gazelle++go_deps+org_golang_x_tools; starting
+_bk;t=1773097243241    Fetching ...azelle++go_deps+com_github_ckaznocha_intrange; running Gazelle
+_bk;t=1773097243241    Fetching repository @@gazelle++go_deps+org_go_simpler_sloglint; starting
+_bk;t=1773097243241    Fetching ...@gazelle++go_deps+com_github_curioswitch_go_reassign; starting
+_bk;t=1773097243241    Fetching ...itory @@gazelle++go_deps+com_github_golangci_revgrep; starting
+_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[1A[K_bk;t=1773097243474[32mAnalyzing:[0m target //services/agentplat/sbox:lint (462 packages loaded, 18543 t\
+_bk;t=1773097243474argets configured)
+_bk;t=1773097243474    Fetching repository @@gazelle++go_deps+org_golang_x_tools; starting
+_bk;t=1773097243474    Fetching ...sitory @@gazelle++go_deps+com_github_dlclark_regexp2; starting
+_bk;t=1773097243474    Fetching ... @@gazelle++go_deps+com_github_godoc_lint_godoc_lint; starting
+_bk;t=1773097243474    Fetching ... @@gazelle++go_deps+com_github_magiconair_properties; starting
+_bk;t=1773097243474    Fetching ...tory @@gazelle++go_deps+com_github_yeya24_promlinter; starting
+_bk;t=1773097243474    Fetching ...ory @@gazelle++go_deps+com_github_ssgreg_nlreturn_v2; starting
+_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[1A[K_bk;t=1773097243674[32mAnalyzing:[0m target //services/agentplat/sbox:lint (472 packages loaded, 18600 t\
+_bk;t=1773097243674argets configured)
+_bk;t=1773097243674    Fetching repository @@gazelle++go_deps+org_golang_x_tools; starting
+_bk;t=1773097243674    Fetching ...sitory @@gazelle++go_deps+com_github_dlclark_regexp2; starting
+_bk;t=1773097243674    Fetching ...ory @@gazelle++go_deps+com_github_pmezard_go_difflib; starting
+_bk;t=1773097243674    Fetching ...@@gazelle++go_deps+com_github_tommy_muehle_go_mnd_v2; starting
+_bk;t=1773097243674    Fetching ...itory @@gazelle++go_deps+com_github_antonboom_nilnil; starting
+_bk;t=1773097243674    Fetching ...sitory @@gazelle++go_deps+com_github_davecgh_go_spew; starting
+_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[1A[K_bk;t=1773097243875[32mAnalyzing:[0m target //services/agentplat/sbox:lint (473 packages loaded, 18601 t\
+_bk;t=1773097243875argets configured)
+_bk;t=1773097243875    currently loading: @@gazelle++go_deps+com_github_davecgh_go_spew//spew
+_bk;t=1773097243875    Fetching ...ository @@gazelle++go_deps+org_golang_x_tools; running Gazelle
+_bk;t=1773097243875    Fetching ...sitory @@gazelle++go_deps+com_github_dlclark_regexp2; starting
+_bk;t=1773097243875    Fetching ...le++go_deps+com_github_tommy_muehle_go_mnd_v2; running Gazelle
+_bk;t=1773097243875    Fetching ...ry @@gazelle++go_deps+com_github_blizzy78_varnamelen; starting
+_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[1A[K_bk;t=1773097244078[32mAnalyzing:[0m target //services/agentplat/sbox:lint (543 packages loaded, 18784 t\
+_bk;t=1773097244078argets configured)
+_bk;t=1773097244078    currently loading: @@gazelle++go_deps+com_github_sashamelentyev_interfaceb\
+_bk;t=1773097244078loat//pkg/analyzer
+_bk;t=1773097244078    Fetching ...tory @@gazelle++go_deps+com_github_securego_gosec_v2; starting
+_bk;t=1773097244078    Fetching ...y @@gazelle++go_deps+com_github_maratori_testpackage; starting
+_bk;t=1773097244078    Fetching ...le++go_deps+com_github_gostaticanalysis_analysisutil; starting
+_bk;t=1773097244078    Fetching ...sitory @@gazelle++go_deps+com_github_4meepo_tagalign; starting
+_bk;t=1773097244078    Fetching ...++go_deps+com_github_hashicorp_go_immutable_radix_v2; starting
+_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[1A[K_bk;t=1773097244289[32mAnalyzing:[0m target //services/agentplat/sbox:lint (597 packages loaded, 19000 t\
+_bk;t=1773097244289argets configured)
+_bk;t=1773097244289    currently loading: @@gazelle++go_deps+com_github_gostaticanalysis_forcetyp\
+_bk;t=1773097244289eassert//
+_bk;t=1773097244289    Fetching ...@gazelle++go_deps+com_github_ultraware_funlen; running Gazelle
+_bk;t=1773097244289    Fetching repository @@gazelle++go_deps+com_github_google_go_cmp; starting
+_bk;t=1773097244289    Fetching ...@gazelle++go_deps+com_github_kunwardeep_paralleltest; starting
+_bk;t=1773097244289    Fetching ...itory @@gazelle++go_deps+com_github_bombsimon_wsl_v5; starting
+_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[1A[K_bk;t=1773097244492[32mAnalyzing:[0m target //services/agentplat/sbox:lint (650 packages loaded, 19117 t\
+_bk;t=1773097244492argets configured)
+_bk;t=1773097244492    Fetching ...azelle++go_deps+com_github_ccojocar_zxcvbn_go; running Gazelle
+_bk;t=1773097244492    Fetching ...y @@gazelle++go_deps+com_github_uudashr_iface; running Gazelle
+_bk;t=1773097244492    Fetching ...gazelle++go_deps+com_github_timakin_bodyclose; running Gazelle
+_bk;t=1773097244492    Fetching ...go_deps+com_github_karamaru_alpha_copyloopvar; running Gazelle
+_bk;t=1773097244492    Fetching ...itory @@gazelle++go_deps+com_github_bombsimon_wsl_v4; starting
+_bk;t=1773097244492    Fetching ...y @@gazelle++go_deps+com_github_ldez_gomoddirectives; starting
+_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[1A[K_bk;t=1773097244698[32mAnalyzing:[0m target //services/agentplat/sbox:lint (678 packages loaded, 19181 t\
+_bk;t=1773097244698argets configured)
+_bk;t=1773097244698    Fetching ...y @@gazelle++go_deps+com_github_mirrexone_unqueryvet; starting
+_bk;t=1773097244698    Fetching ...ository @@gazelle++go_deps+com_github_mgechev_revive; starting
+_bk;t=1773097244698    Fetching ...le++go_deps+team_gaijin_dev_go_exhaustruct_v4; running Gazelle
+_bk;t=1773097244698    Fetching ...gazelle++go_deps+org_codeberg_polyfloyd_go_errorlint; starting
+_bk;t=1773097244698    Fetching ...azelle++go_deps+com_github_denis_tingaikin_go_header; starting
+_bk;t=1773097244698    Fetching ... @@gazelle++go_deps+com_github_nunnatsa_ginkgolinter; starting
+_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[1A[K_bk;t=1773097245000[32mAnalyzing:[0m target //services/agentplat/sbox:lint (692 packages loaded, 19336 t\
+_bk;t=1773097245000argets configured)
+_bk;t=1773097245000    Fetching ...y @@gazelle++go_deps+com_github_mirrexone_unqueryvet; starting
+_bk;t=1773097245000    Fetching ...sitory @@gazelle++go_deps+com_github_burntsushi_toml; starting
+_bk;t=1773097245000    Fetching ...lle++go_deps+com_github_sivchari_containedctx; running Gazelle
+_bk;t=1773097245000    Fetching repository @@gazelle++go_deps+org_golang_x_exp; starting
+_bk;t=1773097245000    Fetching repository @@gazelle++go_deps+com_github_tetafro_godot; starting
+_bk;t=1773097245000    Fetching ...gazelle++go_deps+com_github_gostaticanalysis_comment; starting
+_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[1A[K_bk;t=1773097245226[32mAnalyzing:[0m target //services/agentplat/sbox:lint (717 packages loaded, 19382 t\
+_bk;t=1773097245226argets configured)
+_bk;t=1773097245226    Fetching ...y @@gazelle++go_deps+com_github_mirrexone_unqueryvet; starting
+_bk;t=1773097245226    Fetching ...sitory @@gazelle++go_deps+com_github_burntsushi_toml; starting
+_bk;t=1773097245226    Fetching repository @@gazelle++go_deps+org_golang_x_exp; running Gazelle
+_bk;t=1773097245226    Fetching ...om_github_manuelarte_embeddedstructfieldcheck; running Gazelle
+_bk;t=1773097245226    Fetching ...ory @@gazelle++go_deps+com_github_mattn_go_runewidth; starting
+_bk;t=1773097245226    Fetching ...ry @@gazelle++go_deps+com_github_golangci_swaggoswag; starting
+_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[1A[K_bk;t=1773097245431[32mAnalyzing:[0m target //services/agentplat/sbox:lint (803 packages loaded, 19558 t\
+_bk;t=1773097245431argets configured)
+_bk;t=1773097245431    Fetching ...zelle++go_deps+com_github_sourcegraph_go_diff; running Gazelle
+_bk;t=1773097245431    Fetching ...gazelle++go_deps+com_github_aymanbagabas_go_osc52_v2; starting
+_bk;t=1773097245431    Fetching ...itory @@gazelle++go_deps+org_golang_x_exp_typeparams; starting
+_bk;t=1773097245431    Fetching repository @@gazelle++go_deps+com_github_ettle_strcase; starting
+_bk;t=1773097245431    Fetching ...@gazelle++go_deps+com_github_firefart_nonamedreturns; starting
+_bk;t=1773097245431    Fetching ...ory @@gazelle++go_deps+com_github_alingse_nilnesserr; starting
+_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[1A[K_bk;t=1773097245635[32mAnalyzing:[0m target //services/agentplat/sbox:lint (864 packages loaded, 19696 t\
+_bk;t=1773097245635argets configured)
+_bk;t=1773097245635    currently loading: @@gazelle++go_deps+com_github_butuzov_ireturn//analyzer
+_bk;t=1773097245635    Fetching ...azelle++go_deps+com_github_macabu_inamedparam; running Gazelle
+_bk;t=1773097245635    Fetching ... @@gazelle++go_deps+com_github_ryancurrah_gomodguard; starting
+_bk;t=1773097245635    Fetching ...ository @@gazelle++go_deps+com_github_golangci_gofmt; starting
+_bk;t=1773097245635    Fetching ...zelle++go_deps+com_github_quasilyte_go_ruleguard_dsl; starting
+_bk;t=1773097245635    Fetching ...y @@gazelle++go_deps+com_github_charmbracelet_x_term; starting
+_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[1A[K_bk;t=1773097245843[32mAnalyzing:[0m target //services/agentplat/sbox:lint (933 packages loaded, 19846 t\
+_bk;t=1773097245843argets configured)
+_bk;t=1773097245843    Fetching ...zelle++go_deps+com_github_go_critic_go_critic; running Gazelle
+_bk;t=1773097245843    Fetching ...elle++go_deps+com_github_manuelarte_funcorder; running Gazelle
+_bk;t=1773097245843    Fetching ...itory @@gazelle++go_deps+com_github_kisielk_errcheck; starting
+_bk;t=1773097245843    Fetching repository @@gazelle++go_deps+org_uber_go_zap; starting
+_bk;t=1773097245843    Fetching ...@gazelle++go_deps+com_github_prometheus_client_model; starting
+_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[1A[K_bk;t=1773097246077[32mAnalyzing:[0m target //services/agentplat/sbox:lint (963 packages loaded, 20010 t\
+_bk;t=1773097246077argets configured)
+_bk;t=1773097246077    Fetching repository @@gazelle++go_deps+org_uber_go_zap; running Gazelle
+_bk;t=1773097246077    Fetching ...gazelle++go_deps+com_github_prometheus_client_golang; starting
+_bk;t=1773097246077    Fetching ...go_deps+com_github_charmbracelet_colorprofile; running Gazelle
+_bk;t=1773097246077    Fetching ...gazelle++go_deps+com_github_hexops_gotextdiff; running Gazelle
+_bk;t=1773097246077    Fetching repository @@gazelle++go_deps+com_github_dave_dst; starting
+_bk;t=1773097246077    Fetching ...tory @@gazelle++go_deps+com_github_antonboom_errname; starting
+_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[1A[K_bk;t=1773097246294[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1059 packages loaded, 20378 \
+_bk;t=1773097246294targets configured)
+_bk;t=1773097246294    currently loading: @@gazelle++go_deps+com_github_go_toolsmith_astequal//
+_bk;t=1773097246294    Fetching ...sitory @@gazelle++go_deps+org_golang_google_protobuf; starting
+_bk;t=1773097246294    Fetching ...tory @@gazelle++go_deps+com_github_cespare_xxhash_v2; starting
+_bk;t=1773097246294    Fetching repository @@gazelle++go_deps+com_github_fzipp_gocyclo; starting
+_bk;t=1773097246294    Fetching ...tory @@gazelle++go_deps+com_github_prometheus_common; starting
+_bk;t=1773097246294    Fetching ...itory @@gazelle++go_deps+com_github_breml_errchkjson; starting
+_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[1A[K_bk;t=1773097246504[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1109 packages loaded, 20541 \
+_bk;t=1773097246504targets configured)
+_bk;t=1773097246504    currently loading: @@gazelle++go_deps+com_github_go_toolsmith_astfmt// ...\
+_bk;t=1773097246504 (2 packages)
+_bk;t=1773097246504    Fetching ...sitory @@gazelle++go_deps+org_golang_google_protobuf; starting
+_bk;t=1773097246504    Fetching ...tory @@gazelle++go_deps+com_github_prometheus_procfs; starting
+_bk;t=1773097246504    Fetching ...y @@gazelle++go_deps+com_github_go_toolsmith_astcopy; starting
+_bk;t=1773097246504    Fetching ...tory @@gazelle++go_deps+com_github_go_toolsmith_astp; starting
+_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[1A[K_bk;t=1773097246768[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1135 packages loaded, 22817 \
+_bk;t=1773097246768targets configured)
+_bk;t=1773097246768    Fetching ...@@gazelle++go_deps+org_golang_google_protobuf; running Gazelle
+_bk;t=1773097246768    Fetching ...@@gazelle++go_deps+com_github_quasilyte_go_ruleguard; starting
+_bk;t=1773097246768    Fetching repository @@gazelle++go_deps+com_github_xo_terminfo; starting
+_bk;t=1773097246768    Fetching repository @@gazelle++go_deps+com_github_beorn7_perks; starting
+_bk;t=1773097246768    Fetching ...sitory @@gazelle++go_deps+com_github_ldez_structtags; starting
+_bk;t=1773097246768    Fetching ...tory @@gazelle++go_deps+com_github_munnerz_goautoneg; starting
+_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[1A[K_bk;t=1773097246977[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1192 packages loaded, 25301 \
+_bk;t=1773097246977targets configured)
+_bk;t=1773097246977    currently loading: @@gazelle++go_deps+com_github_quasilyte_stdinfo//
+_bk;t=1773097246977    Fetching repository @@gazelle++go_deps+org_uber_go_nilaway; starting
+_bk;t=1773097246977    Fetching repository @@gazelle++go_deps+com_github_picatz_taint; starting
+_bk;t=1773097246977    Fetching ...@gazelle++go_deps+com_github_quasilyte_gogrep; running Gazelle
+_bk;t=1773097247177[1A[K_bk;t=1773097247177[1A[K_bk;t=1773097247177[1A[K_bk;t=1773097247177[1A[K_bk;t=1773097247177[1A[K_bk;t=1773097247177[1A[K_bk;t=1773097247177[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1222 packages loaded, 25549 \
+_bk;t=1773097247177targets configured)
+_bk;t=1773097247177    currently loading: @@gazelle++go_deps+org_golang_x_tools//go/callgraph/vta\
+_bk;t=1773097247177/internal/trie
+_bk;t=1773097247177    Fetching ...ory @@gazelle++go_deps+com_github_klauspost_compress; starting
+_bk;t=1773097248282[1A[K_bk;t=1773097248282[1A[K_bk;t=1773097248282[1A[K_bk;t=1773097248282[1A[K_bk;t=1773097248282[1A[K_bk;t=1773097248282[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1223 packages loaded, 25559 \
+_bk;t=1773097248282targets configured)
+_bk;t=1773097248282    Fetching ...ory @@gazelle++go_deps+com_github_klauspost_compress; starting
+_bk;t=1773097248681[1A[K_bk;t=1773097248681[1A[K_bk;t=1773097248681[1A[K_bk;t=1773097248681[32mAnalyzing:[0m target //services/agentplat/sbox:lint (1227 packages loaded, 26525 \
+_bk;t=1773097248681targets configured)
+_bk;t=1773097248681
+_bk;t=1773097248796[1A[K_bk;t=1773097248796[1A[K_bk;t=1773097248796[1A[K_bk;t=1773097248796[32mINFO: [0mAnalyzed target //services/agentplat/sbox:lint (1227 packages loaded, 26525 targets configured).
+_bk;t=1773097248796
+_bk;t=1773097249082[1A[K_bk;t=1773097249082[32m[6 / 936][0m checking cached actions
+_bk;t=1773097249345[1A[K_bk;t=1773097249345[32m[7 / 936][0m [Prepa] @go_sdk//:pack_reset
+_bk;t=1773097249630[1A[K_bk;t=1773097249630[32m[9 / 936][0m [Prepa] GoStdlib external/rules_go+/stdlib_/pkg [for tool]
+_bk;t=1773097249831[1A[K_bk;t=1773097249831[32m[23 / 936][0m 4 actions, 0 running
+_bk;t=1773097249831    @org_golang_x_sys//unix:unix; 0s remote-cache
+_bk;t=1773097249831    @org_golang_x_text//unicode/norm:norm; 0s remote-cache
+_bk;t=1773097249831    [Prepa] @in_gopkg_yaml_v3//:yaml_v3
+_bk;t=1773097249831    [Prepa] @com_github_spf13_viper//internal/encoding/json:json
+_bk;t=1773097250031[1A[K_bk;t=1773097250031[1A[K_bk;t=1773097250031[1A[K_bk;t=1773097250031[1A[K_bk;t=1773097250031[1A[K_bk;t=1773097250031[32m[211 / 936][0m 6 actions, 0 running
+_bk;t=1773097250031    ...//fields:fields; 0s remote-cache
+_bk;t=1773097250031    @@gazelle++go_deps+com_github_dave_dst//dstutil:dstutil; 0s remote-cache
+_bk;t=1773097250031    ...//internal/intervals:intervals; 0s remote-cache
+_bk;t=1773097250031    @com_github_google_go_cmp//cmp:cmp; 0s remote-cache
+_bk;t=1773097250031    [Prepa] @@gazelle++go_deps+com_github_kisielk_errcheck//errcheck:errcheck
+_bk;t=1773097250031    ...//internal/govendor/go/printer:printer; 0s remote-cache
+_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[1A[K_bk;t=1773097250232[32m[486 / 936][0m 6 actions, 0 running
+_bk;t=1773097250232    ...//internal/fs:fs; 0s remote-cache
+_bk;t=1773097250232    @org_golang_x_tools//internal/packagepath:packagepath; 0s remote-cache
+_bk;t=1773097250232    ...//encoding/protodelim:protodelim; 0s remote-cache
+_bk;t=1773097250232    ...//pkg/halstvol:halstvol; 0s remote-cache
+_bk;t=1773097250232    ...//issue:issue; 0s remote-cache
+_bk;t=1773097250232    [Prepa] ...//analyzer:analyzer
+_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[1A[K_bk;t=1773097250433[32m[809 / 936][0m 6 actions, 0 running
+_bk;t=1773097250433    ...//staticcheck/sa6006:sa6006; 0s remote-cache
+_bk;t=1773097250433    ...//staticcheck/sa6005:sa6005; 0s remote-cache
+_bk;t=1773097250433    ...//staticcheck/sa1002:sa1002; 0s remote-cache
+_bk;t=1773097250433    @@gazelle++go_deps+co_honnef_go_tools//simple/s1003:s1003; 0s remote-cache
+_bk;t=1773097250433    [Prepa] @@gazelle++go_deps+co_honnef_go_tools//staticcheck/sa5012:sa5012
+_bk;t=1773097250433    ...//staticcheck/sa6001:sa6001; 0s remote-cache
+_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[1A[K_bk;t=1773097250684[32m[935 / 936][0m ...//cmd/golangci-lint:golangci-lint; 0s remote-cache
+_bk;t=1773097250884[1A[K_bk;t=1773097250884[32m[935 / 936][0m ...//cmd/golangci-lint:golangci-lint; 0s remote-cache
+_bk;t=1773097250980[1A[K_bk;t=1773097250980[32mINFO: [0mFound 1 target...
+_bk;t=1773097250980[32m[936 / 936][0m no actions running
+_bk;t=1773097250995[1A[K_bk;t=1773097250996Target //services/agentplat/sbox:lint up-to-date:
+_bk;t=1773097250996[32m[936 / 936][0m no actions running
+_bk;t=1773097250996[1A[K_bk;t=1773097250996  /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/bin/services/agentplat/sbox/lint.sh
+_bk;t=1773097250996[32m[936 / 936][0m no actions running
+_bk;t=1773097251017[1A[K_bk;t=1773097251017[32mINFO: [0mElapsed time: 24.689s, Critical Path: 0.83s
+_bk;t=1773097251017[32m[936 / 936][0m no actions running
+_bk;t=1773097251017[1A[K_bk;t=1773097251017[32mINFO: [0m936 processes: 928 remote cache hit, 8 internal.
+_bk;t=1773097251017[32m[936 / 936][0m no actions running
+_bk;t=1773097251017[1A[K_bk;t=1773097251017[32mINFO: [0mBuild completed successfully, 936 total actions
+_bk;t=1773097251017[32mINFO:[0m 
+_bk;t=1773097251017[1A[K_bk;t=1773097251017[32mINFO:[0m 
+_bk;t=1773097251043[1A[K_bk;t=1773097251043[32mINFO: [0mRunning command line: /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/bin/services/agentplat/sbox/lint.sh <args omitted>
+_bk;t=1773097251043[32mINFO:[0m 
+_bk;t=1773097251195[1A[K_bk;t=1773097251195[32mINFO: [0mStreaming build results to: [36mhttps://taaffeite.cluster.engflow.com/invocation/b3449839-150b-4dd0-a0f8-bad986cdb4ed[0m
+_bk;t=1773097251195[0mRunning golangci-lint in directory /home/circleci/figma/services/agentplat/sbox
+_bk;t=1773097251317GOROOT: /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/external/rules_go++go_sdk+go_sdk
+_bk;t=1773097251317GOPATH: /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/external/gazelle++non_module_deps+bazel_gazelle_go_repository_cache
+_bk;t=1773097251317GOCACHE: /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/external/gazelle++non_module_deps+bazel_gazelle_go_repository_cache/gocache
+_bk;t=1773097251317GOFLAGS: -mod=mod
+_bk;t=1773097251317GOEXPERIMENT: jsonv2
+_bk;t=1773097251317GOLANGCI_LINT_CACHE: /tmp/golangci-lint/4a393efe01e7df442acd55953902aaddd11d00f70f38c7de09ab5267ef618e17
+_bk;t=1773097251387[36mINFO[0m golangci-lint has version unknown built with unknown from ? on  
+_bk;t=1773097251387[36mINFO[0m [config_reader] Config search paths: [./ /home/circleci/figma/services/agentplat/sbox/sboxd /home/circleci/figma/services/agentplat/sbox /home/circleci/figma/services/agentplat /home/circleci/figma/services /home/circleci/figma /home/circleci /home /] 
+_bk;t=1773097251388[36mINFO[0m [config_reader] Used config file ../../../.golangci.yml 
+_bk;t=1773097251393[36mINFO[0m [config_reader] Module name "figma.com"      
+_bk;t=1773097251422[36mINFO[0m [goenv] Read go env for 3.74174ms: map[string]string{"GOCACHE":"/home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/external/gazelle++non_module_deps+bazel_gazelle_go_repository_cache/gocache", "GOROOT":"/home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/external/rules_go++go_sdk+go_sdk"} 
+_bk;t=1773097251422[36mINFO[0m [lintersdb] Active 6 linters: [errcheck gofmt govet ineffassign staticcheck unused] 
+_bk;t=1773097258928[36mINFO[0m [loader] Go packages loading at mode 8767 (types_sizes|compiled_files|exports_file|files|deps|imports|name) took 7.506330313s 
+_bk;t=1773097258942[36mINFO[0m [runner/filename_unadjuster] Pre-built 0 adjustments in 12.695429ms 
+_bk;t=1773097261746[36mINFO[0m [linters_context/goanalysis] analyzers took 10.646071859s with top 10 stages: buildir: 7.521157729s, printf: 479.409511ms, inspect: 249.673134ms, fact_purity: 217.873133ms, ctrlflow: 209.102577ms, gofmt: 208.194156ms, nilness: 187.626162ms, S1038: 165.501968ms, fact_deprecated: 164.654ms, SA5012: 163.342702ms 
+_bk;t=1773097261748[36mINFO[0m [runner/exclusion_rules] Skipped 133 issues by rules: [Path: "_test\\.go|testutil/|test_helpers", Linters: "errcheck"] 
+_bk;t=1773097261748[36mINFO[0m [runner] Issues before processing: 169, after processing: 1 
+_bk;t=1773097261748[36mINFO[0m [runner] Processors filtering stat (in/out): max_per_file_from_linter: 1/1, path_absoluter: 169/169, invalid_issue: 169/169, exclusion_paths: 169/169, generated_file_filter: 169/169, fixer: 1/1, exclusion_rules: 169/1, nolint_filter: 1/1, sort_results: 1/1, cgo: 169/169, filename_unadjuster: 169/169, uniq_by_line: 1/1, max_from_linter: 1/1, source_code: 1/1, path_shortener: 1/1, severity-rules: 1/1, path_prettifier: 1/1, path_relativity: 169/169, diff: 1/1, max_same_issues: 1/1 
+_bk;t=1773097261749[36mINFO[0m [runner] processing took 2.522385ms with stages: exclusion_rules: 1.699641ms, generated_file_filter: 352.22µs, nolint_filter: 297.074µs, path_relativity: 128.261µs, source_code: 18.198µs, cgo: 7.502µs, invalid_issue: 5.061µs, path_absoluter: 3.314µs, uniq_by_line: 2.789µs, max_same_issues: 1.682µs, sort_results: 1.612µs, filename_unadjuster: 1.119µs, exclusion_paths: 899ns, path_shortener: 661ns, path_prettifier: 600ns, max_from_linter: 565ns, fixer: 420ns, diff: 351ns, max_per_file_from_linter: 232ns, severity-rules: 184ns 
+_bk;t=1773097261749[36mINFO[0m [runner] linters took 2.80789958s with stages: goanalysis_metalinter: 2.805302107s 
+_bk;t=1773097261749[1mservices/agentplat/sbox/sboxd/handler/workspace_handler_test.go:20[22m:2: [31mfield createCalled is unused[0m (unused)
+_bk;t=1773097261749	createCalled    bool
+_bk;t=1773097261749	[33m^[0m
+_bk;t=17730972617491 issues:
+_bk;t=1773097261749* unused: 1
+_bk;t=1773097261749[36mINFO[0m File cache stats: 1 entries of total size 5.0KiB 
+_bk;t=1773097261749[36mINFO[0m Memory: 105 samples, avg is 139.2MB, max is 529.1MB 
+_bk;t=1773097261749[36mINFO[0m Execution took 10.331444378s                 
+_bk;t=1773097261773
+_bk;t=1773097261773exit status 1
+_bk;t=1773097261773^^^ +++
+_bk;t=1773097262818--- [34mFlush Bazel-related metrics to Datadog[0m
+_bk;t=1773097262819ci-cache-stats not found, skipping
+_bk;t=1773097262819
+_bk;t=1773097262819--- [34mStore Bazel artifacts and server logs[0m
+_bk;t=1773097263990Tags sent
+_bk;t=1773097264013cp: cannot stat '/home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs': No such file or directory
+_bk;t=1773097264023Metrics args: --metrics bazel.memory.final:1372936
+_bk;t=1773097264023Reporting datadog-ci metrics
+_bk;t=1773097265165Metrics sent
+_bk;t=1773097265178
+_bk;t=1773097265178--- [34mReport additional tags to Datadog[0m
+_bk;t=1773097265183
+_bk;t=1773097265183--- [34mReport test results to Datadog[0m
+_bk;t=1773097265184/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+_bk;t=1773097265264
+_bk;t=1773097265265--- [34mStoring and processing test results for suppression[0m
+_bk;t=1773097265265[test-processor] Skipping, feature flag buildkite_ci_interp_test_processor is false.
+_bk;t=17730972652652026/03/09 23:01:05 ci-interp: Searching pattern: "reports/**/*"
+_bk;t=17730972652652026/03/09 23:01:05 ci-interp: Collected 0 XML files
+_bk;t=1773097265265--- [34mReport network error fetching third party dependencies[0m
+_bk;t=1773097265300
+_bk;t=1773097265300--- [34mRecording max memory usage[0m
+_bk;t=17730972653044985188352 bytes ( 4.6428 GiB )
+_bk;t=1773097265304/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+_bk;t=1773097266437Metrics sent
+_bk;t=1773097266448
+_bk;t=1773097266448--- [34mStoring 2 artifacts[0m
+_bk;t=1773097266448Running "/usr/bin/buildkite-agent artifact upload /home/circleci/.npm/_logs/**/*;artifacts/**/*"
+_bk;t=1773097266461[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mFound 6 files that match "/home/circleci/.npm/_logs/**/*;artifacts/**/*"[0m
+_bk;t=1773097266461[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773097266461[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mCreating (0-6)/6 artifacts[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de7-4df0-898d-96f87654dff5 artifacts/bazel_server_log.out (144 B)[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de8-4aa2-912d-9390c37f0911 artifacts/command.profile.gz (224 KiB)[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de5-45e3-acc6-da90fb73bf03 home/circleci/.npm/_logs/2026-02-27T04_00_49_415Z-debug-0.log (1.2 KiB)[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de4-45c6-b3c4-16d173c141c8 home/circleci/.npm/_logs/2026-02-27T04_00_39_741Z-debug-0.log (1.3 KiB)[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de5-4150-8fe8-54583d3e44a5 home/circleci/.npm/_logs/2026-02-27T04_00_53_605Z-debug-0.log (3.3 KiB)[0m
+_bk;t=1773097266787[38;5;48m2026-03-09 23:01:06 INFO  [0m [0mUploading 019cd4d5-2de6-4c89-8850-9da1e0e0e9bc home/circleci/.npm/_logs/2026-02-27T04_00_39_852Z-debug-0.log (449 KiB)[0m
+_bk;t=1773097267460[38;5;48m2026-03-09 23:01:07 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=17730972675202026/03/09 23:01:07 ci-interp: reaping 0 running tasks
+_bk;t=17730972675202026/03/09 23:01:07 ci-interp: Received error from task: bazel run //services/agentplat/sbox:lint -- run ./sboxd/... ./internal/...
+_bk;t=17730972675812026/03/09 23:01:07 ci-interp: Job bazel run //services/agentplat/sbox:lint -- run ./sboxd/... ./internal/... (exit code 1) does not match any retry conditions or has exceeded all limits
+_bk;t=17730972675862026/03/09 23:01:07 retry-cli: Calling retry service for job agentplat-sbox-lint in build 6031337 (exit code: 1)
+_bk;t=17730972679092026/03/09 23:01:07 retry-cli: Retry service response: shouldRetry=false, reason="Deterministic failure: services/agentplat/sbox/sboxd/handler/workspace_handler_test.go:20:2: field createCalled is unused (unused)", traceId=9500f0d3-1eea-4a90-8b4d-58aa858d3cba
+_bk;t=1773097267909Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/logs/*.log"
+_bk;t=1773097267922[38;5;48m2026-03-09 23:01:07 INFO  [0m [0mFound 2 files that match "devex/buildkite/logs/*.log"[0m
+_bk;t=1773097267922[38;5;48m2026-03-09 23:01:07 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773097267922[38;5;48m2026-03-09 23:01:07 INFO  [0m [0mCreating (0-2)/2 artifacts[0m
+_bk;t=1773097268086[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mUploading 019cd4d5-3333-4515-816f-3064112883fe devex/buildkite/logs/11-Monitor_cgroup_resource_usage.log (958 B)[0m
+_bk;t=1773097268086[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mUploading 019cd4d5-3333-47d0-a785-7094f8dd680c devex/buildkite/logs/12-Start_ci-cache-stats_server.log (55 B)[0m
+_bk;t=1773097268440[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=1773097268441Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/results/*.json"
+_bk;t=1773097268457[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mFound 1 files that match "devex/buildkite/results/*.json"[0m
+_bk;t=1773097268457[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773097268457[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mCreating (0-1)/1 artifacts[0m
+_bk;t=1773097268620[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mUploading 019cd4d5-3542-4b5c-81ef-5017d53d7cde devex/buildkite/results/20260309_230102_failed_step.json (2.4 KiB)[0m
+_bk;t=1773097268973[38;5;48m2026-03-09 23:01:08 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=17730972689732026/03/09 23:01:08 ci-interp: failed to evaluate steps: command `bazel run //services/agentplat/sbox:lint -- run ./sboxd/... ./internal/...` failed with exit code 1
+_bk;t=1773097269200
+_bk;t=1773097269200~~~ :warning: Failed to run command, exited with 1, run params:
+_bk;t=1773097269201run --name agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_BRANCH -e BUILDKITE_LABEL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e USE_WEB_JEST_LITE -e BUILDKITE_BUILD_CREATOR_EMAIL -e DOCKER_BUILDKIT -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_PULL_REQUEST -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_TAG -e BUILDKITE_COMMAND -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_MESSAGE -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e BUILDKITE_JOB_ID -e FIGMA_CI_LD_FEATURE_FLAGS -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e BUILDKITE_PARALLEL_JOB_COUNT -e BASH_ENV -e FIGMA_CI_RESOURCE_CLASS -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e BUILDKITE_BUILD_URL -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e GOFLAGS -e BUILDKITE_AGENT_META_DATA_OS -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_NAME -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_COMMIT_RESOLVED -e CI_WORKING_DIRECTORY -e CI_MEM_GIB -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_REPO -e BUILDKITE_PARALLEL_JOB -e SETTINGS_YML -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_RETRY_COUNT -e CI -e AWS_ECR_ACCOUNT_URL -e BUILDKITE -e BUILDKITE_PULL_REQUEST_REPO -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_PLUGINS -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_REPO_SSH_HOST -e FIGMA_BRANCH_TYPE -e CI_USERNAME -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_BUILD_AUTHOR -e JOB_MAINTAINER -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMIT -e RUN_ALL_TESTS_FOR_DELETED_FILES -e BUILDKITE_AGENT_META_DATA_QUEUE -e TEST_REPORTS_DIR -e BUILDKITE_PROJECT_SLUG -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e BUILDKITE_COMPUTE_TYPE -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e BUILDKITE_STEP_IDENTIFIER -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_REBUILT_FROM_BUILD_ID -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e RACK_ENV -e MERGE_BASE_BRANCH -e BUILDKITE_STEP_KEY -e BUILDKITE_PULL_REQUEST_DRAFT -e BUILDKITE_PIPELINE_ID -e IS_SOFT_FAIL -e MERGE_BASE_COMMIT -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e COMMITTER_EMAIL -e CI_CPUS -e BUILDKITE_STEP_ID -e BUILDKITE_SOURCE -e CHANGED_FILES -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e START_TIME -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_AGENT_META_DATA_ARCH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_AGENT_ID --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.git-trace2/019cd4d4-1f83-4361-a6ed-0123762b5e9e:/var/lib/buildkite-agent/builds/production-linux-i-05f87a20b02441fd3-15/figma/.git-trace2/019cd4d4-1f83-4361-a6ed-0123762b5e9e -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3009467-41213.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3009467-41213.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+_bk;t=1773097269282~~~ Uploading linked container logs
+_bk;t=1773097269294[38;5;48m2026-03-09 23:01:09 INFO  [0m [0mFound 1 files that match "docker-compose-logs/*.log"[0m
+_bk;t=1773097269294[38;5;48m2026-03-09 23:01:09 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773097269294[38;5;48m2026-03-09 23:01:09 INFO  [0m [0mCreating (0-1)/1 artifacts[0m
+_bk;t=1773097269451[38;5;48m2026-03-09 23:01:09 INFO  [0m [0mUploading 019cd4d5-3886-4ccc-bf45-87321e6faed9 docker-compose-logs/network.log (0 B)[0m
+_bk;t=1773097269778[38;5;48m2026-03-09 23:01:09 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=1773097269780--- 
+_bk;t=1773097269780^^^ +++
+_bk;t=1773097269780[31m🚨 Error: The command exited with status 1[0m
+_bk;t=1773097269780^^^ +++
+_bk;t=1773097269780~~~ Running agent post-command hook
+_bk;t=1773097269780[90m$[0m /etc/buildkite-agent/hooks/post-command
+_bk;t=1773097270664check-feature-flag: 2026/03/09 23:01:10 checking flag buildkite_webhook_commit_statuses
+_bk;t=1773097270664check-feature-flag: 2026/03/09 23:01:10 flag value: false
+_bk;t=1773097270671[agentplat-sbox-lint] Reporting commit status: failure (RETRY_COUNT=0, EXIT_STATUS=1)
+_bk;t=1773097273929[agentplat-sbox-lint] Successfully reported commit status to GitHub
+_bk;t=1773097273929~~~ Running plugin docker-compose post-command hook
+_bk;t=1773097273929[90m$[0m devex/buildkite/plugins/docker-compose/hooks/post-command
+_bk;t=1773097273946~~~ :docker: Docker compose: post-command hook
+_bk;t=1773097273961user command error: running "plugin docker-compose command" shell hook: The plugin docker-compose command hook exited with status 1
+_bk;t=1773097273961~~~ Running agent pre-exit hook
+_bk;t=1773097273961[90m$[0m /etc/buildkite-agent/hooks/pre-exit
+_bk;t=1773097273974^^^ :link: Datadog Links
+_bk;t=1773097273974^^^ +++
+_bk;t=1773097273981]1339;url='https://app.datadoghq.com/dashboard/ifv-nnk-8m5/?tpl_var_build_id%5B0%5D=019cd4d2-c342-4f1d-8a78-28a0605c6a16&tpl_var_job_id%5B0%5D=019cd4d4-1f83-4361-a6ed-0123762b5e9e&tpl_var_instance_id%5B0%5D=i-05f87a20b02441fd3&tpl_var_host%5B0%5D=ip-10-143-180-163.us-west-2.compute.internal&from_ts=1773097168000&to_ts=1773097303000&live=false';content='Click here to view job/build/host metrics'
+_bk;t=1773097273981]1339;url='https://app.datadoghq.com/containers?query=ci.build.id%3A019cd4d2-c342-4f1d-8a78-28a0605c6a16%20AND%20ci.job.id%3A019cd4d4-1f83-4361-a6ed-0123762b5e9e&from_ts=1773097168000&to_ts=1773097303000&live=false';content='Click here to view job containers'
+_bk;t=1773097273982]1339;url='https://app.datadoghq.com/process?query=ci.build.id%3A019cd4d2-c342-4f1d-8a78-28a0605c6a16%20AND%20ci.job.id%3A019cd4d4-1f83-4361-a6ed-0123762b5e9e&from_ts=1773097168000&to_ts=1773097303000&live=false';content='Click here to view job processes'
+_bk;t=1773097273983]1339;url='https://app.datadoghq.com/logs?query=service%3Abuildkite%20%40host%3Ai-05f87a20b02441fd3&from_ts=1773097168000&to_ts=1773097303000&live=false&storage=flex_tier';content='Click here to view system logs'
+_bk;t=1773097273984]1339;url='https://app.datadoghq.com/ci/pipeline-executions?query=ci_level%3Ajob%20%40buildkite.agent.name%3Aproduction-linux-i-05f87a20b02441fd3-15&agg_m=count&agg_m_source=base&agg_t=count&cipipeline_explorer_sort=timestamp%2Casc&cols=%40ci.status%2Ctimestamp%2C%40ci.job.url%2C%40ci.job.name%2C%40duration%2C%40git.branch&fromUser=true&index=cipipeline&live=false&paused=true';content='Click here to view job runs on this host'
+_bk;t=1773097273984~~~ Running global pre-exit hook
+_bk;t=1773097274331Job vcpu_hours: 3 * .0208333 = .0624999
+_bk;t=1773097277347Warning: Failed to retrieve AWS EC2 instance price
+_bk;t=1773097277348Final CI stage: container.main
+_bk;t=17730972773532026/03/09 23:01:17 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+_bk;t=1773097277619Tags sent successfully
+_bk;t=1773097277773
+_bk;t=1773097277773=== Git trace2 summaries ===
+_bk;t=1773097277773{"cmd":"fetch","dur":9.263231,"code":0,"time":"2026-03-09T23:00:13.761603Z","caller":"custom-checkout","remote":"github.com/figma/figma.git","proxy":"http://git-mirror.devex.figma.com:80","ls_refs":true}
+_bk;t=1773097277773===========================
+_bk;t=1773097278010{"status": "ok"}Emitted 1 git trace2 metrics to Datadog
+_bk;t=1773097278016Revoking $FIGMA_CI_GITHUB_TOKEN...0m0.337s
+_bk;t=1773097278352Stopping ssh-agent 3009756
+_bk;t=1773097278356Agent pid 3009756 killed
+_bk;t=1773097278356~~~ Pruning unused Docker resources
+_bk;t=1773097278370Total reclaimed space: 0B
+_bk;t=1773097278450Total:	0B
+_bk;t=1773097278453~~~ Disk snapshot
+_bk;t=1773097278453Disk before job: 26% | Disk after job: 26% | Delta: 0%
+_bk;t=1773097278456Filesystem      Size  Used Avail Use% Mounted on
+_bk;t=1773097278456/dev/nvme0n1p1   50G   13G   38G  26% /
+_bk;t=1773097278456Buildkite main command experienced an error, setting exit code to 1
+_bk;t=1773097278456BUILDKITE_JOB_FINAL_EXIT_STATUS=failure
+_bk;t=1773097278472[90m# SSH_AUTH_SOCK removed[0m
+_bk;t=1773097278472[90m# SSH_AGENT_PID removed[0m
+_bk;t=1773097278472~~~ Running plugin docker-compose pre-exit hook
+_bk;t=1773097278472[90m$[0m devex/buildkite/plugins/docker-compose/hooks/pre-exit
+_bk;t=1773097278491~~~ :docker: Reporting docker-compose memory usage to Datadog
+_bk;t=1773097278496{
+_bk;t=1773097278496  "services": [],
+_bk;t=1773097278496  "max_usage_in_bytes": 4222976
+_bk;t=1773097278496}
+_bk;t=1773097278783~~~ :docker: Cleaning up after docker-compose
+_bk;t=1773097278791agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097278792[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e kill
+_bk;t=1773097278940[1A[1B[0G[?25l[+] Running 0/0
+_bk;t=1773097278940[37m ⠋ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killing                                                                     0.1s
+_bk;t=1773097278940[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279040[37m ⠙ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killing                                                                     0.2s
+_bk;t=1773097279040[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279140[37m ⠹ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killing                                                                     0.3s
+_bk;t=1773097279140[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279240[37m ⠸ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killing                                                                     0.4s
+_bk;t=1773097279240[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279341[37m ⠼ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killing                                                                     0.5s
+_bk;t=1773097279341[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+_bk;t=1773097279370[34m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Killed                                                                      0.5s
+_bk;t=1773097279370[0m[?25h
+_bk;t=1773097279382agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097279382[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e rm --force -v
+_bk;t=1773097279432Going to remove agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network
+_bk;t=1773097279437[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773097279437[34m ⠿ Container agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e-network  Removed                                                                     0.0s
+_bk;t=1773097279437[0m[?25h
+_bk;t=1773097279448agent_cgroup: /agent.slice/agent-15/
+_bk;t=1773097279448[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e down --volumes
+_bk;t=1773097279597[1A[1B[0G[?25l[+] Running 0/0
+_bk;t=1773097279597[37m ⠋ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default  Removing                                                                      0.1s
+_bk;t=1773097279597[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279697[37m ⠙ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default  Removing                                                                      0.2s
+_bk;t=1773097279697[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773097279797[37m ⠹ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default  Removing                                                                      0.3s
+_bk;t=1773097279797[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+_bk;t=1773097279818[34m ⠿ Network agentplat-sbox-lint-019cd4d4-1f83-4361-a6ed-0123762b5e9e_default  Removed                                                                       0.3s
+_bk;t=1773097279818[0m[?25h

@@ -201,10 +201,10 @@ cat *_results.json | jq '.runs[].failing_tests[].name'
 
 ## Building
 
-The CLI is a Rust project at `/Users/dtsung/Documents/buildkite-cli`:
+The CLI is a Rust project at `/Users/dtsung/code/buildkite-cli`:
 
 ```bash
-cd /Users/dtsung/Documents/buildkite-cli
+cd /Users/dtsung/code/buildkite-cli
 cargo build --release
 ```
 

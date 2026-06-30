@@ -1,0 +1,1738 @@
+_bk;t=1773439095052~~~ Running agent environment hook
+_bk;t=1773439095052[90m$[0m /etc/buildkite-agent/hooks/environment
+_bk;t=1773439095105FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED: true
+_bk;t=1773439095106~~~ :broom: Setting up worker environment
+_bk;t=1773439095106~~~ :old_key: Loading job credentials
+_bk;t=1773439095106Fetching job JWT from Buildkite...0m0.167s
+_bk;t=1773439095273Authenticating to the Figma CI credential exchange...fetched imdsv2 token
+_bk;t=1773439095285fetched instance role
+_bk;t=1773439095290fetched instance credentials
+_bk;t=17734390955360m0.245s
+_bk;t=1773439095537Starting an SSH agent and loading figmaci/production/FIGMABOT2_SSH_PRIVATE_KEY...
+_bk;t=1773439095540Agent pid 3576313
+_bk;t=1773439096147Identity added: (stdin) (figmabot+2@figma.com)
+_bk;t=17734390966132026/03/13 21:58:16 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+_bk;t=1773439096872Tags sent successfully
+_bk;t=1773439096955~~~ :lock: Verifying pipeline integrity
+_bk;t=1773439096981[90m# JOB_START added[0m
+_bk;t=1773439096981[90m# ENABLE_DD_COMMAND_LOGGING added[0m
+_bk;t=1773439096981[90m# DISK_USAGE_PCT_START added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_TEST_QUEUE_SINATRA_REDIS added[0m
+_bk;t=1773439096981[90m# STABLE_COMMITS_TOKEN_SECRET_ID added[0m
+_bk;t=1773439096981[90m# AWS_SESSION_TOKEN added[0m
+_bk;t=1773439096981[90m# AWS_ACCESS_KEY_ID added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_PRIVATE_DATA_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_ARTIFACTORY_ENDPOINT added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_STEP_SIGNING_KEY_ID added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_PROBER_BUILDS_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_TEST_QUEUE_REDIS added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_CACHE_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_I18N_PRIVATE_BUCKET added[0m
+_bk;t=1773439096981[90m# ADMIN_AWS_SESSION_TOKEN added[0m
+_bk;t=1773439096981[90m# SSH_AGENT_PID added[0m
+_bk;t=1773439096981[90m# BUILDKITE_AGENTS_PER_INSTANCE added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_XCODE_BUCKET added[0m
+_bk;t=1773439096981[90m# LC_ALL added[0m
+_bk;t=1773439096981[90m# ADMIN_AWS_SECRET_ACCESS_KEY added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_LAMBDA_BUILDS_BUCKET added[0m
+_bk;t=1773439096981[90m# CI_HOOK_STAGE_FILE added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_TOOLS_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_GITHUB_TOKEN added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED added[0m
+_bk;t=1773439096981[90m# CI_JOB_STAGE_FILE added[0m
+_bk;t=1773439096981[90m# ADMIN_AWS_ACCESS_KEY_ID added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT added[0m
+_bk;t=1773439096981[90m# STABLE_COMMITS_ENDPOINT added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT added[0m
+_bk;t=1773439096981[90m# SSH_AUTH_SOCK added[0m
+_bk;t=1773439096981[90m# AWS_DEFAULT_REGION added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_BAZEL_TARGET_DETERMINATION_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_TEMPORAL_WORKFLOW_HISTORIES_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_SINATRA_TEST_DURATION added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_I18N_PUBLIC_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_VM_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_STATE_BUCKET added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_GIT_MIRROR_ENDPOINT added[0m
+_bk;t=1773439096981[90m# BUILDKITE_BINARY_DEPS_HASHES added[0m
+_bk;t=1773439096981[90m# AWS_SECRET_ACCESS_KEY added[0m
+_bk;t=1773439096981[90m# FIGMA_CI_ARTIFACT_CACHE_ENDPOINT added[0m
+_bk;t=1773439096981~~~ Preparing plugins
+_bk;t=1773439096982~~~ Running agent pre-checkout hook
+_bk;t=1773439096982[90m$[0m /etc/buildkite-agent/hooks/pre-checkout
+_bk;t=1773439097008Git trace2 enabled: /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335
+_bk;t=1773439097010agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439097708.				devex					     jsvm-cpp					 rootly
+_bk;t=1773439097708..				devops					     k6						 .rubocop_todo.yml
+_bk;t=1773439097708agent				discovery-pipeline			     k8s					 .rubocop.yml
+_bk;t=1773439097708.agents				docker-compose-logs			     kafka					 ruby
+_bk;t=1773439097708AGENTS.md			.dockerignore				     lambda					 .ruby-version
+_bk;t=1773439097708ai-agent			dogma					     launch_darkly				 .ruby-version-next
+_bk;t=1773439097708aibox				dotfig					     .lfs-assets-id				 rust
+_bk;t=1773439097708aibox-use-role			drift-integration			     .lfsconfig					 rust-toolchain
+_bk;t=1773439097708antiabuse			dx					     LICENSE					 scenegraph-server
+_bk;t=1773439097708antiabuse-iframe		dx-use-role				     litmus					 scripts
+_bk;t=1773439097708artifact-metadata-webhook	e2e					     livegraph					 search
+_bk;t=1773439097708artifacts			editor-embeds				     livegraph-internal				 search-indexer
+_bk;t=1773439097708asana				entity-sync-v2				     livequery					 secrets
+_bk;t=1773439097708.aspect				envoy					     local-extension-registry			 security
+_bk;t=1773439097708asset_publish_data_snapshots	error-dashboard				     log					 .semgrepignore
+_bk;t=1773439097708bazel				etcd					     m1-docker-compose.yml			 sentry
+_bk;t=1773439097708bazel-ci-targets.txt		figcode					     macos-dev-setup				 services
+_bk;t=1773439097708.bazel_fix_commands.json	figdev					     .mailmap					 share
+_bk;t=1773439097708.bazelignore			figfile-api				     maintainers				 shell
+_bk;t=1773439097708.bazeliskrc			figfile-event-stream			     maintainers.yml				 should_run_all_tests.txt
+_bk;t=1773439097708.bazelrc			fig_file_random_editor			     mcp-config.yml				 sinatra
+_bk;t=1773439097708.bazelversion			figgytron				     .mcp.json					 sinatra-async-worker
+_bk;t=1773439097708beacon				figkube					     memorydb					 sinatra-ecs-task
+_bk;t=1773439097708benchmark-litmus		figma					     .metadata_never_index			 sitemaps
+_bk;t=1773439097708bin				figma-cli				     minifig					 sites-preview-shared
+_bk;t=1773439097708blob-store			figma.code-workspace			     minifig.coder.yml				 sites-runtime
+_bk;t=1773439097708BUILD.bazel			figmadoc				     minifig-schema.json			 sites-server-renderer
+_bk;t=1773439097708buildbuddy.yaml			figma_repl				     minifig.yml				 sites-tests
+_bk;t=1773439097708.bundle				figmascope-redaction-lambda		     misc-tools					 sites-usage-data-scraper
+_bk;t=1773439097708.cache				figment					     mise.amd64.toml				 smokescreen
+_bk;t=1773439097708.cargo				fig_migrator				     mise.coder.toml				 socket.yml
+_bk;t=1773439097708Cargo.lock			figser					     mise.macos.toml				 sorbet
+_bk;t=1773439097708Cargo.toml			figtag					     mise.rce.toml				 spacelift-admin
+_bk;t=1773439097708catalog-info.yaml		file-diff				     .mise.toml					 spacelift-ci-jobs
+_bk;t=1773439097708changestream			file-importer				     mitmproxy-certs				 sprig
+_bk;t=1773439097708charts				file-proxy				     ml						 src
+_bk;t=1773439097708cherry_pick			.fileTemplates.json			     mnemo					 ssl
+_bk;t=1773439097708chrome-os-app			file_test_map.json			     mobile-android				 support-chat-iframe
+_bk;t=1773439097708ci_env				file_test_map_sinatra.json		     mobile-common				 surveyors
+_bk;t=1773439097708ci_feature_flags.txt		file_test_map_sinatra-rollout-tests.json     mobile-ios					 .syncpackrc.mjs
+_bk;t=1773439097708ci-schema.json			filtered_sinatra_tests.txt		     mobile-prototyping				 teams.go
+_bk;t=1773439097708.clang-format-ignore		flag_to_test_map.json			     MODULE.bazel				 TEAMS.yml
+_bk;t=1773439097708.claude				flag_to_test_map_sinatra.json		     MODULE.bazel.lock				 TEAMS_YML_README.md
+_bk;t=1773439097708CLAUDE.md			flag_to_test_map_sinatra-rollout-tests.json  monitoring					 .templates
+_bk;t=1773439097708.claude-plugin			flag-wizard				     monitors					 temporal
+_bk;t=1773439097708cloud-docker-compose.coder.yml	flink					     msk					 temporal-go-worker
+_bk;t=1773439097708cloud-docker-compose.yml	font-index-tooling			     multiplayer				 temporal-worker
+_bk;t=1773439097708cloudflare			fpl					     multiplayer_data_loss_observability_script  terrafig
+_bk;t=1773439097708codebase-suggestions		fullscreen				     multiplayer-etcd				 TESTING.md
+_bk;t=1773439097708code-components-transpiler	Gemfile					     multiplayer-load-test			 test-snapshot-images
+_bk;t=1773439097708code-devtools-worker		Gemfile.lock				     multiplayer-proxy				 tf
+_bk;t=1773439097708codegen				Gemfile_next.lock			     notion-docs				 tmp
+_bk;t=1773439097708codemirror6			.git					     .npmrc					 todo-lint-migrations.md
+_bk;t=1773439097708code-samples			.gitattributes				     o11y					 tools
+_bk;t=1773439097708code-sandbox-worker		.git-blame-ignore-revs			     orca					 traffic
+_bk;t=1773439097708.codex				git-delete-merged-branches		     package.json				 tree-sitter-datadogmonitor
+_bk;t=1773439097708config				git-delete-merged-branches.ts		     patches					 tunnel
+_bk;t=1773439097708cors-image-proxy-lambda		githooks				     payload					 .tx
+_bk;t=1773439097708cortex_inspector		.github					     permissions				 upnode
+_bk;t=1773439097708coverage			.gitignore				     pixie					 .use-ruby-next
+_bk;t=1773439097708.cursor				go					     plugin-gateway				 vector-aggregator
+_bk;t=1773439097708.cursorindexingignore		.golangci.yml				     .pnpmfile.cjs				 vector-metrics-pipeline
+_bk;t=1773439097708.cursorteam			go.mod					     pnpm-lock.yaml				 vendor
+_bk;t=1773439097708dagster				google-tag-manager			     pnpm-workspace.yaml			 viewer
+_bk;t=1773439097708dashboards			go.sum					     postgresql					 vitest.workspace.js
+_bk;t=1773439097708database_dev			gov					     .prettierignore				 .vscode
+_bk;t=1773439097708data-eng			graphiql				     .prettierrc				 vscode-extension
+_bk;t=1773439097708datahub-executor		.graphqlrc.yml				     .prettier_shim.js				 vulny
+_bk;t=1773439097708db-events-pipeline		heartbeat-client			     probers					 WARP.md
+_bk;t=1773439097708dbops				heartbeat-server			     prodbox					 wb
+_bk;t=1773439097708dbschema			heartbeat-server-go			     .projections.json				 weavy
+_bk;t=1773439097708db_setup.log			high-integrity-approvals		     .projections.md				 web
+_bk;t=1773439097708dbt				high-integrity-approvals.yml		     .pryrc					 webhooks
+_bk;t=1773439097708deny.toml			hk.pkl					     public					 web-logger
+_bk;t=1773439097708deploys				.ignore					     pyrightconfig.json				 widget-iframes
+_bk;t=1773439097708deps				image-resizer				     Rakefile					 widget-oauth
+_bk;t=1773439097708design-to-react			infra-metadata				     rds					 WORKSPACE
+_bk;t=1773439097708desktop				infra-tools				     README.md					 .yamlfmt.yaml
+_bk;t=1773439097708devbox				integrations				     redis					 .zed
+_bk;t=1773439097708devbox_cli			integration-test			     REPO.bazel					 zendesk
+_bk;t=1773439097708devbox-profiles			interaction-test			     reports
+_bk;t=1773439097708.devcontainer			internal-packages			     repo.txt
+_bk;t=1773439097708developer-docs			jira-add-on				     rest-api-schema
+_bk;t=1773439097709/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma already exists, skipping
+_bk;t=1773439097710/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel already exists, skipping
+_bk;t=1773439097716[git-bundle] Downloading s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma/../ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+_bk;t=1773439098253Completed 256.0 KiB/16.8 MiB (5.3 MiB/s) with 1 file(s) remainingCompleted 512.0 KiB/16.8 MiB (10.3 MiB/s) with 1 file(s) remainingCompleted 768.0 KiB/16.8 MiB (15.1 MiB/s) with 1 file(s) remainingCompleted 1.0 MiB/16.8 MiB (19.8 MiB/s) with 1 file(s) remaining  Completed 1.2 MiB/16.8 MiB (24.4 MiB/s) with 1 file(s) remaining  Completed 1.5 MiB/16.8 MiB (28.7 MiB/s) with 1 file(s) remaining  Completed 1.8 MiB/16.8 MiB (33.0 MiB/s) with 1 file(s) remaining  Completed 2.0 MiB/16.8 MiB (37.2 MiB/s) with 1 file(s) remaining  Completed 2.2 MiB/16.8 MiB (41.1 MiB/s) with 1 file(s) remaining  Completed 2.5 MiB/16.8 MiB (44.9 MiB/s) with 1 file(s) remaining  Completed 2.8 MiB/16.8 MiB (48.7 MiB/s) with 1 file(s) remaining  Completed 3.0 MiB/16.8 MiB (52.3 MiB/s) with 1 file(s) remaining  Completed 3.2 MiB/16.8 MiB (55.9 MiB/s) with 1 file(s) remaining  Completed 3.5 MiB/16.8 MiB (59.6 MiB/s) with 1 file(s) remaining  Completed 3.8 MiB/16.8 MiB (63.1 MiB/s) with 1 file(s) remaining  Completed 4.0 MiB/16.8 MiB (66.7 MiB/s) with 1 file(s) remaining  Completed 4.2 MiB/16.8 MiB (70.2 MiB/s) with 1 file(s) remaining  Completed 4.5 MiB/16.8 MiB (72.4 MiB/s) with 1 file(s) remaining  Completed 4.8 MiB/16.8 MiB (74.3 MiB/s) with 1 file(s) remaining  Completed 5.0 MiB/16.8 MiB (73.9 MiB/s) with 1 file(s) remaining  Completed 5.2 MiB/16.8 MiB (74.6 MiB/s) with 1 file(s) remaining  Completed 5.5 MiB/16.8 MiB (76.4 MiB/s) with 1 file(s) remaining  Completed 5.8 MiB/16.8 MiB (76.0 MiB/s) with 1 file(s) remaining  Completed 6.0 MiB/16.8 MiB (77.7 MiB/s) with 1 file(s) remaining  Completed 6.2 MiB/16.8 MiB (78.2 MiB/s) with 1 file(s) remaining  Completed 6.5 MiB/16.8 MiB (77.0 MiB/s) with 1 file(s) remaining  Completed 6.8 MiB/16.8 MiB (79.2 MiB/s) with 1 file(s) remaining  Completed 7.0 MiB/16.8 MiB (79.8 MiB/s) with 1 file(s) remaining  Completed 7.2 MiB/16.8 MiB (80.1 MiB/s) with 1 file(s) remaining  Completed 7.5 MiB/16.8 MiB (80.7 MiB/s) with 1 file(s) remaining  Completed 7.8 MiB/16.8 MiB (80.9 MiB/s) with 1 file(s) remaining  Completed 8.0 MiB/16.8 MiB (81.3 MiB/s) with 1 file(s) remaining  Completed 8.2 MiB/16.8 MiB (81.6 MiB/s) with 1 file(s) remaining  Completed 8.5 MiB/16.8 MiB (82.0 MiB/s) with 1 file(s) remaining  Completed 8.8 MiB/16.8 MiB (82.3 MiB/s) with 1 file(s) remaining  Completed 9.0 MiB/16.8 MiB (82.7 MiB/s) with 1 file(s) remaining  Completed 9.2 MiB/16.8 MiB (83.0 MiB/s) with 1 file(s) remaining  Completed 9.5 MiB/16.8 MiB (83.2 MiB/s) with 1 file(s) remaining  Completed 9.8 MiB/16.8 MiB (83.4 MiB/s) with 1 file(s) remaining  Completed 10.0 MiB/16.8 MiB (83.6 MiB/s) with 1 file(s) remaining Completed 10.2 MiB/16.8 MiB (83.9 MiB/s) with 1 file(s) remaining Completed 10.5 MiB/16.8 MiB (84.1 MiB/s) with 1 file(s) remaining Completed 10.8 MiB/16.8 MiB (84.2 MiB/s) with 1 file(s) remaining Completed 11.0 MiB/16.8 MiB (84.4 MiB/s) with 1 file(s) remaining Completed 11.2 MiB/16.8 MiB (85.3 MiB/s) with 1 file(s) remaining Completed 11.5 MiB/16.8 MiB (84.6 MiB/s) with 1 file(s) remaining Completed 11.8 MiB/16.8 MiB (84.9 MiB/s) with 1 file(s) remaining Completed 12.0 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 12.2 MiB/16.8 MiB (85.5 MiB/s) with 1 file(s) remaining Completed 12.5 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 12.8 MiB/16.8 MiB (85.7 MiB/s) with 1 file(s) remaining Completed 13.0 MiB/16.8 MiB (85.9 MiB/s) with 1 file(s) remaining Completed 13.2 MiB/16.8 MiB (86.1 MiB/s) with 1 file(s) remaining Completed 13.5 MiB/16.8 MiB (86.4 MiB/s) with 1 file(s) remaining Completed 13.8 MiB/16.8 MiB (86.3 MiB/s) with 1 file(s) remaining Completed 14.0 MiB/16.8 MiB (86.5 MiB/s) with 1 file(s) remaining Completed 14.2 MiB/16.8 MiB (86.6 MiB/s) with 1 file(s) remaining Completed 14.5 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 14.8 MiB/16.8 MiB (86.9 MiB/s) with 1 file(s) remaining Completed 15.0 MiB/16.8 MiB (87.1 MiB/s) with 1 file(s) remaining Completed 15.2 MiB/16.8 MiB (87.3 MiB/s) with 1 file(s) remaining Completed 15.5 MiB/16.8 MiB (87.4 MiB/s) with 1 file(s) remaining Completed 15.8 MiB/16.8 MiB (87.5 MiB/s) with 1 file(s) remaining Completed 16.0 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining Completed 16.2 MiB/16.8 MiB (87.7 MiB/s) with 1 file(s) remaining Completed 16.5 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (88.0 MiB/s) with 1 file(s) remaining Completed 16.8 MiB/16.8 MiB (87.6 MiB/s) with 1 file(s) remaining download: s3://figma-ci-cache-production/bundles/019ce933-50d4-4732-a800-fa98dedf0004/ci-git-bundle-2f9d6226314a-39797485db7c.bundle to production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+_bk;t=1773439098498[90m# GIT_CHECKOUT_START_TIME added[0m
+_bk;t=1773439098498[90m# GIT_TRACE2_CONFIG_PARAMS added[0m
+_bk;t=1773439098498[90m# GIT_TRACE2_EVENT_BRIEF added[0m
+_bk;t=1773439098498[90m# GIT_TRACE2_EVENT_NESTING added[0m
+_bk;t=1773439098498[90m# GIT_TRACE2_EVENT added[0m
+_bk;t=1773439098498[90m# BUILDKITE_CLEAN_CHECKOUT added[0m
+_bk;t=1773439098498[90m# CI_GIT_BUNDLE_PATH added[0m
+_bk;t=1773439098498[90m# GIT_TRACE2_ENV_VARS added[0m
+_bk;t=1773439098498~~~ Preparing working directory
+_bk;t=1773439098498[90m$[0m cd /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma
+_bk;t=1773439098498~~~ Running agent checkout hook
+_bk;t=1773439098498[90m$[0m /etc/buildkite-agent/hooks/checkout
+_bk;t=1773439098519In checkout hook v1.0.14
+_bk;t=1773439098522Starting custom checkout logic!
+_bk;t=1773439098522[90m# Using Goblet: true[0m
+_bk;t=1773439098527[90m# Host "github.com" already in list of known hosts at "/var/lib/buildkite-agent/.ssh/known_hosts"[0m
+_bk;t=1773439098527[90m# In checkout directory: /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma[0m
+_bk;t=1773439098527[90m# Preparing to use Goblet at http://git-mirror.devex.figma.com:80[0m
+_bk;t=1773439098529[90m# Result of git remote -v 
+_bk;t=1773439098529`origin	http://github.com/figma/figma.git (fetch)
+_bk;t=1773439098529origin	http://github.com/figma/figma.git (push)`[0m
+_bk;t=1773439098529[90m$[0m git remote set-url origin http://github.com/figma/figma.git
+_bk;t=1773439098531[90m$[0m git config http.proxy http://git-mirror.devex.figma.com:80
+_bk;t=1773439099352[90m# buildkite_keep_git_http_proxy is on, keeping git http proxy set[0m
+_bk;t=1773439099352[90m$[0m sudo git clean -ffxdq
+_bk;t=1773439104901[90m# Unbundling /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle[0m
+_bk;t=1773439104901[90m$[0m git bundle unbundle /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/ci-git-bundle-2f9d6226314a-39797485db7c.bundle
+_bk;t=1773439108063Unbundling objects: 100% (13487/13487), 16.77 MiB | 16.84 MiB/s, done.
+_bk;t=1773439111099Resolving deltas: 100% (8218/8218), completed with 2692 local objects.
+_bk;t=177343911142539797485db7c015fe430b0b519161fcbf2de0483 refs/tags/ci-git-bundle-019ce933-50d4-4732-a800-fa98dedf0004
+_bk;t=1773439111426[90m# Setting origin/master to MERGE_BASE_MASTER_COMMIT a0e18ee951127b32be1ded36b1b043770946712b[0m
+_bk;t=1773439111426[90m$[0m git update-ref refs/remotes/origin/master a0e18ee951127b32be1ded36b1b043770946712b
+_bk;t=1773439111460[90m# Tracking 0 master commits fetched between c4173443ac6a081a3606619903096198307c4bdb and a0e18ee951127b32be1ded36b1b043770946712b[0m
+_bk;t=1773439111460[90m$[0m git switch --force --detach 39797485db7c015fe430b0b519161fcbf2de0483
+_bk;t=1773439115878Warning: you are leaving 344 commits behind, not connected to
+_bk;t=1773439115878any of your branches:
+_bk;t=1773439115878
+_bk;t=1773439115878  4a61b4eeb801 Merge branch 'yichao/plan-id-denorm-poc-cycle-prevetion' into mq-tmp-c41734-9001-709378
+_bk;t=1773439115878  c4173443ac6a Update PPTX export test to address some comments from previous PR (#709958)
+_bk;t=1773439115878  e1566a0b6a01 web: Wire recent sessions into Make Local UI (#709983)
+_bk;t=1773439115878  602ad4abab05 Fullscreen: Remove old dispatchToFacet and replace with optimized dispatchToRef (#709935)
+_bk;t=1773439115878 ... and 340 more.
+_bk;t=1773439115878
+_bk;t=1773439115878If you want to keep them by creating a new branch, this may be a good time
+_bk;t=1773439115878to do so with:
+_bk;t=1773439115878
+_bk;t=1773439115878 git branch <new-branch-name> 4a61b4eeb801
+_bk;t=1773439115878
+_bk;t=1773439115884HEAD is now at 39797485db7c cortex: add observability for workspace/create bootstrap
+_bk;t=1773439117446[90m# Checking to see if Git data needs to be sent to Buildkite[0m
+_bk;t=1773439117446[90m$[0m buildkite-agent meta-data exists buildkite:git:commit
+_bk;t=1773439118534check-feature-flag: 2026/03/13 21:58:38 checking flag buildkite_resolve_commit_after_checkout
+_bk;t=1773439118534check-feature-flag: 2026/03/13 21:58:38 flag value: true
+_bk;t=1773439118542Git checkout required 0 retries
+_bk;t=1773439118563[90m# GIT_CHECKOUT_RETRIES added[0m
+_bk;t=1773439118563[90m# Checking to see if git commit information needs to be sent to Buildkite...[0m
+_bk;t=1773439118563[90m# BUILDKITE_COMMIT is already resolved and meta-data populated, skipping[0m
+_bk;t=1773439118563~~~ Running agent post-checkout hook
+_bk;t=1773439118563[90m$[0m /etc/buildkite-agent/hooks/post-checkout
+_bk;t=1773439118587git head commit timestamp: 2026-03-13T21:55:58Z
+_bk;t=1773439118588=== Stable commit check context ===
+_bk;t=1773439118588Branch: darren/cortex-call-workspace-create
+_bk;t=1773439118588Build number: 6075330
+_bk;t=1773439118588Build URL: https://buildkite.com/figma/figma/builds/6075330
+_bk;t=1773439118588Job ID: 019ce935-099e-42ea-93d6-1e8d3df48335
+_bk;t=1773439118588Job label: cortex-test-and-build
+_bk;t=1773439118588Pipeline: figma
+_bk;t=1773439118588Step key: cortex-test-and-build
+_bk;t=1773439118588Should check stable: false
+_bk;t=1773439118588===================================
+_bk;t=1773439118589Skipping stable check: not a designated job for this pipeline (pipeline=figma, step=cortex-test-and-build)
+_bk;t=1773439118609[90m# BASED_OFF_STABLE added[0m
+_bk;t=1773439118609[90m# GIT_CHECKOUT_DURATION added[0m
+_bk;t=1773439118609[90m# GIT_HEAD_COMMIT_TIMESTAMP added[0m
+_bk;t=1773439118609~~~ Running agent pre-command hook
+_bk;t=1773439118609[90m$[0m /etc/buildkite-agent/hooks/pre-command
+_bk;t=1773439118629~~~ Running plugin docker-compose command hook
+_bk;t=1773439118629[90m$[0m devex/buildkite/plugins/docker-compose/hooks/command
+_bk;t=1773439118652{
+_bk;t=1773439118652  "services": {
+_bk;t=1773439118652    "main": {
+_bk;t=1773439118652      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+_bk;t=1773439118652      "deploy": {
+_bk;t=1773439118652        "resources": {
+_bk;t=1773439118652          "limits": {
+_bk;t=1773439118652            "memory": "32g"
+_bk;t=1773439118652          }
+_bk;t=1773439118652        }
+_bk;t=1773439118652      },
+_bk;t=1773439118652      "labels": {
+_bk;t=1773439118652        "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773439118652        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+_bk;t=1773439118652        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+_bk;t=1773439118652        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+_bk;t=1773439118652        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+_bk;t=1773439118652        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+_bk;t=1773439118652      },
+_bk;t=1773439118652      "volumes": [
+_bk;t=1773439118652        "/var/run/docker.sock:/var/run/docker.sock",
+_bk;t=1773439118652        "/var/lib/buildkite-agent/.docker/:/home/circleci/.docker",
+_bk;t=1773439118652        "/usr/bin/docker-credential-ecr-login:/usr/bin/docker-credential-ecr-login",
+_bk;t=1773439118652        "/var/lib/buildkite-agent/bazel-remote:/home/circleci/bazel-remote",
+_bk;t=1773439118652        "/var/lib/buildkite-agent/.ssh/known_hosts:/home/circleci/.ssh/known_hosts"
+_bk;t=1773439118652      ],
+_bk;t=1773439118652      "depends_on": [],
+_bk;t=1773439118652      "privileged": true,
+_bk;t=1773439118652      "environment": {
+_bk;t=1773439118652        "GOFLAGS": "-mod=mod",
+_bk;t=1773439118652        "RACK_ENV": "test",
+_bk;t=1773439118652        "SETTINGS_YML": "/home/circleci/figma/config/dev_settings.yml",
+_bk;t=1773439118652        "DOCKER_BUILDKIT": "1",
+_bk;t=1773439118652        "TEST_REPORTS_DIR": "/home/circleci/figma/reports",
+_bk;t=1773439118652        "FIGMA_BAZEL_REMOTE_ADDRESS": "unix:///home/circleci/bazel-remote/bazel-remote-grpc.sock",
+_bk;t=1773439118652        "ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK": "1"
+_bk;t=1773439118652      },
+_bk;t=1773439118652      "working_dir": "/home/circleci/figma",
+_bk;t=1773439118652      "network_mode": "service:network",
+_bk;t=1773439118652      "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773439118652      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-main"
+_bk;t=1773439118652    },
+_bk;t=1773439118652    "network": {
+_bk;t=1773439118652      "image": "060562746757.dkr.ecr.us-west-2.amazonaws.com/figma-ci/circleci-base@sha256:e7920991868891f7be4360f912cd90b704f83165daabd83cbcab0db6da965de3",
+_bk;t=1773439118652      "deploy": {
+_bk;t=1773439118652        "resources": {
+_bk;t=1773439118652          "limits": {
+_bk;t=1773439118652            "memory": "32g"
+_bk;t=1773439118652          }
+_bk;t=1773439118652        }
+_bk;t=1773439118652      },
+_bk;t=1773439118652      "labels": {
+_bk;t=1773439118652        "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773439118652        "com.buildkite.job-id": "${BUILDKITE_JOB_ID}",
+_bk;t=1773439118652        "com.buildkite.build-id": "${BUILDKITE_BUILD_ID}",
+_bk;t=1773439118652        "com.buildkite.job-name": "${BUILDKITE_STEP_KEY}",
+_bk;t=1773439118652        "com.buildkite.agent-name": "${BUILDKITE_AGENT_NAME}",
+_bk;t=1773439118652        "com.buildkite.build-number": "${BUILDKITE_BUILD_NUMBER}"
+_bk;t=1773439118652      },
+_bk;t=1773439118652      "command": "tail -f /dev/null",
+_bk;t=1773439118652      "privileged": true,
+_bk;t=1773439118652      "environment": {},
+_bk;t=1773439118652      "cgroup_parent": "${CGROUP_PARENT}",
+_bk;t=1773439118652      "container_name": "${BUILDKITE_STEP_KEY}-${BUILDKITE_JOB_ID}-network"
+_bk;t=1773439118652    }
+_bk;t=1773439118652  }
+_bk;t=1773439118652}
+_bk;t=1773439118918Using BAZEL_CACHE_DIR=/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel
+_bk;t=1773439118960~~~ :docker: Building Docker Compose Service: main
+_bk;t=1773439118960⚠️ No pre-built image found from a previous 'build' step for this service and config file. Building image...
+_bk;t=1773439118966agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439118966[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 build --pull main
+_bk;t=1773439119025
+_bk;t=1773439119026~~~ :docker: Starting dependencies
+_bk;t=1773439119033agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439119033[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 up -d --scale main=0 main
+_bk;t=1773439119187[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773439119187[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119187[0m[37m ⠋ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Creating                                                                  0.1s
+_bk;t=1773439119187[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773439119287[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119287[0m[37m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.2s
+_bk;t=1773439119287[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773439119387[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119387[0m[37m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.3s
+_bk;t=1773439119387[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773439119488[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119488[0m[37m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.4s
+_bk;t=1773439119488[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773439119587[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119587[0m[37m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.5s
+_bk;t=1773439119587[0m[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+_bk;t=1773439119687[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119687[0m[37m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Starting                                                                  0.6s
+_bk;t=1773439119687[0m[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+_bk;t=1773439119694[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default    Created                                                                   0.0s
+_bk;t=1773439119694[0m[34m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Started                                                                   0.6s
+_bk;t=1773439119694[0m[?25h
+_bk;t=1773439119698--- :docker: Running  in service main
+_bk;t=1773439119707agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439119709[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 run --name cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_LABEL -e MERGE_BASE_BRANCH -e FIGMA_CI_LD_FEATURE_FLAGS -e RUN_ALL_TESTS_FOR_DELETED_FILES -e CI -e RACK_ENV -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_BRANCH_TYPE -e BUILDKITE_BRANCH -e BUILDKITE_AGENT_NAME -e BUILDKITE_MESSAGE -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e FIGMA_CI_RESOURCE_CLASS -e CI_CPUS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_PULL_REQUEST -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e USE_WEB_JEST_LITE -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_PARALLEL_JOB -e CI_USERNAME -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_BUILD_ID -e BUILDKITE_SOURCE -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e TEST_REPORTS_DIR -e BUILDKITE_RETRY_COUNT -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_BUILD_CREATOR_EMAIL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_JOB_ID -e BUILDKITE_STEP_IDENTIFIER -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_QUEUE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_AGENT_ID -e BUILDKITE_STEP_ID -e GOFLAGS -e CHANGED_FILES -e BUILDKITE_PLUGINS -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_PROJECT_SLUG -e BUILDKITE_AGENT_META_DATA_ARCH -e COMMITTER_EMAIL -e BUILDKITE_REBUILT_FROM_BUILD_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PIPELINE_ID -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_COMPUTE_TYPE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_STEP_KEY -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMAND -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_TAG -e BUILDKITE_BUILD_URL -e CI_WORKING_DIRECTORY -e BUILDKITE -e BUILDKITE_REPO -e BUILDKITE_PULL_REQUEST_REPO -e AWS_ECR_ACCOUNT_URL -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_OS -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e JOB_MAINTAINER -e IS_SOFT_FAIL -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_PULL_REQUEST_DRAFT -e START_TIME -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_COMMIT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e CI_MEM_GIB -e DOCKER_BUILDKIT -e BASH_ENV --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335:/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+_bk;t=1773439119786[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773439119786[34m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Running                                                                   0.0s
+_bk;t=1773439119786[0m[?25hrunning ci-interp for 6075330/raw-steps-0-0.json with BUILDKITE_STEP_KEY: cortex-test-and-build
+_bk;t=1773439120935--- [34mCI Stage: container.start_job[0m
+_bk;t=1773439120980
+_bk;t=1773439120980--- [34mAttach Workspace at .[0m
+_bk;t=1773439120981Using dependency groups: [[]]
+_bk;t=1773439120981Successfully attached workspace at .
+_bk;t=1773439120981--- [34mmkdir -p reports artifacts[0m
+_bk;t=1773439120984
+_bk;t=1773439120984--- [34mRecord external IP address[0m
+_bk;t=177343912108635.85.229.190
+_bk;t=1773439121087--- [34mdevex/buildkite/bazel-setup.sh[0m
+_bk;t=1773439121095Using EngFlow remote cache configuration
+_bk;t=1773439121098Using --local_resources=memory=29491
+_bk;t=1773439121098Using --local_resources=cpu=32
+_bk;t=1773439121098Using --jobs=32
+_bk;t=1773439121098Using --loading_phase_threads=32
+_bk;t=1773439121098Using --experimental_skyframe_cpu_heavy_skykeys_thread_pool_size=32
+_bk;t=1773439121099Configuring EngFlow TLS certificates...
+_bk;t=1773439122657EngFlow TLS certificates configured successfully
+_bk;t=1773439122657Using EngFlow remote cache
+_bk;t=1773439122657Using --build_metadata=USER=buildkite
+_bk;t=1773439122657Using --build_metadata=DISABLE_COMMIT_STATUS_REPORTING=true
+_bk;t=1773439122657Using --@aspect_rules_lint//lint:fail_on_violation
+_bk;t=1773439122657Using new Artifactory endpoint (artifactory.prod.figmadevex.com)
+_bk;t=1773439122660✓ Configuring pip to use Artifactory for PyPI packages
+_bk;t=1773439122660✓ Set PIP_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+_bk;t=1773439122660✓ Set PIP_TRUSTED_HOST_ARG=--trusted-host=artifactory.prod.figmadevex.com
+_bk;t=1773439122660✓ Set UV_INDEX_URL=https://artifactory.prod.figmadevex.com/artifactory/api/pypi/pypi-virtual/simple
+_bk;t=1773439122660✓ Configuring GOPROXY to use Artifactory for Go modules
+_bk;t=1773439122660✓ Set GOPROXY=https://artifactory.prod.figmadevex.com/artifactory/api/go/go-virtual
+_bk;t=1773439122660✓ Configuring Bazel downloader to use Artifactory for Bazel releases
+_bk;t=1773439122661✓ Set BAZELISK_FORMAT_URL=https://artifactory.prod.figmadevex.com/artifactory/releases.bazel.build/%v/release/bazel-%v-%o-%m%e
+_bk;t=1773439122665✓ Configuring Bazel downloader to use Artifactory for Rust toolchain
+_bk;t=1773439122671✗ rules_oci using upstream registries (buildkite_artifactory_docker flag disabled)
+_bk;t=1773439122671Using --downloader_config=/home/circleci/bazel_downloader.cfg
+_bk;t=1773439122672
+_bk;t=1773439122672--- [34mdevex/buildkite/bazel-help-with-retry.sh[0m
+_bk;t=1773439122677Checking for cached Bazel version 8.5.1...
+_bk;t=1773439122679Cache directory exists: /home/circleci/.cache/bazel/_bazel_circleci/install
+_bk;t=1773439122681Found cached version: 8.5.1 in b8a069f8b7ab718c13dbfa7ea3667622
+_bk;t=1773439122681✓ Bazel 8.5.1 already installed in cache
+_bk;t=1773439122681
+_bk;t=1773439122681--- [34mdevex/buildkite/artifactory-setup.sh[0m
+_bk;t=1773439122686Setting up Artifactory package registry configuration...
+_bk;t=1773439122686✓ Configuring Python/pip to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773439122688  Configured pip.conf to use Artifactory
+_bk;t=1773439122688  Configured UV_INDEX_URL to use Artifactory
+_bk;t=1773439122688✓ Configuring Go modules to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773439122689✓ Configuring Ruby/Bundler to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773439122907✓ Configuring npm/pnpm to use Artifactory at artifactory.prod.figmadevex.com
+_bk;t=1773439122914✗ Skipping Docker Artifactory setup
+_bk;t=1773439122914Artifactory setup complete.
+_bk;t=1773439122914
+_bk;t=1773439122914--- [34mdevex/buildkite/ssh-setup.sh[0m
+_bk;t=1773439122920Starting an SSH agent and loading figmaci/production/FIGMABOT1_SSH_PRIVATE_KEY...
+_bk;t=1773439122925Agent pid 107
+_bk;t=1773439122927export SSH_AUTH_SOCK=/tmp/ssh-dwDO32EoByN9/agent.106
+_bk;t=1773439124017Identity added: (stdin) (figmabot+1@figma.com)
+_bk;t=1773439124017
+_bk;t=1773439124017--- [34mStoring artifacts at git-fetch-debug.log[0m
+_bk;t=1773439124018Could not find file at path git-fetch-debug.log
+_bk;t=1773439124018Running "/usr/bin/buildkite-agent artifact upload git-fetch-debug.log"
+_bk;t=1773439124033[33m2026-03-13 21:58:44 WARN  [0m [0mCouldn't walk path git-fetch-debug.log[0m
+_bk;t=1773439124033[38;5;48m2026-03-13 21:58:44 INFO  [0m [0mNo files matched paths: git-fetch-debug.log[0m
+_bk;t=1773439124272--- [34mDelete git debug log[0m
+_bk;t=1773439124286
+_bk;t=1773439124286--- [34mMonitor cgroup resource usage[0m
+_bk;t=1773439124286This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-11.log
+_bk;t=1773439124286--- [34mStart ci-cache-stats server[0m
+_bk;t=1773439124286This step is running in the background; on completion of the current job, this step's output will be available in the artifact background-12.log
+_bk;t=1773439124286--- [34mConfigure BES backend[0m
+_bk;t=1773439124293Using EngFlow backend, skipping BuildBuddy BES configuration
+_bk;t=1773439124293
+_bk;t=1773439124293--- CI Stage: container.main
+_bk;t=1773439124295
+_bk;t=1773439124295--- bazel build //services/cortex/...
+_bk;t=1773439124313Starting local Bazel server (8.5.1) and connecting to it...
+_bk;t=1773439126461INFO: Invocation ID: 7bef9dcb-d504-4ecf-a721-4684bcce7939
+_bk;t=1773439127408WARNING: For repository 'rules_cc', the root module requires module version rules_cc@0.1.5, but got rules_cc@0.2.15 in the resolved dependency graph. Please update the version in your MODULE.bazel or set --check_direct_dependencies=off
+_bk;t=1773439127894[32mINFO: [0mInvocation ID: 709ff8b0-dce7-4551-b766-276b20e7606b
+_bk;t=1773439127895[32mINFO: [0mStreaming build results to: [36mhttps://taaffeite.cluster.engflow.com/invocation/709ff8b0-dce7-4551-b766-276b20e7606b[0m
+_bk;t=1773439127961[32mComputing main repo mapping:[0m 
+_bk;t=1773439128243[1A[K_bk;t=1773439128243[32mComputing main repo mapping:[0m 
+_bk;t=1773439128243    Fetching ..._features+//private:extensions.bzl%version_extension; starting
+_bk;t=1773439128454[1A[K_bk;t=1773439128454[1A[K_bk;t=1773439128454[32mComputing main repo mapping:[0m 
+_bk;t=1773439128454    Fetching ...@@rules_python+//python/extensions:python.bzl%python; starting
+_bk;t=1773439128764[1A[K_bk;t=1773439128764[1A[K_bk;t=1773439128764[32mComputing main repo mapping:[0m 
+_bk;t=1773439128846[1A[K_bk;t=1773439128846[32mLoading:[0m 
+_bk;t=1773439128869[1A[K_bk;t=1773439128869[32mLoading:[0m 8 packages loaded
+_bk;t=1773439129165[1A[K_bk;t=1773439129165[32mLoading:[0m 14 packages loaded
+_bk;t=1773439129165    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439129165    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+_bk;t=1773439130165[1A[K_bk;t=1773439130165[1A[K_bk;t=1773439130165[1A[K_bk;t=1773439130165[32mLoading:[0m 14 packages loaded
+_bk;t=1773439130165    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439130165    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+_bk;t=1773439131166[1A[K_bk;t=1773439131166[1A[K_bk;t=1773439131166[1A[K_bk;t=1773439131166[32mLoading:[0m 14 packages loaded
+_bk;t=1773439131166    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439131166    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+_bk;t=1773439132173[1A[K_bk;t=1773439132173[1A[K_bk;t=1773439132173[1A[K_bk;t=1773439132173[32mLoading:[0m 14 packages loaded
+_bk;t=1773439132173    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439132173    Fetching ...extension @@aspect_rules_js+//npm:extensions.bzl%npm; starting
+_bk;t=1773439133170[1A[K_bk;t=1773439133170[1A[K_bk;t=1773439133170[1A[K_bk;t=1773439133170[32mLoading:[0m 14 packages loaded
+_bk;t=1773439133170    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439133170    Fetching ...ension @@aspect_rules_js+//npm:extensions.bzl%npm; starting 4s
+_bk;t=1773439134171[1A[K_bk;t=1773439134171[1A[K_bk;t=1773439134171[1A[K_bk;t=1773439134171[32mLoading:[0m 14 packages loaded
+_bk;t=1773439134171    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439135172[1A[K_bk;t=1773439135172[1A[K_bk;t=1773439135172[32mLoading:[0m 14 packages loaded
+_bk;t=1773439135172    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439136172[1A[K_bk;t=1773439136172[1A[K_bk;t=1773439136172[32mLoading:[0m 14 packages loaded
+_bk;t=1773439136172    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439137173[1A[K_bk;t=1773439137173[1A[K_bk;t=1773439137173[32mLoading:[0m 14 packages loaded
+_bk;t=1773439137173    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439138174[1A[K_bk;t=1773439138174[1A[K_bk;t=1773439138174[32mLoading:[0m 14 packages loaded
+_bk;t=1773439138174    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439139178[1A[K_bk;t=1773439139178[1A[K_bk;t=1773439139178[32mLoading:[0m 14 packages loaded
+_bk;t=1773439139178    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439140179[1A[K_bk;t=1773439140179[1A[K_bk;t=1773439140179[32mLoading:[0m 14 packages loaded
+_bk;t=1773439140179    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439141380[1A[K_bk;t=1773439141380[1A[K_bk;t=1773439141380[32mLoading:[0m 14 packages loaded
+_bk;t=1773439141380    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439142581[1A[K_bk;t=1773439142581[1A[K_bk;t=1773439142581[32mLoading:[0m 14 packages loaded
+_bk;t=1773439142581    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439143782[1A[K_bk;t=1773439143782[1A[K_bk;t=1773439143782[32mLoading:[0m 14 packages loaded
+_bk;t=1773439143782    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439144246[1A[K_bk;t=1773439144246[1A[K_bk;t=1773439144246[32mLoading:[0m 14 packages loaded
+_bk;t=1773439144246    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439144246    Fetching repository @@aspect_rules_js++npm+npm; starting
+_bk;t=1773439144729[1A[K_bk;t=1773439144729[1A[K_bk;t=1773439144729[1A[K_bk;t=1773439144729[32mLoading:[0m 14 packages loaded
+_bk;t=1773439144729    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439144729    Fetching repository @@aspect_rules_js++npm+npm; Initializing
+_bk;t=1773439145784[1A[K_bk;t=1773439145784[1A[K_bk;t=1773439145784[1A[K_bk;t=1773439145784[32mLoading:[0m 14 packages loaded
+_bk;t=1773439145784    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439145784    Fetching repository @@aspect_rules_js++npm+npm; Initializing
+_bk;t=1773439145988[1A[K_bk;t=1773439145988[1A[K_bk;t=1773439145988[1A[K_bk;t=1773439145988[32mLoading:[0m 14 packages loaded
+_bk;t=1773439145988    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439145988    Fetching ...ository @@aspect_rules_js++npm+npm; Translating pnpm-lock.yaml
+_bk;t=1773439146608[1A[K_bk;t=1773439146608[1A[K_bk;t=1773439146608[1A[K_bk;t=1773439146608[32mLoading:[0m 14 packages loaded
+_bk;t=1773439146608    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439146608    Fetching ...ct_rules_js++npm+npm; Generating starlark for npm dependencies
+_bk;t=1773439147789[1A[K_bk;t=1773439147789[1A[K_bk;t=1773439147789[1A[K_bk;t=1773439147789[32mLoading:[0m 14 packages loaded
+_bk;t=1773439147789    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439147789    Fetching ...ct_rules_js++npm+npm; Generating starlark for npm dependencies
+_bk;t=1773439148991[1A[K_bk;t=1773439148991[1A[K_bk;t=1773439148991[1A[K_bk;t=1773439148991[32mLoading:[0m 14 packages loaded
+_bk;t=1773439148991    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439148991    Fetching ...rules_js++npm+npm; Generating starlark for npm dependencies 4s
+_bk;t=1773439149991[1A[K_bk;t=1773439149991[1A[K_bk;t=1773439149991[1A[K_bk;t=1773439149991[32mLoading:[0m 14 packages loaded
+_bk;t=1773439149991    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439149991    Fetching ...rules_js++npm+npm; Generating starlark for npm dependencies 5s
+_bk;t=1773439150392[1A[K_bk;t=1773439150392[1A[K_bk;t=1773439150392[1A[K_bk;t=1773439150392[32mLoading:[0m 14 packages loaded
+_bk;t=1773439150392    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439150596[1A[K_bk;t=1773439150596[1A[K_bk;t=1773439150596[32mLoading:[0m 14 packages loaded
+_bk;t=1773439150596    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439150596    Fetching ...ct_rules_js++npm+npm__astro__5.18.1_620251581__links; starting
+_bk;t=1773439150596    Fetching ...m+npm__at_astrojs_starlight__0.37.7_409104384__links; starting
+_bk;t=1773439150596    Fetching ...npm__at_anthropic-ai_claude-agent-sdk__0.2.69__links; starting
+_bk;t=1773439150596    Fetching ...thropic-ai_claude-agent-sdk__0.2.69_zod_4.3.5__links; starting
+_bk;t=1773439150596    Fetching ...ropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58__links; starting
+_bk;t=1773439150596    Fetching ..._js++npm+npm__at_astrojs_mdx__4.3.0_409104384__links; starting
+_bk;t=1773439150596    Fetching ...+npm+npm__at_anthropic-ai_claude-code__2.1.58__links; starting
+_bk;t=1773439150596    Fetching ...trojs_react__4.4.2_1380537113__links; starting ... (9 fetches)
+_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[1A[K_bk;t=1773439150798[32mLoading:[0m 14 packages loaded
+_bk;t=1773439150798    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439150798    Fetching ...s_postcss-cascade-layers__4.0.6_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...stcss-color-mix-function__4.0.1_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...s_postcss-color-function__5.0.1_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...ss-exponential-functions__1.0.9_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...ols_postcss-hwb-function__5.0.1_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...ls_postcss-hwb-function__3.0.18_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...s_postcss-gamut-mapping__1.0.11_postcss_8.5.2__links; starting
+_bk;t=1773439150798    Fetching ...apping__2.0.10_postcss_8.5.2__links; starting ... (13 fetches)
+_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[1A[K_bk;t=1773439150999[32mLoading:[0m 14 packages loaded
+_bk;t=1773439150999    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439150999    Fetching ...m__at_docusaurus_plugin-svgr__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ..._at_docusaurus_theme-common__3.9.1_1096324443__links; starting
+_bk;t=1773439150999    Fetching ...+npm+npm__at_docusaurus_core__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ...cusaurus_plugin-content-docs__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ...__at_docusaurus_plugin-debug__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ...us_plugin-css-cascade-layers__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ...ocusaurus_plugin-google-gtag__3.9.1_333713746__links; starting
+_bk;t=1773439150999    Fetching ...e-analytics__3.9.1_333713746__links; starting ... (18 fetches)
+_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[1A[K_bk;t=1773439151199[32mLoading:[0m 14 packages loaded
+_bk;t=1773439151199    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439151199    Fetching ...__at_rspack_core__1.7.5_at_swc_helpers_0.5.15__links; starting
+_bk;t=1773439151199    Fetching ...t_rules_js++npm+npm__at_rspack_binding__1.7.5__links; starting
+_bk;t=1773439151199    Fetching ..._js++npm+npm__at_rspack_cli__1.7.5_1223858708__links; starting
+_bk;t=1773439151199    Fetching ...m+npm__at_rspack_dev-server__1.1.5_1223858708__links; starting
+_bk;t=1773439151401[1A[K_bk;t=1773439151401[1A[K_bk;t=1773439151401[1A[K_bk;t=1773439151401[1A[K_bk;t=1773439151401[1A[K_bk;t=1773439151401[1A[K_bk;t=1773439151401[32mLoading:[0m 14 packages loaded
+_bk;t=1773439151401    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439151401    Fetching ...ect_rules_js++npm+npm__at_types_node__22.17.2__links; starting
+_bk;t=1773439151401    Fetching ...ules_js++npm+npm__at_types_node-fetch__2.6.13__links; starting
+_bk;t=1773439151401    Fetching ..._webpack-dev-middleware__5.3.4_webpack_5.91.0__links; starting
+_bk;t=1773439151401    Fetching ...pm+npm__at_types_postcss-modules-scope__3.0.4__links; starting
+_bk;t=1773439151401    Fetching ...types_postcss-modules-local-by-default__4.0.2__links; starting
+_bk;t=1773439151401    Fetching ...types_rollup-plugin-postcss__3.1.4_2066069473__links; starting
+_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[1A[K_bk;t=1773439151605[32mLoading:[0m 14 packages loaded
+_bk;t=1773439151605    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439151605    Fetching ...sitory @@aspect_rules_js++npm+npm__vue__3.3.4__links; starting
+_bk;t=1773439151811[1A[K_bk;t=1773439151811[1A[K_bk;t=1773439151811[1A[K_bk;t=1773439151811[32mLoading:[0m 14 packages loaded
+_bk;t=1773439151811    currently loading: services/cortex ... (2 packages)
+_bk;t=1773439151811    Fetching ...pm+npm__postcss-load-config__6.0.1_1147016012__links; starting
+_bk;t=1773439151811    Fetching ..._js++npm+npm__postcss-js__4.0.1_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...npm+npm__postcss-logical__7.0.1_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...__postcss-merge-longhand__7.0.4_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...npm+npm__postcss-logical__9.0.0_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...pm__postcss-merge-idents__6.0.3_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...postcss-minify-gradients__5.1.1_postcss_8.5.2__links; starting
+_bk;t=1773439151811    Fetching ...adients__6.0.3_postcss_8.5.2__links; starting ... (18 fetches)
+_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[1A[K_bk;t=1773439152205[32mLoading:[0m 15 packages loaded
+_bk;t=1773439152205    currently loading: services/cortex
+_bk;t=1773439152588[1A[K_bk;t=1773439152588[1A[K_bk;t=1773439152588[32mLoading:[0m 16 packages loaded
+_bk;t=1773439152588    currently loading: config/terraform/infra-metadata/aws-vpc/modules/config \
+_bk;t=1773439152588... (18 packages)
+_bk;t=1773439152802[1A[K_bk;t=1773439152802[1A[K_bk;t=1773439152802[1A[K_bk;t=1773439152802[32mAnalyzing:[0m 288 targets (76 packages loaded)
+_bk;t=1773439153087[1A[K_bk;t=1773439153087[32mAnalyzing:[0m 288 targets (76 packages loaded, 0 targets configured)
+_bk;t=1773439153115[1A[K_bk;t=1773439153115[32mAnalyzing:[0m 288 targets (76 packages loaded, 0 targets configured)
+_bk;t=1773439153115    currently loading: @@bazel_tools//tools
+_bk;t=1773439153115
+_bk;t=1773439153330[1A[K_bk;t=1773439153330[1A[K_bk;t=1773439153330[1A[K_bk;t=1773439153330[32mAnalyzing:[0m 288 targets (182 packages loaded, 293 targets configured)
+_bk;t=1773439153330    currently loading: @@rules_go++go_sdk+go_toolchains// ... (8 packages)
+_bk;t=1773439153330    Fetching repository @@rules_java++toolchains+local_jdk; starting
+_bk;t=1773439153609[1A[K_bk;t=1773439153609[1A[K_bk;t=1773439153609[1A[K_bk;t=1773439153609[32mAnalyzing:[0m 288 targets (244 packages loaded, 2361 targets configured)
+_bk;t=1773439153609    currently loading: 
+_bk;t=1773439153609[32m[12 / 12][0m no actions running
+_bk;t=1773439153850[1A[K_bk;t=1773439153850[1A[K_bk;t=1773439153850[1A[K_bk;t=1773439153850[32mAnalyzing:[0m 288 targets (283 packages loaded, 4687 targets configured)
+_bk;t=1773439153850    currently loading:  ... (26 packages)
+_bk;t=1773439153850[32m[12 / 12][0m no actions running
+_bk;t=1773439154012[1A[K_bk;t=1773439154012[1A[K_bk;t=1773439154012[1A[K_bk;t=1773439154012[32mAnalyzing:[0m 288 targets (448 packages loaded, 6902 targets configured)
+_bk;t=1773439154012    currently loading:  ... (10 packages)
+_bk;t=1773439154012[32m[24 / 29][0m [Prepa] Creating source manifest for //.../cortex/logging:tf_gen_all
+_bk;t=1773439154012    Fetching ...itory @@gazelle++go_deps+com_github_hashicorp_hcl_v2; starting
+_bk;t=1773439154012    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439154012    Fetching ...tory @@gazelle++go_deps+com_github_charmbracelet_huh; starting
+_bk;t=1773439154225[1A[K_bk;t=1773439154225[1A[K_bk;t=1773439154225[1A[K_bk;t=1773439154225[1A[K_bk;t=1773439154225[1A[K_bk;t=1773439154225[1A[K_bk;t=1773439154225[32mAnalyzing:[0m 288 targets (479 packages loaded, 7029 targets configured)
+_bk;t=1773439154225    currently loading:  ... (12 packages)
+_bk;t=1773439154225[32m[207 / 289][0m 32 actions, 30 running
+_bk;t=1773439154225    Copying file services/cortex/ownership/figjam.yml; 0s local
+_bk;t=1773439154225    Copying file .../cortex/ownership/search_and_recommendations.yml; 0s local
+_bk;t=1773439154225    Copying file services/cortex/ownership/desktop.yml; 0s local
+_bk;t=1773439154225    Copying file services/cortex/ownership/interaction_design.yml; 0s local
+_bk;t=1773439154225    Copying file vitest/private/bazel_snapshot_resolver.mjs; 0s local
+_bk;t=1773439154225    Copying file vitest/private/bazel_sequencer.mjs; 0s local
+_bk;t=1773439154225    Copying file services/cortex/ownership/buzz.yml; 0s local
+_bk;t=1773439154225    Copying file services/cortex/ownership/expressive_ai.yml; 0s local ...
+_bk;t=1773439154225    Fetching ...itory @@gazelle++go_deps+com_github_hashicorp_hcl_v2; starting
+_bk;t=1773439154225    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439154225    Fetching ...gazelle++go_deps+com_github_charmbracelet_huh; running Gazelle
+_bk;t=1773439154225    Fetching ...o_deps+com_github_hashicorp_terraform_config_inspect; starting
+_bk;t=1773439154225    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[1A[K_bk;t=1773439154444[32mAnalyzing:[0m 288 targets (506 packages loaded, 14803 targets configured)
+_bk;t=1773439154444    currently loading:  ... (4 packages)
+_bk;t=1773439154444[32m[349 / 351][0m 2 actions, 1 running
+_bk;t=1773439154444    Copying file services/cortex/eslint.config.mjs; 0s local
+_bk;t=1773439154444    //services/cortex:integration_test-known-flaky; 0s remote-cache
+_bk;t=1773439154444    Fetching ...@gazelle++go_deps+com_github_hashicorp_hcl_v2; running Gazelle
+_bk;t=1773439154444    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439154444    Fetching ...com_github_hashicorp_terraform_config_inspect; running Gazelle
+_bk;t=1773439154444    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439154444    Fetching ...zelle++go_deps+com_github_mitchellh_hashstructure_v2; starting
+_bk;t=1773439154444    Fetching ...elle++go_deps+com_github_charmbracelet_x_exp_strings; starting
+_bk;t=1773439154444    Fetching repository @@gazelle++go_deps+com_github_catppuccin_go; starting
+_bk;t=1773439154444    Fetching ...eps+com_github_charmbracelet_bubbles; starting ... (9 fetches)
+_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[1A[K_bk;t=1773439154664[32mAnalyzing:[0m 288 targets (557 packages loaded, 17896 targets configured)
+_bk;t=1773439154664    currently loading:  ... (3 packages)
+_bk;t=1773439154664[32m[351 / 351][0m no actions running
+_bk;t=1773439154664    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439154664    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439154664    Fetching ...y @@gazelle++go_deps+com_github_catppuccin_go; running Gazelle
+_bk;t=1773439154664    Fetching ...ository @@gazelle++go_deps+com_github_zclconf_go_cty; starting
+_bk;t=1773439154664    Fetching ...le++go_deps+com_github_apparentlymart_go_textseg_v15; starting
+_bk;t=1773439154664    Fetching ...ry @@gazelle++go_deps+com_github_muesli_cancelreader; starting
+_bk;t=1773439154664    Fetching repository @@gazelle++go_deps+com_github_muesli_ansi; starting
+_bk;t=1773439154664    Fetching ...go_deps+com_github_atotto_clipboard; starting ... (10 fetches)
+_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[1A[K_bk;t=1773439154843[32mAnalyzing:[0m 288 targets (563 packages loaded, 27764 targets configured)
+_bk;t=1773439154843    currently loading:  ... (2 packages)
+_bk;t=1773439154843[32m[351 / 351][0m no actions running
+_bk;t=1773439154843    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439154843    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439154843    Fetching ...ository @@gazelle++go_deps+com_github_zclconf_go_cty; starting
+_bk;t=1773439154843    Fetching ...le++go_deps+com_github_apparentlymart_go_textseg_v15; starting
+_bk;t=1773439154843    Fetching ...zelle++go_deps+com_github_muesli_cancelreader; running Gazelle
+_bk;t=1773439154843    Fetching repository @@gazelle++go_deps+com_github_muesli_ansi; starting
+_bk;t=1773439154843    Fetching ...@gazelle++go_deps+com_github_atotto_clipboard; running Gazelle
+_bk;t=1773439154843    Fetching ...ps+com_github_mitchellh_go_wordwrap; starting ... (11 fetches)
+_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[1A[K_bk;t=1773439155137[32mAnalyzing:[0m 288 targets (584 packages loaded, 36626 targets configured)
+_bk;t=1773439155137    currently loading: 
+_bk;t=1773439155137[32m[351 / 351][0m no actions running
+_bk;t=1773439155137    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439155137    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439155137    Fetching ...ne.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 3.2 MiB (14.5%)
+_bk;t=1773439155137    Fetching ...s/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 415.5 KiB (1.7%)
+_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[1A[K_bk;t=1773439155337[32mAnalyzing:[0m 288 targets (584 packages loaded, 36865 targets configured)
+_bk;t=1773439155337    currently loading: 
+_bk;t=1773439155337[32m[351 / 351][0m no actions running
+_bk;t=1773439155337    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439155337    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439155337    Fetching ...ne.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 9.9 MiB (44.3%)
+_bk;t=1773439155337    Fetching ...es/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 4.5 MiB (18.3%)
+_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[1A[K_bk;t=1773439155553[32mAnalyzing:[0m 288 targets (592 packages loaded, 36991 targets configured)
+_bk;t=1773439155553    currently loading: 
+_bk;t=1773439155553[32m[377 / 611][0m checking cached actions
+_bk;t=1773439155553    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439155553    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439155553    Fetching ...e.org/v1.69.2/rclone-v1.69.2-linux-amd64.zip; 17.0 MiB (76.4%)
+_bk;t=1773439155553    Fetching ...s/download/v1.9.1/tofu_1.9.1_linux_amd64.zip; 18.8 MiB (77.2%)
+_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[1A[K_bk;t=1773439155805[32mAnalyzing:[0m 288 targets (593 packages loaded, 36994 targets configured)
+_bk;t=1773439155805    currently loading: 
+_bk;t=1773439155805[32m[384 / 611][0m checking cached actions
+_bk;t=1773439155805    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439155805    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439155805    Fetching ...+rclone_linux_amd64; Extracting rclone-v1.69.2-linux-amd64.zip
+_bk;t=1773439155805    Fetching ..._1/linux_x86_64_archive; Extracting tofu_1.9.1_linux_amd64.zip
+_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[1A[K_bk;t=1773439156025[32mAnalyzing:[0m 288 targets (593 packages loaded, 36994 targets configured)
+_bk;t=1773439156025    currently loading: 
+_bk;t=1773439156025[32m[506 / 611][0m 30 actions, 0 running
+_bk;t=1773439156025    @com_github_google_go_cmp//cmp/internal/flags:flags; 0s remote-cache
+_bk;t=1773439156025    @com_github_google_go_cmp//cmp/internal/function:function; 0s remote-cache
+_bk;t=1773439156025    ...//:go-wordwrap; 0s remote-cache
+_bk;t=1773439156025    @com_github_google_go_cmp//cmp/internal/flags:flags; 0s remote-cache
+_bk;t=1773439156025    ...//textseg:textseg; 0s remote-cache
+_bk;t=1773439156025    @com_github_agext_levenshtein//:levenshtein; 0s remote-cache
+_bk;t=1773439156025    ...//hcl/strconv:strconv; 0s remote-cache
+_bk;t=1773439156025    ...//:go-wordwrap; 0s remote-cache ...
+_bk;t=1773439156025    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439156025    Fetching repository @@+_repo_rules+rclone_linux_amd64; starting
+_bk;t=1773439156025    Fetching ...+rclone_linux_amd64; Extracting rclone-v1.69.2-linux-amd64.zip
+_bk;t=1773439156025    Fetching ..._1/linux_x86_64_archive; Extracting tofu_1.9.1_linux_amd64.zip
+_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[1A[K_bk;t=1773439156225[32mAnalyzing:[0m 288 targets (595 packages loaded, 36998 targets configured)
+_bk;t=1773439156225[32m[598 / 611][0m 3 actions, 0 running
+_bk;t=1773439156225    .../cortex/monitor_generator:cortex_monitor_generator_lib; 0s remote-cache
+_bk;t=1773439156225    .../cortex/monitor_generator:cortex_monitor_generator; 0s remote-cache
+_bk;t=1773439156225    Running nogo on //.../monitor_generator:monitorgenerator; 0s remote-cache
+_bk;t=1773439156225    Fetching ...ool++multitool+multitool.opentofu_1_9_1.linux_x86_64; starting
+_bk;t=1773439156514[1A[K_bk;t=1773439156514[1A[K_bk;t=1773439156514[1A[K_bk;t=1773439156514[1A[K_bk;t=1773439156514[1A[K_bk;t=1773439156514[1A[K_bk;t=1773439156514[32mAnalyzing:[0m 288 targets (596 packages loaded, 37020 targets configured)
+_bk;t=1773439156514    currently loading: share/kiwi
+_bk;t=1773439156514[32m[620 / 620][0m no actions running
+_bk;t=1773439156714[1A[K_bk;t=1773439156714[1A[K_bk;t=1773439156714[1A[K_bk;t=1773439156714[32mAnalyzing:[0m 288 targets (670 packages loaded, 40345 targets configured)
+_bk;t=1773439156714    currently loading: @@aspect_rules_js++npm+npm__throttleit__2.1.0//
+_bk;t=1773439156714[32m[638 / 640][0m checking cached actions
+_bk;t=1773439156714    Fetching ...ry @@aspect_rules_js++npm+npm__at_types_aws4__1.11.6; starting
+_bk;t=1773439156714    Fetching ...pect_rules_js++npm+npm__at_streamparser_json__0.0.20; starting
+_bk;t=1773439156714    Fetching repository @@aspect_rules_js++npm+npm__uuid__9.0.0; starting
+_bk;t=1773439156714    Fetching repository @@aspect_rules_js++npm+npm__hpagent__1.2.0; starting
+_bk;t=1773439156714    Fetching repository @@aspect_rules_js++npm+npm__json11__2.0.2; starting
+_bk;t=1773439156714    Fetching ...y @@aspect_rules_js++npm+npm__at_types_node__22.17.2; starting
+_bk;t=1773439156714    Fetching ...aspect_rules_js++npm+npm__at_ioredis_commands__1.5.0; starting
+_bk;t=1773439156714    Fetching ...ules_js++npm+npm__underscore__1.1.7; starting ... (39 fetches)
+_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[1A[K_bk;t=1773439156916[32mAnalyzing:[0m 288 targets (769 packages loaded, 41008 targets configured)
+_bk;t=1773439156916    currently loading: @@aspect_rules_js++npm+npm__at_smithy_util-defaults-mod\
+_bk;t=1773439156916e-browser__3.0.28//
+_bk;t=1773439156916[32m[664 / 672][0m 3 actions running
+_bk;t=1773439156916    //services/cortex:tf_gen_2; 0s local
+_bk;t=1773439156916    Fetching ...itory @@aspect_rules_js++npm+npm__dprint-node__1.0.8; starting
+_bk;t=1773439156916    Fetching ...m-virtual/dprint-node/-/dprint-node-1.0.8.tgz; 5.2 MiB (55.2%)
+_bk;t=1773439156916    Fetching ...ules_js++npm+npm__at_dmsnell_diff-match-patch__1.1.0; starting
+_bk;t=1773439156916    Fetching ... @@aspect_rules_js++npm+npm__cluster-key-slot__1.1.2; starting
+_bk;t=1773439156916    Fetching ...sitory @@aspect_rules_js++npm+npm__aws4fetch__1.0.20; starting
+_bk;t=1773439156916    Fetching repository @@aspect_rules_js++npm+npm__react__18.3.1; starting
+_bk;t=1773439156916    Fetching repository @@aspect_rules_js++npm+npm__ioredis__5.6.0; starting
+_bk;t=1773439156916    Fetching ...t_ai-sdk_anthropic__1.2.5_703562450; starting ... (33 fetches)
+_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[1A[K_bk;t=1773439157125[32mAnalyzing:[0m 288 targets (896 packages loaded, 41767 targets configured)
+_bk;t=1773439157125    currently loading: @@aspect_rules_js++npm+npm__strip-final-newline__2.0.0/\
+_bk;t=1773439157125/
+_bk;t=1773439157125[32m[689 / 695][0m [Prepa] .../generated_monitors:validate_monitors_adoption_test
+_bk;t=1773439157125    Fetching ...itory @@aspect_rules_js++npm+npm__dprint-node__1.0.8; starting
+_bk;t=1773439157125    Fetching ...ct_rules_js++npm+npm__ioredis-mock__8.13.1_546409497; starting
+_bk;t=1773439157125    Fetching repository @@aspect_rules_js++npm+npm__fengari__0.1.4; starting
+_bk;t=1773439157125    Fetching ...t_rules_js++npm+npm__sharp-phash__2.2.0_sharp_0.33.5; starting
+_bk;t=1773439157125    Fetching ...ect_rules_js++npm+npm__ml-levenberg-marquardt__2.1.1; starting
+_bk;t=1773439157125    Fetching ...tory @@aspect_rules_js++npm+npm__is-any-array__0.1.1; starting
+_bk;t=1773439157125    Fetching ...ct_rules_js++npm+npm__json-parse-helpfulerror__1.0.3; starting
+_bk;t=1773439157125    Fetching ...npm__at_img_sharp-win32-x64__0.34.3; starting ... (27 fetches)
+_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[1A[K_bk;t=1773439157327[32mAnalyzing:[0m 288 targets (1080 packages loaded, 42768 targets configured)
+_bk;t=1773439157327    currently loading: launch_darkly
+_bk;t=1773439157327[32m[731 / 822][0m 2 actions, 0 running
+_bk;t=1773439157327    ...//parser:parser; 0s remote-cache
+_bk;t=1773439157327    ...//parser:parser; 0s remote-cache
+_bk;t=1773439157327    Fetching ...++npm+npm__at_img_sharp-libvips-linuxmusl-x64__1.2.0; starting
+_bk;t=1773439157327    Fetching ...pentelemetry_core__1.30.1_at_opentelemetry_api_1.7.0; starting
+_bk;t=1773439157327    Fetching ...ory @@aspect_rules_js++npm+npm__at_types_pako__1.0.1; starting
+_bk;t=1773439157327    Fetching repository @@aspect_rules_js++npm+npm__cjson__0.5.0; starting
+_bk;t=1773439157327    Fetching ...tory @@aspect_rules_js++npm+npm__unsplash-js__7.0.19; starting
+_bk;t=1773439157327    Fetching ...itory @@aspect_rules_js++npm+npm__widest-line__3.1.0; starting
+_bk;t=1773439157327    Fetching repository @@aspect_rules_js++npm+npm__figures__3.2.0; starting
+_bk;t=1773439157327    Fetching ...ules_js++npm+npm__JSONSelect__0.4.0; starting ... (32 fetches)
+_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[1A[K_bk;t=1773439157389[32mINFO: [0mFrom RunBinary services/cortex/monitor_generator/gen_monitors:
+_bk;t=1773439157391  Warning: No such directory: services/cortex/generated_monitors
+_bk;t=1773439157391[32mAnalyzing:[0m 288 targets (1199 packages loaded, 43274 targets configured)
+_bk;t=1773439157391    currently loading: @@aspect_rules_js++npm+npm__ip3country__5.0.0// ... (2 \
+_bk;t=1773439157391packages)
+_bk;t=1773439157391[32m[813 / 916][0m 6 actions, 2 running
+_bk;t=1773439157391    .../cortex/generated_monitors:validate_monitors_community_test; 0s local
+_bk;t=1773439157391    //services/cortex/generated_monitors:validate_monitors_community; 0s local
+_bk;t=1773439157391    //services/cortex/generated_monitors:validate_monitors_community; 0s local
+_bk;t=1773439157391    RunBinary services/cortex/monitor_generator/gen_monitors; 0s remote-cache
+_bk;t=1773439157391    ...//accessibility:accessibility; 0s remote-cache
+_bk;t=1773439157391    ...//accessibility:accessibility; 0s remote-cache
+_bk;t=1773439157391    Fetching ...++npm+npm__at_img_sharp-libvips-linuxmusl-x64__1.2.0; starting
+_bk;t=1773439157391    Fetching ...itory @@aspect_rules_js++npm+npm__widest-line__3.1.0; starting
+_bk;t=1773439157391    Fetching ...npm+npm__at_jitl_quickjs-wasmfile-debug-sync__0.31.0; starting
+_bk;t=1773439157391    Fetching ...ory @@aspect_rules_js++npm+npm__xml-parser-xo__4.1.4; starting
+_bk;t=1773439157391    Fetching ..._js++npm+npm__esbuild-register__3.5.0_esbuild_0.25.0; starting
+_bk;t=1773439157391    Fetching repository @@aspect_rules_js++npm+npm__which__5.0.0; starting
+_bk;t=1773439157391    Fetching ...itory @@aspect_rules_js++npm+npm__kiwi-schema__0.5.0; starting
+_bk;t=1773439157391    Fetching ..._provider-utils__3.0.20_zod_3.25.58; starting ... (31 fetches)
+_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[1A[K_bk;t=1773439157593[32mAnalyzing:[0m 288 targets (1387 packages loaded, 44275 targets configured)
+_bk;t=1773439157593[32m[863 / 944][0m 4 actions, 0 running
+_bk;t=1773439157593    @com_github_atotto_clipboard//:clipboard; 0s remote-cache
+_bk;t=1773439157593    Running nogo on @com_github_atotto_clipboard//:clipboard; 0s remote-cache
+_bk;t=1773439157593    @@gazelle++go_deps+com_github_catppuccin_go//:go; 0s remote-cache
+_bk;t=1773439157593    @@gazelle++go_deps+com_github_catppuccin_go//:go; 0s remote-cache
+_bk;t=1773439157593    Fetching ...ository @@aspect_rules_js++npm+npm__tiktoken__1.0.13; starting
+_bk;t=1773439157593    Fetching ..._rules_js++npm+npm__at_img_sharp-win32-arm64__0.34.3; starting
+_bk;t=1773439157593    Fetching repository @@aspect_rules_js++npm+npm__esm__3.2.25; starting
+_bk;t=1773439157593    Fetching ...t_rules_js++npm+npm__at_datadog_native-appsec__7.1.1; starting
+_bk;t=1773439157593    Fetching repository @@aspect_rules_js++npm+npm__turndown__7.2.2; starting
+_bk;t=1773439157593    Fetching ...npm+npm__at_img_sharp-libvips-linuxmusl-arm64__1.2.0; starting
+_bk;t=1773439157593    Fetching ...pect_rules_js++npm+npm__node-abort-controller__3.1.1; starting
+_bk;t=1773439157593    Fetching ...les_js++npm+npm__token-types__6.1.2; starting ... (30 fetches)
+_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[1A[K_bk;t=1773439157799[32mAnalyzing:[0m 288 targets (1552 packages loaded, 46143 targets configured)
+_bk;t=1773439157799    currently loading: fullscreen/ts/bindings/ui ... (11 packages)
+_bk;t=1773439157799[32m[994 / 1,069][0m checking cached actions
+_bk;t=1773439157799    Fetching ...s_js++npm+npm__at_img_sharp-libvips-linux-x64__1.2.0; starting
+_bk;t=1773439157799    Fetching repository @@aspect_rules_js++npm+npm__sql.js__1.14.0; starting
+_bk;t=1773439157799    Fetching ...@@aspect_rules_js++npm+npm__at_datadog_pprof__5.10.0; starting
+_bk;t=1773439157799    Fetching ...ository @@aspect_rules_js++npm+npm__clarinet__0.12.6; starting
+_bk;t=1773439157799    Fetching ... @@aspect_rules_js++npm+npm__at_grpc_grpc-js__1.10.9; starting
+_bk;t=1773439157799    Fetching repository @@aspect_rules_js++npm+npm__tmp__0.0.33; starting
+_bk;t=1773439157799    Fetching ...itory @@aspect_rules_js++npm+npm__tiny-worker__2.3.0; starting
+_bk;t=1773439157799    Fetching ...aspect_rules_js++npm+npm__rc__1.2.8; starting ... (25 fetches)
+_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[1A[K_bk;t=1773439157997[32mAnalyzing:[0m 288 targets (1746 packages loaded, 48830 targets configured)
+_bk;t=1773439157997[32m[994 / 1,069][0m checking cached actions
+_bk;t=1773439157997    Fetching ...js++npm+npm__at_img_sharp-libvips-linux-arm64__1.2.0; starting
+_bk;t=1773439157997    Fetching ...s_js++npm+npm__at_img_sharp-libvips-linux-arm__1.2.0; starting
+_bk;t=1773439157997    Fetching repository @@aspect_rules_js++npm+npm__sinon__18.0.1; starting
+_bk;t=1773439157997    Fetching ..._js++npm+npm__at_img_sharp-libvips-darwin-x64__1.2.0; starting
+_bk;t=1773439157997    Fetching ...@aspect_rules_js++npm+npm__at_types_request__2.48.12; starting
+_bk;t=1773439157997    Fetching repository @@aspect_rules_js++npm+npm__semifies__1.0.0; starting
+_bk;t=1773439157997    Fetching ...ry @@aspect_rules_js++npm+npm__node-addon-api__8.5.0; starting
+_bk;t=1773439157997    Fetching ..._rules_js++npm+npm__cardinal__2.1.1; starting ... (29 fetches)
+_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[1A[K_bk;t=1773439158200[32mAnalyzing:[0m 288 targets (1893 packages loaded, 50089 targets configured)
+_bk;t=1773439158200    currently loading: @@aspect_rules_js++npm+npm__jest-util__30.2.0// ... (2 \
+_bk;t=1773439158200packages)
+_bk;t=1773439158200[32m[1,055 / 1,219][0m checking cached actions
+_bk;t=1773439158200    Fetching ..._js++npm+npm__at_img_sharp-libvips-darwin-x64__1.2.0; starting
+_bk;t=1773439158200    Fetching ...s++npm+npm__at_img_sharp-libvips-darwin-arm64__1.2.0; starting
+_bk;t=1773439158200    Fetching ...t_rules_js++npm+npm__at_sinonjs_text-encoding__0.7.3; starting
+_bk;t=1773439158200    Fetching ...ository @@aspect_rules_js++npm+npm__nice-grpc__2.1.7; starting
+_bk;t=1773439158200    Fetching ...ect_rules_js++npm+npm__at_types_cli-progress__3.11.6; starting
+_bk;t=1773439158200    Fetching ...sitory @@aspect_rules_js++npm+npm__queue-tick__1.0.1; starting
+_bk;t=1773439158200    Fetching ...sitory @@aspect_rules_js++npm+npm__modern-tar__0.7.4; starting
+_bk;t=1773439158200    Fetching ...s_js++npm+npm__at_types_uuid__9.0.8; starting ... (28 fetches)
+_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[1A[K_bk;t=1773439158438[32mAnalyzing:[0m 288 targets (2056 packages loaded, 51442 targets configured)
+_bk;t=1773439158438    currently loading: fullscreen ... (2 packages)
+_bk;t=1773439158438[32m[1,115 / 1,232][0m checking cached actions
+_bk;t=1773439158438    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439158438    Fetching ..._rules_js++npm+npm__at_datadog_native-appsec__10.2.1; starting
+_bk;t=1773439158438    Fetching repository @@aspect_rules_js++npm+npm__prettier__3.0.3; starting
+_bk;t=1773439158438    Fetching ...spect_rules_js++npm+npm__at_types_stream-json__1.7.7; starting
+_bk;t=1773439158438    Fetching ...ct_rules_js++npm+npm__at_smithy_protocol-http__1.2.0; starting
+_bk;t=1773439158438    Fetching repository @@aspect_rules_js++npm+npm__ora__5.4.1; starting
+_bk;t=1773439158438    Fetching repository @@aspect_rules_js++npm+npm__koalas__1.0.2; starting
+_bk;t=1773439158438    Fetching ...rules_js++npm+npm__duplexify__4.1.3; starting ... (27 fetches)
+_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[1A[K_bk;t=1773439158613[32mAnalyzing:[0m 288 targets (2334 packages loaded, 53575 targets configured)
+_bk;t=1773439158613    currently loading: share/design-diff ... (3 packages)
+_bk;t=1773439158613[32m[1,157 / 1,260][0m Running nogo on //go/common/runfiles:runfiles; 0s remote-cache
+_bk;t=1773439158613    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439158613    Fetching ...@@aspect_rules_js++npm+npm__vitest__3.2.4_1802497239; starting
+_bk;t=1773439158613    Fetching ...ry @@aspect_rules_js++npm+npm__is-interactive__1.0.0; starting
+_bk;t=1773439158613    Fetching ...es_js++npm+npm__at_aws-sdk_client-sagemaker__3.664.0; starting
+_bk;t=1773439158613    Fetching ...pect_rules_js++npm+npm__at_borewit_text-codec__0.2.1; starting
+_bk;t=1773439158613    Fetching ...itory @@aspect_rules_js++npm+npm__jsonrepair__3.13.1; starting
+_bk;t=1773439158613    Fetching ...itory @@aspect_rules_js++npm+npm__hyperlinker__1.0.0; starting
+_bk;t=1773439158613    Fetching ...+npm+npm__at_sinonjs_commons__2.0.0; starting ... (14 fetches)
+_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[1A[K_bk;t=1773439158809[32mAnalyzing:[0m 288 targets (2464 packages loaded, 55416 targets configured)
+_bk;t=1773439158809[32m[1,214 / 2,175][0m checking cached actions
+_bk;t=1773439158809    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439158809    Fetching ... @@aspect_rules_js++npm+npm__at_datadog_pprof__5.2.0; starting
+_bk;t=1773439158809    Fetching repository @@aspect_rules_js++npm+npm__lru_map__0.3.3; starting
+_bk;t=1773439158809    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+_bk;t=1773439158809    Fetching ...ry @@aspect_rules_js++npm+npm__extend-shallow__2.0.1; starting
+_bk;t=1773439158809    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+_bk;t=1773439158809    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+_bk;t=1773439158809    Fetching ...edrock__2.1.4_2131515139; Patching repository ... (35 fetches)
+_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[1A[K_bk;t=1773439159009[32mAnalyzing:[0m 288 targets (2506 packages loaded, 56017 targets configured)
+_bk;t=1773439159009    currently loading: fullscreen/node-fields-codegen
+_bk;t=1773439159009[32m[1,220 / 2,175][0m checking cached actions
+_bk;t=1773439159009    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439159009    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+_bk;t=1773439159009    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+_bk;t=1773439159009    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+_bk;t=1773439159009    Fetching ...s++npm+npm__at_napi-rs_canvas-linux-x64-musl__0.1.96; starting
+_bk;t=1773439159009    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+_bk;t=1773439159009    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+_bk;t=1773439159009    Fetching ...-rs_canvas-linux-arm64-musl__0.1.96; starting ... (29 fetches)
+_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[1A[K_bk;t=1773439159241[32mAnalyzing:[0m 288 targets (2541 packages loaded, 56639 targets configured)
+_bk;t=1773439159241[32m[1,380 / 2,437][0m 6 actions running
+_bk;t=1773439159241    //services/cortex:gantt_parser_run_binary_copy_srcs_to_bin; 0s local
+_bk;t=1773439159241    Copying file .../rules-engine/src/util/configs/bad_anon_ids.json; 0s local
+_bk;t=1773439159241    Copying file .../util/configs/mcp_tool_success_rate_limits.json; 0s local
+_bk;t=1773439159241    Copying file .../rules-engine/src/util/configs/bad_mx_ips.json; 0s local
+_bk;t=1773439159241    Copying file .../src/util/configs/known_bad_ip_nets.json; 0s local
+_bk;t=1773439159241    Copying file .../src/util/configs/known_card_testing_emails.json; 0s local
+_bk;t=1773439159241    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439159241    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+_bk;t=1773439159241    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+_bk;t=1773439159241    Fetching ...@@aspect_rules_js++npm+npm__at_dqbd_tiktoken__1.0.15; starting
+_bk;t=1773439159241    Fetching ...s++npm+npm__at_napi-rs_canvas-linux-x64-musl__0.1.96; starting
+_bk;t=1773439159241    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+_bk;t=1773439159241    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+_bk;t=1773439159241    Fetching ...-rs_canvas-linux-arm64-musl__0.1.96; starting ... (29 fetches)
+_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[1A[K_bk;t=1773439159454[32mAnalyzing:[0m 288 targets (2584 packages loaded, 57880 targets configured)
+_bk;t=1773439159454    currently loading: @@aspect_rules_js++npm+npm__undici__5.29.0//
+_bk;t=1773439159454[32m[1,452 / 2,456][0m 8 actions, 7 running
+_bk;t=1773439159454    //services/cortex:gantt_parser_run_binary_copy_srcs_to_bin; 0s local
+_bk;t=1773439159454    Copying file .../rules-engine/src/util/configs/bad_anon_ids.json; 0s local
+_bk;t=1773439159454    Copying file .../util/configs/mcp_tool_success_rate_limits.json; 0s local
+_bk;t=1773439159454    Copying file .../rules-engine/src/util/configs/bad_mx_ips.json; 0s local
+_bk;t=1773439159454    Copying file .../src/util/configs/known_bad_ip_nets.json; 0s local
+_bk;t=1773439159454    Copying file .../src/util/configs/known_card_testing_emails.json; 0s local
+_bk;t=1773439159454    //services/cortex:flowchart_parser_run_binary_copy_srcs_to_bin; 0s local
+_bk;t=1773439159454    //bazel/js:tsconfig_to_swcrc_ts; 0s remote-cache
+_bk;t=1773439159454    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439159454    Fetching ...s++npm+npm__at_napi-rs_canvas-win32-x64-msvc__0.1.96; starting
+_bk;t=1773439159454    Fetching ...+npm+npm__at_napi-rs_canvas-win32-arm64-msvc__0.1.96; starting
+_bk;t=1773439159454    Fetching ...js++npm+npm__at_napi-rs_canvas-linux-x64-gnu__0.1.96; starting
+_bk;t=1773439159454    Fetching ...npm+npm__at_napi-rs_canvas-linux-riscv64-gnu__0.1.96; starting
+_bk;t=1773439159454    Fetching ...+npm+npm__at_napi-rs_canvas-linux-arm64-musl__0.1.96; starting
+_bk;t=1773439159454    Fetching ...++npm+npm__at_napi-rs_canvas-linux-arm64-gnu__0.1.96; starting
+_bk;t=1773439159454    Fetching ..._canvas-linux-arm-gnueabihf__0.1.96; starting ... (25 fetches)
+_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[1A[K_bk;t=1773439159653[32mAnalyzing:[0m 288 targets (2604 packages loaded, 58704 targets configured)
+_bk;t=1773439159653[32m[1,590 / 2,456][0m 31 actions, 0 running
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_integration_tests_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159653    //services/cortex:ts_tests_transpile; 0s remote-cache ...
+_bk;t=1773439159653    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439159653    Fetching ...es_js++npm+npm__at_napi-rs_canvas-darwin-x64__0.1.96; starting
+_bk;t=1773439159653    Fetching ..._js++npm+npm__at_napi-rs_canvas-darwin-arm64__0.1.96; starting
+_bk;t=1773439159653    Fetching ...js++npm+npm__at_napi-rs_canvas-android-arm64__0.1.96; starting
+_bk;t=1773439159653    Fetching ...at_anthropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58; starting
+_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[1A[K_bk;t=1773439159852[32mAnalyzing:[0m 288 targets (2608 packages loaded, 58817 targets configured)
+_bk;t=1773439159852[32m[2,043 / 2,456][0m 31 actions, 0 running
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache
+_bk;t=1773439159852    //services/cortex:ts_transpile; 0s remote-cache ...
+_bk;t=1773439159852    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439159852    Fetching ...at_anthropic-ai_claude-agent-sdk__0.2.69_zod_3.25.58; starting
+_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[1A[K_bk;t=1773439160079[32mAnalyzing:[0m 288 targets (2608 packages loaded, 58817 targets configured)
+_bk;t=1773439160079    currently loading: @@aspect_rules_js++npm+npm__at_anthropic-ai_claude-agen\
+_bk;t=1773439160079t-sdk__0.2.69_zod_3.25.58//
+_bk;t=1773439160079[32m[2,455 / 2,456][0m //services/cortex:ts_transpile; 0s local, remote-cache
+_bk;t=1773439160079    Fetching ...nsion @@rules_python+//python/extensions:pip.bzl%pip; starting
+_bk;t=1773439160445[1A[K_bk;t=1773439160445[1A[K_bk;t=1773439160445[1A[K_bk;t=1773439160445[1A[K_bk;t=1773439160445[1A[K_bk;t=1773439160445[32mAnalyzing:[0m 288 targets (2622 packages loaded, 59063 targets configured)
+_bk;t=1773439160445[32m[2,456 / 2,456][0m no actions running
+_bk;t=1773439160643[1A[K_bk;t=1773439160643[1A[K_bk;t=1773439160643[32mAnalyzing:[0m 288 targets (2622 packages loaded, 59093 targets configured)
+_bk;t=1773439160643[32m[3,141 / 31,522][0m 9 actions, 7 running
+_bk;t=1773439160643    //services/cortex:ts_typecheck_test; 0s local
+_bk;t=1773439160643    Copying directory package; 0s local
+_bk;t=1773439160643    Copying file services/cortex/lib/util/v1_to_v2_helpers.ts; 0s local
+_bk;t=1773439160643    Copying file config/feature_flags.json [for tool]; 0s local
+_bk;t=1773439160643    Copying file .../cortex/cortex-types-no-readable-stream.d.ts; 0s local
+_bk;t=1773439160643    Copying file share/sync.kiwi; 0s local
+_bk;t=1773439160643    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439160643    //services/cortex:_ts_generate_types_swcrc; 0s remote-cache ...
+_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[1A[K_bk;t=1773439160831[32mINFO: [0mAnalyzed 288 targets (2622 packages loaded, 59094 targets configured).
+_bk;t=1773439160831[32m[5,531 / 35,417][0m 22 actions, 15 running
+_bk;t=1773439160831    Copying file services/cortex/vitest.config.mjs; 0s local
+_bk;t=1773439160831    Copying file services/cortex/tsconfig.json; 0s local
+_bk;t=1773439160831    Copying file share/scenegraph-server-client/src/index.ts; 0s local
+_bk;t=1773439160831    Copying file .../cortex/lib/api/background_remove_inference.ts; 0s local
+_bk;t=1773439160831    Copying file ai-agent/mappers/claude-code/tsconfig.json; 0s local
+_bk;t=1773439160831    Copying file services/cortex/lib/util/tokens-cost.ts; 0s local
+_bk;t=1773439160831    Copying file .../ts/bindings/editor/tsconfig.json [for tool]; 0s local
+_bk;t=1773439160831    Copying file share/code-vfs/tsconfig.json [for tool]; 0s local ...
+_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[1A[K_bk;t=1773439161030[32m[8,486 / 39,012][0m 18 actions, 12 running
+_bk;t=1773439161030    //share/color-tokens:generate_token_files; 0s local
+_bk;t=1773439161030    Copying file web/packages/lib/src/hooks/resize_observer.ts; 0s local
+_bk;t=1773439161030    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161030    Copying file .../mappers/claude-code/package.json [for tool]; 0s local
+_bk;t=1773439161030    Copying file .../bindings/render-tree/tsconfig.json [for tool]; 0s local
+_bk;t=1773439161030    Copying file .../ts/bindings/scenegraph/tsconfig.json [for tool]; 0s local
+_bk;t=1773439161030    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161030    Copying file .../cli/src/commands/log_or_mock_all/index.ts; 0s local ...
+_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[1A[K_bk;t=1773439161232[32m[13,475 / 42,470][0m 22 actions, 16 running
+_bk;t=1773439161232    //services/cortex:build_deps; 0s local
+_bk;t=1773439161232    Copying file share/point-and-edit/package.json [for tool]; 0s local
+_bk;t=1773439161232    //services/cortex:ts; 0s local
+_bk;t=1773439161232    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161232    Copying file services/cortex/lib/util/__test__/sort.test.ts; 0s local
+_bk;t=1773439161232    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161232    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161232    //services/cortex:ts; 0s local ...
+_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[1A[K_bk;t=1773439161433[32m[16,979 / 43,330][0m 25 actions, 19 running
+_bk;t=1773439161433    //services/cortex:build_deps; 0s local
+_bk;t=1773439161433    //services/cortex:build_dist; 0s local
+_bk;t=1773439161433    Copying file .../cortex/integration_tests/lib/test_schema.ts; 0s local
+_bk;t=1773439161433    Copying file share/code-vfs/src/utils.ts [for tool]; 0s local
+_bk;t=1773439161433    Copying file share/jsx/src/util/validators/fontSizeCount.ts; 0s local
+_bk;t=1773439161433    //services/cortex:ts; 0s local
+_bk;t=1773439161433    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161433    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[1A[K_bk;t=1773439161635[32m[20,436 / 43,610][0m 26 actions, 22 running
+_bk;t=1773439161635    //services/cortex:build_deps; 0s local
+_bk;t=1773439161635    Copying file services/cortex/lib/context.ts; 0s local
+_bk;t=1773439161635    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161635    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161635    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439161635    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161635    Copying file share/code-vfs/src/lru-cache.ts; 0s local
+_bk;t=1773439161635    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[1A[K_bk;t=1773439161839[32m[23,017 / 43,807][0m 31 actions, 15 running
+_bk;t=1773439161839    //services/cortex:build_deps; 0s local
+_bk;t=1773439161839    //services/cortex:ts; 0s local
+_bk;t=1773439161839    Copying file .../cortex/test_data/status.expected_responses.json; 0s local
+_bk;t=1773439161839    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161839    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161839    //services/cortex:ts_tests; 0s local
+_bk;t=1773439161839    Copying file share/code-vfs/src/code-vfs.ts [for tool]; 0s local
+_bk;t=1773439161839    //share/node-info:ts; 0s local ...
+_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[1A[K_bk;t=1773439162040[32m[24,691 / 43,936][0m 26 actions, 18 running
+_bk;t=1773439162040    //services/cortex:build_deps; 0s local
+_bk;t=1773439162040    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162040    Copying file share/collaborative-text/tsconfig.json [for tool]; 0s local
+_bk;t=1773439162040    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162040    //services/cortex:ts; 0s local
+_bk;t=1773439162040    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162040    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162040    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[1A[K_bk;t=1773439162260[32m[27,142 / 44,086][0m 28 actions, 23 running
+_bk;t=1773439162260    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162260    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439162260    Copying file services/cortex/lib/util/crypto.ts; 0s local
+_bk;t=1773439162260    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162260    Copying file share/figcache/src/throttler/throttler.ts; 0s local
+_bk;t=1773439162260    Copying file web/packages/lib/src/interaction_recording.ts; 0s local
+_bk;t=1773439162260    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162260    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[1A[K_bk;t=1773439162459[32m[28,493 / 44,368][0m 30 actions, 18 running
+_bk;t=1773439162459    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439162459    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162459    //services/cortex:integration_test; 0s local
+_bk;t=1773439162459    Copying file .../make-edits-core/src/prompts/buzz_zero_to_one.ts; 0s local
+_bk;t=1773439162459    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439162459    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162459    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162459    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[1A[K_bk;t=1773439162660[32m[28,855 / 44,416][0m 29 actions, 23 running
+_bk;t=1773439162660    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439162660    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+_bk;t=1773439162660    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162660    Copying file .../cortex/__test__/test_data/tone/tone_46.json; 0s local
+_bk;t=1773439162660    Copying file sites-runtime/packages/schemas/src/json/schemas.ts; 0s local
+_bk;t=1773439162660    //share/synapse/global:ts; 0s local
+_bk;t=1773439162660    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162660    Copying file services/cortex/lib/support/tracer.ts; 0s local ...
+_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[1A[K_bk;t=1773439162861[32m[29,230 / 44,448][0m 29 actions, 23 running
+_bk;t=1773439162861    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439162861    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+_bk;t=1773439162861    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162861    Copying file share/node-info/package.json [for tool]; 0s local
+_bk;t=1773439162861    //services/cortex:ts_tests; 0s local
+_bk;t=1773439162861    //sites-runtime:ts; 0s local
+_bk;t=1773439162861    Copying file share/jsx/src/index.ts; 0s local
+_bk;t=1773439162861    Copying file .../scenegraph/src/actions/codegen/cpp_to_ts.ts; 0s local ...
+_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[1A[K_bk;t=1773439163062[32m[30,109 / 45,124][0m 30 actions, 18 running
+_bk;t=1773439163062    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439163062    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+_bk;t=1773439163062    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163062    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163062    //share/point-and-edit:ts; 0s local
+_bk;t=1773439163062    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163062    Copying file share/foundry-schemas/package.json [for tool]; 0s local
+_bk;t=1773439163062    Copying file share/synapse/server/src/lib/pixelmatch.ts; 0s local ...
+_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[1A[K_bk;t=1773439163268[32m[30,525 / 45,142][0m 32 actions, 21 running
+_bk;t=1773439163268    //share/synapse/server:bundle_code_file_templates_binary; 0s local
+_bk;t=1773439163268    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163268    //services/cortex:integration_test; 0s local
+_bk;t=1773439163268    //services/cortex:ts; 0s local
+_bk;t=1773439163268    Copying file services/cortex/lib/server.ts; 0s local
+_bk;t=1773439163268    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163268    Copying file .../cortex/__test__/test_data/gantt/gantt_12.json; 0s local
+_bk;t=1773439163268    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[1A[K_bk;t=1773439163471[32m[30,920 / 45,144][0m 31 actions, 21 running
+_bk;t=1773439163471    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+_bk;t=1773439163471    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163471    //share/synapse/global:ts; 0s local
+_bk;t=1773439163471    Copying file .../cortex/test_data/slides_rewrite_text_v2.json; 0s local
+_bk;t=1773439163471    Copying file sites-runtime/src/shared/types/behavior_presets.ts; 0s local
+_bk;t=1773439163471    Copying file share/html-to-design-serializer/src/svg.ts; 0s local
+_bk;t=1773439163471    Copying file config/logging/schema_preset_libraries.ts; 0s local
+_bk;t=1773439163471    //services/cortex:ts; 0s local ...
+_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[1A[K_bk;t=1773439163674[32m[31,406 / 45,150][0m 31 actions, 21 running
+_bk;t=1773439163674    //services/cortex:cortex_debug; 0s local
+_bk;t=1773439163674    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163674    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163674    //services/cortex:ts; 0s local
+_bk;t=1773439163674    //share/synapse/global:ts; 0s local
+_bk;t=1773439163674    //share/synapse/global:ts; 0s local
+_bk;t=1773439163674    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163674    Copying file config/logging/schema_figmascope.ts; 0s local ...
+_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[1A[K_bk;t=1773439163874[32m[31,887 / 45,257][0m 32 actions, 31 running
+_bk;t=1773439163874    //services/cortex:cortex_debug; 0s local
+_bk;t=1773439163874    //services/cortex:ts; 0s local
+_bk;t=1773439163874    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439163874    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163874    //share/synapse/server:ts; 0s local
+_bk;t=1773439163874    //sites-runtime:ts; 0s local
+_bk;t=1773439163874    //services/cortex:ts_tests; 0s local
+_bk;t=1773439163874    .../server:bundle_code_file_templates_copy_srcs_to_bin; 0s local ...
+_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[1A[K_bk;t=1773439164075[32m[32,208 / 45,257][0m 30 actions, 25 running
+_bk;t=1773439164075    //services/cortex:cortex_debug; 0s local
+_bk;t=1773439164075    //share/synapse/global:ts; 0s local
+_bk;t=1773439164075    Copying file sites-runtime/src/components/figma_layer.tsx; 0s local
+_bk;t=1773439164075    //services/cortex:ts; 0s local
+_bk;t=1773439164075    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164075    //services/cortex:ts_tests; 0s local
+_bk;t=1773439164075    Copying file .../packages/js_serializer/src/ir/index.ts; 0s local
+_bk;t=1773439164075    //share/synapse/server:ts; 0s local ...
+_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[1A[K_bk;t=1773439164276[32m[32,633 / 45,257][0m 32 actions, 26 running
+_bk;t=1773439164276    //services/cortex:cortex_debug; 0s local
+_bk;t=1773439164276    Copying file share/node-info/helpers/runtime.ts; 0s local
+_bk;t=1773439164276    Copying file share/code-ts-transforms/src/index.ts; 0s local
+_bk;t=1773439164276    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164276    Copying file code-components-transpiler/shared/src/lib/css.ts; 0s local
+_bk;t=1773439164276    //services/cortex:ts_tests; 0s local
+_bk;t=1773439164276    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164276    //share/code-ts-transforms:ts; 0s local ...
+_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[1A[K_bk;t=1773439164477[32m[33,005 / 45,261][0m 29 actions, 26 running
+_bk;t=1773439164477    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164477    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164477    Copying file config/logging/schema_ai_productivity.ts; 0s local
+_bk;t=1773439164477    Copying file fullscreen/ts/scenegraph/src/changes_stager.ts; 0s local
+_bk;t=1773439164477    //share/synapse/server:ts; 0s local
+_bk;t=1773439164477    //share/make-edits-core:ts; 0s local
+_bk;t=1773439164477    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164477    //services/cortex:ts; 0s local ...
+_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[1A[K_bk;t=1773439164678[32m[33,532 / 45,261][0m 31 actions, 27 running
+_bk;t=1773439164678    //services/cortex/cli:client_test; 0s local
+_bk;t=1773439164678    //services/cortex:ts_tests; 0s local
+_bk;t=1773439164678    Copying file .../synapse/server/src/app/design/image-helpers.ts; 0s local
+_bk;t=1773439164678    Copying file share/figcache/src/timer/stopwatch.ts; 0s local
+_bk;t=1773439164678    Copying file design-to-react/packages/util/src/name_deduper.ts; 0s local
+_bk;t=1773439164678    //share/jsx:ts; 0s local
+_bk;t=1773439164678    //services/cortex:ts; 0s local
+_bk;t=1773439164678    Copying file share/figcache/src/throttler/acceptor.ts; 0s local ...
+_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[1A[K_bk;t=1773439164879[32m[34,017 / 45,261][0m 29 actions, 21 running
+_bk;t=1773439164880    //services/cortex/cli:client_test; 0s local
+_bk;t=1773439164880    Copying file .../modal-direct/package.json [for tool]; 0s local
+_bk;t=1773439164880    //fullscreen/ts/scenegraph:ts; 0s local
+_bk;t=1773439164880    Copying file sites-runtime/src/components/website.tsx; 0s local
+_bk;t=1773439164880    //services/cortex:ts_tests; 0s local
+_bk;t=1773439164880    //share/synapse/global:ts; 0s local
+_bk;t=1773439164880    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439164880    Copying file .../ts/scenegraph/src/facets/fragment_facet.ts; 0s local ...
+_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[1A[K_bk;t=1773439165080[32m[35,815 / 45,415][0m 30 actions, 27 running
+_bk;t=1773439165080    //services/cortex/cli:client_test; 0s local
+_bk;t=1773439165080    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165080    //fullscreen/ts/scenegraph:ts; 0s local
+_bk;t=1773439165080    //services/cortex:ts; 0s local
+_bk;t=1773439165080    //services/cortex:ts_tests; 0s local
+_bk;t=1773439165080    //services/cortex:ts_tests; 0s local
+_bk;t=1773439165080    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165080    Copying file config/manifests/jsvm-cpp.json [for tool]; 0s local ...
+_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[1A[K_bk;t=1773439165282[32m[37,197 / 45,685][0m 32 actions, 25 running
+_bk;t=1773439165282    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165282    //services/cortex:ts_tests; 0s local
+_bk;t=1773439165282    Copying file share/auto-auto-layout/src/stack_test_helpers.ts; 0s local
+_bk;t=1773439165282    Copying file sites-runtime/src/interactivity/smart_animate.ts; 0s local
+_bk;t=1773439165282    //share/synapse/global:ts; 0s local
+_bk;t=1773439165282    //services/cortex:ts_tests; 0s local
+_bk;t=1773439165282    Copying file .../cortex/lib/controllers/foundry/sync/handler.ts; 0s local
+_bk;t=1773439165282    Copying file .../server/src/agent/strip_media_content.ts; 0s local ...
+_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[1A[K_bk;t=1773439165483[32m[37,815 / 45,689][0m 30 actions, 25 running
+_bk;t=1773439165483    //services/cortex:convert_old_test; 0s local
+_bk;t=1773439165483    //services/cortex:generate_errors_binary; 0s local
+_bk;t=1773439165483    //services/cortex:test; 0s local
+_bk;t=1773439165483    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165483    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165483    //share/code-ts-transforms:ts; 0s local
+_bk;t=1773439165483    Copying file share/code-ts-transforms/src/jsx_source_import.ts; 0s local
+_bk;t=1773439165483    Copying file .../global/src/shared/schemas/image_to_jsx.ts; 0s local ...
+_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[1A[K_bk;t=1773439165684[32m[38,487 / 45,690][0m 31 actions, 29 running
+_bk;t=1773439165684    //services/cortex:convert_old_test; 0s local
+_bk;t=1773439165684    //services/cortex:generate_errors_binary; 0s local
+_bk;t=1773439165684    //services/cortex:test; 0s local
+_bk;t=1773439165684    //services/cortex/cli:cli; 0s local
+_bk;t=1773439165684    //share/synapse/server:ts; 0s local
+_bk;t=1773439165684    Copying file share/jsx/src/tailwind/constants.ts; 0s local
+_bk;t=1773439165684    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439165684    //services/cortex:ts; 0s local ...
+_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[1A[K_bk;t=1773439165885[32m[38,948 / 45,695][0m 31 actions, 23 running
+_bk;t=1773439165885    //services/cortex:convert_old_test; 0s local
+_bk;t=1773439165885    //services/cortex:generate_errors_binary; 0s local
+_bk;t=1773439165885    //services/cortex:test; 0s local
+_bk;t=1773439165885    //services/cortex/cli:cli; 0s local
+_bk;t=1773439165885    //services/cortex:integration_test; 0s local
+_bk;t=1773439165885    //services/cortex/cli:build_deps; 0s local
+_bk;t=1773439165885    Copying file config/logging/schema_comments.ts; 0s local
+_bk;t=1773439165885    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[1A[K_bk;t=1773439166088[32m[39,350 / 45,696][0m 30 actions, 28 running
+_bk;t=1773439166089    //services/cortex:convert_old_test; 0s local
+_bk;t=1773439166089    //services/cortex:generate_errors_binary; 0s local
+_bk;t=1773439166089    //services/cortex:test; 0s local
+_bk;t=1773439166089    //services/cortex/cli:cli; 0s local
+_bk;t=1773439166089    //services/cortex:integration_test; 0s local
+_bk;t=1773439166089    //services/cortex/cli:build_deps; 0s local
+_bk;t=1773439166089    //services/cortex:ts; 0s local
+_bk;t=1773439166089    Copying file .../cortex/__test__/test_data/tone/tone_35.json; 0s local ...
+_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[1A[K_bk;t=1773439166322[32m[39,479 / 45,700][0m 31 actions, 25 running
+_bk;t=1773439166322    //services/cortex:convert_old_test; 0s local
+_bk;t=1773439166322    //services/cortex:generate_errors_binary; 0s local
+_bk;t=1773439166322    //services/cortex:test; 0s local
+_bk;t=1773439166322    //services/cortex/cli:cli; 0s local
+_bk;t=1773439166322    //services/cortex:integration_test; 0s local
+_bk;t=1773439166322    //services/cortex/cli:build_deps; 0s local
+_bk;t=1773439166322    //share/point-and-edit:ts; 0s local
+_bk;t=1773439166322    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[1A[K_bk;t=1773439166523[32m[39,909 / 45,700][0m 26 actions, 21 running
+_bk;t=1773439166523    //services/cortex:convert_old_test; 1s local
+_bk;t=1773439166523    //services/cortex:generate_errors_binary; 1s local
+_bk;t=1773439166523    //services/cortex:test; 1s local
+_bk;t=1773439166523    //services/cortex/cli:cli; 0s local
+_bk;t=1773439166523    //services/cortex:integration_test; 0s local
+_bk;t=1773439166523    //services/cortex/cli:build_deps; 0s local
+_bk;t=1773439166523    Copying file .../cortex/__test__/test_data/gantt/gantt_17.json; 0s local
+_bk;t=1773439166523    //services/cortex:ts; 0s local ...
+_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[1A[K_bk;t=1773439166724[32m[40,444 / 45,700][0m 31 actions, 17 running
+_bk;t=1773439166724    //services/cortex:convert_old_test; 1s local
+_bk;t=1773439166724    //services/cortex:test; 1s local
+_bk;t=1773439166724    //services/cortex:integration_test; 1s local
+_bk;t=1773439166724    //services/cortex/cli:build_deps; 0s local
+_bk;t=1773439166724    //services/cortex:cortex; 0s local
+_bk;t=1773439166724    //services/cortex:ts_tests; 0s local
+_bk;t=1773439166724    //share/synapse/server:ts; 0s local
+_bk;t=1773439166724    //services/cortex:ts_tests; 0s local ...
+_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[1A[K_bk;t=1773439166926[32m[41,151 / 45,700][0m 32 actions, 19 running
+_bk;t=1773439166926    //services/cortex:integration_test; 1s local
+_bk;t=1773439166926    //services/cortex:cortex; 0s local
+_bk;t=1773439166926    Copying file .../ts/scenegraph/src/facets/whiteboard_facet.ts; 0s local
+_bk;t=1773439166926    Copying file .../ts/scenegraph/src/facets/viewer_state_facet.ts; 0s local
+_bk;t=1773439166926    Copying file .../tailwind/src/tw_animate_css.ts; 0s local
+_bk;t=1773439166926    //services/cortex:ts_tests; 0s local
+_bk;t=1773439166926    Copying file fpl/tokens-raw/package.json; 0s local
+_bk;t=1773439166926    Copying file .../cortex/__test__/test_data/tone/tone_6.json; 0s local ...
+_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[1A[K_bk;t=1773439167126[32m[41,849 / 45,700][0m 30 actions, 25 running
+_bk;t=1773439167126    //services/cortex:cortex; 0s local
+_bk;t=1773439167126    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+_bk;t=1773439167126    //share/synapse/server:ts; 0s local
+_bk;t=1773439167126    Copying file share/jotai/src/with_history.ts; 0s local
+_bk;t=1773439167126    Copying file share/design-diff/src/types.ts; 0s local
+_bk;t=1773439167126    .../synapse/server:bundle_code_file_templates_copy_srcs_to_bin; 0s local
+_bk;t=1773439167126    //services/cortex:ts_tests; 0s local
+_bk;t=1773439167126    //services/cortex:test; 0s local ...
+_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[1A[K_bk;t=1773439167327[32m[42,119 / 45,700][0m 29 actions, 24 running
+_bk;t=1773439167327    //services/cortex:cortex; 0s local
+_bk;t=1773439167327    //share/synapse/server:ts; 0s local
+_bk;t=1773439167327    //share/synapse/server:ts; 0s local
+_bk;t=1773439167327    Copying file .../cortex/__test__/test_data/tone/tone_45.json; 0s local
+_bk;t=1773439167327    //services/cortex:ts_tests; 0s local
+_bk;t=1773439167327    Copying file .../packages/util/src/select_element_for_node.ts; 0s local
+_bk;t=1773439167327    Copying file share/synapse/server/src/agent_sandbox/index.ts; 0s local
+_bk;t=1773439167327    Copying file .../synapse/server/src/llm_rerank/llm_rerank.ts; 0s local ...
+_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[1A[K_bk;t=1773439167528[32m[42,787 / 45,700][0m 32 actions, 20 running
+_bk;t=1773439167528    //services/cortex:cortex; 0s local
+_bk;t=1773439167528    Copying file fullscreen/ts/scenegraph/src/base_scenegraph.ts; 0s local
+_bk;t=1773439167528    //services/cortex:ts_tests; 0s local
+_bk;t=1773439167528    Copying file services/cortex/__test__/test_data/tone/tone_2.json; 0s local
+_bk;t=1773439167528    Copying file .../server/src/cortex/core/edit_image/types.ts; 0s local
+_bk;t=1773439167528    //services/cortex:ts_tests; 0s local
+_bk;t=1773439167528    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439167528    //share/synapse/global:ts; 0s local ...
+_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[1A[K_bk;t=1773439167729[32m[43,125 / 45,700][0m 29 actions, 27 running
+_bk;t=1773439167729    Creating source manifest for //.../cortex:generate_types_binary; 0s local
+_bk;t=1773439167729    Copying file services/cortex/__test__/test_data/tone/tone_3.json; 0s local
+_bk;t=1773439167729    Copying file share/jsx/src/util/quadtree.ts; 0s local
+_bk;t=1773439167729    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439167729    //share/synapse/server:ts; 0s local
+_bk;t=1773439167729    Copying file .../cortex/__test__/test_data/tone/tone_30.json; 0s local
+_bk;t=1773439167729    Copying file .../packages/schemas/src/primitives/schemas.ts; 0s local
+_bk;t=1773439167729    //services/cortex:ts_integration_tests; 0s local ...
+_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[1A[K_bk;t=1773439167931[32m[43,580 / 45,700][0m 31 actions, 12 running
+_bk;t=1773439167931    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439167931    //share/synapse/server:ts; 0s local
+_bk;t=1773439167931    //design-to-react/packages/core:ts; 0s local
+_bk;t=1773439167931    Copying directory package [for tool]; 0s local
+_bk;t=1773439167931    Copying file ml/packages/acorn-jsx/utils.ts; 0s local
+_bk;t=1773439167931    Copying file .../server/src/app/design/code_chat/supabase.ts; 0s local
+_bk;t=1773439167931    //share/synapse/server:ts; 0s local
+_bk;t=1773439167931    //share/synapse/server:ts; 0s local ...
+_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[1A[K_bk;t=1773439168133[32m[44,070 / 45,720][0m 30 actions, 20 running
+_bk;t=1773439168133    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local
+_bk;t=1773439168133    Copying file .../cortex/test_data/inference_core_text_embed.json; 0s local
+_bk;t=1773439168133    //share/synapse/server:ts; 0s local ...
+_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[1A[K_bk;t=1773439168334[32m[44,504 / 45,720][0m 32 actions, 28 running
+_bk;t=1773439168334    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439168334    //design-to-react/packages/core:ts; 0s local
+_bk;t=1773439168334    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439168334    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439168334    Copying file .../core/src/assembler/breakpoint_assembler.ts; 0s local
+_bk;t=1773439168334    Copying directory package [for tool]; 0s local
+_bk;t=1773439168334    //share/synapse/server:ts; 0s local
+_bk;t=1773439168334    //share/synapse/server:ts; 0s local ...
+_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[1A[K_bk;t=1773439168535[32m[44,794 / 45,720][0m 32 actions, 13 running
+_bk;t=1773439168535    //services/cortex:generate_types_binary; 0s local
+_bk;t=1773439168535    //services/cortex:ts_integration_tests; 0s local
+_bk;t=1773439168535    //share/synapse/server:ts; 0s local
+_bk;t=1773439168535    //share/synapse/global:ts; 0s local
+_bk;t=1773439168535    Copying file .../synapse/global/src/shared/snake_case_helpers.ts; 0s local
+_bk;t=1773439168535    //share/synapse/server:ts; 0s local
+_bk;t=1773439168535    //design-to-react/packages/core:ts; 0s local
+_bk;t=1773439168535    .../server:bundle_code_file_templates_copy_srcs_to_bin; 0s local ...
+_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[1A[K_bk;t=1773439168736[32m[45,389 / 45,720][0m 18 actions, 10 running
+_bk;t=1773439168736    Copying file .../kq/query/test/cases/attribute_selectors.tsx; 0s local
+_bk;t=1773439168736    Copying file .../kq/configs/all_transforms_all_props_jsx.json; 0s local
+_bk;t=1773439168736    Copying file ml/packages/kq/jsx/util/sanitizePropName.ts; 0s local
+_bk;t=1773439168736    Copying file ml/packages/kq/fig/node_defaults.json; 0s local
+_bk;t=1773439168736    Copying file ml/packages/kq/formatters/json.ts; 0s local
+_bk;t=1773439168736    Copying file ml/packages/kq/fig/font_list_types.d.ts; 0s local
+_bk;t=1773439168736    Copying file ml/packages/kq/fig/fig_builders.ts; 0s local
+_bk;t=1773439168736    Copying directory package; 0s local ...
+_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[1A[K_bk;t=1773439168938[32m[45,423 / 45,720][0m 31 actions, 0 running
+_bk;t=1773439168938    //config/logging:ts_src; 0s remote-cache
+_bk;t=1773439168938    .../node_modules/@datadog+native-metrics@2.0.0/lc; 0s remote-cache
+_bk;t=1773439168938    Running lifecycle hooks on npm package protobufjs@7.3.0}; 0s remote-cache
+_bk;t=1773439168938    Running lifecycle hooks on npm package canvas@3.0.1}; 0s remote-cache
+_bk;t=1773439168938    //:.aspect_rules_js/node_modules/canvas@3.0.1/lc; 0s remote-cache
+_bk;t=1773439168938    //ml/packages/kq:ts; 0s remote-cache
+_bk;t=1773439168938    //:.aspect_rules_js/node_modules/@datadog+pprof@5.2.0/lc; 0s remote-cache
+_bk;t=1773439168938    .../node_modules/@datadog+pprof@5.2.0/lc; 0s remote-cache ...
+_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[1A[K_bk;t=1773439169150[32m[45,441 / 45,720][0m 19 actions, 0 running
+_bk;t=1773439169150    //config/logging:ts_src; 0s remote-cache
+_bk;t=1773439169150    //:.aspect_rules_js/node_modules/canvas@3.0.1/lc; 0s remote-cache
+_bk;t=1773439169150    //ml/packages/kq:ts; 0s remote-cache
+_bk;t=1773439169150    //security/infra/lib/antiabuse-ts-client:ts; 0s remote-cache
+_bk;t=1773439169150    //:.aspect_rules_js/node_modules/node-av@5.2.2/lc; 0s remote-cache
+_bk;t=1773439169150    //fullscreen/node-fields-codegen:data_ts; 0s remote-cache
+_bk;t=1773439169150    //fullscreen/node-fields-codegen:main_ts; 0s remote-cache
+_bk;t=1773439169150    //share/color-tokens:generate; 0s remote-cache ...
+_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[1A[K_bk;t=1773439169485[32m[45,453 / 45,720][0m 7 actions, 0 running
+_bk;t=1773439169485    //config/logging:ts_src; 0s remote-cache
+_bk;t=1773439169485    //ml/packages/kq:ts; 0s remote-cache
+_bk;t=1773439169485    //share/point-and-edit:ts; 0s remote-cache
+_bk;t=1773439169485    Running lifecycle hooks on npm package dd-trace@3.58.0}; 0s remote-cache
+_bk;t=1773439169485    //:.aspect_rules_js/node_modules/dd-trace@3.58.0/lc; 0s remote-cache
+_bk;t=1773439169485    Running lifecycle hooks on npm package dd-trace@5.67.0}; 0s remote-cache
+_bk;t=1773439169485    //:.aspect_rules_js/node_modules/dd-trace@5.67.0/lc; 0s remote-cache
+_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[1A[K_bk;t=1773439169686[32m[45,590 / 45,720][0m 4 actions, 0 running
+_bk;t=1773439169686    [Prepa] Writing file services/cortex/image.binary.js_image_entries.json
+_bk;t=1773439169686    //fullscreen/ts/bindings/path-rendering:ts; 0s remote-cache
+_bk;t=1773439169686    Generating bindings for scenegraph; 0s remote-cache
+_bk;t=1773439169686    Generating bindings for scenegraph [for tool]; 0s remote-cache
+_bk;t=1773439170009[1A[K_bk;t=1773439170009[1A[K_bk;t=1773439170009[1A[K_bk;t=1773439170009[1A[K_bk;t=1773439170009[1A[K_bk;t=1773439170009[32m[45,691 / 45,720][0m 7 actions, 0 running
+_bk;t=1773439170009    [Prepa] Bundling Javascript sites-runtime/dist/index.js [esbuild]
+_bk;t=1773439170009    [Prepa] Bundling Javascript sites-runtime/dist/server.js [esbuild]
+_bk;t=1773439170009    [Prepa] Bundling Javascript sites-runtime/dist/index.js [esbuild]
+_bk;t=1773439170009    [Prepa] //sites-runtime:bundle
+_bk;t=1773439170009    [Prepa] //sites-runtime:bundle_dev
+_bk;t=1773439170009    [Prepa] //sites-runtime:bundle_server
+_bk;t=1773439170009    //fullscreen/ts/scenegraph:ts; 0s remote-cache
+_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[1A[K_bk;t=1773439170239[32m[45,698 / 45,720][0m [Prepa] //share/auto-auto-layout:ts
+_bk;t=1773439170455[1A[K_bk;t=1773439170455[32m[45,702 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439170455    [Prepa] JsRunBinary .../server/dist/code_file_templates.json [for tool]
+_bk;t=1773439170455    [Prepa] JsRunBinary share/synapse/server/dist/code_file_templates.json
+_bk;t=1773439170455    [Prepa] //share/synapse/global:ts
+_bk;t=1773439170687[1A[K_bk;t=1773439170687[1A[K_bk;t=1773439170687[1A[K_bk;t=1773439170687[1A[K_bk;t=1773439170687[32m[45,702 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439170687    [Prepa] JsRunBinary .../server/dist/code_file_templates.json [for tool]
+_bk;t=1773439170687    [Prepa] JsRunBinary share/synapse/server/dist/code_file_templates.json
+_bk;t=1773439170687    //share/synapse/global:ts; 0s remote-cache
+_bk;t=1773439171075[1A[K_bk;t=1773439171075[1A[K_bk;t=1773439171075[1A[K_bk;t=1773439171075[1A[K_bk;t=1773439171075[32m[45,706 / 45,720][0m [Prepa] //share/synapse/server:ts
+_bk;t=1773439171288[1A[K_bk;t=1773439171288[32m[45,706 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439171288    [Prepa] //share/synapse/server:ts
+_bk;t=1773439171288    [Prepa] JsRunBinary services/cortex/dist/.cortex-types.d.ts
+_bk;t=1773439171865[1A[K_bk;t=1773439171865[1A[K_bk;t=1773439171865[1A[K_bk;t=1773439171865[32m[45,706 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439171865    [Prepa] //share/synapse/server:ts
+_bk;t=1773439171865    JsRunBinary services/cortex/dist/.cortex-types.d.ts; 0s remote-cache
+_bk;t=1773439172089[1A[K_bk;t=1773439172089[1A[K_bk;t=1773439172089[1A[K_bk;t=1773439172089[32m[45,706 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439172089    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439172089    //share/synapse/server:ts; 0s remote-cache
+_bk;t=1773439172289[1A[K_bk;t=1773439172289[1A[K_bk;t=1773439172289[1A[K_bk;t=1773439172289[32m[45,707 / 45,720][0m 4 actions, 0 running
+_bk;t=1773439172289    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439172289    [Prepa] //services/cortex/cli:ts
+_bk;t=1773439172289    [Prepa] //services/cortex:generate_errors_script
+_bk;t=1773439172289    [Prepa] //services/cortex:ts
+_bk;t=1773439172490[1A[K_bk;t=1773439172490[1A[K_bk;t=1773439172490[1A[K_bk;t=1773439172490[1A[K_bk;t=1773439172490[1A[K_bk;t=1773439172490[32m[45,707 / 45,720][0m 4 actions, 0 running
+_bk;t=1773439172490    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439172490    [Prepa] //services/cortex/cli:ts
+_bk;t=1773439172490    [Prepa] //services/cortex:generate_errors_script
+_bk;t=1773439172490    [Prepa] //services/cortex:ts
+_bk;t=1773439172691[1A[K_bk;t=1773439172691[1A[K_bk;t=1773439172691[1A[K_bk;t=1773439172691[1A[K_bk;t=1773439172691[1A[K_bk;t=1773439172691[32m[45,707 / 45,720][0m 4 actions, 0 running
+_bk;t=1773439172691    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439172691    [Prepa] //services/cortex/cli:ts
+_bk;t=1773439172691    [Prepa] //services/cortex:generate_errors_script
+_bk;t=1773439172691    [Prepa] //services/cortex:ts
+_bk;t=1773439172993[1A[K_bk;t=1773439172993[1A[K_bk;t=1773439172993[1A[K_bk;t=1773439172993[1A[K_bk;t=1773439172993[1A[K_bk;t=1773439172993[32m[45,707 / 45,720][0m 4 actions, 0 running
+_bk;t=1773439172993    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439172993    [Prepa] //services/cortex:generate_errors_script
+_bk;t=1773439172993    [Prepa] //services/cortex:ts
+_bk;t=1773439172993    //services/cortex/cli:ts; 0s remote-cache
+_bk;t=1773439173292[1A[K_bk;t=1773439173292[1A[K_bk;t=1773439173292[1A[K_bk;t=1773439173292[1A[K_bk;t=1773439173292[1A[K_bk;t=1773439173292[32m[45,709 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439173292    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439173292    [Sched] //services/cortex:ts
+_bk;t=1773439173693[1A[K_bk;t=1773439173693[1A[K_bk;t=1773439173693[1A[K_bk;t=1773439173693[32m[45,709 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439173693    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439173693    [Sched] //services/cortex:ts
+_bk;t=1773439173893[1A[K_bk;t=1773439173893[1A[K_bk;t=1773439173893[1A[K_bk;t=1773439173893[32m[45,709 / 45,720][0m 2 actions, 0 running
+_bk;t=1773439173893    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439173893    [Sched] //services/cortex:ts
+_bk;t=1773439174294[1A[K_bk;t=1773439174294[1A[K_bk;t=1773439174294[1A[K_bk;t=1773439174294[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439174294    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439174294    [Sched] //services/cortex:ts
+_bk;t=1773439174294    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439174494[1A[K_bk;t=1773439174494[1A[K_bk;t=1773439174494[1A[K_bk;t=1773439174494[1A[K_bk;t=1773439174494[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439174494    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439174494    [Sched] //services/cortex:ts
+_bk;t=1773439174494    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439174895[1A[K_bk;t=1773439174895[1A[K_bk;t=1773439174895[1A[K_bk;t=1773439174895[1A[K_bk;t=1773439174895[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439174895    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439174895    [Sched] //services/cortex:ts
+_bk;t=1773439174895    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439175095[1A[K_bk;t=1773439175095[1A[K_bk;t=1773439175095[1A[K_bk;t=1773439175095[1A[K_bk;t=1773439175095[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439175095    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439175095    [Sched] //services/cortex:ts
+_bk;t=1773439175095    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439175495[1A[K_bk;t=1773439175495[1A[K_bk;t=1773439175495[1A[K_bk;t=1773439175495[1A[K_bk;t=1773439175495[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439175495    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439175495    [Sched] //services/cortex:ts
+_bk;t=1773439175495    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439175696[1A[K_bk;t=1773439175696[1A[K_bk;t=1773439175696[1A[K_bk;t=1773439175696[1A[K_bk;t=1773439175696[32m[45,709 / 45,720][0m 3 actions, 0 running
+_bk;t=1773439175696    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downloadin...
+_bk;t=1773439175696    [Sched] //services/cortex:ts
+_bk;t=1773439175696    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439175913[1A[K_bk;t=1773439175913[1A[K_bk;t=1773439175913[1A[K_bk;t=1773439175913[1A[K_bk;t=1773439175913[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439175913    //services/cortex:ts; 0s remote-cache, linux-sandbox
+_bk;t=1773439175913    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+_bk;t=1773439175913    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439176303[1A[K_bk;t=1773439176303[1A[K_bk;t=1773439176303[1A[K_bk;t=1773439176303[1A[K_bk;t=1773439176303[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439176303    //services/cortex:ts; 0s remote-cache, linux-sandbox
+_bk;t=1773439176303    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+_bk;t=1773439176303    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439176697[1A[K_bk;t=1773439176697[1A[K_bk;t=1773439176697[1A[K_bk;t=1773439176697[1A[K_bk;t=1773439176697[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439176697    //services/cortex:ts; 0s remote-cache, linux-sandbox
+_bk;t=1773439176697    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 4s
+_bk;t=1773439176697    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439176898[1A[K_bk;t=1773439176898[1A[K_bk;t=1773439176898[1A[K_bk;t=1773439176898[1A[K_bk;t=1773439176898[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439176898    //services/cortex:ts; 0s remote-cache, linux-sandbox
+_bk;t=1773439176898    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+_bk;t=1773439176898    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439177298[1A[K_bk;t=1773439177298[1A[K_bk;t=1773439177298[1A[K_bk;t=1773439177298[1A[K_bk;t=1773439177298[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439177298    //services/cortex:ts; 1s remote-cache, linux-sandbox
+_bk;t=1773439177298    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+_bk;t=1773439177298    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439177511[1A[K_bk;t=1773439177511[1A[K_bk;t=1773439177511[1A[K_bk;t=1773439177511[1A[K_bk;t=1773439177511[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439177511    //services/cortex:ts; 1s remote-cache, linux-sandbox
+_bk;t=1773439177511    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 5s
+_bk;t=1773439177511    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439177911[1A[K_bk;t=1773439177911[1A[K_bk;t=1773439177911[1A[K_bk;t=1773439177911[1A[K_bk;t=1773439177911[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439177911    //services/cortex:ts; 1s remote-cache, linux-sandbox
+_bk;t=1773439177911    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+_bk;t=1773439177911    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439178112[1A[K_bk;t=1773439178112[1A[K_bk;t=1773439178112[1A[K_bk;t=1773439178112[1A[K_bk;t=1773439178112[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439178112    //services/cortex:ts; 2s remote-cache, linux-sandbox
+_bk;t=1773439178112    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+_bk;t=1773439178112    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+_bk;t=1773439178313[1A[K_bk;t=1773439178313[1A[K_bk;t=1773439178313[1A[K_bk;t=1773439178313[1A[K_bk;t=1773439178313[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439178313    //services/cortex:ts; 2s remote-cache, linux-sandbox
+_bk;t=1773439178313    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+_bk;t=1773439178313    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+_bk;t=1773439178713[1A[K_bk;t=1773439178713[1A[K_bk;t=1773439178713[1A[K_bk;t=1773439178713[1A[K_bk;t=1773439178713[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439178713    //services/cortex:ts; 2s remote-cache, linux-sandbox
+_bk;t=1773439178713    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 6s
+_bk;t=1773439178713    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+_bk;t=1773439178914[1A[K_bk;t=1773439178914[1A[K_bk;t=1773439178914[1A[K_bk;t=1773439178914[1A[K_bk;t=1773439178914[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439178914    //services/cortex:ts; 3s remote-cache, linux-sandbox
+_bk;t=1773439178914    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+_bk;t=1773439178914    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 4s
+_bk;t=1773439179314[1A[K_bk;t=1773439179314[1A[K_bk;t=1773439179314[1A[K_bk;t=1773439179314[1A[K_bk;t=1773439179314[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439179314    //services/cortex:ts; 3s remote-cache, linux-sandbox
+_bk;t=1773439179314    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+_bk;t=1773439179314    [Prepa] Computing Layer Groups //services/cortex:image.binary.js_image; 5s
+_bk;t=1773439179515[1A[K_bk;t=1773439179515[1A[K_bk;t=1773439179515[1A[K_bk;t=1773439179515[1A[K_bk;t=1773439179515[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439179515    //services/cortex:ts; 3s remote-cache, linux-sandbox
+_bk;t=1773439179515    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 7s
+_bk;t=1773439179515    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439179915[1A[K_bk;t=1773439179915[1A[K_bk;t=1773439179915[1A[K_bk;t=1773439179915[1A[K_bk;t=1773439179915[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439179915    //services/cortex:ts; 4s remote-cache, linux-sandbox
+_bk;t=1773439179915    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+_bk;t=1773439179915    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439180315[1A[K_bk;t=1773439180315[1A[K_bk;t=1773439180315[1A[K_bk;t=1773439180315[1A[K_bk;t=1773439180315[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439180315    //services/cortex:ts; 4s remote-cache, linux-sandbox
+_bk;t=1773439180315    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+_bk;t=1773439180315    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439180516[1A[K_bk;t=1773439180516[1A[K_bk;t=1773439180516[1A[K_bk;t=1773439180516[1A[K_bk;t=1773439180516[32m[45,709 / 45,720][0m 3 actions, 1 running
+_bk;t=1773439180516    //services/cortex:ts; 4s remote-cache, linux-sandbox
+_bk;t=1773439180516    [Sched] JsRunBinary services/cortex/dist/.cortex-types.d.ts; Downlo...; 8s
+_bk;t=1773439180516    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439180797[1A[K_bk;t=1773439180797[1A[K_bk;t=1773439180797[1A[K_bk;t=1773439180797[1A[K_bk;t=1773439180797[32m[45,709 / 45,720][0m 3 actions, 2 running
+_bk;t=1773439180797    //services/cortex:ts; 4s remote-cache, linux-sandbox
+_bk;t=1773439180797    .../cortex:generate_types_run_binary; 0s remote-cache, linux-sandbox
+_bk;t=1773439180797    [Sched] Computing Layer Groups //services/cortex:image.binary.js_image
+_bk;t=1773439181116[1A[K_bk;t=1773439181116[1A[K_bk;t=1773439181116[1A[K_bk;t=1773439181116[1A[K_bk;t=1773439181116[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439181116    //services/cortex:ts; 5s remote-cache, linux-sandbox
+_bk;t=1773439181116    .../cortex:generate_types_run_binary; 0s remote-cache, linux-sandbox
+_bk;t=1773439181116    //services/cortex:image.binary.js_image; 0s remote-cache, linux-sandbox
+_bk;t=1773439182117[1A[K_bk;t=1773439182117[1A[K_bk;t=1773439182117[1A[K_bk;t=1773439182117[1A[K_bk;t=1773439182117[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439182117    //services/cortex:ts; 6s remote-cache, linux-sandbox
+_bk;t=1773439182117    .../cortex:generate_types_run_binary; 1s remote-cache, linux-sandbox
+_bk;t=1773439182117    //services/cortex:image.binary.js_image; 1s remote-cache, linux-sandbox
+_bk;t=1773439183118[1A[K_bk;t=1773439183118[1A[K_bk;t=1773439183118[1A[K_bk;t=1773439183118[1A[K_bk;t=1773439183118[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439183118    //services/cortex:ts; 7s remote-cache, linux-sandbox
+_bk;t=1773439183118    .../cortex:generate_types_run_binary; 2s remote-cache, linux-sandbox
+_bk;t=1773439183118    //services/cortex:image.binary.js_image; 2s remote-cache, linux-sandbox
+_bk;t=1773439184122[1A[K_bk;t=1773439184122[1A[K_bk;t=1773439184122[1A[K_bk;t=1773439184122[1A[K_bk;t=1773439184122[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439184122    //services/cortex:ts; 8s remote-cache, linux-sandbox
+_bk;t=1773439184122    .../cortex:generate_types_run_binary; 3s remote-cache, linux-sandbox
+_bk;t=1773439184122    //services/cortex:image.binary.js_image; 3s remote-cache, linux-sandbox
+_bk;t=1773439184519[1A[K_bk;t=1773439184519[1A[K_bk;t=1773439184519[1A[K_bk;t=1773439184519[1A[K_bk;t=1773439184519[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439184519    //services/cortex:ts; 8s remote-cache, linux-sandbox
+_bk;t=1773439184519    .../cortex:generate_types_run_binary; 3s remote-cache, linux-sandbox
+_bk;t=1773439184519    //services/cortex:image.binary.js_image; 3s remote-cache, linux-sandbox
+_bk;t=1773439185520[1A[K_bk;t=1773439185520[1A[K_bk;t=1773439185520[1A[K_bk;t=1773439185520[1A[K_bk;t=1773439185520[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439185520    //services/cortex:ts; 9s remote-cache, linux-sandbox
+_bk;t=1773439185520    .../cortex:generate_types_run_binary; 4s remote-cache, linux-sandbox
+_bk;t=1773439185520    //services/cortex:image.binary.js_image; 4s remote-cache, linux-sandbox
+_bk;t=1773439186121[1A[K_bk;t=1773439186121[1A[K_bk;t=1773439186121[1A[K_bk;t=1773439186121[1A[K_bk;t=1773439186121[32m[45,709 / 45,720][0m 3 actions running
+_bk;t=1773439186121    //services/cortex:ts; 10s remote-cache, linux-sandbox
+_bk;t=1773439186121    .../cortex:generate_types_run_binary; 5s remote-cache, linux-sandbox
+_bk;t=1773439186121    //services/cortex:image.binary.js_image; 5s remote-cache, linux-sandbox
+_bk;t=1773439186521[1A[K_bk;t=1773439186521[1A[K_bk;t=1773439186521[1A[K_bk;t=1773439186521[1A[K_bk;t=1773439186521[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439186521    //services/cortex:ts; 10s remote-cache, linux-sandbox
+_bk;t=1773439186521    //services/cortex:image.binary.js_image; 5s remote-cache, linux-sandbox
+_bk;t=1773439187522[1A[K_bk;t=1773439187522[1A[K_bk;t=1773439187522[1A[K_bk;t=1773439187522[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439187522    //services/cortex:ts; 11s remote-cache, linux-sandbox
+_bk;t=1773439187522    //services/cortex:image.binary.js_image; 6s remote-cache, linux-sandbox
+_bk;t=1773439188523[1A[K_bk;t=1773439188523[1A[K_bk;t=1773439188523[1A[K_bk;t=1773439188523[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439188523    //services/cortex:ts; 12s remote-cache, linux-sandbox
+_bk;t=1773439188523    //services/cortex:image.binary.js_image; 7s remote-cache, linux-sandbox
+_bk;t=1773439189724[1A[K_bk;t=1773439189724[1A[K_bk;t=1773439189724[1A[K_bk;t=1773439189724[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439189724    //services/cortex:ts; 13s remote-cache, linux-sandbox
+_bk;t=1773439189724    //services/cortex:image.binary.js_image; 8s remote-cache, linux-sandbox
+_bk;t=1773439190924[1A[K_bk;t=1773439190924[1A[K_bk;t=1773439190924[1A[K_bk;t=1773439190924[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439190924    //services/cortex:ts; 15s remote-cache, linux-sandbox
+_bk;t=1773439190924    //services/cortex:image.binary.js_image; 10s remote-cache, linux-sandbox
+_bk;t=1773439191124[1A[K_bk;t=1773439191124[1A[K_bk;t=1773439191124[1A[K_bk;t=1773439191124[32m[45,710 / 45,720][0m 2 actions running
+_bk;t=1773439191124    //services/cortex:ts; 15s remote-cache, linux-sandbox
+_bk;t=1773439191124    //services/cortex:image.binary.js_image; 10s remote-cache, linux-sandbox
+_bk;t=1773439191448[1A[K_bk;t=1773439191448[1A[K_bk;t=1773439191448[1A[K_bk;t=1773439191448[32m[45,711 / 45,720][0m 6 actions, 3 running
+_bk;t=1773439191448    //services/cortex:ts; 15s remote-cache, linux-sandbox
+_bk;t=1773439191448    JsImageLayer node //.../cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191448    //services/cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191448    [Sched] JsImageLayer package_store_3p //.../cortex:image.binary.js_image
+_bk;t=1773439191448    [Sched] JsImageLayer app //services/cortex:image.binary.js_image
+_bk;t=1773439191448    [Sched] JsImageLayer package_store_1p //.../cortex:image.binary.js_image
+_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[1A[K_bk;t=1773439191725[32m[45,711 / 45,720][0m 6 actions running
+_bk;t=1773439191725    //services/cortex:ts; 15s remote-cache, linux-sandbox
+_bk;t=1773439191725    JsImageLayer node //.../cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191725    //services/cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191725    //services/cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191725    JsImageLayer app //services/cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439191725    //services/cortex:image.binary.js_image; 0s linux-sandbox
+_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[1A[K_bk;t=1773439192726[32m[45,711 / 45,720][0m 6 actions running
+_bk;t=1773439192726    //services/cortex:ts; 16s remote-cache, linux-sandbox
+_bk;t=1773439192726    JsImageLayer node //.../cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439192726    //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439192726    //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439192726    JsImageLayer app //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439192726    //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[1A[K_bk;t=1773439193326[32m[45,712 / 45,720][0m 5 actions running
+_bk;t=1773439193326    //services/cortex:ts; 17s remote-cache, linux-sandbox
+_bk;t=1773439193326    JsImageLayer node //.../cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439193326    //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439193326    JsImageLayer app //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439193326    //services/cortex:image.binary.js_image; 1s linux-sandbox
+_bk;t=1773439193527[1A[K_bk;t=1773439193527[1A[K_bk;t=1773439193527[1A[K_bk;t=1773439193527[1A[K_bk;t=1773439193527[1A[K_bk;t=1773439193527[1A[K_bk;t=1773439193527[32m[45,713 / 45,720][0m 4 actions running
+_bk;t=1773439193527    //services/cortex:ts; 17s remote-cache, linux-sandbox
+_bk;t=1773439193527    JsImageLayer node //.../cortex:image.binary.js_image; 2s linux-sandbox
+_bk;t=1773439193527    //services/cortex:image.binary.js_image; 2s linux-sandbox
+_bk;t=1773439193527    JsImageLayer app //services/cortex:image.binary.js_image; 2s linux-sandbox
+_bk;t=1773439194728[1A[K_bk;t=1773439194728[1A[K_bk;t=1773439194728[1A[K_bk;t=1773439194728[1A[K_bk;t=1773439194728[1A[K_bk;t=1773439194728[32m[45,713 / 45,720][0m 4 actions running
+_bk;t=1773439194728    //services/cortex:ts; 18s remote-cache, linux-sandbox
+_bk;t=1773439194728    JsImageLayer node //.../cortex:image.binary.js_image; 3s linux-sandbox
+_bk;t=1773439194728    //services/cortex:image.binary.js_image; 3s linux-sandbox
+_bk;t=1773439194728    JsImageLayer app //services/cortex:image.binary.js_image; 3s linux-sandbox
+_bk;t=1773439195928[1A[K_bk;t=1773439195928[1A[K_bk;t=1773439195928[1A[K_bk;t=1773439195928[1A[K_bk;t=1773439195928[1A[K_bk;t=1773439195928[32m[45,713 / 45,720][0m 4 actions running
+_bk;t=1773439195928    //services/cortex:ts; 20s remote-cache, linux-sandbox
+_bk;t=1773439195928    JsImageLayer node //.../cortex:image.binary.js_image; 4s linux-sandbox
+_bk;t=1773439195928    //services/cortex:image.binary.js_image; 4s linux-sandbox
+_bk;t=1773439195928    JsImageLayer app //services/cortex:image.binary.js_image; 4s linux-sandbox
+_bk;t=1773439196489[1A[K_bk;t=1773439196489[1A[K_bk;t=1773439196489[1A[K_bk;t=1773439196489[1A[K_bk;t=1773439196489[1A[K_bk;t=1773439196489[31m[1mERROR: [0m/home/circleci/figma/services/cortex/BUILD.bazel:45:11: Transpiling (dts) & type-checking TypeScript project @@//services/cortex:ts [tsc -p services/cortex/tsconfig.json] failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)
+_bk;t=1773439196489
+_bk;t=1773439196489Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+_bk;t=1773439196489[96mservices/cortex/lib/support/foundry_api.ts[0m:[93m20[0m:[93m33[0m - [91merror[0m[90m TS2307: [0mCannot find module '@figma/agentplat-client' or its corresponding type declarations.
+_bk;t=1773439196489
+_bk;t=1773439196489[7m20[0m import { AgentPlatClient } from '@figma/agentplat-client'
+_bk;t=1773439196489[7m  [0m [91m                                ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+_bk;t=1773439196489
+_bk;t=1773439196489[96mservices/cortex/lib/support/foundry_api.ts[0m:[93m210[0m:[93m34[0m - [91merror[0m[90m TS7006: [0mParameter 'connectErr' implicitly has an 'any' type.
+_bk;t=1773439196489
+_bk;t=1773439196489[7m210[0m       client.connect(undefined, (connectErr) => {
+_bk;t=1773439196489[7m   [0m [91m                                 ~~~~~~~~~~[0m
+_bk;t=1773439196489
+_bk;t=1773439196489[96mservices/cortex/lib/support/foundry_api.ts[0m:[93m219[0m:[93m12[0m - [91merror[0m[90m TS7006: [0mParameter 'createErr' implicitly has an 'any' type.
+_bk;t=1773439196489
+_bk;t=1773439196489[7m219[0m           (createErr) => {
+_bk;t=1773439196489[7m   [0m [91m           ~~~~~~~~~[0m
+_bk;t=1773439196489
+_bk;t=1773439196489
+_bk;t=1773439196489Found 3 errors in the same file, starting at: services/cortex/lib/support/foundry_api.ts[90m:20[0m
+_bk;t=1773439196489
+_bk;t=1773439196489[32m[45,714 / 45,720][0m 3 actions running
+_bk;t=1773439196489    //services/cortex:ts; 20s remote-cache, linux-sandbox
+_bk;t=1773439196489    JsImageLayer node //.../cortex:image.binary.js_image; 5s linux-sandbox
+_bk;t=1773439196489    //services/cortex:image.binary.js_image; 5s linux-sandbox
+_bk;t=1773439196672[1A[K_bk;t=1773439196672[1A[K_bk;t=1773439196672[1A[K_bk;t=1773439196672[1A[K_bk;t=1773439196672[31m[1mERROR: [0m/home/circleci/figma/services/cortex/BUILD.bazel:45:11 Middleman _middlemen/services_Scortex_Sts_Utypecheck_Utest.sh-runfiles failed: (Exit 2): tsc failed: error executing TsProject command (from target //services/cortex:ts) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/external/aspect_rules_ts++ext+npm_typescript/tsc_/tsc --pretty --outDir services/cortex/dist --declarationDir services/cortex/dist --project ... (remaining 4 arguments skipped)
+_bk;t=1773439196672
+_bk;t=1773439196672Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+_bk;t=1773439196672[32m[45,717 / 45,720][0m checking cached actions
+_bk;t=1773439196725[1A[K_bk;t=1773439196725[32mINFO: [0mElapsed time: 68.891s, Critical Path: 27.71s
+_bk;t=1773439196725[32m[45,717 / 45,720][0m checking cached actions
+_bk;t=1773439196725[1A[K_bk;t=1773439196725[32mINFO: [0m17151 processes: 25850 action cache hit, 6391 remote cache hit, 4979 internal, 5 linux-sandbox, 5776 local.
+_bk;t=1773439196725[32m[45,717 / 45,720][0m checking cached actions
+_bk;t=1773439196726[1A[K_bk;t=1773439196726[31m[1mERROR: [0mBuild did NOT complete successfully
+_bk;t=1773439196726[31m[1mFAILED:[0m 
+_bk;t=1773439196726[1A[K_bk;t=1773439196726[31m[1mFAILED:[0m 
+_bk;t=1773439197547[1A[K_bk;t=1773439197548[32mINFO: [0mStreaming build results to: [36mhttps://taaffeite.cluster.engflow.com/invocation/709ff8b0-dce7-4551-b766-276b20e7606b[0m
+_bk;t=1773439197548[0m
+_bk;t=1773439197556exit status 1
+_bk;t=1773439197556^^^ +++
+_bk;t=1773439198595--- [34mFlush Bazel-related metrics to Datadog[0m
+_bk;t=1773439198597ci-cache-stats not found, skipping
+_bk;t=1773439198597
+_bk;t=1773439198597--- [34mStore Bazel artifacts and server logs[0m
+_bk;t=1773439199910Tags sent
+_bk;t=1773439199936cp: cannot stat '/home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs': No such file or directory
+_bk;t=1773439199946Metrics args: --metrics bazel.memory.final:6175808
+_bk;t=1773439199946Reporting datadog-ci metrics
+_bk;t=1773439201266Metrics sent
+_bk;t=1773439201280
+_bk;t=1773439201280--- [34mReport additional tags to Datadog[0m
+_bk;t=1773439201287Feature flag buildkite_ci_interp_test_processor=true, adding datadog tag
+_bk;t=1773439202620Tags sent
+_bk;t=1773439202636
+_bk;t=1773439202636--- [34mReport test results to Datadog[0m
+_bk;t=1773439202639/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+_bk;t=1773439202737
+_bk;t=1773439202737--- [34mStoring and processing test results for suppression[0m
+_bk;t=1773439202737Running test-processor for path reports (test service: cortex-test-and-build)
+_bk;t=17734392027372026/03/13 22:00:02 ci-interp: [test-processor-cli] no XML files found in reports
+_bk;t=1773439203841[test-processor] wrote done sentinel to metadata key test-processor-done-6075330-0
+_bk;t=17734392038412026/03/13 22:00:03 ci-interp: Searching pattern: "reports/**/*"
+_bk;t=17734392038412026/03/13 22:00:03 ci-interp: Collected 0 XML files
+_bk;t=1773439203841--- [34mReport network error fetching third party dependencies[0m
+_bk;t=1773439204018
+_bk;t=1773439204018--- [34mRecording max memory usage[0m
+_bk;t=177343920402519394469888 bytes ( 18.0625 GiB )
+_bk;t=1773439204025/home/circleci/.cache/bazel_managed_binaries/external/rules_nodejs++node+nodejs_linux_amd64/bin/nodejs/bin/datadog-ci
+_bk;t=1773439205393Metrics sent
+_bk;t=1773439205408
+_bk;t=1773439205408--- [34mStoring 2 artifacts[0m
+_bk;t=1773439205408Running "/usr/bin/buildkite-agent artifact upload /home/circleci/.npm/_logs/**/*;artifacts/**/*"
+_bk;t=1773439205430[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mFound 6 files that match "/home/circleci/.npm/_logs/**/*;artifacts/**/*"[0m
+_bk;t=1773439205430[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773439205430[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mCreating (0-6)/6 artifacts[0m
+_bk;t=1773439205680[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d5-4040-9595-b36279d456eb artifacts/command.profile.gz (3.4 MiB)[0m
+_bk;t=1773439205681[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d4-40a8-8d24-5a9460c5893b home/circleci/.npm/_logs/2026-03-12T13_37_33_047Z-debug-0.log (1.3 KiB)[0m
+_bk;t=1773439205681[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d5-45bc-9afd-754dc063f7c9 home/circleci/.npm/_logs/2026-03-12T13_37_33_158Z-debug-0.log (445 KiB)[0m
+_bk;t=1773439205682[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d5-4abf-a387-9a2d76a3343d artifacts/bazel_server_log.out (144 B)[0m
+_bk;t=1773439205682[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d5-460c-9361-159f21f23ab6 home/circleci/.npm/_logs/2026-03-12T13_37_44_234Z-debug-0.log (1.2 KiB)[0m
+_bk;t=1773439205682[38;5;48m2026-03-13 22:00:05 INFO  [0m [0mUploading 019ce936-c0d5-4625-b435-3793f00f81ef home/circleci/.npm/_logs/2026-03-12T13_37_47_693Z-debug-0.log (3.3 KiB)[0m
+_bk;t=1773439206562[38;5;48m2026-03-13 22:00:06 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=17734392066252026/03/13 22:00:06 ci-interp: reaping 0 running tasks
+_bk;t=17734392066252026/03/13 22:00:06 ci-interp: Received error from task: bazel build //services/cortex/...
+_bk;t=17734392066872026/03/13 22:00:06 ci-interp: Job bazel build //services/cortex/... (exit code 1) does not match any retry conditions or has exceeded all limits
+_bk;t=17734392066932026/03/13 22:00:06 retry-cli: Calling retry service for job cortex-test-and-build in build 6075330 (exit code: 1)
+_bk;t=17734392072722026/03/13 22:00:07 retry-cli: Retry service response: shouldRetry=false, reason="Deterministic failure: Found 3 errors in the same file, starting at: services/cortex/lib/support/foundry_api.ts:20", traceId=d9eaf3df-fab0-4669-a2b9-da810d9d414c
+_bk;t=1773439207274Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/logs/*.log"
+_bk;t=1773439207293[38;5;48m2026-03-13 22:00:07 INFO  [0m [0mFound 2 files that match "devex/buildkite/logs/*.log"[0m
+_bk;t=1773439207293[38;5;48m2026-03-13 22:00:07 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773439207293[38;5;48m2026-03-13 22:00:07 INFO  [0m [0mCreating (0-2)/2 artifacts[0m
+_bk;t=1773439207526[38;5;48m2026-03-13 22:00:07 INFO  [0m [0mUploading 019ce936-c829-4a67-94a4-60ca91c213f5 devex/buildkite/logs/12-Start_ci-cache-stats_server.log (55 B)[0m
+_bk;t=1773439207526[38;5;48m2026-03-13 22:00:07 INFO  [0m [0mUploading 019ce936-c82a-4291-82d3-6b41c80fc363 devex/buildkite/logs/11-Monitor_cgroup_resource_usage.log (957 B)[0m
+_bk;t=1773439208064[38;5;48m2026-03-13 22:00:08 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=1773439208065Running "/usr/bin/buildkite-agent artifact upload devex/buildkite/results/*.json"
+_bk;t=1773439208081[38;5;48m2026-03-13 22:00:08 INFO  [0m [0mFound 1 files that match "devex/buildkite/results/*.json"[0m
+_bk;t=1773439208081[38;5;48m2026-03-13 22:00:08 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773439208081[38;5;48m2026-03-13 22:00:08 INFO  [0m [0mCreating (0-1)/1 artifacts[0m
+_bk;t=1773439208883[38;5;48m2026-03-13 22:00:08 INFO  [0m [0mUploading 019ce936-cd27-49a0-bb75-01f53cfdd6e6 devex/buildkite/results/20260313_215958_failed_step.json (2.3 KiB)[0m
+_bk;t=1773439209366[38;5;48m2026-03-13 22:00:09 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=17734392093692026/03/13 22:00:09 ci-interp: failed to evaluate steps: command `bazel build //services/cortex/...` failed with exit code 1
+_bk;t=1773439209834
+_bk;t=1773439209835~~~ :warning: Failed to run command, exited with 1, run params:
+_bk;t=1773439209836run --name cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-main -e FIGMA_CI_BUCKET -e FIGMA_CI_CACHE_BUCKET -e FIGMA_CI_LAMBDA_BUILDS_BUCKET -e FIGMA_CI_PROBER_BUILDS_BUCKET -e FIGMA_CI_STATE_BUCKET -e FIGMA_CI_SECRETS_NAMESPACE -e FIGMA_CI_TEST_QUEUE_REDIS -e FIGMA_CI_TEST_QUEUE_SINATRA_REDIS -e FIGMA_CI_SINATRA_TEST_DURATION -e FIGMA_CI_TOOLS_BUCKET -e FIGMA_CI_XCODE_BUCKET -e FIGMA_CI_VM_BUCKET -e FIGMA_CI_PRIVATE_DATA_BUCKET -e FIGMA_CI_MEMORY_PER_AGENT -e FIGMA_CI_VCPUS_PER_AGENT -e FIGMA_CI_ARTIFACT_CACHE_ENDPOINT -e FIGMA_CI_ARTIFACTORY_ENDPOINT -e FIGMA_CI_ARTIFACTORY_DOCKER_ENDPOINT -e FIGMA_CI_ARTIFACTORY_PRODUCTION_DEVEX_ENDPOINT -e FIGMA_CI_ARTIFACTORY_SANDBOX_DEVEX_ENDPOINT -e FIGMA_CI_COSIGN_KEY_ID_HIGH_INTEGRITY -e FIGMA_CI_COSIGN_KEY_ID_LOW_INTEGRITY -e FIGMA_CI_STEP_SIGNING_KEY_ID -e AWS_ACCESS_KEY_ID -e AWS_ECR_ACCOUNT_URL -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN -e AWS_REGION -e AWS_DEFAULT_REGION -e ADMIN_AWS_ACCESS_KEY_ID -e ADMIN_AWS_SECRET_ACCESS_KEY -e ADMIN_AWS_SESSION_TOKEN -e BUILDKITE_BUILD_CHECKOUT_PATH -e ENABLE_DD_COMMAND_LOGGING -e JOB_START -e FIGMA_CI_GITHUB_TOKEN -e STABLE_COMMITS_ENDPOINT -e STABLE_COMMITS_TOKEN_SECRET_ID -e FIGMA_CI_IS_AUTO_RETRY_FROM_WITHIN_JOB_ENABLED -e GIT_TRACE2_EVENT -e GIT_TRACE2_EVENT_NESTING -e GIT_TRACE2_EVENT_BRIEF -e GIT_TRACE2_CONFIG_PARAMS -e GIT_TRACE2_ENV_VARS -e BUILDKITE_LABEL -e MERGE_BASE_BRANCH -e FIGMA_CI_LD_FEATURE_FLAGS -e RUN_ALL_TESTS_FOR_DELETED_FILES -e CI -e RACK_ENV -e BUILDKITE_PROJECT_PROVIDER -e BUILDKITE_ORGANIZATION_SLUG -e BUILDKITE_PARALLEL_JOB_COUNT -e BUILDKITE_REPO_SSH_HOST -e MERGE_BASE_COMMIT -e FIGMA_BRANCH_TYPE -e BUILDKITE_BRANCH -e BUILDKITE_AGENT_NAME -e BUILDKITE_MESSAGE -e BUILDKITE_BUILD_AUTHOR -e BUILDKITE_AGENT_META_DATA_STACK -e BUILDKITE_BUILD_AUTHOR_EMAIL -e BUILDKITE_TIMEOUT -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_LIFE_CYCLE -e FIGMA_CI_RESOURCE_CLASS -e CI_CPUS -e CI_GIT_BUNDLE_PREREQUISITE_COMMIT -e BUILDKITE_PULL_REQUEST_BASE_BRANCH -e JOB_FILE_RELATIVE_PATH -e BUILDKITE_BUILD_CREATOR -e BUILDKITE_PULL_REQUEST -e BUILDKITE_COMMIT_RESOLVED -e BUILDKITE_TRIGGERED_FROM_BUILD_ID -e USE_WEB_JEST_LITE -e BUILDKITE_CHECKSUM_BASED_WORKSPACES -e BUILDKITE_PARALLEL_JOB -e CI_USERNAME -e BUILDKITE_SCRIPT_PATH -e BUILDKITE_AGENT_META_DATA_HOSTNAME -e BUILDKITE_BUILD_ID -e BUILDKITE_SOURCE -e USE_INTERACTION_TEST_DYNAMIC_DEADLINE -e FIGMA_CI_INTEGRITY -e BUILDKITE_AGENT_META_DATA_AWS_ARCHITECTURE -e TEST_REPORTS_DIR -e BUILDKITE_RETRY_COUNT -e USE_INTERACTION_TEST_HIGH_LOCAL_TIMEOUT -e FF_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_PIPELINE_PROVIDER -e BUILDKITE_BUILD_CREATOR_EMAIL -e ASPECT_RULES_JS_DISABLE_UPDATE_PNPM_LOCK -e BUILDKITE_PULL_REQUEST_LABELS -e BUILDKITE_JOB_ID -e BUILDKITE_STEP_IDENTIFIER -e SETTINGS_YML -e BUILDKITE_AGENT_META_DATA_QUEUE -e MERGE_BASE_MASTER_TIMESTAMP -e BUILDKITE_AGENT_ID -e BUILDKITE_STEP_ID -e GOFLAGS -e CHANGED_FILES -e BUILDKITE_PLUGINS -e BUILDKITE_PIPELINE_TEAMS -e BUILDKITE_ORGANIZATION_ID -e BUILDKITE_PROJECT_SLUG -e BUILDKITE_AGENT_META_DATA_ARCH -e COMMITTER_EMAIL -e BUILDKITE_REBUILT_FROM_BUILD_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_NUMBER -e BUILDKITE_PIPELINE_SLUG -e BUILDKITE_AGENT_META_DATA_AWS_ACCOUNT_ID -e BUILDKITE_PIPELINE_ID -e FIGMA_BUILDKITE_COMMAND_SIG -e BUILDKITE_COMPUTE_TYPE -e FIGMA_BUILDKITE_PLUGINS_SIG -e BUILDKITE_AGENT_META_DATA_BUILDKITE_AWS_STACK -e BUILDKITE_ARTIFACT_PATHS -e BUILDKITE_AGENT_META_DATA_AWS_AVAILABILITY_ZONE -e BUILDKITE_STEP_KEY -e BUILDKITE_REBUILT_FROM_BUILD_NUMBER -e BUILDKITE_COMMAND -e BUILDKITE_BUILD_CREATOR_TEAMS -e BUILDKITE_TAG -e BUILDKITE_BUILD_URL -e CI_WORKING_DIRECTORY -e BUILDKITE -e BUILDKITE_REPO -e BUILDKITE_PULL_REQUEST_REPO -e AWS_ECR_ACCOUNT_URL -e MERGE_BASE_MASTER_COMMIT -e BUILDKITE_AGENT_META_DATA_OS -e BUILDKITE_AGENT_META_DATA_CUSTOM_AGENT -e JOB_MAINTAINER -e IS_SOFT_FAIL -e BUILDKITE_PIPELINE_NAME -e BUILDKITE_PULL_REQUEST_DRAFT -e START_TIME -e PR_OVERRIDE_RUN_ALL_TESTS -e BUILDKITE_BUILD_NUMBER -e BUILDKITE_AGENT_META_DATA_MACHINE_ID -e BUILDKITE_AGENT_META_DATA_AWS_INSTANCE_TYPE -e BUILDKITE_COMMIT -e BUILDKITE_AGENT_META_DATA_DOCKER -e BUILDKITE_AGENT_META_DATA_AWS_REGION -e CI_GIT_BUNDLE_S3_URL -e BUILDKITE_AGENT_META_DATA_AWS_AMI_ID -e BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG -e BUILDKITE_PIPELINE_DEFAULT_BRANCH -e CI_MEM_GIB -e DOCKER_BUILDKIT -e BASH_ENV --workdir=/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/figma:/home/circleci/figma -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.cache/bazel:/home/circleci/.cache/bazel -v /var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335:/var/lib/buildkite-agent/builds/production-linux-i-03bc3c50e2f9baef4-4/figma/.git-trace2/019ce935-099e-42ea-93d6-1e8d3df48335 -v /usr/local/bin/check-feature-flag:/usr/local/bin/check-feature-flag --user=circleci --rm --entrypoint /home/circleci/figma/devex/buildkite/bin/ci-substeps-compose -e BUILDKITE_JOB_ID -e BUILDKITE_BUILD_ID -e BUILDKITE_AGENT_ACCESS_TOKEN -v /bin/buildkite-agent:/usr/bin/buildkite-agent -v /var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock:/var/lib/buildkite-agent/.buildkite-agent/sockets/job-api/3575842-10263.sock -e BUILDKITE_AGENT_JOB_API_SOCKET -e BUILDKITE_AGENT_JOB_API_TOKEN -e FIGMA_CI_CREDENTIAL_EXCHANGE_ENDPOINT -v /var/lib/buildkite-agent/.aws:/home/circleci/.aws -e FIGMA_CI_SIGNING_ACCESS_KEY_ID -e FIGMA_CI_SIGNING_SECRET_ACCESS_KEY -e FIGMA_CI_SIGNING_SESSION_TOKEN main
+_bk;t=1773439209921~~~ Uploading linked container logs
+_bk;t=1773439209936[38;5;48m2026-03-13 22:00:09 INFO  [0m [0mFound 1 files that match "docker-compose-logs/*.log"[0m
+_bk;t=1773439209936[38;5;48m2026-03-13 22:00:09 INFO  [0m [0mUploading to default Buildkite artifact storage[0m
+_bk;t=1773439209936[38;5;48m2026-03-13 22:00:09 INFO  [0m [0mCreating (0-1)/1 artifacts[0m
+_bk;t=1773439210106[38;5;48m2026-03-13 22:00:10 INFO  [0m [0mUploading 019ce936-d230-49f1-be91-fd0bce5f7c3b docker-compose-logs/network.log (0 B)[0m
+_bk;t=1773439210463[38;5;48m2026-03-13 22:00:10 INFO  [0m [0mArtifact uploads completed successfully[0m
+_bk;t=1773439210466--- 
+_bk;t=1773439210466^^^ +++
+_bk;t=1773439210466[31m🚨 Error: The command exited with status 1[0m
+_bk;t=1773439210466^^^ +++
+_bk;t=1773439210466~~~ Running agent post-command hook
+_bk;t=1773439210466[90m$[0m /etc/buildkite-agent/hooks/post-command
+_bk;t=1773439211286check-feature-flag: 2026/03/13 22:00:11 checking flag buildkite_webhook_commit_statuses
+_bk;t=1773439211286check-feature-flag: 2026/03/13 22:00:11 flag value: true
+_bk;t=1773439211290[cortex-test-and-build] buildkite_webhook_commit_statuses is enabled, skipping post-command commit status
+_bk;t=1773439211291~~~ Running plugin docker-compose post-command hook
+_bk;t=1773439211291[90m$[0m devex/buildkite/plugins/docker-compose/hooks/post-command
+_bk;t=1773439211311~~~ :docker: Docker compose: post-command hook
+_bk;t=1773439211332user command error: running "plugin docker-compose command" shell hook: The plugin docker-compose command hook exited with status 1
+_bk;t=1773439211332~~~ Running agent pre-exit hook
+_bk;t=1773439211332[90m$[0m /etc/buildkite-agent/hooks/pre-exit
+_bk;t=1773439211353^^^ :link: Datadog Links
+_bk;t=1773439211353^^^ +++
+_bk;t=1773439211359]1339;url='https://app.datadoghq.com/dashboard/ifv-nnk-8m5/?tpl_var_build_id%5B0%5D=019ce933-50d4-4732-a800-fa98dedf0004&tpl_var_job_id%5B0%5D=019ce935-099e-42ea-93d6-1e8d3df48335&tpl_var_instance_id%5B0%5D=i-03bc3c50e2f9baef4&tpl_var_host%5B0%5D=ip-10-143-180-112.us-west-2.compute.internal&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job/build/host metrics'
+_bk;t=1773439211360]1339;url='https://app.datadoghq.com/containers?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-099e-42ea-93d6-1e8d3df48335&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job containers'
+_bk;t=1773439211361]1339;url='https://app.datadoghq.com/process?query=ci.build.id%3A019ce933-50d4-4732-a800-fa98dedf0004%20AND%20ci.job.id%3A019ce935-099e-42ea-93d6-1e8d3df48335&from_ts=1773439065000&to_ts=1773439241000&live=false';content='Click here to view job processes'
+_bk;t=1773439211362]1339;url='https://app.datadoghq.com/logs?query=service%3Abuildkite%20%40host%3Ai-03bc3c50e2f9baef4&from_ts=1773439065000&to_ts=1773439241000&live=false&storage=flex_tier';content='Click here to view system logs'
+_bk;t=1773439211363]1339;url='https://app.datadoghq.com/ci/pipeline-executions?query=ci_level%3Ajob%20%40buildkite.agent.name%3Aproduction-linux-i-03bc3c50e2f9baef4-4&agg_m=count&agg_m_source=base&agg_t=count&cipipeline_explorer_sort=timestamp%2Casc&cols=%40ci.status%2Ctimestamp%2C%40ci.job.url%2C%40ci.job.name%2C%40duration%2C%40git.branch&fromUser=true&index=cipipeline&live=false&paused=true';content='Click here to view job runs on this host'
+_bk;t=1773439211363~~~ Running global pre-exit hook
+_bk;t=1773439211816Job vcpu_hours: 16 * .0322222 = .5155552
+_bk;t=1773439214832Warning: Failed to retrieve AWS EC2 instance price
+_bk;t=1773439214834Final CI stage: container.main
+_bk;t=17734392148402026/03/13 22:00:14 [DEBUG] POST https://api.datadoghq.com/api/v2/ci/pipeline/tags
+_bk;t=1773439215125Tags sent successfully
+_bk;t=1773439215369No matching git trace2 events found
+_bk;t=1773439215370Revoking $FIGMA_CI_GITHUB_TOKEN...0m0.201s
+_bk;t=1773439215570Stopping ssh-agent 3576313
+_bk;t=1773439215574Agent pid 3576313 killed
+_bk;t=1773439215574~~~ Pruning unused Docker resources
+_bk;t=1773439215594Total reclaimed space: 0B
+_bk;t=1773439215698Total:	0B
+_bk;t=1773439215702~~~ Disk snapshot
+_bk;t=1773439215702Disk before job: 30% | Disk after job: 30% | Delta: 0%
+_bk;t=1773439215705Filesystem      Size  Used Avail Use% Mounted on
+_bk;t=1773439215705/dev/nvme0n1p1   50G   15G   36G  30% /
+_bk;t=1773439215706Buildkite main command experienced an error, setting exit code to 1
+_bk;t=1773439215706BUILDKITE_JOB_FINAL_EXIT_STATUS=failure
+_bk;t=1773439215727[90m# SSH_AUTH_SOCK removed[0m
+_bk;t=1773439215727[90m# SSH_AGENT_PID removed[0m
+_bk;t=1773439215727~~~ Running plugin docker-compose pre-exit hook
+_bk;t=1773439215728[90m$[0m devex/buildkite/plugins/docker-compose/hooks/pre-exit
+_bk;t=1773439215750~~~ :docker: Reporting docker-compose memory usage to Datadog
+_bk;t=1773439215756{
+_bk;t=1773439215756  "services": [],
+_bk;t=1773439215756  "max_usage_in_bytes": 4792320
+_bk;t=1773439215756}
+_bk;t=1773439216077~~~ :docker: Cleaning up after docker-compose
+_bk;t=1773439216086agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439216086[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 kill
+_bk;t=1773439216245[1A[1B[0G[?25l[+] Running 0/0
+_bk;t=1773439216245[37m ⠋ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.1s
+_bk;t=1773439216245[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216344[37m ⠙ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.2s
+_bk;t=1773439216344[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216444[37m ⠹ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.3s
+_bk;t=1773439216444[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216544[37m ⠸ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.4s
+_bk;t=1773439216544[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216645[37m ⠼ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.5s
+_bk;t=1773439216645[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216745[37m ⠴ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.6s
+_bk;t=1773439216745[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216844[37m ⠦ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.7s
+_bk;t=1773439216844[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439216944[37m ⠧ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.8s
+_bk;t=1773439216944[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439217044[37m ⠇ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killing                                                                   0.9s
+_bk;t=1773439217044[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+_bk;t=1773439217087[34m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Killed                                                                    0.9s
+_bk;t=1773439217087[0m[?25h
+_bk;t=1773439217181agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439217181[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 rm --force -v
+_bk;t=1773439217238Going to remove cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network
+_bk;t=1773439217249[1A[1B[0G[?25l[+] Running 1/0
+_bk;t=1773439217249[34m ⠿ Container cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335-network  Removed                                                                   0.0s
+_bk;t=1773439217249[0m[?25h
+_bk;t=1773439217261agent_cgroup: /agent.slice/agent-4/
+_bk;t=1773439217261[90m$[0m docker compose -f ./devex/buildkite/docker-compose.yml -p cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335 down --volumes
+_bk;t=1773439217416[1A[1B[0G[?25l[+] Running 0/0
+_bk;t=1773439217416[37m ⠋ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removing                                                                    0.1s
+_bk;t=1773439217416[0m[?25h[1A[1A[0G[?25l[+] Running 0/1
+_bk;t=1773439217516[37m ⠙ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removing                                                                    0.2s
+_bk;t=1773439217516[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+_bk;t=1773439217616[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removed                                                                     0.3s
+_bk;t=1773439217616[0m[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+_bk;t=1773439217616[34m ⠿ Network cortex-test-and-build-019ce935-099e-42ea-93d6-1e8d3df48335_default  Removed                                                                     0.3s
+_bk;t=1773439217616[0m[?25h

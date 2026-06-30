@@ -1,0 +1,465 @@
+{
+  "bazel_summary": null,
+  "packages": [
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/cli/itest",
+      "tests": [
+        {
+          "duration_secs": 0.01,
+          "name": "TestHealth",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.02,
+          "name": "TestWorkspaceCreateListDelete",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestWorkspaceStatus",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.03,
+          "name": "TestFSWriteReadDelete",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.04,
+          "name": "TestFSMkdirAndList",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.03,
+          "name": "TestFSMove",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestExecRun",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestExecRunNonZeroExit",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestExecRunWithCwd",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sbox/itest_agent_prompt",
+      "tests": [
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiUnavailable/skip_explicit_missing_binary",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiUnavailable/skip_explicit_auth_failure",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiUnavailable/skip_auth_failure_reported_in_stream_lines",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiUnavailable/do_not_skip_generic_early_failure",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiUnavailable",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestCodexPrompt_EndToEnd",
+          "status": "SKIP"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestClaudePrompt_EndToEnd",
+          "status": "SKIP"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiPrompt_EndToEnd",
+          "status": "SKIP"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestGeminiPrompt_ToolStream_EndToEnd",
+          "status": "SKIP"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestCodexPrompt_DiscoveredSkillsAndMCPs",
+          "status": "SKIP"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAgentSwitch_ClaudeThenCodex",
+          "status": "SKIP"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sbox/itest_bootstrap",
+      "tests": [
+        {
+          "duration_secs": 6.18,
+          "name": "TestBootstrap_ClaudeSymlink",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.26,
+          "name": "TestBootstrap_CodexSymlink",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.27,
+          "name": "TestBootstrap_CodexConfigDir",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 4.56,
+          "name": "TestBootstrap_CodexPlugins",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 4.88,
+          "name": "TestGitTrace2_SocketAndMetrics",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 4.86,
+          "name": "TestBootstrap_SessionRepoSetup",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sbox/itest_make_git",
+      "tests": [
+        {
+          "duration_secs": 5.68,
+          "name": "TestMakeGit_TemplateFilesRendered",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.16,
+          "name": "TestMakeGit_MiseToml",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.68,
+          "name": "TestMakeGit_MakeScriptsExecutable",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.75,
+          "name": "TestMakeGit_ViteConfigReadsPort",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.19,
+          "name": "TestMakeGit_InstallScriptRan",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 5.72,
+          "name": "TestMakeGit_ManifestNotSynced",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sbox/itest_session_persist",
+      "tests": [
+        {
+          "duration_secs": 0.61,
+          "name": "TestSessionPersistence_SurvivesRebootstrap",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sboxcontrol/itest",
+      "tests": [
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Direct/ListSessions",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Direct/GetNonexistentSession",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Direct/DeleteNonexistentSession",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Direct/UnknownCommand",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Direct",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Proxy/ListSessions",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Proxy/GetNonexistentSession",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Proxy/DeleteNonexistentSession",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestAPIParity/Proxy/UnknownCommand",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestAPIParity/Proxy",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.01,
+          "name": "TestAPIParity",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/sboxproxy/itest",
+      "tests": [
+        {
+          "duration_secs": 0.0,
+          "name": "TestHealthEndpoint",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestReadyEndpoint",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestStatsEndpoint",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestRequestWithoutUserID",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestRequestWithoutOwnerID",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestRequestWithUserAndOwner",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestRequestWithFileKey",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestCORSPreflight",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": false,
+      "raw_output": [
+        "Error [AgentPlatError]: bootstrap config is required",
+        "Error [AgentPlatError]: bootstrap config is required"
+      ],
+      "target": "//services/agentplat/ts-client/itest",
+      "tests": []
+    },
+    {
+      "executed": false,
+      "failing_tests": [],
+      "passed": true,
+      "target": "//services/agentplat/ugit/itest",
+      "tests": [
+        {
+          "duration_secs": 0.25,
+          "name": "TestScenario_BasicPushClone",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.13,
+          "name": "TestScenario_MultipleCommits",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.19,
+          "name": "TestScenario_TwoClientsPushPull",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.38,
+          "name": "TestScenario_ThreeClientsRoundtrip",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.19,
+          "name": "TestScenario_FileDelete",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.29,
+          "name": "TestScenario_FileEdit",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.11,
+          "name": "TestScenario_NestedDirectories",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.15,
+          "name": "TestScenario_LargeFile",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.87,
+          "name": "TestScenario_ManySmallPushes",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 1.6,
+          "name": "TestScenario_ReadYourWritesImmediately",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.4,
+          "name": "TestScenario_ConcurrentPush",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.05,
+          "name": "TestScenario_PackfileURIs",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.11,
+          "name": "TestAuth_ValidWriteToken",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.35,
+          "name": "TestAuth_ValidReadToken",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.23,
+          "name": "TestAuth_ReadTokenCannotPush",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.08,
+          "name": "TestAuth_WrongRepo",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.16,
+          "name": "TestAuth_ExpiredToken",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.11,
+          "name": "TestAuth_NoToken",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.09,
+          "name": "TestAuth_PrefixToken",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.4,
+          "name": "TestAuth_FullWorkflow",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.2,
+          "name": "TestAuth_FigjwtPrefix",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.09,
+          "name": "TestAuth_ProactiveAuth_NoChallenge",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.15,
+          "name": "TestAuth_ProactiveAuth_ProtocolV2",
+          "status": "PASS"
+        },
+        {
+          "duration_secs": 0.0,
+          "name": "TestStressorPassthrough",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "type": "gotest",
+  "uncaptured_errors": [
+    "FAIL: //services/agentplat/ts-client/itest:itest_extended (Exit 1) (see /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs/services/agentplat/ts-client/itest/itest_extended/test.log)",
+    "FAIL: //services/agentplat/ts-client/itest:itest (Exit 1) (see /home/circleci/.cache/bazel/_bazel_circleci/a6e8cb0ce75ceb1ea1faa0cca0b0ae0d/execroot/_main/bazel-out/k8-fastbuild/testlogs/services/agentplat/ts-client/itest/itest/test.log)"
+  ]
+}

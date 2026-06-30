@@ -1,0 +1,10 @@
+{
+  "type": "gotest",
+  "packages": [],
+  "bazel_summary": {
+    "executed": 13,
+    "total": 13,
+    "passed": 11,
+    "failed": 2
+  }
+}
