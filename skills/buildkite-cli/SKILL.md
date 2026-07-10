@@ -7,6 +7,10 @@ description: Buildkite CLI for inspecting builds and parsing job logs. Use when 
 
 The `bk` CLI inspects Buildkite builds and parses job logs. It can list all jobs in a build with pass/fail status, or download and parse individual job logs into structured output.
 
+## CLI availability
+
+Run `command -v bk` before use. If it is unavailable, install the local source with `cargo install --path ~/code/buildkite-cli`.
+
 ## Authentication
 
 Set the Buildkite API token (requires `read_builds`, `write_builds`, and `read_artifacts` scopes):

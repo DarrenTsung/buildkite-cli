@@ -1,0 +1,4 @@
+interface:
+  display_name: "Buildkite CLI"
+  short_description: "Inspect Buildkite builds and CI logs"
+  default_prompt: "Use $buildkite-cli to investigate this Buildkite failure."
